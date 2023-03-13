@@ -1,0 +1,34 @@
+version: '3'
+  
+networks:
+  tmail:
+  
+services:
+  cyrus:
+    container_name: cyrus
+    image: cyrus-local
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    ports:
+      - 993:993
+      - 143:143
+      - 8008:80
+    volumes:
+      - ./cyrus/imapd.conf:/etc/imapd.conf
+      - ./cyrus/saslauthd:/etc/default/saslauthd
+      - ./cyrus/cyrus.conf:/etc/cyrus.conf
+    networks:
+      - tmail
+
+  # tmail-frontend:
+  #   image: linagora/tmail-web:master
+  #   container_name: tmail-frontend
+  #   ports:
+  #     - "8080:80"
+  #   volumes:
+  #     - ./tmail/env.file:/usr/share/nginx/html/assets/env.file
+  #   networks:
+  #     - tmail
+  #   depends_on:
+  #     - cyrus

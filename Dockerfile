@@ -37,7 +37,7 @@ RUN \
     echo postfix postfix/mailbox_limit string 0 | debconf-set-selections && \
     echo postfix postfix/root_address string "$ROOT_ADDRESS" | debconf-set-selections && \
     echo postfix postfix/newaliases boolean false | debconf-set-selections && \
-    apt install -y xz-utils \
+    apt install -y xz-utils vim net-tools dnsutils telnet sasl2-bin \
       cyrus-imapd/${DEBIAN_VERSION}-backports \
       cyrus-pop3d/${DEBIAN_VERSION}-backports \
       cyrus-nntpd/${DEBIAN_VERSION}-backports \
@@ -77,7 +77,7 @@ EXPOSE 25 465 587 110 143 993 995 2000 8008 8443
 
 VOLUME [ "/etc", "/var/lib/cyrus", "/var/spool/cyrus", "/var/spool/mail", "/var/spool/sieve" ]
 
-copy install /
+COPY install /
 
 CMD ["/usr/sbin/cyrmaster", "-D", "-l", "32", "-C", "/etc/imapd.conf", "-M", "/etc/cyrus.conf"]
 

@@ -37,7 +37,7 @@ RUN \
     echo postfix postfix/mailbox_limit string 0 | debconf-set-selections && \
     echo postfix postfix/root_address string "$ROOT_ADDRESS" | debconf-set-selections && \
     echo postfix postfix/newaliases boolean false | debconf-set-selections && \
-    apt install -y xz-utils vim net-tools dnsutils telnet sasl2-bin \
+    apt install -y xz-utils vim net-tools dnsutils telnet sasl2-bin curl \
       cyrus-imapd/${DEBIAN_VERSION}-backports \
       cyrus-pop3d/${DEBIAN_VERSION}-backports \
       cyrus-nntpd/${DEBIAN_VERSION}-backports \

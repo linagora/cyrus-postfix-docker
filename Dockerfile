@@ -1,6 +1,3 @@
-FROM windows
-
-
 ARG DEBIANVERSION=bullseye
 
 FROM debian:${DEBIANVERSION}-slim as debian-backports-updated

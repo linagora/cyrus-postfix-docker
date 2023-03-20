@@ -13,7 +13,7 @@ services:
     ports:
       - 993:993
       - 143:143
-      - 8008:80
+      - 8008:8008
     volumes:
       - ./cyrus/imapd.conf:/etc/imapd.conf
       - ./cyrus/saslauthd:/etc/default/saslauthd
@@ -21,14 +21,14 @@ services:
     networks:
       - tmail
 
-  # tmail-frontend:
-  #   image: linagora/tmail-web:master
-  #   container_name: tmail-frontend
-  #   ports:
-  #     - "8080:80"
-  #   volumes:
-  #     - ./tmail/env.file:/usr/share/nginx/html/assets/env.file
-  #   networks:
-  #     - tmail
-  #   depends_on:
-  #     - cyrus
+  tmail-frontend:
+    image: linagora/tmail-web:master
+    container_name: tmail-frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./tmail/env.file:/usr/share/nginx/html/assets/env.file
+    networks:
+      - tmail
+    depends_on:
+      - cyrus

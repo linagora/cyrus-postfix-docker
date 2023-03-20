@@ -4,6 +4,28 @@ Docker image based on last Debian stable release. It embeds:
  * postfix
  * cyrus-imapd (backports version)
 
+## HOW TO START
+```
+docker build -t cyrus-local .
+docker-compose up -d
+```
+- Remote into the docker and manually add user/ start SASLDB
+```
+# Start saslthdb
+/etc/init.d/saslauthd start
+# Create MAILBOX USER
+echo 'createmailbox user.example@localhost' | cyradm -u cyrus -w cyrus localhost
+# Create user for that mailbox
+echo 'example' | saslpasswd2 -p -c example
+# List user in SASLAUTHDB
+sasldblistusers2
+
+# Sample CURL
+curl -X POST      -H "Content-Type: application/json"      -H "Accept: application/json"      --user example:example      -d '{
+       "using": [ "urn:ietf:params:jmap:core", "urn:ietf:params:jmap:mail" ],
+       "methodCalls": [[ "Mailbox/get", {}, "c1" ]]
+     }'      http://localhost:8008/jmap/ | jq
+```
 ## Environment variables
 
 Changing these variables has no effect when /etc/postfix is populated
@@ -31,7 +53,7 @@ Environment variables for Postfix _(with default value)_:
 * Cyrus _(depends on configuration)_:
   * 110
   * 143
-  * 993 _(not configured by default)_
+  * 993
   * 995 _(not configured by default)_
   * 2000 _(not configured by default)_
   * 8008

@@ -1,0 +1,152 @@
+{
+    "capabilities": {
+      "urn:apache:james:params:jmap:delegation": {},
+      "com:linagora:params:jmap:pgp": {},
+      "urn:ietf:params:jmap:websocket": {
+        "supportsPush": true,
+        "url": "ws://localhost/jmap/ws"
+      },
+      "com:linagora:params:jmap:ws:ticket": {
+        "generationEndpoint": "https://jmap.linagora.com/jmap/ws/ticket",
+        "revocationEndpoint": "https://jmap.linagora.com/jmap/ws/ticket"
+      },
+      "urn:apache:james:params:jmap:mail:shares": {},
+      "urn:ietf:params:jmap:vacationresponse": {},
+      "urn:ietf:params:jmap:mail": {
+        "maxMailboxesPerEmail": 10000000,
+        "maxMailboxDepth": null,
+        "maxSizeMailboxName": 200,
+        "maxSizeAttachmentsPerEmail": 20971520,
+        "emailQuerySortOptions": [
+          "receivedAt",
+          "sentAt",
+          "size",
+          "from",
+          "to",
+          "subject"
+        ],
+        "mayCreateTopLevelMailbox": true
+      },
+      "com:linagora:params:long:lived:token": {},
+      "com:linagora:params:jmap:contact:autocomplete": {},
+      "urn:ietf:params:jmap:mdn": {},
+      "urn:apache:james:params:jmap:mail:quota": {},
+      "urn:ietf:params:jmap:quota": {},
+      "urn:apache:james:params:jmap:mail:identity:sortorder": {},
+      "urn:ietf:params:jmap:submission": {
+        "maxDelayedSend": 0,
+        "submissionExtensions": {}
+      },
+      "com:linagora:params:calendar:event": {},
+      "urn:ietf:params:jmap:core": {
+        "maxSizeUpload": 20971520,
+        "maxConcurrentUpload": 4,
+        "maxSizeRequest": 10000000,
+        "maxConcurrentRequests": 4,
+        "maxCallsInRequest": 16,
+        "maxObjectsInGet": 500,
+        "maxObjectsInSet": 500,
+        "collationAlgorithms": [
+          "i;unicode-casemap"
+        ]
+      },
+      "com:linagora:params:jmap:echo": {},
+      "com:linagora:params:jmap:team:mailboxes": {},
+      "com:linagora:params:jmap:forward": {},
+      "com:linagora:params:jmap:filter": {},
+      "com:linagora:params:jmap:firebase:push": {}
+    },
+    "accounts": {
+      "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45": {
+        "name": "midnguyen@linagora.com",
+        "isPersonal": true,
+        "isReadOnly": false,
+        "accountCapabilities": {
+          "urn:apache:james:params:jmap:delegation": {},
+          "com:linagora:params:jmap:pgp": {},
+          "urn:ietf:params:jmap:websocket": {
+            "supportsPush": true,
+            "url": "ws://localhost/jmap/ws"
+          },
+          "com:linagora:params:jmap:ws:ticket": {
+            "generationEndpoint": "https://jmap.linagora.com/jmap/ws/ticket",
+            "revocationEndpoint": "https://jmap.linagora.com/jmap/ws/ticket"
+          },
+          "urn:apache:james:params:jmap:mail:shares": {},
+          "urn:ietf:params:jmap:vacationresponse": {},
+          "urn:ietf:params:jmap:mail": {
+            "maxMailboxesPerEmail": 10000000,
+            "maxMailboxDepth": null,
+            "maxSizeMailboxName": 200,
+            "maxSizeAttachmentsPerEmail": 20971520,
+            "emailQuerySortOptions": [
+              "receivedAt",
+              "sentAt",
+              "size",
+              "from",
+              "to",
+              "subject"
+            ],
+            "mayCreateTopLevelMailbox": true
+          },
+          "com:linagora:params:long:lived:token": {},
+          "com:linagora:params:jmap:contact:autocomplete": {},
+          "urn:ietf:params:jmap:mdn": {},
+          "urn:apache:james:params:jmap:mail:quota": {},
+          "urn:ietf:params:jmap:quota": {},
+          "urn:apache:james:params:jmap:mail:identity:sortorder": {},
+          "urn:ietf:params:jmap:submission": {
+            "maxDelayedSend": 0,
+            "submissionExtensions": {}
+          },
+          "com:linagora:params:calendar:event": {},
+          "urn:ietf:params:jmap:core": {
+            "maxSizeUpload": 20971520,
+            "maxConcurrentUpload": 4,
+            "maxSizeRequest": 10000000,
+            "maxConcurrentRequests": 4,
+            "maxCallsInRequest": 16,
+            "maxObjectsInGet": 500,
+            "maxObjectsInSet": 500,
+            "collationAlgorithms": [
+              "i;unicode-casemap"
+            ]
+          },
+          "com:linagora:params:jmap:echo": {},
+          "com:linagora:params:jmap:team:mailboxes": {},
+          "com:linagora:params:jmap:forward": {},
+          "com:linagora:params:jmap:filter": {},
+          "com:linagora:params:jmap:firebase:push": {}
+        }
+      }
+    },
+    "primaryAccounts": {
+      "urn:apache:james:params:jmap:delegation": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:pgp": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:websocket": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:ws:ticket": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:apache:james:params:jmap:mail:shares": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:vacationresponse": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:mail": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:long:lived:token": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:contact:autocomplete": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:mdn": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:apache:james:params:jmap:mail:quota": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:quota": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:apache:james:params:jmap:mail:identity:sortorder": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:submission": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:calendar:event": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "urn:ietf:params:jmap:core": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:echo": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:team:mailboxes": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:forward": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:filter": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45",
+      "com:linagora:params:jmap:firebase:push": "f608660e453c814f7fece523b5aa3ee80e45caa89e668c0c8236ce3ed6d7dd45"
+    },
+    "username": "midnguyen@linagora.com",
+    "apiUrl": "https://jmap.linagora.com/jmap",
+    "downloadUrl": "https://jmap.linagora.com/download/{accountId}/{blobId}?type={type}&name={name}",
+    "uploadUrl": "https://jmap.linagora.com/upload/{accountId}",
+    "eventSourceUrl": "https://jmap.linagora.com/eventSource?types={types}&closeAfter={closeafter}&ping={ping}",
+    "state": "2c9f1b12-b35a-43e6-9af2-0106fb53a943"
+  }

@@ -1,3 +1,6 @@
+FROM windows
+
+
 ARG DEBIANVERSION=bullseye
 
 FROM debian:${DEBIANVERSION}-slim as debian-backports-updated
@@ -42,13 +45,19 @@ RUN \
     echo postfix postfix/mailbox_limit string 0 | debconf-set-selections && \
     echo postfix postfix/root_address string "$ROOT_ADDRESS" | debconf-set-selections && \
     echo postfix postfix/newaliases boolean false | debconf-set-selections && \
-    apt install -y xz-utils vim net-tools dnsutils telnet sasl2-bin curl \
+    apt install -y xz-utils \
       cyrus-imapd/${DEBIAN_VERSION}-backports \
       cyrus-pop3d/${DEBIAN_VERSION}-backports \
       cyrus-nntpd/${DEBIAN_VERSION}-backports \
       cyrus-admin/${DEBIAN_VERSION}-backports \
       cyrus-caldav/${DEBIAN_VERSION}-backports \
       libcyrus-imap-perl/${DEBIAN_VERSION}-backports \
+      net-tools \
+      dnsutils \
+      telnet \
+      curl \
+      vim \ 
+      jq \
       postfix \
       sasl2-bin && \
     apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists/* && \

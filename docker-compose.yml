@@ -22,7 +22,7 @@ services:
       - tmail
 
   tmail-frontend:
-    image: linagora/tmail-web:master
+    image: chibenwa/tmail-front:cyrus
     container_name: tmail-frontend
     ports:
       - "8080:80"

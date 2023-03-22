@@ -73,8 +73,14 @@ RUN \
       /etc/postfix/main.cf.proto
 
 RUN perl -i -pe 's/httpmodules: .*$/httpmodules: carddav caldav jmap/' /etc/imapd.conf
+RUN perl -i -pe 's/sasl_pwcheck_method: .*$/sasl_pwcheck_method: saslauthd auxprop/' /etc/imapd.conf
 RUN echo 'conversations: 1' >> /etc/imapd.conf
 RUN echo 'conversations_db: twoskip' >> /etc/imapd.conf
+RUN echo 'admins: cyrus' >> /etc/imapd.conf
+RUN echo 'jmap_vacation: 0' >> /etc/imapd.conf
+RUN echo 'virtdomains: yes' >> /etc/imapd.conf
+RUN echo 'defaultdomain: localhost.com' >> /etc/imapd.conf
+
 RUN /usr/lib/cyrus/bin/ctl_conversationsdb -b -r
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp

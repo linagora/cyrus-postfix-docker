@@ -13,14 +13,26 @@ docker-compose up -d
 ```
 # Start saslthdb
 /etc/init.d/saslauthd start
-# Create MAILBOX USER
-echo 'createmailbox user.example@localhost' | cyradm -u cyrus -w cyrus localhost
-# Create user for that mailbox
+```
+### Create Mailbox user/password in SASLAUTHDB
+```
+echo 'createmailbox user.example@localhost.com' | cyradm -u cyrus -w cyrus localhost
+echo 'createmailbox user.ana@localhost.com' | cyradm -u cyrus -w cyrus localhost
+echo 'createmailbox user.bob@localhost.com' | cyradm -u cyrus -w cyrus localhost
 echo 'example' | saslpasswd2 -p -c example
-# List user in SASLAUTHDB
+echo 'example' | saslpasswd2 -p -c ana
+echo 'example' | saslpasswd2 -p -c bob
+```
+### List user in SASLAUTHDB and verify password
+```
 sasldblistusers2
-
-# Sample CURL
+cyrus@ca77a55b1057: userPassword
+example@ca77a55b1057: userPassword
+testsaslauthd -u example -p example -f /var/run/saslauthd/mux
+0: OK "Success."
+```
+### Sample CURL
+```
 curl -X POST      -H "Content-Type: application/json"      -H "Accept: application/json"      --user example:example      -d '{
        "using": [ "urn:ietf:params:jmap:core", "urn:ietf:params:jmap:mail" ],
        "methodCalls": [[ "Mailbox/get", {}, "c1" ]]

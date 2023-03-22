@@ -10,14 +10,16 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile
+    environment:
+      - CYRUS_PWD=cyrus
     ports:
       - 993:993
       - 143:143
       - 8008:8008
     volumes:
-      - ./cyrus/imapd.conf:/etc/imapd.conf
+      # - ./cyrus/imapd.conf:/etc/imapd.conf
       - ./cyrus/saslauthd:/etc/default/saslauthd
-      - ./cyrus/cyrus.conf:/etc/cyrus.conf
+      # - ./cyrus/cyrus.conf:/etc/cyrus.conf
     networks:
       - tmail
 

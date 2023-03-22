@@ -24,7 +24,8 @@ services:
       - tmail
 
   tmail-frontend:
-    image: chibenwa/tmail-front:cyrus
+    image: tmail-local
+    build: https://github.com/linagora/tmail-flutter.git
     container_name: tmail-frontend
     ports:
       - "8080:80"

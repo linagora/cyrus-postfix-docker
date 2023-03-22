@@ -8,10 +8,11 @@ Docker image based on last Debian stable release. It embeds:
 ```
 docker build -t cyrus-local .
 docker-compose up -d
+docker exec -it cyrus /bin/bash
 ```
-- Remote into the docker and manually add user/ start SASLDB
+After remote into the docker, run below steps to add dummy data:
+### Start saslthdb
 ```
-# Start saslthdb
 /etc/init.d/saslauthd start
 ```
 ### Create Mailbox user/password in SASLAUTHDB

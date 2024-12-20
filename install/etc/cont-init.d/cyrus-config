@@ -8,4 +8,4 @@ if test "$CYRUS_PWD" = ""; then
 else
 	echo -n "$CYRUS_PWD" | saslpasswd2 -p cyrus
 fi
-perl -i -pe 's/^sasl_auxprop_plugin:.*$//;s/^sasl_pwcheck_method:.*$/sasl_pwcheck_method: '$SASL_PWCHECK_METHOD'\nsasl_auxprop_plugin: '$SASLDB'/' /etc/imapd.conf
+perl -i -pe 's/^sasl_auxprop_plugin:.*$//;s/^sasl_pwcheck_method:.*$/sasl_pwcheck_method: '"$SASL_PWCHECK_METHOD"'\nsasl_auxprop_plugin: '"$SASLDB"'/' /etc/imapd.conf

@@ -51,8 +51,8 @@ Environment variables for Postfix _(with default value)_:
   * `SASL_PWCHECK_METHOD` = `saslauthd auxprop`
   * `SASLDB` = `sasldb`
 * For Postfix
-  * `MAILNAME` = `mail.example.com`
-  * `OTHER_DESTINATIONS` = `example.com mail.example.com`
+  * `MAILNAME` = `example.com`
+  * `OTHER_DESTINATIONS` = `example.com`
   * `RELAY_HOST` = `""`
   * `MYNETWORKS` = `127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128`
   * `ROOT_ADDRESS` = `""`: _(address to which mail from root and postmaster will be sent)_

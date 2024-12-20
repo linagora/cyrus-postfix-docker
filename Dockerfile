@@ -1,8 +1,8 @@
-ARG DEBIANVERSION=bullseye
+ARG DEBIANVERSION=bookworm
 
-FROM debian:${DEBIANVERSION}-slim as debian-backports-updated
+FROM debian:${DEBIANVERSION}-slim AS debian-backports-updated
 
-ENV DEBIAN_VERSION=bullseye
+ENV DEBIAN_VERSION=bookworm
 
 RUN echo "# Install packages from ${DEBIAN_VERSION}" && \
     apt-get -y update && \
@@ -12,15 +12,15 @@ RUN echo "# Install packages from ${DEBIAN_VERSION}" && \
 
 FROM debian-backports-updated
 
-ARG S6_OVERLAY_VERSION=3.1.3.0
+ARG S6_OVERLAY_VERSION=3.2.0.2
 
 LABEL maintainer="Yadd yadd@debian.org>" \
       name="yadd/cyrus-imapd-postfix" \
       version="v1.0"
 
-ENV DEBIAN_VERSION=bullseye \
-    MAILNAME=mail.example.com \
-    OTHER_DESTINATIONS="example.com mail.example.com" \
+ENV DEBIAN_VERSION=bookworm \
+    MAILNAME=example.com \
+    OTHER_DESTINATIONS="example.com" \
     RELAY_HOST= \
     MYNETWORKS="127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128" \
     ROOT_ADDRESS= \
@@ -53,7 +53,7 @@ RUN \
       dnsutils \
       telnet \
       curl \
-      vim \ 
+      vim \
       jq \
       postfix \
       sasl2-bin && \
@@ -82,6 +82,8 @@ RUN echo 'virtdomains: yes' >> /etc/imapd.conf
 RUN echo 'defaultdomain: localhost.com' >> /etc/imapd.conf
 
 RUN /usr/lib/cyrus/bin/ctl_conversationsdb -b -r
+
+RUN usermod -aG mail postfix
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-x86_64.tar.xz /tmp

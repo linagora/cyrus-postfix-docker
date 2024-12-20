@@ -1,36 +1,38 @@
 version: '3'
-  
+
 networks:
   tmail:
-  
+
 services:
   cyrus:
     container_name: cyrus
     image: cyrus-local
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
     environment:
       - CYRUS_PWD=cyrus
     ports:
       - 993:993
       - 143:143
       - 8008:8008
+      - "25:25"
+      - "465:465"
+      - "587:587"
     volumes:
-      # - ./cyrus/imapd.conf:/etc/imapd.conf
+      - ./cyrus/imapd.conf:/etc/imapd.conf
       - ./cyrus/saslauthd:/etc/default/saslauthd
-      # - ./cyrus/cyrus.conf:/etc/cyrus.conf
+      - ./cyrus/cyrus.conf:/etc/cyrus.conf
+      - ./postfix/:/etc/postfix/
     networks:
       - tmail
 
-  tmail-frontend:
-    image: tmail-local
-    build: https://github.com/linagora/tmail-flutter.git
-    container_name: tmail-frontend
-    ports:
-      - "8080:80"
+  nginx:
+    container_name: nginx
+    image: nginx:latest
     volumes:
-      - ./tmail/env.file:/usr/share/nginx/html/assets/env.file
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 80:80
+      - 443:443
     networks:
       - tmail
     depends_on:

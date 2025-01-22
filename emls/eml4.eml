@@ -1,0 +1,53 @@
+Return-Path: <SRS0=Ef2S=UN=goc.govmu.org=noreply-fgt@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-1.099999 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 51887d1d
+          for <btellier@linagora.com>;
+          Tue, 21 Jan 2025 10:07:26 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 6D6AA140555
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 10:07:26 +0000 (UTC)
+Received: from s602i.ik2.com (s602i.ik2.com [66.37.25.76])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 043851D5C6
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 11:12:17 +0100 (CET)
+Received: from s214b.ik2.com
+	by s602i.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <noreply-fgt@goc.govmu.org>)
+	id 1taBAK-0005W4-AQ
+	for btellier@linagora.com; Tue, 21 Jan 2025 10:07:25 +0000
+Received: from 202.123.27.122 by s214b.ik2.com (IK2 SMTP Server); Tue, 21 Jan 2025 10:07:23 +0000
+Received: from mxmail5.govmu.org (localhost [127.0.0.1])
+	by mxmail5.govmu.org (Postfix) with ESMTP id 5778C56F5AF
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 14:07:16 +0400 (+04)
+Received: by mxmail5.govmu.org (Postfix, from userid 110)
+	id 52A3156F3FD; Tue, 21 Jan 2025 14:07:16 +0400 (+04)
+Received: from localhost (localhost [127.0.0.1])
+	by mxmail5.govmu.org (Postfix) with ESMTP id 42EAA56F3FB
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 14:07:16 +0400 (+04)
+Authentication-Results: mxmail5.govmu.org;
+        x-trusted-ip=pass
+Received: from goc.govmu.org (mxmail.govmu.org [202.123.27.104])
+	by mxmail5.govmu.org (Postfix) with ESMTP id 0491256F57A
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 14:07:15 +0400 (+04)
+Mime-Version: 1.0
+Content-Type: text/plain; 
+	charset="utf-8"
+Content-Transfer-Encoding:  base64
+Date: Tue, 21 Jan 2025 14:07:18 +0400
+X-LINAGORA-Copy-Delivery-Done: 1
+From: noreply-fgt@goc.govmu.org
+Message-Id: <1737454038.6824@goc.govmu.org>
+Reply-To: noreply-fgt@goc.govmu.org
+To: btellier@linagora.com
+Subject: AuthCode: 712540
+X-SF-RX-Return-Path: <noreply-fgt@goc.govmu.org>
+X-SF-Originating-IP: 202.123.27.122
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 1.7
+X-SF-SRS: Sender address rewritten from <noreply-fgt@goc.govmu.org> to <SRS0=Ef2S=UN=goc.govmu.org=noreply-fgt@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+WW91ciBhdXRoZW50aWNhdGlvbiB0b2tlbiBjb2RlIGlzIDcxMjU0MC4gIA0K
+

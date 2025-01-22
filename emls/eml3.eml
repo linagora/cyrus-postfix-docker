@@ -1,0 +1,89 @@
+Return-Path: <SRS0=CSbJ=UO=apache.org=announce-return-9765-btellier=linagora.com@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-3.11 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID c70b2383
+          for <btellier@linagora.com>;
+          Wed, 22 Jan 2025 12:56:43 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 579E6140B07
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 12:56:43 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 6F8521D5C6
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 14:01:35 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <announce-return-9765-btellier=linagora.com@apache.org>)
+	id 1taaHe-0007Jm-SP
+	for btellier@linagora.com; Wed, 22 Jan 2025 12:56:42 +0000
+Received: from 3.227.148.255 by s602e.ik2.com (IK2 SMTP Server); Wed, 22 Jan 2025 12:56:38 +0000
+Received: from mail.apache.org (mailgw-he-de.apache.org [116.203.246.181])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mxout1-ec2-va.apache.org (ASF Mail Server at mxout1-ec2-va.apache.org) with ESMTPS id CB0C04D8DC
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 12:56:36 +0000 (UTC)
+Received: (qmail 793132 invoked by uid 998); 22 Jan 2025 12:56:28 -0000
+Mailing-List: contact announce-help@apache.org; run by ezmlm
+Precedence: bulk
+List-Help: <mailto:announce-help@apache.org>
+List-Unsubscribe: <mailto:announce-unsubscribe@apache.org>
+List-Post: <mailto:announce@apache.org>
+List-Id: <announce.apache.org>
+Delivered-To: mailing list announce@apache.org
+Delivered-To: moderator for announce@apache.org
+Delivered-To: btellier@linagora.com
+Received: (qmail 28134 invoked by uid 116); 22 Jan 2025 08:20:34 -0000
+Authentication-Results: apache.org; auth=none
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Haonan Hou <haonan@apache.org>
+To: announce@apache.org
+Subject: [ANNOUNCE] Apache TsFile 2.0.0 released
+Date: Wed, 22 Jan 2025 08:20:34 -0000
+Message-ID: <pony-c5e2d0b9-152b-46ae-a845-ec7795a529cd-announce@apache.org>
+User-Agent: Apache Pony Mail Foal Composer v/0.4
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-SF-RX-Return-Path: <announce-return-9765-btellier=linagora.com@apache.org>
+X-SF-Originating-IP: 3.227.148.255
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 1.1
+X-SF-SRS: Sender address rewritten from <announce-return-9765-btellier=linagora.com@apache.org> to <SRS0=CSbJ=UO=apache.org=announce-return-9765-btellier=linagora.com@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+The Apache TsFile team is pleased to announce the release of Apache TsFile
+2.0.0.
+
+Apache TsFile is a columnar storage file format designed for time series
+data, which supports efficient compression, high throughput of read and
+write, and compatibility with various frameworks, such as Spark and Flink.
+It is easy to integrate TsFile into IoT big data processing frameworks.
+
+## New Feature
+- TsFile V4 for Table Model
+- Support dictionary encoding for STRING data type
+- Modify default timestamp encoding
+- Tsfile java interfaces v4
+- Convert column name and table name to lower case
+- Add type cast interfaces in TsDataType
+
+## Improvement/Bugfix
+- Fix allSatisfy bug in InFilter
+- Fix bug in the conversion of int types to timestamp
+- Fix getValue method in Tablet doesn't support Date and Timestamp type
+- Fix error when write aligned tablet with null date
+- Fix tablet isNull method not correct
+- Fixed the issue that the time of the first data item written to TSFile by m=
+easurement cannot be a negative number
+- Fix float encoder overflow
+
+The full release note is available at:
+https://dlcdn.apache.org/tsfile/2.0.0/RELEASE_NOTES.md
+
+Maven artifacts can be found at:
+https://search.maven.org/search?q=3Dg:org.apache.tsfile
+
+
+Regards,
+The Apache TsFile team
+

@@ -1,0 +1,2357 @@
+Return-Path: <SRS0=5wR9=UM=apache.org=apmail-btellier-owner@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=0.35005 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID d109b688
+          for <btellier@linagora.com>;
+          Mon, 20 Jan 2025 15:24:45 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id B8CCE140AF9
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 15:24:45 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id BF51E1D5C6
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 16:29:34 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <apmail-btellier-owner@apache.org>)
+	id 1tZtdp-0007Ty-7m
+	for btellier@linagora.com; Mon, 20 Jan 2025 15:24:43 +0000
+Received: from 95.216.194.37 by s602e.ik2.com (IK2 SMTP Server); Mon, 20 Jan 2025 15:24:40 +0000
+Received: from mail.apache.org (mailgw-he-de.apache.org [IPv6:2a01:4f8:c2c:d4aa::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mxout1-he-de.apache.org (ASF Mail Server at mxout1-he-de.apache.org) with ESMTPS id 7199260B10
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 15:23:07 +0000 (UTC)
+Received: (qmail 3477510 invoked by uid 998); 20 Jan 2025 15:23:07 -0000
+Delivered-To: apmail-btellier@apache.org
+Delivered-To: btellier@linagora.com
+Received: (qmail 3477506 invoked by uid 116); 20 Jan 2025 15:23:07 -0000
+Received: from spamproc1-he-de.apache.org (HELO spamproc1-he-de.apache.org) (116.203.196.100)
+ by apache.org (qpsmtpd/0.94) with ESMTP; Mon, 20 Jan 2025 15:23:07 +0000
+Authentication-Results: apache.org; auth=none
+Received: from localhost (localhost [127.0.0.1])
+	by spamproc1-he-de.apache.org (ASF Mail Server at spamproc1-he-de.apache.org) with ESMTP id E3C6B20032B
+	for <btellier@apache.org>; Mon, 20 Jan 2025 15:23:06 +0000 (UTC)
+X-Spam-Level:
+Authentication-Results: spamproc1-he-de.apache.org (amavisd-new);
+	dkim=pass (1024-bit key) header.d=info.camif.fr
+Received: from mx1-ec2-va.apache.org ([116.203.227.195])
+	by localhost (spamproc1-he-de.apache.org [116.203.196.100]) (amavisd-new, port 10024)
+	with ESMTP id hge94UCw_fzl for <btellier@apache.org>;
+	Mon, 20 Jan 2025 15:23:04 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=208.73.7.172; helo=mail4957.info.camif.fr; envelope-from=v-bnbpddh_cbkdhkmkc_jmnhjcfd_jmnhjcfd_a-1@bounce.info.camif.fr; receiver=<UNKNOWN> 
+Received: from mail4957.info.camif.fr (mail4957.info.camif.fr [208.73.7.172])
+	by mx1-ec2-va.apache.org (ASF Mail Server at mx1-ec2-va.apache.org) with ESMTPS id BCCD4BFB55
+	for <btellier@apache.org>; Mon, 20 Jan 2025 15:23:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=spop1024; d=info.camif.fr;
+ h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+ X-CSA-Complaints; i=news@info.camif.fr;
+ bh=xhv8EMIlOuOd/Qvgnkk4agsPdVRSk5JjqKr/q0neCyQ=;
+ b=NNTXA7AFsYbNgIo0LqhsmjZTgRKChKxiS0yeRiI25CtoPDeGK1rzA4yyX3Mq+DmLjhKJ1CM+RnS+
+   TZb6ebIiHVa65LuG90SAW6CQ0i2J+L/PxGsT7s5aOxn02HUO7vghSSebfy6C/R/G5UNfvvTHISIl
+   OcQozsZ1s6Oq5UZIWIs=
+Received: by bg63-ca-ec1.prod.awspr id hhpl502vq6go for <btellier@apache.org>; Mon, 20 Jan 2025 15:22:56 +0000 (envelope-from <v-bnbpddh_cbkdhkmkc_jmnhjcfd_jmnhjcfd_a-1@bounce.info.camif.fr>)
+Date: Mon, 20 Jan 2025 15:22:56 +0000 (UTC)
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Camif <news@info.camif.fr>
+Reply-To: news@info.camif.fr
+To: btellier@apache.org
+Message-ID: <462227868.116563671737386576131.JavaMail.app@ap61-ca-ec1.prod.awspr>
+Subject: =?utf-8?Q?Un_s=C3=A9jour_inspirant_fabriqu=C3=A9_en_Europe?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_5885122_2130327524.1737386576127"
+x-mid: 30536503
+X-CSA-Complaints: whitelist-complaints@eco.de
+x-rpcampaign: sp30536503
+x-job: 30536503
+x-orgId: 20002
+X-SF-RX-Return-Path: <apmail-btellier-owner@apache.org>
+X-SF-Originating-IP: 95.216.194.37
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 2.1
+X-SF-SRS: Sender address rewritten from <apmail-btellier-owner@apache.org> to <SRS0=5wR9=UM=apache.org=apmail-btellier-owner@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+------=_Part_5885122_2130327524.1737386576127
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Profitez de la livraison offerte jusqu'au 27 janvier !=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09Si vous n=E2=80=99arrivez pas =C3=A0 lire cet e-mai=
+l, consultez ce lien https://links.info.camif.fr/servlet/MailView?ms=3DMzA1=
+MzY1MDMS1&r=3DLTkwMjk3OTA4ODIS1&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0.=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D2&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=
+=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09 https://links.inf=
+o.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D46&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DM=
+jYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+Profitez de prix doux, jusqu=E2=80=99=C3=A0 -20% sur nos meubles fabriqu=C3=
+=A9s en Europe.=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Voir les meuble=
+s en soldes https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D73&r=3D=
+LTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09JUSQU=
+=E2=80=99AU 27 JANVIER=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09
+
+LIVRAISON OFFERTE=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+sur tout le site d=C3=A8s 49=E2=82=AC d=E2=80=99achat*=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09J=E2=80=99en profite https://links.info.camif.fr/ct=
+t?ms=3DMzA1MzY1MDMS1&kn=3D24&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQ=
+S2&mt=3D1&rt=3D0 =09=09=09COLLECTION ALBIN=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09
+
+le charme du ch=C3=AAne=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1M=
+zY1MDMS1&kn=3D53&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=
+=3D0 =09=09=09=09=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?m=
+s=3DMzA1MzY1MDMS1&kn=3D33&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&=
+mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Buffet 2 portes =
+Albin CAMIF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+499 =E2=82=AC=C2=A0-10%=C2=A0 449=C2=A0=E2=82=AC https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D34&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0 =09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY=
+1MDMS1&kn=3D71&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=
+=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Buffet 4 portes Albin CAM=
+IF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+749=E2=82=AC=C2=A0-10%=C2=A0 675=C2=A0=E2=82=AC https://links.info.camif.fr=
+/ctt?ms=3DMzA1MzY1MDMS1&kn=3D31&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM=
+5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09 https://links.info=
+.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D64&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMj=
+YzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09T=
+able =C3=A0 manger Albin CAMIF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09
+
+899 =E2=82=AC=C2=A0-11%=C2=A0 799=C2=A0=E2=82=AC https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D11&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0 =09=09=09STYLE TERROIR OU NATURE...=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09
+
+trouvez le s=C3=A9jour qui vous ressemble=09=09=09 https://links.info.camif=
+.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D4&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3M=
+zM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09 https://links.in=
+fo.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D14&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3D=
+MjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09Buffet Appoline CAMIF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09
+
+749 =E2=82=AC=C2=A0-7%=C2=A0 699=C2=A0=E2=82=AC https://links.info.camif.fr=
+/ctt?ms=3DMzA1MzY1MDMS1&kn=3D12&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM=
+5NQS2&mt=3D1&rt=3D0 =09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY1=
+MDMS1&kn=3D21&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D=
+0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Table =C3=A0 allonge Appolin=
+e CAMIF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+649 =E2=82=AC=C2=A0-10%=C2=A0 585=C2=A0=E2=82=AC https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D59&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09 https://links.inf=
+o.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D61&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DM=
+jYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09 https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D27&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09 https://links.info.camif.=
+fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D16&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3M=
+zM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Buffet L=
+uminescence CAMIF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+899 =E2=82=AC=C2=A0-11%=C2=A0 799=C2=A0=E2=82=AC https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D15&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0 =09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY=
+1MDMS1&kn=3D13&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=
+=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Table =C3=A0 manger Lumin=
+escence CAMIF=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+749 =E2=82=AC=C2=A0-10%=C2=A0 675=C2=A0=E2=82=AC https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D54&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09 https://links.inf=
+o.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D55&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DM=
+jYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09Voir tous les meubles en soldes http=
+s://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D6&r=3DLTkwMjk3OTA4ODIS1=
+&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D52&r=
+=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1=
+MzY1MDMS1&kn=3D35&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&r=
+t=3D0 =09=09=09Nous contacter :=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09
+
+Par email : rendez-vous ici https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MD=
+MS1&kn=3D56&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+Par t=C3=A9l=C3=A9phone : 05 49 79 98 88=09=09=09=09=09=09=09=09=09=09=09=
+=09Nous suivre :=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09 https://links=
+.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D5&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=
+=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1=
+&kn=3D74&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09 https://links.=
+info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D57&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=
+=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1=
+&kn=3D3&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09 https://links.=
+info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D45&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=
+=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09 https://links.info.camif.fr/ctt=
+?ms=3DMzA1MzY1MDMS1&kn=3D40&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS=
+2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Livraison domi=
+cile
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09ou point relais=09=09=
+=09=09=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY=
+1MDMS1&kn=3D28&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=
+=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Paiement 3x ou 4x
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09sans frais=09=09=09=
+=09=09=09=09=09=09=09=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MD=
+MS1&kn=3D62&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=0930 jours satisfait
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09ou rembours=C3=A9=09=
+=09=09 https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D22&r=3DLTkwM=
+jk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0 =09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=C2=A0Site respectant le code de bonne conduite des=
+ ventes en ligne de meubles de la fnaem.=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09
+
+* Livraison =C3=A0 domicile offerte d=C3=A8s 49=E2=82=AC d=E2=80=99achat ju=
+squ=E2=80=99au 27 janvier inclus. Cette offre s=E2=80=99appliquera automati=
+quement =C3=A0 votre panier, hors options sp=C3=A9ciales (livraison sous 24=
+h, livraison sous 48h Paris et livraison hipli).
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=C2=A0=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+D=C3=A9sabonnez-vous en cliquant ici https://links.info.camif.fr/ctt?ms=3DM=
+zA1MzY1MDMS1&kn=3D23&r=3DLTkwMjk3OTA4ODIS1&b=3D2&j=3DMjYzMTM3MzM5NQS2&mt=3D=
+1&rt=3D0 =09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+
+Camif =E2=80=93 SAS au capital de 2 650 895 =E2=82=AC dont le si=C3=A8ge so=
+cial est au 10 rue de l=E2=80=99Ang=C3=A9lique - Parc de l=E2=80=99Ebaupin =
+79000 Bessines, immatricul=C3=A9e au RCS de Niort sous le num=C3=A9ro 402 4=
+67 120. Conform=C3=A9ment =C3=A0 la loi Informatique et Libert=C3=A9s du 6 =
+janvier 1978, vous disposez d'un droit d'acc=C3=A8s et de rectification des=
+ donn=C3=A9es qui vous concernent.
+
+
+------=_Part_5885122_2130327524.1737386576127
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"fr" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ xmlns:w=3D"urn:schemas-microsoft-com:office:word">
+<head><!-- Double head trick: Yahoo App Android will strip this -->
+=09<title>camif__news__soldes_sejour__20250117</title>
+=09<style id=3D"0_common" type=3D"text/css">.cta a,.cta a:hover{text-decora=
+tion:none !important}a{text-decoration:none}a:hover{text-decoration:none}th=
+.stack-column{font-weight:normal;background:none;padding:0}th a,th a:link,t=
+h a:visited{background:none;padding:0}.lg-td-u--a a{text-decoration:underli=
+ne}.lg-td-u--a-h a:hover{text-decoration:underline}img{-ms-interpolation-mo=
+de:bicubic}@media screen and (max-width:600px){body,table{font-size:16px !i=
+mportant}table{width:100% !important}th.stack-column{font-weight:normal;dis=
+play:block !important;width:100% !important;max-width:100% !important}table=
+.hidden-desktop{display:table !important}.body-fake.export table.hidden-sma=
+rtphone{display:none !important}.section table.columns.use-columns-width{wi=
+dth:100% !important}.xs-ta-l{text-align:left!important}.xs-ta-c{text-align:=
+center!important}.xs-w-a{width:auto!important}.xs-f-n{float:none!important}=
+.xs-m-0a{margin:0 auto!important}.section .column.stack-column.first{paddin=
+g-top:0 !important}.section .column.stack-column.last{padding-bottom:0 !imp=
+ortant}.columns.stacked-columns{height:auto!important}.columns.stacked-colu=
+mns .column{padding-right:0!important;padding-left:0!important}}
+=09</style>
+=09<style id=3D"10_typography" type=3D"text/css">@media screen and (max-wid=
+th:600px){p{font-size:16px !important;line-height:24px !important}h1{font-s=
+ize:36px !important;line-height:38px !important}.xs-fs-p-12 p{font-size:12p=
+x!important}.xs-fs-16{font-size:16px!important}.xs-fs-p-16 p{font-size:16px=
+!important}.xs-lh-p-24 p{line-height:24px!important}}
+=09</style>
+=09<style id=3D"20_padding" type=3D"text/css">@media screen and (max-width:=
+600px){.xs-pt-0{padding-top:0!important}.xs-pt-20{padding-top:20px!importan=
+t}.xs-pt-15{padding-top:15px!important}.xs-pt-10{padding-top:10px!important=
+}.xs-pt-40{padding-top:40px!important}.xs-pt-24{padding-top:24px!important}=
+.xs-pt-5{padding-top:5px!important}.xs-pt-22{padding-top:22px!important}.xs=
+-pt-30{padding-top:30px!important}.xs-pr-0{padding-right:0!important}.xs-pr=
+-20{padding-right:20px!important}.xs-pr-30{padding-right:30px!important}.xs=
+-pr-10{padding-right:10px!important}.xs-pr-5{padding-right:5px!important}.x=
+s-pr-15{padding-right:15px!important}.xs-pr-26{padding-right:26px!important=
+}.xs-pb-0{padding-bottom:0!important}.xs-pb-20{padding-bottom:20px!importan=
+t}.xs-pb-15{padding-bottom:15px!important}.xs-pb-10{padding-bottom:10px!imp=
+ortant}.xs-pb-24{padding-bottom:24px!important}.xs-pb-9{padding-bottom:9px!=
+important}.xs-pb-5{padding-bottom:5px!important}.xs-pb-1{padding-bottom:1px=
+!important}.xs-pb-30{padding-bottom:30px!important}.xs-pb-40{padding-bottom=
+:40px!important}.xs-pl-0{padding-left:0!important}.xs-pl-20{padding-left:20=
+px!important}.xs-pl-30{padding-left:30px!important}.xs-pl-10{padding-left:1=
+0px!important}.xs-pl-5{padding-left:5px!important}.xs-pl-15{padding-left:15=
+px!important}.xs-pl-26{padding-left:26px!important}}
+=09</style>
+=09<style id=3D"30_border-radius" type=3D"text/css">@media screen and (max-=
+width:600px){.xs-btlr-0{border-top-left-radius:0!important}.xs-brtr-0{borde=
+r-top-right-radius:0!important}.xs-bbrr-0{border-bottom-right-radius:0!impo=
+rtant}.xs-blbr-0{border-bottom-left-radius:0!important}}
+=09</style>
+=09<style id=3D"40_width" type=3D"text/css">@media screen and (max-width:60=
+0px){.xs-w-33p{width:33%!important}.xs-w-34p{width:34%!important}.xs-w-50p{=
+width:50%!important}.xs-w-72p{width:72%!important}.xs-w-86p{width:86%!impor=
+tant}.xs-w-89p{width:89%!important}.xs-w-100p{width:100%!important}.xs-w-50=
+px{width:50px!important}}
+=09</style>
+=09<style type=3D"text/css">a[x-apple-data-detectors],a[href^=3Dtel]{color:=
+inherit !important;text-decoration:none !important;font-size:inherit !impor=
+tant;font-family:inherit !important;font-weight:inherit !important;line-hei=
+ght:inherit !important}table.columns.use-columns-width-440{width:440px}tabl=
+e.columns.use-columns-width-560{width:560px}table.columns.use-columns-width=
+-490{width:490px}@media screen and (max-width:600px){.widget-38806 .column{=
+padding-top:0;padding-bottom:0}.widget-39145 .column{padding-top:0;padding-=
+bottom:0}.widget-39305 .column{padding-top:0;padding-bottom:0}.widget-39421=
+ .column{padding-top:0;padding-bottom:0}.widget-39661 .column{padding-top:0=
+;padding-bottom:0}.widget-39955 .column{padding-top:0;padding-bottom:0}.wid=
+get-40071 .column{padding-top:0;padding-bottom:0}.widget-40311 .column{padd=
+ing-top:0;padding-bottom:0}.widget-40551 .column{padding-top:0;padding-bott=
+om:0}.widget-40791 .column{padding-top:0;padding-bottom:0}.widget-41031 .co=
+lumn{padding-top:0;padding-bottom:0}.widget-41230 .column{padding-top:5px;p=
+adding-bottom:5px}.widget-41474 .column{padding-top:5px;padding-bottom:5px}=
+.widget-41898 .column{padding-top:0;padding-bottom:0}}
+=09</style>
+</head>
+<meta charset=3D"utf-8"><meta name=3D"viewport" content=3D"width=3Ddevice-w=
+idth"><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><meta name=
+=3D"x-apple-disable-message-reformatting"><!--[if mso]>
+<style>
+* {
+font-family: sans-serif !important;
+}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<body style=3D"margin: 0; padding: 0;"><img alt=3D""   src=3D"https://sntf.=
+camif.fr/notifyMail/open.html?u=3Db0cbfa98-14ac-429f-b87a-bb316f2ea532" sty=
+le=3D"display: block; max-width: 100%; height: auto; -ms-interpolation-mode=
+: bicubic;" />
+<div>
+<div class=3D"body-fake v-application d-block desktop export">
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"margin: 0; padding: 0;" wi=
+dth=3D"100%">
+=09
+=09=09<tr>
+=09=09=09<td class=3D"body-cell" valign=3D"top">
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-38806" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-40 xs-pl-0" style=3D"padding: 0px 0px 40px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns stacked-columns" dir=3D"ltr" role=
+=3D"presentation" style=3D"padding: 0; margin: 0px auto;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-38847 stack-=
+column first last xs-pt-0 xs-pb-0" dir=3D"ltr" style=3D"box-sizing: border-=
+box; font-weight: normal; background: none; padding: 0; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 100%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+8876 xs-ta-l lg-td-n--a lg-td-n--a-h xs-fs-p-16 xs-lh-p-24 xs-fs-h1-36 xs-l=
+h-h1-38 xs-fs-h2-24 xs-lh-h2-26 xs-fs-h3-18 xs-lh-h3-20 xs-mb-li-5 xs-pt-0 =
+xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-align: left;" valign=
+=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; line-height: 24px; mso-line=
+-height-rule: exactly; text-align: center;"><span style=3D"font-size: 10px;=
+ color: #ffffff;">Profitez de la livraison offerte jusqu&#39;au 27 janvier =
+!</span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+8923 xs-ta-l lg-td-u--a lg-td-u--a-h xs-fs-p-12 xs-lh-p-24 xs-fs-h1-34 xs-l=
+h-h1-38 xs-fs-h2-24 xs-lh-h2-26 xs-fs-h3-18 xs-lh-h3-20 xs-mb-li-5 xs-pt-0 =
+xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-align: left;" valign=
+=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 10px; line-height: 24px; mso-line=
+-height-rule: exactly; text-align: center;">Si vous n&rsquo;arrivez pas =C3=
+=A0 lire cet e-mail, consultez <a href=3D"https://links.info.camif.fr/servl=
+et/MailView?ms=3DMzA1MzY1MDMS1&r=3DLTkwMjk3OTA4ODIS1&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"_" style=3D"color: #054354; text-decoration: underlin=
+e; background: none; padding: 0;" target=3D"_blank" xt=3D"SPCLICKTOVIEW">ce=
+ lien</a>.</p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-38970 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-20 xs-pr-0 xs-pb-20 xs-pl-0" style=3D"padding: 14px =
+0px; background-color: #ffffff;" valign=3D"top"><a class=3D"img" href=3D"ht=
+tps://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D47&r=3DLTkwMjk3OTA4OD=
+IS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr__utm_sou=
+rce_newsletter" style=3D"color: #054354; text-decoration: none; background:=
+ none; padding: 0; display: block;" target=3D"_blank" ><img alt=3D"www.cami=
+f.fr" class=3D"the-image xs-w-100p xs-m-0a" height=3D"88"   src=3D"https://=
+back.mailroseplace.io/storage/exports/30503/img/processed/component2897-305=
+03-67862b9e89e20.jpg" style=3D"display: block; max-width: 100%; height: aut=
+o; -ms-interpolation-mode: bicubic; object-fit: contain; border: none;" wid=
+th=3D"600" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-39013 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" v=
+align=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D9&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=
+=3D1&rt=3D0" name=3D"www_camif_fr_c_nos_meubles_utm_sour" style=3D"color: #=
+054354; text-decoration: none; background: none; padding: 0; display: block=
+;" target=3D"_blank" ><img alt=3D"Soldes s=C3=A9lection s=C3=A9jour" class=
+=3D"the-image xs-w-100p xs-m-0a" height=3D"669"   src=3D"https://back.mailr=
+oseplace.io/storage/exports/30503/img/processed/camif-header-albin.jpg" sty=
+le=3D"display: block; max-width: 100%; height: auto; -ms-interpolation-mode=
+: bicubic; object-fit: contain; border: none;" width=3D"600" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+9056 xs-ta-c xs-pt-20 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 20px 0px 0=
+px; text-align: center;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;">Profitez de prix doux, <b>=
+jusqu&rsquo;=C3=A0 -20%</b> sur nos meubles fabriqu=C3=A9s en Europe.</p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component cta widget-39102 xs-fs-16" rol=
+e=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"xs-pt-20=
+ xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 20px 0px 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"xs-w-a xs-m-0a=
+ xs-f-n" style=3D"padding: 0; margin: 0px auto;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"border-width: 1px; border-style: solid; border-color: #054354; border-radi=
+us: 5px; background-color: #054354;mso-padding-left-alt: 5px;mso-padding-ri=
+ght-alt: 5px;mso-padding-top-alt: 15px;mso-padding-bottom-alt: 15px;mso-lin=
+e-height-rule: exactly;mso-line-height-alt:16px;"><a class=3D"xs-fs-16 xs-p=
+t-15 xs-pr-20 xs-pb-15 xs-pl-20" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D60&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_c_nos_meubles_utm_sour_2" style=3D"backg=
+round: none; display: inline-block; text-decoration: none; font-family: 'Tr=
+ebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height: 16px; col=
+or: #ffffff; padding: 15px 20px; border-radius: 5px; border: 1px solid #054=
+354; text-align: center;" target=3D"_blank" >Voir les meubles en soldes </a=
+></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-39145" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-40 xs-pl-0" style=3D"padding: 0px 0px 40px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width stacked-columns=
+ use-columns-width-440px" dir=3D"ltr" role=3D"presentation" style=3D"paddin=
+g: 0; margin: 0px auto;" width=3D"440">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-39186 stack-=
+column first last xs-pt-0 xs-pb-0" dir=3D"ltr" style=3D"box-sizing: border-=
+box; font-weight: normal; background: none; padding: 0; padding-left: 0px; =
+padding-right: 0px; width: 100%;" valign=3D"middle">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" role=3D"presentation" style=3D"marg=
+in: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-10 xs-pr-30 xs-pb-10 xs-pl-30" style=3D"text-align: left; font-weigh=
+t: normal; padding: 10px 30px; background-color: #e5eced;" valign=3D"middle=
+">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+9215 xs-ta-c xs-pt-10 xs-pr-0 xs-pb-10 xs-pl-0" style=3D"background-color: =
+#e5eced; padding: 10px 0px 5px; text-align: center;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;">JUSQU&rsquo;AU 27 JANVIER<=
+/p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<h1 data-pm-slice=3D"=
+1 1 []" style=3D"margin: 0; color: #054354; font-family: 'Times New Roman',=
+ Times, serif; font-size: 36px; line-height: 38px; mso-line-height-rule: ex=
+actly; font-weight: normal;"><b>Livraison offerte </b></h1>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;">sur tout le site d=C3=A8s =
+49&euro; d&rsquo;achat*</p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component cta widget-39261 xs-fs-16" rol=
+e=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"xs-pt-10=
+ xs-pr-0 xs-pb-10 xs-pl-0" style=3D"padding: 10px 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"xs-w-a xs-m-0a=
+ xs-f-n" style=3D"padding: 0; margin: 0px auto;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"border-width: 1px; border-style: solid; border-color: #054354; border-radi=
+us: 5px; background-color: #e5eced;mso-padding-left-alt: 5px;mso-padding-ri=
+ght-alt: 5px;mso-padding-top-alt: 15px;mso-padding-bottom-alt: 15px;mso-lin=
+e-height-rule: exactly;mso-line-height-alt:14px;"><a class=3D"xs-fs-16 xs-p=
+t-15 xs-pr-20 xs-pb-15 xs-pl-20" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D65&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr__utm_source_newsletter_2" style=3D"backg=
+round: none; display: inline-block; text-decoration: none; font-family: 'Tr=
+ebuchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 14px; col=
+or: #183b39; padding: 15px 20px; border-radius: 5px; border: 1px solid #e5e=
+ced; text-align: center;" target=3D"_blank" >J&rsquo;en profite </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-39305" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px 0px 10px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width stacked-columns=
+ use-columns-width-560px" dir=3D"ltr" role=3D"presentation" style=3D"paddin=
+g: 0; margin: 0px auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-39346 stack-=
+column first last xs-pt-0 xs-pb-0" dir=3D"ltr" style=3D"box-sizing: border-=
+box; font-weight: normal; background: none; padding: 0; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 100%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+9375 xs-ta-c xs-pt-0 xs-pr-20 xs-pb-0 xs-pl-20" style=3D"padding: 0px 20px;=
+ text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 24px;=
+ color: #054354;"><b>COLLECTION ALBIN</b></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 20px;=
+ color: #054354;">le charme du ch=C3=AAne</span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-39421" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-560px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-39462 first;=
+ xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-39495 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-20 xs-pr-0 xs-pb-24 xs-pl-0" style=3D"padding: 0px;"=
+ valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D30&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_p_buffet_bois_2_portes" style=3D"color: =
+#054354; text-decoration: none; background: none; padding: 0; display: bloc=
+k;" target=3D"_blank" ><img alt=3D"Buffet 2 portes Albin CAMIF" class=3D"th=
+e-image xs-w-100p xs-m-0a" height=3D"280"   src=3D"https://back.mailrosepla=
+ce.io/storage/exports/30503/img/processed/005-am-salle-a-manger-nature-n-20=
+241118-crop.jpg" style=3D"display: block; max-width: 100%; height: auto; -m=
+s-interpolation-mode: bicubic; object-fit: contain; border: none;" width=3D=
+"280" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th bgcolor=3D"#FFFFFF" class=3D"column=
+ widget-39532 last; xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; =
+padding-left: 0px; padding-right: 0px; height: 100%; background-color: #fff=
+fff; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#FFFFFF" class=
+=3D"column-inner-cell xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align:=
+ left; font-weight: normal; padding: 0px; background-color: #ffffff;" valig=
+n=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-39565 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-10 xs-pr-0 xs-pb-10 xs-pl-0" style=3D"padding: 20px =
+10px 0px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif=
+.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D18&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3=
+MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_buffet_bois_2_portes_2" styl=
+e=3D"color: #054354; text-decoration: none; background: none; padding: 0; d=
+isplay: block;" target=3D"_blank" ><img alt=3D"Buffet 2 portes Albin CAMIF"=
+ class=3D"the-image xs-w-89p xs-m-0a" height=3D"182"   src=3D"https://back.=
+mailroseplace.io/storage/exports/30503/img/processed/01-de-meubles-buffets-=
+camif-bois-clair-bois-albin-n-10037848.png" style=3D"display: block; max-wi=
+dth: 100%; height: auto; -ms-interpolation-mode: bicubic; object-fit: conta=
+in; border: none;" width=3D"260" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+9608 xs-ta-l xs-pt-0 xs-pr-10 xs-pb-0 xs-pl-10" style=3D"padding: 20px 20px=
+ 0px; text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[462]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><b>Buffet 2 portes Albin CAMIF</b><=
+/p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;"><span style=3D"font-size: =
+16px; font-family: 'trebuchet ms', geneva;"><a href=3D"https://links.info.c=
+amif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D17&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYz=
+MTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_buffet_bois_2_portes_3" =
+style=3D"color: #054354; text-decoration: none; background: none; padding: =
+0;" target=3D"_blank" ><span style=3D"text-decoration: line-through;">499 &=
+euro;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -10%&nbsp;</s=
+pan> <b>449<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</=
+span>&euro;</b></a></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-39661" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-560px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th bgcolor=3D"#FFFFFF" class=3D"column=
+ widget-39702 first; xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box;=
+ padding-left: 0px; padding-right: 0px; height: 100%; background-color: #ff=
+ffff; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#FFFFFF" class=
+=3D"column-inner-cell xs-pt-0 xs-pr-5 xs-pb-0 xs-pl-5" style=3D"text-align:=
+ left; font-weight: normal; padding: 0px; background-color: #ffffff;" valig=
+n=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-39735 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-10 xs-pr-0 xs-pb-10 xs-pl-0" style=3D"padding: 20px =
+15px 0px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif=
+.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D41&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3=
+MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_meuble_tv_bois_4_por" style=
+=3D"color: #054354; text-decoration: none; background: none; padding: 0; di=
+splay: block;" target=3D"_blank" ><img alt=3D"Buffet 4 portes Albin CAMIF" =
+class=3D"the-image xs-w-100p xs-m-0a" height=3D"173"   src=3D"https://back.=
+mailroseplace.io/storage/exports/30503/img/processed/02-de-meubles-buffets-=
+camif-bois-clair-bois-albin-camif-10037846-edit1736932365853.png" style=3D"=
+display: block; max-width: 100%; height: auto; -ms-interpolation-mode: bicu=
+bic; object-fit: contain; border: none;" width=3D"250" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+9778 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-9 xs-pl-0" style=3D"padding: 13px 20px 1=
+5px; text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[462]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><b>Buffet 4 portes Albin CAMIF</b><=
+/p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;"><span style=3D"font-size: =
+16px; font-family: 'trebuchet ms', geneva;"><a href=3D"https://links.info.c=
+amif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D58&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYz=
+MTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_meuble_tv_bois_4_por_2" =
+style=3D"color: #054354; text-decoration: none; background: none; padding: =
+0;" target=3D"_blank" ><span style=3D"text-decoration: line-through;">749&e=
+uro;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -10%&nbsp;</sp=
+an> <b>675<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</s=
+pan>&euro;</b></a></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-39826 last; =
+xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 0px; p=
+adding-right: 0px; height: 100%; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-5 xs-pb-0 xs-pl-5" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-39859 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-10 xs-pr-0 xs-pb-10 xs-pl-0" style=3D"padding: 0px;"=
+ valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D76&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_p_table_a_manger_recta" style=3D"color: =
+#054354; text-decoration: none; background: none; padding: 0; display: bloc=
+k;" target=3D"_blank" ><img alt=3D"Table =C3=A0 manger Albin CAMIF" class=
+=3D"the-image xs-w-100p xs-m-0a" height=3D"194"   src=3D"https://back.mailr=
+oseplace.io/storage/exports/30503/img/processed/01-de-meubles-tables-a-mang=
+er-camif-bois-clair-bois-albin-camif-10037849-edit1736932657304.png" style=
+=3D"display: block; max-width: 100%; height: auto; -ms-interpolation-mode: =
+bicubic; object-fit: contain; border: none;" width=3D"280" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-3=
+9902 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 15px 20px; =
+text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[470]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><strong style=3D"font-weight: bold;=
+">Table =C3=A0 manger Albin CAMIF</strong></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;"><span style=3D"font-size: =
+16px; font-family: 'trebuchet ms', geneva;"><a href=3D"https://links.info.c=
+amif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D48&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYz=
+MTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_table_a_manger_recta_2" =
+style=3D"color: #054354; text-decoration: none; background: none; padding: =
+0;" target=3D"_blank" ><span style=3D"text-decoration: line-through;">899 &=
+euro;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -11%&nbsp;</s=
+pan> <b>799<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</=
+span>&euro;</b></a></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-39955" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-40 xs-pr=
+-0 xs-pb-0 xs-pl-0" style=3D"padding: 50px 0px 20px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width stacked-columns=
+ use-columns-width-560px" dir=3D"ltr" role=3D"presentation" style=3D"paddin=
+g: 0; margin: 0px auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-39996 stack-=
+column first last xs-pt-0 xs-pb-0" dir=3D"ltr" style=3D"box-sizing: border-=
+box; font-weight: normal; background: none; padding: 0; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 100%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-10 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: =
+normal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+0025 xs-ta-l xs-pt-0 xs-pr-20 xs-pb-0 xs-pl-20" style=3D"padding: 0px 20px;=
+ text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 24px;=
+ color: #054354;"><b>STYLE TERROIR OU NATURE...</b></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 20px;=
+ color: #054354;">trouvez le s=C3=A9jour qui vous ressemble</span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-40071" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-560px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-40112 first;=
+ xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40145 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-24 xs-pr-0 xs-pb-24 xs-pl-0" style=3D"padding: 0px;"=
+ valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D38&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_p_enfilade_3_portes_ap" style=3D"color: =
+#054354; text-decoration: none; background: none; padding: 0; display: bloc=
+k;" target=3D"_blank" ><img alt=3D"Collection Appoline CAMIF" class=3D"the-=
+image xs-w-100p xs-m-0a" height=3D"280"   src=3D"https://back.mailroseplace=
+.io/storage/exports/30503/img/processed/13-am-salle-a-manger-terroir-camif-=
+20240102-4-edit1736852963593.jpg" style=3D"display: block; max-width: 100%;=
+ height: auto; -ms-interpolation-mode: bicubic; object-fit: contain; border=
+: none;" width=3D"280" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th bgcolor=3D"#FFFFFF" class=3D"column=
+ widget-40182 last; xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; =
+padding-left: 0px; padding-right: 0px; height: 100%; background-color: #fff=
+fff; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#FFFFFF" class=
+=3D"column-inner-cell xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align:=
+ left; font-weight: normal; padding: 0px; background-color: #ffffff;" valig=
+n=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40215 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-10 xs-pr-15 xs-pb-10 xs-pl-15" style=3D"padding: 20p=
+x 15px 0px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.cam=
+if.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D43&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMT=
+M3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_enfilade_3_portes_ap_2" st=
+yle=3D"color: #054354; text-decoration: none; background: none; padding: 0;=
+ display: block;" target=3D"_blank" ><img alt=3D"Buffet Appoline CAMIF" cla=
+ss=3D"the-image xs-w-100p xs-m-0a" height=3D"192"   src=3D"https://back.mai=
+lroseplace.io/storage/exports/30503/img/processed/01-de-meubles-de-rangemen=
+t-buffets-blanc-bois-appoline-n-10036967-edit1736854448222.png" style=3D"di=
+splay: block; max-width: 100%; height: auto; -ms-interpolation-mode: bicubi=
+c; object-fit: contain; border: none;" width=3D"250" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+0258 xs-ta-l xs-pt-0 xs-pr-10 xs-pb-9 xs-pl-10" style=3D"padding: 10px 20px=
+ 0px; text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[462]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><strong style=3D"font-weight: bold;=
+">Buffet Appoline CAMIF</strong></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;"><span style=3D"font-size: =
+16px; font-family: 'trebuchet ms', geneva;"><a href=3D"https://links.info.c=
+amif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D42&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYz=
+MTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_enfilade_3_portes_ap_3" =
+style=3D"color: #054354; text-decoration: none; background: none; padding: =
+0;" target=3D"_blank" ><span style=3D"text-decoration: line-through;">749 &=
+euro;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -7%&nbsp;</sp=
+an> <b>699<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</s=
+pan>&euro;</b></a></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-40311" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-560px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th bgcolor=3D"#FFFFFF" class=3D"column=
+ widget-40352 first; xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box;=
+ padding-left: 0px; padding-right: 0px; height: 100%; background-color: #ff=
+ffff; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#FFFFFF" class=
+=3D"column-inner-cell xs-pt-5 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align:=
+ left; font-weight: normal; padding: 0px; background-color: #ffffff;" valig=
+n=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40385 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-5 xs-pr-10 xs-pb-5 xs-pl-10" style=3D"padding: 20px =
+15px 0px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif=
+.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D44&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3=
+MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_table_rectangulaire_" style=
+=3D"color: #054354; text-decoration: none; background: none; padding: 0; di=
+splay: block;" target=3D"_blank" ><img alt=3D"Table =C3=A0 allonge Appoline=
+ CAMIF" class=3D"the-image xs-w-100p xs-m-0a" height=3D"172"   src=3D"https=
+://back.mailroseplace.io/storage/exports/30503/img/processed/01-de-tables-t=
+ables-a-manger-blanc-bois-appoline-n-10036968-edit1736853402265.png" style=
+=3D"display: block; max-width: 100%; height: auto; -ms-interpolation-mode: =
+bicubic; object-fit: contain; border: none;" width=3D"250" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+0428 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-9 xs-pl-0" style=3D"padding: 15px 20px 0=
+px; text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[318]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><strong style=3D"font-weight: bold;=
+">Table =C3=A0 allonge Appoline CAMIF</strong></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;"><span style=3D"font-size: =
+16px; font-family: 'trebuchet ms', geneva;"><a href=3D"https://links.info.c=
+amif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D36&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYz=
+MTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_table_rectangulaire__2" =
+style=3D"color: #054354; text-decoration: none; background: none; padding: =
+0;" target=3D"_blank" ><span style=3D"text-decoration: line-through;">649 &=
+euro;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -10%&nbsp;</s=
+pan> <b>585<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</=
+span>&euro;</b></a></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-40476 last; =
+xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 0px; p=
+adding-right: 0px; height: 100%; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40509 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-24 xs-pr-0 xs-pb-24 xs-pl-0" style=3D"padding: 0px;"=
+ valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D37&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_p_table_rectangulaire__3" style=3D"color=
+: #054354; text-decoration: none; background: none; padding: 0; display: bl=
+ock;" target=3D"_blank" ><img alt=3D"Table =C3=A0 allonge Appoline CAMIF" c=
+lass=3D"the-image xs-w-100p xs-m-0a" height=3D"280"   src=3D"https://back.m=
+ailroseplace.io/storage/exports/30503/img/processed/14-za-salle-a-manger-te=
+rroir-camif-20240102-edit1736853462674.jpg" style=3D"display: block; max-wi=
+dth: 100%; height: auto; -ms-interpolation-mode: bicubic; object-fit: conta=
+in; border: none;" width=3D"280" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-40551" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-560px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-40592 first;=
+ xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40625 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-24 xs-pr-0 xs-pb-24 xs-pl-0" style=3D"padding: 0px;"=
+ valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D19&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_p_buffet_4_portes_4_ti" style=3D"color: =
+#054354; text-decoration: none; background: none; padding: 0; display: bloc=
+k;" target=3D"_blank" ><img alt=3D"Buffet ch=C3=AAne massif Luminescence" c=
+lass=3D"the-image xs-w-100p xs-m-0a" height=3D"280"   src=3D"https://back.m=
+ailroseplace.io/storage/exports/30503/img/processed/003-am-salle-a-manger-n=
+ature-camif-20230621-crop4.jpg" style=3D"display: block; max-width: 100%; h=
+eight: auto; -ms-interpolation-mode: bicubic; object-fit: contain; border: =
+none;" width=3D"280" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th bgcolor=3D"#FFFFFF" class=3D"column=
+ widget-40662 last; xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; =
+padding-left: 0px; padding-right: 0px; height: 100%; background-color: #fff=
+fff; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#FFFFFF" class=
+=3D"column-inner-cell xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align:=
+ left; font-weight: normal; padding: 0px; background-color: #ffffff;" valig=
+n=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40695 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-22 xs-pr-0 xs-pb-1 xs-pl-0" style=3D"padding: 30px 1=
+5px 5px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.=
+fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D66&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3M=
+zM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_buffet_4_portes_4_ti_2" style=
+=3D"color: #054354; text-decoration: none; background: none; padding: 0; di=
+splay: block;" target=3D"_blank" ><img alt=3D"Buffet Luminescence" class=3D=
+"the-image xs-w-72p xs-m-0a" height=3D"144"   src=3D"https://back.mailrosep=
+lace.io/storage/exports/30503/img/processed/01-de-meubles-de-rangement-buff=
+ets-bois-clair-bois-luminescence-camif-10008992-20230802-edit1736932036212.=
+png" style=3D"display: block; max-width: 100%; height: auto; -ms-interpolat=
+ion-mode: bicubic; object-fit: contain; border: none;" width=3D"250" /> </a=
+></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+0738 xs-ta-l xs-pt-0 xs-pr-10 xs-pb-0 xs-pl-10" style=3D"padding: 30px 20px=
+ 0px; text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[462]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><b>Buffet Luminescence CAMIF</b></p=
+>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 []" style=3D"padding: 0; margin: 0; word-break: break-word; color: #0543=
+54; font-family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; li=
+ne-height: 24px; mso-line-height-rule: exactly;"><span style=3D"font-size: =
+16px; font-family: 'trebuchet ms', geneva;"><a href=3D"https://links.info.c=
+amif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D67&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYz=
+MTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_buffet_4_portes_4_ti_3" =
+style=3D"color: #054354; text-decoration: none; background: none; padding: =
+0;" target=3D"_blank" ><span style=3D"text-decoration: line-through;">899 &=
+euro;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -11%&nbsp;</s=
+pan> <b>799<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</=
+span>&euro;</b></a></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-40791" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-560px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"560">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th bgcolor=3D"#FFFFFF" class=3D"column=
+ widget-40832 first; xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box;=
+ padding-left: 0px; padding-right: 0px; height: 100%; background-color: #ff=
+ffff; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td bgcolor=3D"#FFFFFF" class=
+=3D"column-inner-cell xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align:=
+ left; font-weight: normal; padding: 0px; background-color: #ffffff;" valig=
+n=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40865 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-30 xs-pr-5 xs-pb-10 xs-pl-5" style=3D"padding: 30px =
+20px 10px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.cami=
+f.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D63&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM=
+3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_table_repas_rectangu" style=
+=3D"color: #054354; text-decoration: none; background: none; padding: 0; di=
+splay: block;" target=3D"_blank" ><img alt=3D"Table =C3=A0 manger Luminesce=
+nce CAMIF" class=3D"the-image xs-w-86p xs-m-0a" height=3D"145"   src=3D"htt=
+ps://back.mailroseplace.io/storage/exports/30503/img/processed/01-de-tables=
+-tables-a-manger-bois-clair-bois-luminescence-camif-10008996-20230802-edit1=
+736932054384.png" style=3D"display: block; max-width: 100%; height: auto; -=
+ms-interpolation-mode: bicubic; object-fit: contain; border: none;" width=
+=3D"240" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+0908 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-9 xs-pl-0" style=3D"padding: 15px 20px 0=
+px; text-align: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[323]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><strong style=3D"font-weight: bold;=
+">Table =C3=A0 manger Luminescence CAMIF</strong></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p data-pm-slice=3D"1=
+ 1 [&quot;table&quot;,{},&quot;table_row&quot;,{},&quot;table_cell&quot;,{&=
+quot;colspan&quot;:1,&quot;rowspan&quot;:1,&quot;colwidth&quot;:[462]}]" st=
+yle=3D"padding: 0; margin: 0; word-break: break-word; color: #054354; font-=
+family: 'Trebuchet MS', Helvetica, sans-serif; font-size: 16px; line-height=
+: 24px; mso-line-height-rule: exactly;"><a href=3D"https://links.info.camif=
+.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D69&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3=
+MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_p_table_repas_rectangu_2" styl=
+e=3D"color: #054354; text-decoration: none; background: none; padding: 0;" =
+target=3D"_blank" ><span style=3D"text-decoration: line-through;">749 &euro=
+;</span>&nbsp;<span style=3D"background-color: #e5eced;"> -10%&nbsp;</span>=
+ <b>675<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">&nbsp;</span=
+>&euro;</b></a></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-40956 last; =
+xs-w-50p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 0px; p=
+adding-right: 0px; height: 100%; width: 50%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-40989 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-24 xs-pr-0 xs-pb-24 xs-pl-0" style=3D"padding: 0px;"=
+ valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D70&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_p_table_repas_rectangu_3" style=3D"color=
+: #054354; text-decoration: none; background: none; padding: 0; display: bl=
+ock;" target=3D"_blank" ><img alt=3D"Table =C3=A0 manger Luminescence CAMIF=
+" class=3D"the-image xs-w-100p xs-m-0a" height=3D"280"   src=3D"https://bac=
+k.mailroseplace.io/storage/exports/30503/img/processed/002-za-salle-a-mange=
+r-nature-camif-20230621-crop.jpg" style=3D"display: block; max-width: 100%;=
+ height: auto; -ms-interpolation-mode: bicubic; object-fit: contain; border=
+: none;" width=3D"280" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-41031" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-10 xs-pr=
+-0 xs-pb-0 xs-pl-0" style=3D"padding: 20px 0px 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns stacked-columns" dir=3D"ltr" role=
+=3D"presentation" style=3D"padding: 0; margin: 0px auto;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41072 stack-=
+column first last xs-pt-0 xs-pb-0" dir=3D"ltr" style=3D"box-sizing: border-=
+box; font-weight: normal; background: none; padding: 0; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 100%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component cta widget-41101 xs-fs-16" rol=
+e=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"xs-pt-0 =
+xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"xs-w-a xs-m-0a=
+ xs-f-n" style=3D"padding: 0; margin: 0px auto;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"border-width: 1px; border-style: solid; border-color: #054354; border-radi=
+us: 5px; background-color: #ffffff;mso-padding-left-alt: 5px;mso-padding-ri=
+ght-alt: 5px;mso-padding-top-alt: 15px;mso-padding-bottom-alt: 15px;mso-lin=
+e-height-rule: exactly;mso-line-height-alt:14px;"><a class=3D"xs-fs-16 xs-p=
+t-15 xs-pr-20 xs-pb-15 xs-pl-20" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D72&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_c_meubles_utm_source_n" style=3D"backgro=
+und: none; display: inline-block; text-decoration: none; font-family: 'Treb=
+uchet MS', Helvetica, sans-serif; font-size: 14px; line-height: 14px; color=
+: #183b39; padding: 15px 20px; border-radius: 5px; border: 1px solid #fffff=
+f; text-align: center;" target=3D"_blank" >Voir tous les meubles en soldes =
+</a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-41138 hidden-smar=
+tphone xs-m-0a" role=3D"presentation" style=3D"margin: 0; padding: 0;" widt=
+h=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-40 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 40px 0=
+px 0px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D50&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_soldes_html_utm_source" style=3D=
+"color: #054354; text-decoration: none; background: none; padding: 0; displ=
+ay: block;" target=3D"_blank" ><img alt=3D"J'en profite" class=3D"the-image=
+ xs-w-100p xs-m-0a" height=3D"209"   src=3D"https://back.mailroseplace.io/s=
+torage/exports/30503/img/processed/camif-bandeau-soldes-news.jpg" style=3D"=
+display: block; max-width: 100%; height: auto; -ms-interpolation-mode: bicu=
+bic; object-fit: contain; border: none;" width=3D"600" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-41181 hidden-desk=
+top xs-m-0a" role=3D"presentation" style=3D"margin: 0; padding: 0; display:=
+ none; mso-hide: all;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-40 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 40px 0=
+px 0px;" valign=3D"top"><a class=3D"img" href=3D"https://links.info.camif.f=
+r/ctt?ms=3DMzA1MzY1MDMS1&kn=3D39&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3Mz=
+M5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_soldes_html_utm_source_2" style=
+=3D"color: #054354; text-decoration: none; background: none; padding: 0; ms=
+o-hide: all; display: block;" target=3D"_blank" ><img alt=3D"J'en profite" =
+class=3D"the-image xs-w-100p xs-m-0a" height=3D"288"   src=3D"https://back.=
+mailroseplace.io/storage/exports/30503/img/processed/camif-bandeau-soldes-n=
+ews-edit1737119101414.jpg" style=3D"display: block; max-width: 100%; height=
+: auto; -ms-interpolation-mode: bicubic; object-fit: contain; border: none;=
+" width=3D"600" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-41230" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-30 xs-pr=
+-0 xs-pb-0 xs-pl-0" style=3D"padding: 50px 0px 0px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" bgcolor=3D"#054354" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" class=3D"section-inner" role=3D"present=
+ation" style=3D"padding: 0; margin: 0px auto; width: 600px; background-colo=
+r: #054354;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px 5px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns stacked-columns" dir=3D"ltr" role=
+=3D"presentation" style=3D"padding: 0; margin: 0px auto;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41271 stack-=
+column first xs-btlr-0 xs-brtr-0 xs-bbrr-0 xs-blbr-0 xs-pt-5 xs-pb-5" dir=
+=3D"ltr" style=3D"box-sizing: border-box; font-weight: normal; background: =
+none; padding: 0; padding-left: 5px; padding-right: 5px; height: 100%; widt=
+h: 50%;" valign=3D"middle">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-btlr-0 xs-brtr-0 xs-bbrr-0 xs-blbr-0 xs-pt-20 xs-pr-0 xs-pb-10 xs-pl-0"=
+ style=3D"text-align: left; font-weight: normal; padding: 22px 0px; border-=
+radius: 0px;" valign=3D"middle">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+1304 xs-ta-c xs-pt-0 xs-pr-26 xs-pb-0 xs-pl-26" style=3D"padding: 0px; text=
+-align: center; border-radius: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 20px;=
+"><b>Nous contacter :</b></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 16px;=
+">Par email : <a href=3D"https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1=
+&kn=3D75&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" na=
+me=3D"www_camif_fr_contact_utm_source_new" style=3D"text-decoration: none; =
+background: none; padding: 0; color: #FFFFFF;" target=3D"_blank" ><span sty=
+le=3D"text-decoration: underline;">rendez-vous ici</span></a></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 16px;=
+">Par t=C3=A9l=C3=A9phone : <b>05 49 79 98 88</b></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41346 stack-=
+column last xs-pt-5 xs-pb-5" dir=3D"ltr" style=3D"box-sizing: border-box; f=
+ont-weight: normal; background: none; padding: 0; padding-left: 5px; paddin=
+g-right: 5px; height: 100%; width: 50%;" valign=3D"middle">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-10 xs-pr-0 xs-pb-20 xs-pl-0" style=3D"text-align: left; font-weight:=
+ normal; padding: 22px 0px;" valign=3D"middle">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+1379 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-a=
+lign: center;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; font-family: 'Trebuchet MS', Helvetic=
+a, sans-serif; font-size: 16px; line-height: 24px; mso-line-height-rule: ex=
+actly; color: #FFFFFF; text-align: center;"><span style=3D"font-size: 20px;=
+"><b>Nous suivre :</b></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component link-bar widget-41427 xs-fs-16=
+" role=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D"padding:=
+ 5px 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"xs-w-a xs-m-0a=
+ xs-f-n" role=3D"presentation" style=3D"padding: 0; margin: 0px auto;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"padding-right: 5px;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0; padding: 0;=
+">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td=
+ style=3D"padding-right: 5px; padding-left: 0px;" valign=3D"middle"><a href=
+=3D"https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D10&r=3DLTkwMjk3=
+OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_instagram_c=
+om_camif_fr__utm_sou" style=3D"color: #054354; text-decoration: none; backg=
+round: none; padding: 0;" target=3D"_blank" ><img alt=3D"Instagram" class=
+=3D"icon-text" height=3D"32"   src=3D"https://back.mailroseplace.io/storage=
+/exports/30503/img/processed/instagram-1020.png" style=3D"max-width: 100%; =
+height: auto; -ms-interpolation-mode: bicubic; display: inline-block; verti=
+cal-align: middle;" width=3D"32" /></a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"padding-right: 5px;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0; padding: 0;=
+">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td=
+ style=3D"padding-right: 5px; padding-left: 0px;" valign=3D"middle"><a href=
+=3D"https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D32&r=3DLTkwMjk3=
+OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"fr_pinterest_co=
+m_camif_fr__utm_sour" style=3D"color: #054354; text-decoration: none; backg=
+round: none; padding: 0;" target=3D"_blank" ><img alt=3D"Pinterest" class=
+=3D"icon-text" height=3D"32"   src=3D"https://back.mailroseplace.io/storage=
+/exports/30503/img/processed/pinterest-light-1020.png" style=3D"max-width: =
+100%; height: auto; -ms-interpolation-mode: bicubic; display: inline-block;=
+ vertical-align: middle;" width=3D"32" /></a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"padding-right: 5px;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0; padding: 0;=
+">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td=
+ style=3D"padding-right: 5px; padding-left: 0px;" valign=3D"middle"><a href=
+=3D"https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D7&r=3DLTkwMjk3O=
+TA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_youtube_com_=
+c_CamifEtVous_utm_s" style=3D"color: #054354; text-decoration: none; backgr=
+ound: none; padding: 0;" target=3D"_blank" ><img alt=3D"Youtube" class=3D"i=
+con-text" height=3D"32"   src=3D"https://back.mailroseplace.io/storage/expo=
+rts/30503/img/processed/youtube-play-1020.png" style=3D"max-width: 100%; he=
+ight: auto; -ms-interpolation-mode: bicubic; display: inline-block; vertica=
+l-align: middle;" width=3D"32" /></a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"padding-right: 5px;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0; padding: 0;=
+">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td=
+ style=3D"padding-right: 5px; padding-left: 0px;" valign=3D"middle"><a href=
+=3D"https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D8&r=3DLTkwMjk3O=
+TA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"facebook_com_Cam=
+if_fr_utm_source_ne" style=3D"color: #054354; text-decoration: none; backgr=
+ound: none; padding: 0;" target=3D"_blank" ><img alt=3D"Facebook" class=3D"=
+icon-text" height=3D"32"   src=3D"https://back.mailroseplace.io/storage/exp=
+orts/30503/img/processed/facebook-1020.png" style=3D"max-width: 100%; heigh=
+t: auto; -ms-interpolation-mode: bicubic; display: inline-block; vertical-a=
+lign: middle;" width=3D"32" /></a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td style=3D=
+"padding-right: 0px;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0; padding: 0;=
+">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td=
+ style=3D"padding-right: 5px; padding-left: 0px;" valign=3D"middle"><a href=
+=3D"https://links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D25&r=3DLTkwMjk3=
+OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_linkedin_co=
+m_company_camif_mate" style=3D"color: #054354; text-decoration: none; backg=
+round: none; padding: 0;" target=3D"_blank" ><img alt=3D"Linkedin" class=3D=
+"icon-text" height=3D"32"   src=3D"https://back.mailroseplace.io/storage/ex=
+ports/30503/img/processed/linkedin-1020.png" style=3D"max-width: 100%; heig=
+ht: auto; -ms-interpolation-mode: bicubic; display: inline-block; vertical-=
+align: middle;" width=3D"32" /></a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-41474" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-30 xs-pr=
+-0 xs-pb-30 xs-pl-0" style=3D"padding: 20px 0px 30px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px 5px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns use-columns-width use-columns-wid=
+th-490px" dir=3D"ltr" role=3D"presentation" style=3D"padding: 0; margin: 0p=
+x auto;" width=3D"490">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41515 first;=
+ xs-w-33p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 5px; =
+padding-right: 5px; width: 33.33%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" role=3D"presentation" style=3D"marg=
+in: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-41548 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" v=
+align=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D51&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_livraison_et_retours_h" style=3D"color: =
+#054354; text-decoration: none; background: none; padding: 0; display: bloc=
+k;" target=3D"_blank" ><img alt=3D"Livraison domicile ou point relais" clas=
+s=3D"the-image xs-w-50px xs-m-0a" height=3D"45"   src=3D"https://back.mailr=
+oseplace.io/storage/exports/30503/img/processed/component2908-30503-678a5aa=
+48a74b.jpg" style=3D"display: block; max-width: 100%; height: auto; -ms-int=
+erpolation-mode: bicubic; object-fit: contain; border: none;" width=3D"50" =
+/> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+1591 xs-ta-l lg-td-n--a lg-td-n--a-h xs-fs-p-16 xs-lh-p-24 xs-fs-h1-36 xs-l=
+h-h1-38 xs-fs-h2-24 xs-lh-h2-26 xs-fs-h3-18 xs-lh-h3-20 xs-mb-li-5 xs-pt-0 =
+xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-align: left;" valign=
+=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: Arial, H=
+elvetica, sans-serif; font-size: 16px; mso-line-height-rule: exactly; text-=
+align: center; line-height: 1.2 !important;"><span style=3D"color: #054354;=
+ font-size: 12px;">Livraison domicile<br />
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09ou point relais</span=
+></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41640; xs-w-=
+33p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 5px; paddin=
+g-right: 5px; width: 33.33%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" role=3D"presentation" style=3D"marg=
+in: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-41677 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" v=
+align=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D26&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_paiement_securise_html" style=3D"color: =
+#054354; text-decoration: none; background: none; padding: 0; display: bloc=
+k;" target=3D"_blank" ><img alt=3D"Paiement 3x ou 4x sans frais" class=3D"t=
+he-image xs-w-50px xs-m-0a" height=3D"45"   src=3D"https://back.mailrosepla=
+ce.io/storage/exports/30503/img/uploads/component2908-30503-678a5aa490578.j=
+pg" style=3D"display: block; max-width: 100%; height: auto; -ms-interpolati=
+on-mode: bicubic; object-fit: contain; border: none;" width=3D"50" /> </a><=
+/td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+1720 xs-ta-l lg-td-u--a lg-td-u--a-h xs-fs-p-16 xs-lh-p-24 xs-fs-h1-36 xs-l=
+h-h1-38 xs-fs-h2-24 xs-lh-h2-26 xs-fs-h3-18 xs-lh-h3-20 xs-mb-li-5 xs-pt-0 =
+xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-align: left;" valign=
+=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; mso-line-height-rule: exact=
+ly; text-align: center; line-height: 1.2 !important;"><span style=3D"font-s=
+ize: 12px; color: #054354;">Paiement 3x ou 4x<br />
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09sans frais</span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41769 last; =
+xs-w-34p" dir=3D"ltr" style=3D"box-sizing: border-box; padding-left: 5px; p=
+adding-right: 5px; width: 33.33%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" role=3D"presentation" style=3D"marg=
+in: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-41802 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" v=
+align=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D20&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr_livraison_et_retours_h_2" style=3D"color=
+: #054354; text-decoration: none; background: none; padding: 0; display: bl=
+ock;" target=3D"_blank" ><img alt=3D"30 jours satisfait ou rembours=C3=A9" =
+class=3D"the-image xs-w-50px xs-m-0a" height=3D"45"   src=3D"https://back.m=
+ailroseplace.io/storage/exports/30503/img/processed/component2908-30503-678=
+a5aa4910bc.jpg" style=3D"display: block; max-width: 100%; height: auto; -ms=
+-interpolation-mode: bicubic; object-fit: contain; border: none;" width=3D"=
+50" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+1845 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-a=
+lign: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; mso-line-height-rule: exact=
+ly; text-align: center; line-height: 1.2 !important;"><span style=3D"font-s=
+ize: 12px; color: #054354;">30 jours satisfait<br />
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09ou rembours=C3=A9</sp=
+an></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"s=
+ection widget-41898" role=3D"presentation" style=3D"margin: 0; padding: 0;"=
+ width=3D"100%">
+=09=09=09=09
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td align=3D"center" class=3D"section-cell xs-pt-0 xs-pr-=
+0 xs-pb-30 xs-pl-0" style=3D"padding: 0px 0px 30px;" valign=3D"top">
+=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"section-inner" role=3D"presentation" style=3D"padd=
+ing: 0; margin: 0px auto; width: 600px;" width=3D"600">
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"section-inner-cell xs-pt-0 xs-pr-0 =
+xs-pb-0 xs-pl-0" style=3D"padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"columns stacked-columns" dir=3D"ltr" role=
+=3D"presentation" style=3D"padding: 0; margin: 0px auto;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<th class=3D"column widget-41939 stack-=
+column first last xs-pt-0 xs-pb-0" dir=3D"ltr" style=3D"box-sizing: border-=
+box; font-weight: normal; background: none; padding: 0; padding-left: 0px; =
+padding-right: 0px; height: 100%; width: 100%;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"column-inner" height=3D"100%" role=3D"presentatio=
+n" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"column-inner-cell=
+ xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"text-align: left; font-weight: n=
+ormal; padding: 0px;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component image widget-41968 xs-m-0a" ro=
+le=3D"presentation" style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" =
+class=3D"xs-ta-c xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px;" v=
+align=3D"top"><a class=3D"img" href=3D"https://links.info.camif.fr/ctt?ms=
+=3DMzA1MzY1MDMS1&kn=3D68&r=3DLTkwMjk3OTA4ODIS1&b=3D0&j=3DMjYzMTM3MzM5NQS2&m=
+t=3D1&rt=3D0" name=3D"www_camif_fr__utm_source_newsletter_3" style=3D"color=
+: #054354; text-decoration: none; background: none; padding: 0; display: bl=
+ock;" target=3D"_blank" ><img alt=3D"Changeons le monde de l'interieur" cla=
+ss=3D"the-image xs-w-100p xs-m-0a" height=3D"89"   src=3D"https://back.mail=
+roseplace.io/storage/exports/30503/img/processed/component2908-30503-678a5a=
+a4918a6.jpg" style=3D"display: block; max-width: 100%; height: auto; -ms-in=
+terpolation-mode: bicubic; object-fit: contain; border: none;" width=3D"510=
+" /> </a></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"component editor" role=3D"presentation" =
+style=3D"margin: 0; padding: 0;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"widget-4=
+2011 xs-ta-l xs-pt-0 xs-pr-0 xs-pb-0 xs-pl-0" style=3D"padding: 0px; text-a=
+lign: left;" valign=3D"top">
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; mso-line-height-rule: exact=
+ly; text-align: center; line-height: 1.2 !important;"><span style=3D"font-s=
+ize: 10px;">&nbsp;Site respectant le code de bonne conduite des ventes en l=
+igne de meubles de la fnaem. </span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; mso-line-height-rule: exact=
+ly; text-align: center; line-height: 1.2 !important;"><span style=3D"font-s=
+ize: 10px;">* Livraison =C3=A0 domicile offerte d=C3=A8s 49&euro; d&rsquo;a=
+chat jusqu&rsquo;au 27 janvier inclus. Cette offre s&rsquo;appliquera autom=
+atiquement =C3=A0 votre panier, hors options sp=C3=A9ciales (livraison sous=
+ 24h, livraison sous 48h Paris et livraison hipli).</span><br />
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09&nbsp;</p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; mso-line-height-rule: exact=
+ly; text-align: center; line-height: 1.2 !important;"><span style=3D"text-d=
+ecoration: underline;"><span style=3D"font-size: 10px;"><a href=3D"https://=
+links.info.camif.fr/ctt?ms=3DMzA1MzY1MDMS1&kn=3D29&r=3DLTkwMjk3OTA4ODIS1&b=
+=3D0&j=3DMjYzMTM3MzM5NQS2&mt=3D1&rt=3D0" name=3D"www_camif_fr_desabonnement=
+news_html" style=3D"color: #054354; text-decoration: none; background: none=
+; padding: 0;" target=3D"_blank" >D=C3=A9sabonnez-vous en cliquant ici</a><=
+br />
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<img alt=3D""   src=
+=3D"https://web.datamark.fr/tracking_pixel/pixel.php?client=3DSP106&identif=
+iant=3D6169307&campagne=3D%%CODECAMPAGNE%%" style=3D"max-width: 100%; heigh=
+t: auto; -ms-interpolation-mode: bicubic; display: inline-block;" /></span>=
+</span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"padding: =
+0; margin: 0; word-break: break-word; color: #054354; font-family: 'Trebuch=
+et MS', Helvetica, sans-serif; font-size: 16px; mso-line-height-rule: exact=
+ly; text-align: center; line-height: 1.2 !important;"><span style=3D"font-s=
+ize: 10px;">Camif &ndash; SAS au capital de 2 650 895 &euro; dont le si=C3=
+=A8ge social est au 10 rue de l&rsquo;Ang=C3=A9lique - Parc de l&rsquo;Ebau=
+pin 79000 Bessines, immatricul=C3=A9e au RCS de Niort sous le num=C3=A9ro 4=
+02 467 120. Conform=C3=A9ment =C3=A0 la loi Informatique et Libert=C3=A9s d=
+u 6 janvier 1978, vous disposez d&#39;un droit d&#39;acc=C3=A8s et de recti=
+fication des donn=C3=A9es qui vous concernent.</span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09</th>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09
+=09=09=09</table>
+=09=09=09</td>
+=09=09</tr>
+=09
+</table>
+</div>
+</div>
+<IMG src=3D"https://links.info.camif.fr/open/log/30536503/LTkwMjk3OTA4ODIS1=
+/0/MjYzMTM3MzM5NQS2/1/0" style=3D"display: none"></body>
+</html>
+
+
+
+------=_Part_5885122_2130327524.1737386576127--
+
+

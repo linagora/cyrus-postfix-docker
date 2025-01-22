@@ -1,0 +1,163 @@
+Return-Path: <SRS0=FPHw=T4=mail.redboostman.top=18693-7940-31721-905-benoit.tellier=linagora.com@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=3.328923 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 8402bb83
+          for <btellier@linagora.com>;
+          Sat, 04 Jan 2025 22:26:51 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 1D9AF1406FC
+	for <btellier@linagora.com>; Sat,  4 Jan 2025 22:26:51 +0000 (UTC)
+Received: from s480g.ik2.com (s480g.ik2.com [64.38.239.86])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 21FB81D5C6
+	for <btellier@linagora.com>; Sat,  4 Jan 2025 23:31:20 +0100 (CET)
+Received: from s480d.ik2.com
+	by s480g.ik2.com with esmtps (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <18693-7940-31721-905-benoit.tellier=linagora.com@mail.redboostman.top>)
+	id 1tUBtJ-0005Sk-M1
+	for benoit.tellier@linagora.com; Sat, 04 Jan 2025 21:41:13 +0000
+Received: from 207.88.77.182 by s480d.ik2.com (IK2 SMTP Server); Sat, 4 Jan 2025 21:41:05 +0000
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=k1; d=redboostman.top;
+ h=Mime-Version:Content-Type:Date:From:Reply-To:Subject:To:Message-ID; i=piano_courses@redboostman.top;
+ bh=hsJZi8DVjv0u8nZ8JQSx6hLDQzs=;
+ b=RnZA7+GNtJpF45czOO3vwXS7GoVd9h0zrrillv7cddyDtB/PX49gIq3lsFxaF4MmRMsMFln29pIC
+   W8xLlGRLZYOAohEjcAWyuB8RGq2PbT7+iUL5uegowzYwkNLv05mbYqUGlBafFEzGN9jhnKymdsYb
+   0V/J6tozK2TZYVh+Mbr/eV9oDdIiv7+3RqYFgKNl7FMaIDjeHMOtr6qIFp+u/wOWuUw7EXaQ7R4g
+   PCI4AOu0jE7TI4+hRC2ih8ypplTVyU0eZULRLKdcWNQ1EBhiGZN8JNa9DJ1zfampwuztHJz4umRE
+   jygAjy53UFa+KVxiyQ+KpM8QIrybR+2fHt9Fmw==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=k1; d=redboostman.top;
+ b=i4L6FArHQWr6KEBW/AaI2JjLtzmHnU8aGVlDoZNLtqyH5W1ZybwlTwtQcPbjjDGXXVLy2TlWBv05
+   tEctn4N6H5BsZFyvO42pW3YIEW46cwVuO57r0QrZvXBJw5nE8x4N9gBJ+qPbuZcaQsxUf7DnyOUJ
+   bqPqPS2Vy0A/Z7+tocbP/Upkb2TxkOzVguV1LC+AU8e16clK7BB6TlK0ENZtu+m6DNISaCjf03WQ
+   EOCoPjQ+es2LUiHlrv2NCR3aKOx9GfKSjKVtrpdArUCb6j9iL8GJlW4YuH1KiVmUbTH5F0ES2vsV
+   MbwErFgcrwYhVQRdnjUkPzL6TNZBFSGLXgv+Rg==;
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="028f67bb9468c4d524c8a911a5aa9212"
+Date: Sat, 4 Jan 2025 13:37:03 -0800
+X-LINAGORA-Copy-Delivery-Done: 1
+From: "Learn Piano" <piano_courses@redboostman.top>
+Reply-To: "Learn Piano" <piano_courses@redboostman.top>
+Subject: The Ingenious Way TO Learn Piano
+To: <benoit.tellier@linagora.com>
+Message-ID: <fy6fr7zv52omsz9o-b7m3n71s3jxdvvq6-7be9@redboostman.top>
+X-SF-RX-Return-Path: <18693-7940-31721-905-benoit.tellier=linagora.com@mail.redboostman.top>
+X-SF-Originating-IP: 207.88.77.182
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-Rejection-Reason: 16 - 557 Your domain mail.redboostman.top does not have a valid MX DNS record. Disconnecting...
+X-SF-Score: 27.9
+X-SF-Alias: btellier@linagora.com
+X-SF-SRS: Sender address rewritten from <18693-7940-31721-905-benoit.tellier=linagora.com@mail.redboostman.top> to <SRS0=FPHw=T4=mail.redboostman.top=18693-7940-31721-905-benoit.tellier=linagora.com@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+--028f67bb9468c4d524c8a911a5aa9212
+Content-Type: text/plain;
+
+http://redboostman.top/gIjNtjs_DPnSaBBqDeHAHbrGeQpRvoPm1bkm3E7SP1c6jA
+CLASSICALLY TRAINED BUT WANTED TO PLAY BY EAR
+
+The INGENIOUS New Way To Learn Piano & Keyboard
+
+
+Learn Piano
+
+
+Imagine being able to sit down at a piano and just PLAY
+- Ballads, Pop, Blues, Jazz, Ragtime, even amazing Classical pieces?
+Now you can... and you can do it in months not years without wasting money,
+time and effort on traditional Piano Lessons.
+
+
+Play-by-ear and learn to read music at the same time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://redboostman.top/-VFcJTB3w5m_ScqZn5C20K6JJcLy2GsOUxdbD8WqaeTBOg                                                                              
+Unsubscribe 
+1770 Walnut Hill Drive Dayton, OH 45406
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://redboostman.top/RAGM5Y3GG78joPA66wQut1zapqPLBWiWQrPim4KiRo727w
+
+--028f67bb9468c4d524c8a911a5aa9212
+Content-Type: text/html;
+Content-Transfer-Encoding: 8bit
+
+<html>
+<head>
+	<title></title>
+</head>
+<body autocomplete="off">
+<div><a href="http://redboostman.top/rE_D-SOC5LTgoymcNItAGB_2CqC1MlC_gHmADQNonVmI8Q"><img src="http://redboostman.top/rhcdDVCF9LOjU7RpHpSaJmK0uEvpUgHM--G6HtWpFvY7Aj0" /></a></div>
+
+<div style="text-align: center; margin-left: 40px;"><br />
+<br />
+<span style="font-size:22px;"><span style="font-family:verdana,geneva,sans-serif;"><span style="font-family:tahoma,geneva,sans-serif;"><span style="text-align: center;"><strong><a href="http://redboostman.top/gIjNtjs_DPnSaBBqDeHAHbrGeQpRvoPm1bkm3E7SP1c6jA"><img alt="CLASSICALLY TRAINED BUT WANTED TO PLAY BY EAR" src="http://redboostman.top/8691d5e5cd0d4fc5d9.jpg" style="width: 700px; height: 90px;" /></a></strong><br />
+<br />
+<a href="http://redboostman.top/gIjNtjs_DPnSaBBqDeHAHbrGeQpRvoPm1bkm3E7SP1c6jA"><span style="color:#0000FF;"><strong><span style="background-color:#FFFFFF;">The INGENIOUS New Way To Learn Piano &amp; Keyboard</span></strong></span></a><br />
+<br />
+<a href="http://redboostman.top/gIjNtjs_DPnSaBBqDeHAHbrGeQpRvoPm1bkm3E7SP1c6jA"><img alt="Learn Piano" src="http://redboostman.top/19806e2406c73c8f9f.jpg" style="width: 450px; height: 300px;" /></a><br />
+<br />
+<br />
+Imagine being able to sit down at a piano and just PLAY<br />
+- <em>Ballads, Pop, Blues, Jazz, Ragtime</em>, even amazing Classical pieces?<br />
+Now you can... and you can do it in months not years without wasting money,<br />
+time and effort on traditional Piano Lessons.<br />
+<br />
+<a href="http://redboostman.top/gIjNtjs_DPnSaBBqDeHAHbrGeQpRvoPm1bkm3E7SP1c6jA" target="_blank"><strong>Play-by-ear and learn to read music at the same time</strong></a></span></span></span></span></div>
+
+<div style="text-align: center;">
+<div style="text-align: left;">
+<div style="text-align: center;">
+<div style="margin-left: 40px;"><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+&nbsp;</div>
+
+<div style="margin-left: 40px;">&nbsp;</div>
+
+<div>
+<div style="margin-left: 40px;">&nbsp;</div>
+
+<div style="margin-left: 40px;">
+<div><span style="font-size:11px;"><span style="font-family:verdana,geneva,sans-serif;"><a href="http://redboostman.top/-VFcJTB3w5m_ScqZn5C20K6JJcLy2GsOUxdbD8WqaeTBOg">Unsubscribe</a><span style="white-space:pre"> </span></span></span></div>
+
+<div><span style="font-family:tahoma,geneva,sans-serif;"><span style="font-size:10px;">3452 Stratford Drive Moanalua, HI 96819</span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--028f67bb9468c4d524c8a911a5aa9212--
+
+

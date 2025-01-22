@@ -1,0 +1,1109 @@
+Return-Path: <SRS0=TE77=UB=eu-lon-188.mktomail.com=937-DCH-261.0.226310.0.0.57630.9.36130630@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-2.559991 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID b9c6c509
+          for <btellier@linagora.com>;
+          Thu, 09 Jan 2025 07:30:27 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 9F44514070A
+	for <btellier@linagora.com>; Thu,  9 Jan 2025 07:30:27 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id F38781D5C6
+	for <btellier@linagora.com>; Thu,  9 Jan 2025 08:35:02 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <937-DCH-261.0.226310.0.0.57630.9.36130630@eu-lon-188.mktomail.com>)
+	id 1tVmzk-0007Cg-DE
+	for btellier@linagora.com; Thu, 09 Jan 2025 07:30:25 +0000
+Received: from 185.28.196.86 by s602e.ik2.com (IK2 SMTP Server); Thu, 9 Jan 2025 07:30:19 +0000
+X-MSFBL: ytWt18fl1WOM47AslcmD2+/fNfJH7zaDwumzyLYZ3/0=|eyJiIjoiZHZwLTE4NS0
+	yOC0xOTYtODYiLCJ1IjoiOTM3LURDSC0yNjE6MDo1MTc4MzoxNjc5Nzk6NzI2NDM
+	xOjU3NjMwOjk6MjI2MzEwOjM2MTMwNjMwIiwiZyI6ImJnLWxvbi0wMSIsInIiOiJ
+	idGVsbGllckBsaW5hZ29yYS5jb20ifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1736407818;
+	s=m1; d=suse.com; i=@suse.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=AmYmQ2fTaeBA1gaxyxThboS4dzAQghoQnuBRGS7vdGI=;
+	b=PNAPiBTEGorw3g/q9Ncr/mNX441JopPCpj900qujIHUuRLvH1P7hn6DlFY4ehgS3
+	XEdtLJaLdTHrlTxQDcBHa08/nOMhMZFLy0g3QR7lRRNWhcy6fFfUlof7wk2WJRc94TJ
+	FQuPc3/jy0bQk2kuBVaQnFpxwCUvGe9bGcUdor1I=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1736407818;
+	s=m1; d=mktomail.com; i=@mktomail.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=AmYmQ2fTaeBA1gaxyxThboS4dzAQghoQnuBRGS7vdGI=;
+	b=Vo07pRu0u7IdE9xKtnn9XIZAgsDvW8xLCdmOc4NoP3DOORav9sBx/l0RXvvz5yiB
+	YqtMpetTjOeCOz4i5uKCmNXPdsOMeiZHCTSHwCmt3dg78WleBWO3L1XRIlpic3dLodO
+	Cyh0+aFRWfhNnuYHxcdk5F0xiDJrIaY0xO5POLz4=
+Date: Thu, 9 Jan 2025 01:30:18 -0600 (CST)
+X-LINAGORA-Copy-Delivery-Done: 1
+From: SUSE <event-info@suse.com>
+Reply-To: event-info@suse.com
+To: btellier@linagora.com
+Message-ID: <492619904.484552202.1736407818028@lonmktmail-batch1a.marketo.org>
+Subject: [Webinar] Adoptez l'approche Cloud Native avec SUSE Virtualization
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_484552201_768995941.1736407818027"
+X-Binding: bg-lon-01
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://em.suse.com/u/OTM3LURDSC0yNjEAAAGX6PFPJsNzUDVHIZCrL--mmVV-TZ1Y9Ux8rhnzcbNpQBgM5f3j6eCGxIzVctCc46PtnZ__dq8=?emailAddress=OTM3LURDSC0yNjEAAAGX6PFPJUcgorCuW5_MPK2AYOlC5Ey6TT6vhk1Z-aLeTG8JBXnBeMKoHFX7hlLbNh7ncqfXvKQ>, <mailto:HE2HSYSZHA4XA4KHPBMVMZDIKNXHMMDSNVYTSMSTNEZEYU3JIJBXSYKBKREGMVLRN4ZTIPI=.226310.57630.9@unsub-lon.mktomail.com>
+X-MarketoID: 937-DCH-261:0:51783:167979:726431:57630:9:226310:36130630
+X-Mailfrom: 937-DCH-261.0.226310.0.0.57630.9.36130630@eu-lon-188.mktomail.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+X-SF-RX-Return-Path: <937-DCH-261.0.226310.0.0.57630.9.36130630@eu-lon-188.mktomail.com>
+X-SF-Originating-IP: 185.28.196.86
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 2.2
+X-SF-SRS: Sender address rewritten from <937-DCH-261.0.226310.0.0.57630.9.36130630@eu-lon-188.mktomail.com> to <SRS0=TE77=UB=eu-lon-188.mktomail.com=937-DCH-261.0.226310.0.0.57630.9.36130630@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+------=_Part_484552201_768995941.1736407818027
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+To view this email as a web page, go to the following address: https://more=
+.suse.com/index.php/email/emailWebview?mkt_tok=3DOTM3LURDSC0yNjEAAAGX6PFPJs=
+J9mySjJ1HJ1KWWTksYjxpI3H350B7JJK_VtwMlDxRAa-c-OdzJxpFOX0QwkJTj6lxFN9WcVROYT=
+uc2xQffJ3sTRz_wStCajEJYr8jj6QI
+
+Dans un contexte o=C3=B9 les entreprises adoptent des architectures cloud-n=
+ative, d=C3=A9couvrez comment SUSE Virtualization (ex-Harvester) vous aide =
+=C3=A0 moderniser vos infrastructures en unifiant la gestion des machines v=
+irtuelles et des conteneurs pour des op=C3=A9rations simplifi=C3=A9es et de=
+s co=C3=BBts r=C3=A9duits.
+
+Ce webinar vous pr=C3=A9sentera les fonctionnalit=C3=A9s cl=C3=A9s, des cas=
+ d=E2=80=99usage concrets pour divers secteurs et des conseils pour une tra=
+nsition agile vers des architectures cloud-native s=C3=A9curis=C3=A9es et p=
+erformantes.
+D=C3=A9tails
+
+
+
+
+=C2=A0
+
+
+
+
+16 janvier 2025
+
+
+
+=C2=A0
+
+
+
+
+10h30
+
+
+
+=C2=A0
+
+
+
+
+Lionel Meoni
+
+
+=C2=A0
+
+
+
+
+GotoWebinar
+
+Copyright =C2=A9 2025 SUSE, Tous droits r=C3=A9serv=C3=A9s.
+ Unsubscribe <[[https://more.suse.com/UnsubscribePage.html?mkt_unsubscribe=
+=3D1&mkt_tok=3DOTM3LURDSC0yNjEAAAGX6PFPJsJ9mySjJ1HJ1KWWTksYjxpI3H350B7JJK_V=
+twMlDxRAa-c-OdzJxpFOX0QwkJTj6lxFN9WcVROYTuc2xQffJ3sTRz_wStCajEJYr8jj6QI]]>=
+=20
+=20
+ Frankenstra=C3=9Fe 146, 90461 N=C3=BCrnberg, Germany
+=20
+ Vous recevez cette communication marketing de SUSE soit parce que vous ave=
+z d=C3=A9j=C3=A0 choisi de recevoir des communications, soit parce=20
+que nous pensons qu=E2=80=99il existe une raison commerciale l=C3=A9gitime =
+de vous contacter au sujet des produits et services de SUSE. Veuillez consu=
+lter la page de gestion des souscriptions SUSE <https://em.suse.com/OTM3LUR=
+DSC0yNjEAAAGX6PFPJoaDx13FgouB3sa0P2oM7L5PdrteiBCTrIpWaP-LcEtdfDllxhjuo_NRsd=
+Vu2HsulOc=3D> si vous souhaitez refuser toute autre notification. Toutes le=
+s marques commerciales de fabricants tiers appartiennent =C3=A0 leur propri=
+=C3=A9taire respectif.
+
+------=_Part_484552201_768995941.1736407818027
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office">
+<!-- v1.7 -->
+<head>=20
+<title>Suse</title>=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=
+=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ minimum-scale=3D1">=20
+<meta name=3D"robots" content=3D"noindex,nofollow">=20
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">=20
+<meta name=3D"color-scheme" content=3D"light dark">=20
+<meta name=3D"supported-color-schemes" content=3D"light dark only">=20
+<meta content=3D"telephone=3Dno" name=3D"format-detection">=20
+<link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorigin>=20
+<link href=3D"https://fonts.googleapis.com/css2?family=3DPoppins:wght@400;5=
+00&amp;display=3Dswap" rel=3D"stylesheet">=20
+<!-- Marketo Variable Definitions -->    =20
+<!-- Banner Tags -->      =20
+<!-- Section01 Tags -->  =20
+<!-- SIngle agenda module -->   =20
+<!-- speaker module -->      =20
+<!-- single speaker module -->  =20
+<!-- title module --> =20
+<!--Only CTA Tags -->    =20
+<!-- Section03 Tags -->  =20
+<!-- Spacer Meta Tags -->=20
+<style media=3D"all">
+    /* CLIENT-SPECIFIC STYLES */
+    #outlook a {
+      padding: 0;
+    }
+
+    /* Force Outlook to provide a "view in browser" message */
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* Force Hotmail to display emails at full width */
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    /* Force Hotmail to display normal line spacing */
+    /* iOS BLUE LINKS */
+    .appleBody a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .appleFooter a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    @-ms-viewport {
+      width: device-width;
+    }
+
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+
+    table,
+    tr,
+    td {
+      border: 0px;
+      padding: 0px;
+      margin: 0px;
+      border-collapse: collapse;
+    }
+
+    /* Responsive rules */
+    @media (max-width: 600px) {
+
+      .column-60,
+      .column-40 {
+        width: 100%;
+      }
+
+      .maintable {
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      .borderbottom-mobile {
+        border-right: none !important;
+      }
+
+      .pad-tp {
+        padding-top: 29px !important;
+      }
+      .height-t15{
+       height: 15px;
+      }
+      .innertable {
+        width: 90% !important;
+      }
+      .innertable-2 {
+        width: 250px !important;
+      }
+
+      .mobile-width-td,
+      .mobileWidthImg img {
+        width: 85px !important;
+      }
+
+      .block {
+        width: 100% !important;
+        display: block !important;
+        box-sizing: border-box;
+      }
+
+      .center {
+        text-align: center !important;
+      }
+
+      .xs_height24 {
+        height: 24px !important;
+      }
+
+      h1 {
+        font-size: 24px !important;
+      }
+    }
+
+    /* GLOBAL */
+    body {
+      background: #f1f1f1;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .email-bg {
+      background-color: #fffffe;
+    }
+
+    .default-font-style {
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    p {
+      font-weight: 400;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 500;
+      vertical-align: top;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 26px;
+      line-height: 1.3em;
+    }
+
+    h2 {
+      font-size: 22px;
+      line-height: 1.3em;
+      margin-top: 0em;
+      margin-bottom: 1em;
+      font-weight: 500;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.3em;
+      font-weight: 500;
+      vertical-align: top;
+      margin: 0;
+    }
+
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 0em;
+      margin-bottom: 0em;
+    }
+
+    /* ENDS Global */
+
+    /* MODULE: free text */
+    li {
+      margin-top: 10px;
+    }
+
+    .list-bullet {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+      background: #31ba78;
+      width: 7px;
+      height: 7px;
+    }
+
+    ul {
+      padding: 15px;
+    }
+
+    /* MODULE: Speakers and Agenda */
+
+    .column-60,
+    .column_speaker-details,
+    .column-40,
+    .column_speaker-img {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .column-padding {
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .mb-m {
+      margin-bottom: 30px;
+    }
+
+    .mb-s {
+      margin-bottom: 20px;
+    }
+
+    .ml-xs {
+      margin-left: 10px;
+    }
+
+    .column_speaker-details {
+      width: 140px;
+      padding-top: 8px;
+    }
+
+    .column-60 {
+      width: 350px;
+    }
+
+    .column-40 {
+      width: 240px;
+    }
+
+    .column_speaker-img {
+      width: 50px;
+    }
+
+    .agenda-time {
+      color: #31ba78;
+      font-weight: 700;
+    }
+
+    .speaker_name {
+      color: #000001;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5em;
+    }
+
+    .speaker_job-title {
+      color: #31ba78;
+    }
+
+    .speaker-image-size {
+      width: 50px;
+    }
+
+    .hide {
+      display: none;
+      visibility: hidden;
+    }
+
+    /* ENDS MODULE: Speakers and Agenda */
+  </style>=20
+<style type=3D"text/css">
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    .text-darkgreen {
+      color: #0E322C;
+    }
+
+    .font-s {
+      font-size: 13px;
+    }
+
+    .center-align {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .white-background-header {
+      background-color: #fffffe;
+      background-image: url(https://more.suse.com/rs/937-DCH-261/images/whi=
+te-background-rancher.png);
+      background-repeat: repeat;
+    }
+
+    .event-details {
+      background-color: #EFEFEF;
+      padding: 20px;
+    }
+     .black-text{
+      color: #000001;
+     }
+     a.black-text{
+      color: #000001 !important;
+     }
+    @media screen and (prefers-color-scheme: dark) {
+
+      .speaker_name,
+      .agenda-title,
+      .text-darkgreen,
+      .text-black,a.text-black {
+        color: #fffffe !important;
+      }
+       .border-white{
+          border-color: lightgray !important;
+        }
+      .white-background-header,
+      [data-ogsc] .white-background-header {
+        background-color: #fffffe !important;
+        background-image: url(https://more.suse.com/rs/937-DCH-261/images/w=
+hite-background-rancher.png) !important;
+        background-repeat: repeat !important;
+      }
+        span.text-black,
+      [data-ogsc] span.text-black {
+        color: #ffffff !important;
+        mso-style-textfill-fill-color: #ffffff;
+      }
+      [data-ogsc] .bluecolor,
+      .bluecolor {
+        color: #fffffe !important;
+      }
+
+      [data-ogsc] .darkMode,
+      .darkMode {
+        background: #222222 !important;
+        color: #fffffe;
+      }
+      [data-ogsc] .border-white{
+          border-color: lightgray !important;
+        }
+
+      [data-ogsc] .darkMode4,
+      .darkMode4 {
+        background: #0C322C !important;
+        color: #fffffe;
+      }
+
+      .event-details {
+        background-color: #494949;
+      }
+
+      .email-bg {
+        background-color: #222222;
+      }
+
+    }
+  </style>=20
+<!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+  <![endif]-->=20
+<!--[if gte mso 16]>
+    <style>
+
+      a {text-decoration: none;}
+
+    </style>
+    <![endif]-->=20
+<!-- litmus analytics: webinar email -->=20
+<style data-ignore-inlining>
+      @media (prefers-color-scheme: dark) { #_t::before {content:url('https=
+://igioo1uj.emltrk.com/v2/igioo1uj?rd&i=3D36130630');}}
+      @media (prefers-color-scheme: light) { #_t::before {content:url('http=
+s://igioo1uj.emltrk.com/v2/igioo1uj?rl&i=3D36130630');}}
+      @media print{ #_t {background-image:url('https://igioo1uj.emltrk.com/=
+v2/igioo1uj?p&i=3D36130630');}}
+      div.OutlookMessageHeader {background-image:url('https://igioo1uj.emlt=
+rk.com/v2/igioo1uj?f&i=3D36130630')}
+      table.moz-email-headers-table {background-image:url('https://igioo1uj=
+.emltrk.com/v2/igioo1uj?f&i=3D36130630')}
+      blockquote #_t {background-image:url('https://igioo1uj.emltrk.com/v2/=
+igioo1uj?f&i=3D36130630')}
+      #MailContainerBody #_t {background-image:url('https://igioo1uj.emltrk=
+.com/v2/igioo1uj?f&i=3D36130630')}
+      </style>
+</head>
+<body class=3D"body" style=3D"-webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none; width: 100%; height: 100% !important; font-family: =
+'Poppins', Arial, Helvetica, sans-serif; text-align: left; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; margin: 0; padding: 0;=
+"><style type=3D"text/css">div#emailPreHeader{ display: none !important; }<=
+/style><div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden;=
+ opacity:0; color:transparent; mso-line-height-rule:exactly; line-height:0;=
+ font-size:0px; overflow:hidden; border-width:0; display:none !important;">=
+Adoptez l'approche Cloud Native avec SUSE Virtualization</div>
+<div id=3D"_t"></div>=20
+<img src=3D"https://igioo1uj.emltrk.com/v2/igioo1uj?i=3D36130630" width=3D"=
+1" height=3D"1" border=3D"0" alt=3D"">  =20
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"width:100%; margin: 0 auto; -webkit-text-size-ad=
+just: 100%; -ms-text-size-adjust: 100%;">=20
+<tbody>=20
+<tr>=20
+<!-- body background -->=20
+<td class=3D"email-bg">=20
+<!-- Container table -->=20
+<table role=3D"presentation" width=3D"600" align=3D"center" class=3D"mktoCo=
+ntainer maintable" id=3D"template-wrapper" style=3D"border-collapse:collaps=
+e; margin:0 auto; width:600px; min-width:600px;">
+<tr class=3D"mktoModule" id=3D"viewAsWebpage" width=3D"100%">=20
+<td>=20
+<div id=3D"viewAsWebpageText" mktoname=3D"View As Webpage Text">=20
+<p style=3D"font-size:10px; font-family:'Poppins',Verdana, sans-serif; line=
+-height:25px; text-align:right; margin:0px; padding:0px;">  <a href=3D"http=
+s://em.suse.com/v/OTM3LURDSC0yNjEAAAGX6PFPJYZe9WDF-7uuruge0T8U1DnP8HPeoGxbJ=
+gM9uRtxLmobfNDUEGOdyq3rZSpeweb0ZAk=3D" style=3D"color:#00cd62" target=3D"_b=
+lank"></a> </p>=20
+</div> </td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"header-module">=20
+<td style=3D"background-color: #0C322C;">=20
+<table width=3D"600" style=3D"width: 600px; background-color: #0C322C;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"padding: 20px;"> <a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJg6btkyfwIXQ78lMHkH80NpCcZLrBI=
+6oFKSj1sBxVFjnTnyjDe3A0xsYKtl-rqoFz_0=3D" target=3D"_blank"
+> <img src=3D"https://more.suse.com/rs/937-DCH-261/images/suse-logo-2020.pn=
+g" width=3D"auto" alt=3D"SUSE" height=3D"30" style=3D"height: 30px; width: =
+auto;"> </a> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"Stripe">=20
+<td>=20
+<table width=3D"100%" align=3D"center" style=3D"margin:0 auto;">=20
+<tbody>=20
+<tr>=20
+<td height=3D"7" width=3D"70" style=3D"width:70px; font-size:1px; line-heig=
+ht:1px; height:7px; background-color: #0e322c;"> &nbsp;</td>=20
+<td height=3D"7" width=3D"145" style=3D"font-size:1px; line-height:1px; hei=
+ght:7px; background-color:#40b87c;">&nbsp; </td>=20
+<td height=3D"7" width=3D"141" style=3D"width:141px; font-size:1px; line-he=
+ight:1px; height:7px; background-color:#93eacd;"> &nbsp;</td>=20
+<td height=3D"7" width=3D"175" style=3D"width:175px; font-size:1px; line-he=
+ight:1px; height:7px; background-color:#fc7c48;"> &nbsp;</td>=20
+<td height=3D"7" width=3D"36" style=3D"width:36px; font-size:1px; line-heig=
+ht:1px; height:7px; background-color:#0076ff;"> &nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"BannerDarkBgc02b2025-2458-4f9e-bb34-a5fa7985=
+e1c0">=20
+<td style=3D"padding:0px;">=20
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td style=3D"background-image: url('https://more.suse.com/rs/937-DCH-261/im=
+ages/SUSE-Banner02.png'); background-repeat:no-repeat; background-position:=
+center; background-size:cover; height: 275px; background-color: #111111;">=
+=20
+<!--[if mso]>
+                          <v:image
+                            xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=
+=3D"true" stroke=3D"false" style=3D" border: 0;display: block; width: 600px=
+; height: 275px;" src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-B=
+anner02.png" />
+                            <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vm=
+l" fill=3D"true" stroke=3D"false"
+                              style=3D" border: 0;display:block;position: a=
+bsolute; width: 600px; height: 275px;">
+                              <v:fill opacity=3D"0%" color=3D"#111111" />
+                              <v:textbox inset=3D"0,0,0,0">
+                        <![endif]-->=20
+<table class=3D"" width=3D"100%" align=3D"center" style=3D"width:100%;" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td>=20
+<table align=3D"left" class=3D"maintable" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td width=3D"" class=3D"block">=20
+<table width=3D"" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table bgcolor=3D"#FE7C3F" width=3D"auto" align=3D"left" style=3D"backgroun=
+d-color: #FE7C3F;width:auto; border-spacing: 0;" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td colspan=3D"3" height=3D"5" style=3D"line-height:1px;font-size:1px;"> &n=
+bsp; </td>=20
+</tr>=20
+<tr>=20
+<td width=3D"27" style=3D"width:27px;" valign=3D"top">&nbsp; </td>=20
+<td align=3D"left" style=3D"font-family:'Poppins', sans-serif; font-size: 1=
+4px;font-weight: 500;  line-height: 20px; color:#000001; text-align: left;m=
+so-line-height-rule: exactly; "> Webinar </td>=20
+<td width=3D"20" style=3D"width:20px;" valign=3D"top">&nbsp; </td>=20
+</tr>=20
+<tr>=20
+<td colspan=3D"3" height=3D"5" style=3D"line-height:1px;font-size:1px;"> &n=
+bsp; </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+<td class=3D"block" height=3D"12" width=3D"9" style=3D"font-size: 1px; line=
+-height: 1px;"> &nbsp; </td>=20
+<td class=3D"block" align=3D"left">=20
+<table class=3D"innertable" width=3D"100%" style=3D"width:100%; margin: 0 a=
+uto;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"default-font-style"> <span style=3D"color: #ffffff"> 16 janvie=
+r 2025 </span> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<table class=3D"innertable" width=3D"540" align=3D"center" style=3D"width: =
+540px; margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td height=3D"25" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<table align=3D"left" class=3D"maintable" width=3D"360" style=3D"width: 360=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"default-font-style"> <h1 style=3D"color: #ffffff; margin:0px; =
+font-weight: 500;"> Adoptez le Cloud Native avec SUSE Virtualization</h1> <=
+/td>=20
+</tr>=20
+<tr>=20
+<td class=3D"default-font-style"> <h3 style=3D"color: #ffffff; margin:0px; =
+font-weight: 500;"> </h3> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"20" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<div>=20
+<table align=3D"left">=20
+<tbody>=20
+<tr>=20
+<td bgcolor=3D"#40B87C" class=3D"center-align default-font-style" style=3D"=
+color: #000001; padding: 16.5px 45px 16.5px; background-color: #FE7C3F;"> <=
+a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJkxIpJ-8L4B6uB9w5HAApwpWx8_eEM=
+6EExRVYffM8se5lP2pFB824GMQVgfYzDKVdoY=3D" style=3D"text-decoration:none; co=
+lor: #000001;"
+>Inscription</a> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<!--[if mso]>
+                          </v:textbox>
+                        </v:rect>
+                        <![endif]--> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"Section1">=20
+<td class=3D"darkMode" style=3D"background-color: #fffffe;" bgcolor=3D"#fff=
+ffe">=20
+<!-- description and main event details module-->=20
+<table class=3D"innertable" width=3D"560" align=3D"center" style=3D"width: =
+560px; margin:0 auto;">=20
+<tbody>=20
+<tr height=3D"50">=20
+<td></td>=20
+</tr>=20
+<tr>=20
+<td width=3D"320" style=3D"width: 320px;">=20
+<div class=3D"mktoText" id=3D"Section1_text01"></div>=20
+<div class=3D"mktoText" id=3D"Section1_text0001">
+<p>Dans un contexte o=C3=B9 les entreprises adoptent des architectures clou=
+d-native, d=C3=A9couvrez comment SUSE Virtualization (ex-Harvester) vous ai=
+de =C3=A0 moderniser vos infrastructures en unifiant la gestion des machine=
+s virtuelles et des conteneurs pour des op=C3=A9rations simplifi=C3=A9es et=
+ des co=C3=BBts r=C3=A9duits.</p>=20
+<p>Ce webinar vous pr=C3=A9sentera les fonctionnalit=C3=A9s cl=C3=A9s, des =
+cas d=E2=80=99usage concrets pour divers secteurs et des conseils pour une =
+transition agile vers des architectures cloud-native s=C3=A9curis=C3=A9es e=
+t performantes.</p>
+</div> </td>=20
+<td width=3D"20" style=3D"width: 20px;"></td>=20
+<td width=3D"220" style=3D"width: 220px; vertical-align: top;">=20
+<div class=3D"mktoText event-details" id=3D"Event-details">
+<!--[if mso]>
+                            <table role=3D"presentation" cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"background-color: #E=
+FEFEF;">
+                            <tr>
+                            <td style=3D"padding: 20px;">
+                            <![endif]-->=20
+<h4 class=3D"text-darkgreen">D=C3=A9tails<br></h4>=20
+<table width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td height=3D"15" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<th width=3D"22" style=3D"vertical-align: top; width: 22px; text-align: lef=
+t; padding-top: 3px;" valign=3D"top"><img src=3D"https://more.suse.com/rs/9=
+37-DCH-261/images/Icon feather-calendar-001.png" width=3D"17"></th>=20
+<th style=3D"width: 10px; height: 20px; margin: 0 auto;" width=3D"10" heigh=
+t=3D"20"></th>=20
+<th class=3D"text-darkgreen default-font-style" style=3D"text-align: left;"=
+ valign=3D"top">16 janvier 2025<br></th>=20
+</tr>=20
+<tr>=20
+<td height=3D"17" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<th width=3D"22" style=3D"vertical-align: top; width: 22px; text-align: lef=
+t; padding-top: 3px;" valign=3D"top"><img src=3D"https://more.suse.com/rs/9=
+37-DCH-261/images/Icon ionic-md-time.png" width=3D"15"></th>=20
+<th style=3D"width: 10px; height: 20px; margin: 0 auto;" width=3D"10" heigh=
+t=3D"20"></th>=20
+<th class=3D"text-darkgreen default-font-style" style=3D"text-align: left;"=
+ valign=3D"top">10h30<br></th>=20
+</tr>=20
+<tr>=20
+<td height=3D"17" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<th width=3D"22" style=3D"vertical-align: top; width: 22px; text-align: lef=
+t; padding-top: 3px;" valign=3D"top"><img src=3D"https://more.suse.com/rs/9=
+37-DCH-261/images/Icon ionic-md-person.png" width=3D"16"></th>=20
+<th style=3D"width: 10px; height: 20px; margin: 0 auto;" width=3D"10" heigh=
+t=3D"20"></th>=20
+<th class=3D"text-darkgreen default-font-style" style=3D"text-align: left;"=
+ valign=3D"top">Lionel Meoni</th>=20
+</tr>=20
+<tr>=20
+<td height=3D"17" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<th width=3D"22" style=3D"vertical-align: top; width: 22px; text-align: lef=
+t; padding-top: 3px;" valign=3D"top"><img src=3D"https://more.suse.com/rs/9=
+37-DCH-261/images/worksshops_Group-188.png" width=3D"19"></th>=20
+<th style=3D"width: 10px; height: 20px; margin: 0 auto;" width=3D"10" heigh=
+t=3D"20"></th>=20
+<th class=3D"text-darkgreen default-font-style" style=3D"text-align: left;"=
+ valign=3D"top">GotoWebinar<br></th>=20
+</tr>=20
+<tr>=20
+<td height=3D"17" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table>=20
+<!--[if mso]>
+                          </td>
+                          </tr>
+                          </table>
+                          <![endif]-->
+</div> </td>=20
+</tr>=20
+<tr height=3D"50">=20
+<td></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+<tr class=3D"mktoModule darkMode" id=3D"CTA_Module2b59abeb5-1383-49a4-9bae-=
+ea77d144f6b6">=20
+<td align=3D"center">=20
+<table class=3D"darkMode" role=3D"presentation" style=3D"background-color:#=
+fffffe; border-spacing: 0; border-collapse: collapse;" align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0">=20
+<tbody>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td class=3D"Wd-Mob" style=3D"font-family: 'Poppins', sans-serif; font-size=
+:14px; text-align:center; vertical-align: middle; color: #000001;display: b=
+lock; padding: 12px 30px;line-height: 22px; font-weight: 500;mso-line-heigh=
+t-rule:exactly !important; margin: 0; background: #FE7C3F" valign=3D"middle=
+"> <a style=3D"text-decoration: none; color: #000001; border-radius: 100px;=
+ min-width: 200px; padding: 0 20px" href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJkxIpJ-8L4B6uB9w5HAApwpWx8_eEM=
+6EExRVYffM8se5lP2pFB824GMQVgfYzDKVdoY=3D"
+> Inscription </a> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"Col2TestiModule">=20
+<td>=20
+<table style=3D"border-spacing: 0; border-collapse: collapse;" width=3D"100=
+%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"background-color: #f0efef;" bgcolor=3D"#f0efef">=20
+<table class=3D"innertable" width=3D"560" style=3D"border-spacing: 0; mso-t=
+able-lspace: 0pt; mso-table-rspace: 0pt; margin:0 auto;width:560px;">=20
+<tbody>=20
+<tr>=20
+<td height=3D"25" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td>=20
+<table width=3D"100%" style=3D"border-spacing: 0; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; margin:0 auto;width:100%;">=20
+<tbody>=20
+<tr>=20
+<td class=3D"mobileWidthImg mobile-width-td" valign=3D"top" width=3D"128" s=
+tyle=3D"text-align: center;">=20
+<div class=3D"mktoImg" id=3D"left1image1Testi">=20
+<img src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-person.png" wi=
+dth=3D"128" align=3D"">=20
+</div> </td>=20
+<td width=3D"16" style=3D"font-size: 1px;line-height:1px;">&nbsp;</td>=20
+<td class=3D"" valign=3D"middle">=20
+<table class=3D"deviceWidth" width=3D"100%" style=3D"border-spacing: 0; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; margin:0 auto;width:100%;">=20
+<tbody>=20
+<tr>=20
+<th width=3D"176" class=3D"block" style=3D"width: 176px;">=20
+<table width=3D"100%" style=3D"border-spacing: 0; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; margin:0 auto;width:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"text-align: left;font-family:  'Poppins', sans-serif; font-siz=
+e:20px; line-height:22px; color: #000001; mso-line-height-rule:exactly;font=
+-weight: 500;">=20
+<div>
+ Contactez-nous=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td style=3D"text-align: left;font-family: 'Poppins', sans-serif; font-size=
+:14px; line-height:17px; color: #0C322C; mso-line-height-rule:exactly;font-=
+weight: 400;">=20
+<div>
+ Discutez avec nos =C3=A9quipes ou demandez un rendez-vous t=C3=A9l=C3=A9ph=
+onique.=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </th>=20
+<th height=3D"16" class=3D"block" width=3D"65" style=3D"font-size: 1px;line=
+-height:1px;"> &nbsp;</th>=20
+<th class=3D"block pad-top" valign=3D"middle" style=3D"vertical-align:middl=
+e">=20
+<div>=20
+<table width=3D"176" style=3D"width: 176px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D" border: 2px solid #0E322C; font-family: 'Poppins', sans-serif=
+; font-size:14px; text-align:center; color: #0E322C;display: block; padding=
+: 17px 0px; line-height: 16px; font-weight: 500;" valign=3D"middle"> <a sty=
+le=3D"text-decoration: none; color: #0E322C; outline:none;" href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJmplsIrIhfMxfBGtfXP8nT12sGwU8g=
+PvU7cCVrXMxMU7ub9Vkwi7l6vFXL2qOicwmhg=3D"
+> CONTACT </a> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div> </th>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"25" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"Footer" style=3D"margin:0 auto;">=20
+<td class=3D"darkMode4" style=3D"background-color: #0C322C;">=20
+<table width=3D"560" align=3D"center" class=3D"innertable" style=3D"margin:=
+0 auto;">=20
+<tbody>=20
+<tr>=20
+<td height=3D"20" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+<tr>=20
+<td>=20
+<div class=3D"mktoSnippet" id=3D"Footer-snippet">=20
+<div>=20
+<div class=3D"text-center" style=3D"margin-bottom: 28px; text-align: center=
+;">
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJZB9L00cQftzIWuBbYImAPtI3c36t1=
+15GaBWwdKWuB2tqtz-j2T0Wn_AEk8GQfJa7DA=3D" target=3D"_blank" style=3D"text-d=
+ecoration: none;"
+> <img src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-ionic-l=
+ogo-facebook.png" alt=3D"Facebook" width=3D"21" border=3D"0"> </a> &nbsp;&n=
+bsp;&nbsp;=20
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJsvYdlzwJ6lA29m7hLZ6RvaOQBUrBz=
+0K05xJ5iYCxxffRTtFyRv-z2SBg8QXjcTTk2k=3D" target=3D"_blank" style=3D"text-d=
+ecoration:=20
+none;"
+> <img src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-awesome=
+-twitter.png" alt=3D"Twitter" width=3D"25" border=3D"0"> </a> &nbsp;&nbsp;&=
+nbsp;=20
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJgn8uaQmnDyvbDu4GUNFSzP_a_hGQp=
+oUJ3HGpnGCz_GuDzIqoi8-Fcfe3DsojeG0di0=3D" target=3D"_blank" style=3D"text-d=
+ecoration: none;"
+> <img src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-feather=
+-instagram.png" alt=3D"Instagram" width=3D"19" border=3D"0"> </a> &nbsp;&nb=
+sp;&nbsp;=20
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJiUU1SqChPr2N-hG2nwfZ-iIiigTUv=
+gaZYdQEVsx9Fq9ivpRVkFnKb5onUjMfK1Hi0Q=3D" target=3D"_blank" style=3D"text-d=
+ecoration: none;"
+> <img src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-awesome=
+-linkedin.png" alt=3D"LinkedIn" width=3D"19" border=3D"0"> </a> &nbsp;&nbsp=
+;&nbsp;=20
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJVltm6i_RrHVthkAeeuDSxxD1z_N2E=
+kLSADtWtd1zAoTl-NPr4ed1E7vOazFobe9PU4=3D" target=3D"_blank" style=3D"text-d=
+ecoration: none;"
+> <img src=3D"https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-simple-=
+youtube.png" alt=3D"Youtube" width=3D"25" border=3D"0"> </a>
+</div>=20
+<table class=3D"innertable" style=3D"width: 455px; margin: 0 auto;" width=
+=3D"455" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">=
+=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-family: 'Poppins', sans-serif; font-size: 12px; font-weig=
+ht: 500; line-height: 2; color: #fff; text-align: center; mso-line-height-r=
+ule: exactly;" align=3D"center">=20
+<div>
+Copyright =C2=A9 2025 SUSE, Tous droits r=C3=A9serv=C3=A9s.
+<br>=20
+<a href=3D"https://more.suse.com/UnsubscribePage.html?mkt_unsubscribe=3D1&m=
+kt_tok=3DOTM3LURDSC0yNjEAAAGX6PFPJsJ9mySjJ1HJ1KWWTksYjxpI3H350B7JJK_VtwMlDx=
+RAa-c-OdzJxpFOX0QwkJTj6lxFN9WcVROYTuc2xQffJ3sTRz_wStCajEJYr8jj6QI" style=3D=
+"color: #30ba78; text-decoration: underline; outline: 0;">Unsubscribe</a>=
+=20
+<br>=20
+<br> Frankenstra=C3=9Fe 146, 90461 N=C3=BCrnberg, Germany
+<br>=20
+<br> Vous recevez cette communication marketing de SUSE soit parce que vous=
+ avez d=C3=A9j=C3=A0 choisi de recevoir des communications, soit parce que =
+nous pensons qu=E2=80=99il existe une raison commerciale l=C3=A9gitime de v=
+ous contacter au sujet des produits et services de SUSE. Veuillez consulter=
+ la page de=20
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJoaDx13FgouB3sa0P2oM7L5PdrteiB=
+CTrIpWaP-LcEtdfDllxhjuo_NRsdVu2HsulOc=3D" target=3D"_blank" style=3D"text-d=
+ecoration: underline; outline: 0; color: #30ba78;"
+>gestion des souscriptions SUSE</a> si vous souhaitez refuser toute autre n=
+otification. Toutes les marques commerciales de fabricants tiers appartienn=
+ent =C3=A0 leur propri=C3=A9taire respectif.
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td height=3D"40" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>=
+=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>  =20
+<a href=3D
+"https://em.suse.com/OTM3LURDSC0yNjEAAAGX6PFPJRW6HqcuiVyGNhC6WDhwdkQQovNuFS=
+E4dl_GGF21BJ5HiHE4fygly4qF9jMXVwsKAG0=3D"
+></a>
+<img src=3D"https://em.suse.com/trk?t=3D1&mid=3DOTM3LURDSC0yNjEAAAGX6PFPJr9=
+UrwjM9gfLtTEC4otA9cU6Jc-87dW7pHZxxJsFxEdMbFoQkwG6-vLs7wtUZo787xk5fHhMyFTZGs=
+SOJm7LuIkRWBGiZPx_ix8fkYR1vqWNitA6XGeKLUn0OUPtqOxyNCdV8BoQEHDbFzlT" width=
+=3D"1" height=3D"1" style=3D"display:none !important;" alt=3D"" />
+</body>
+</html>
+------=_Part_484552201_768995941.1736407818027--
+

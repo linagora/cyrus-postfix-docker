@@ -1,0 +1,172 @@
+Return-Path: <SRS0=6nez=T5=ietf.org=forwardingalgorithm@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-2.707668 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID c449ee0c
+          for <btellier@linagora.com>;
+          Sun, 05 Jan 2025 23:23:07 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id C370B1406FC
+	for <btellier@linagora.com>; Sun,  5 Jan 2025 23:23:07 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 200671D5C6
+	for <btellier@linagora.com>; Mon,  6 Jan 2025 00:27:39 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <forwardingalgorithm@ietf.org>)
+	id 1tUZxV-0001D5-Fp
+	for btellier@linagora.com; Sun, 05 Jan 2025 23:23:06 +0000
+Received: from 50.223.129.194 by s602e.ik2.com (IK2 SMTP Server); Sun, 5 Jan 2025 23:23:01 +0000
+Received: from ietfa.amsl.com (localhost [IPv6:::1])
+	by ietfa.amsl.com (Postfix) with ESMTP id 87284C00E184
+	for <btellier@linagora.com>; Sun,  5 Jan 2025 15:20:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ietf.org; s=ietf1;
+	t=1736119222; bh=303/V0EGT+jdE6DUe/r2qFjVNTv/Vi36NJlKMmN+rpU=;
+	h=From:Subject:Date:To:List-Id:List-Archive:List-Help:List-Owner:
+	 List-Post:List-Subscribe:List-Unsubscribe;
+	b=qR0gGrK3PRE5kLIqSeoKpDoraKWHXhjhDPMrvwceaU5X6lCW564MKiS52opyj4Hs4
+	 41avnHgIrF4zXNi/VB3Ta5jvP13Eb25o8mYITdO61DpFpUJu6/UF9DeuWlq/WcsjXs
+	 V/TIyWiOi9DrOC4d1H//TeG67iMObyt9YWPw9wCY=
+X-Mailbox-Line: From ietf-surveys-bounces+btellier=linagora.com@ietf.org  Sun Jan  5 15:20:13 2025
+Received: from ietfa.amsl.com (localhost [IPv6:::1])
+	by ietfa.amsl.com (Postfix) with ESMTP id 0C817C13AE3B
+	for <btellier@linagora.com>; Sun,  5 Jan 2025 15:20:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ietf.org; s=ietf1;
+	t=1736119213; bh=303/V0EGT+jdE6DUe/r2qFjVNTv/Vi36NJlKMmN+rpU=;
+	h=From:Subject:Date:To:List-Id:List-Archive:List-Help:List-Owner:
+	 List-Post:List-Subscribe:List-Unsubscribe;
+	b=Cjialz53wsxkr5/A15/jSNVVlaosNVWz1XAqNVxidg4t8ZAkDw6mRckbQmfDwchHT
+	 h9mQXps5N3lJwfRA9zxFzqMkpOsh/goHD66GpIeYw5URwQYpDM/qsFp79rdJ3T9T+T
+	 WD23xTvj/FTonP9PAdD9Xe21uoB7tULZki+bEyYs=
+X-Original-To: ietf-surveys@ietfa.amsl.com
+Delivered-To: ietf-surveys@ietfa.amsl.com
+Delivered-To: btellier@linagora.com
+Received: from localhost (localhost [127.0.0.1])
+	by ietfa.amsl.com (Postfix) with ESMTP id 07FD5C14F6AB
+	for <ietf-surveys@ietfa.amsl.com>; Sun,  5 Jan 2025 14:46:35 -0800 (PST)
+X-Spam-Level: 
+Authentication-Results: ietfa.amsl.com (amavisd-new); dkim=pass (2048-bit key)
+	header.d=staff-ietf-org.20230601.gappssmtp.com
+Received: from mail.ietf.org ([50.223.129.194])
+	by localhost (ietfa.amsl.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id hrQ2WEQOxOP7 for <ietf-surveys@ietfa.amsl.com>;
+	Sun,  5 Jan 2025 14:46:31 -0800 (PST)
+Received: from mail-pl1-x641.google.com (mail-pl1-x641.google.com
+ [IPv6:2607:f8b0:4864:20::641])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature ECDSA (P-256) server-digest SHA256)
+	(No client certificate requested)
+	by ietfa.amsl.com (Postfix) with ESMTPS id 00D25C14F6B5
+	for <ietf-surveys@ietf.org>; Sun,  5 Jan 2025 14:46:30 -0800 (PST)
+Received: by mail-pl1-x641.google.com with SMTP id
+ d9443c01a7336-2164b1f05caso191300465ad.3
+        for <ietf-surveys@ietf.org>; Sun, 05 Jan 2025 14:46:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=staff-ietf-org.20230601.gappssmtp.com; s=20230601; t=1736117189;
+ x=1736721989; darn=ietf.org;
+        h=to:date:message-id:subject:mime-version:content-transfer-encoding
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=biDb5EjAtcR7SREMcbb7rtB14jmcrCJGoUZw3oIH0/0=;
+        b=PyVZ0VL6o4iY38CvYZ/Ywf/FqArYNfsl1HyyMkmTQLxlFyCvHyk/OglZ8xmFMR8I/S
+         0kPvJDogfy4VDY2LlaOwv3XVlCnT0oSj8OczuJ7DEfNkolVPabhN3DMUnTU6u32X/yAD
+         Cf3pFZxCCakwK+kIj+zB/QCMMIPnf0lZsz7kVT+HwFOAlYAViCRsHS7uC+33T+M/LKBz
+         +oYO8wz0Fl5EASPtZPUoO2lvw8cTZhJbIna4ulaQb9cWrZrXKLQrVMiLYg824dW08BYz
+         AZGlx/Vx4hF42MC92/gzjLc9VDB/iNYQSz4vfgdAoxtDPtIV/88KbXtGQnSvdw7WFGxy
+         kChQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736117189; x=1736721989;
+        h=to:date:message-id:subject:mime-version:content-transfer-encoding
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=biDb5EjAtcR7SREMcbb7rtB14jmcrCJGoUZw3oIH0/0=;
+        b=S2yrA5A9pRa8s4tgli6G//+tMFha0AQZ5s0L5/oEnhtLEoU/a0o0VeDj4gl9H7UWcn
+         iWWuLI2RqHl61ClRl6Ko7jAIpwmc2YuCjxAvcVdacwT5BqvDn7E0lYfRHULisWRYxjw9
+         U2OcE0SQSmBckxQvUXUkjkHjytWPkSrw0B4M17WQx8guv1xj8p/tAmu+xVu8Gp0Q7n1U
+         nYu/TN3YP1FeOfABUc+gfcMwUp7rc1awC0o8BKJwPpumX35K7cUjhu4yoXNIlngtUtf+
+         6qNxtSXlNr8r9RqfA3Kxbg4VF2i0Z5b8UFIApqvUaJVjhWrpjFKf+0nKJAvktupoNcGn
+         NyEQ==
+X-Gm-Message-State: AOJu0Yw0oq/WvlQAEk2ghpEGLBJuPyV8LFqOgeySk7MphVxZimmr9KUH
+	5V7m3uWm2LuXOJEr2wwQEHO+F4NBGL3dwBtmSuuUEo9Abme5WJE8PTpzsDj2kM4eXSKLmsttxii
+	otcb9uLwsfU0=
+X-Gm-Gg: ASbGnctmD/AcXV4abzhKt60neoMylRAkXqjKn1nrq5NdaSooUCzpHemcRvbTkXjVhJz
+	WpkSKOm62PitHk6LpcQILUEWZbABsgsXUM9srtsaKYS8mkZm628lDcSQ1tvDyqmNHAWNHuiSFVP
+	w/hJfpLDUcPY3ZiYwXsuN9ZaERJ1Vhl88CYO3ZyWVA7zxUfrv3K1C8QlJAvM0keRzPP98WWm1hx
+	Kj3/f8wI5KwOhcmOKcQSYsn6nPibaBTM5EvkMoTKbKJrCh2aIdjEf5rM2TEVhYhlGhntwA8oO73
+	TJLZvD5e9rEBeoKquYxoe+zzeitSOsPWdgMeZV2zXrPX9zoOmdw=
+X-Google-Smtp-Source: 
+ AGHT+IEw/exYIf9tACDDxiAdcFALy1Ts09lrOZs3czLLuuNrwxWcxqYqT3ME1ih13URXwtmItQFO/A==
+X-Received: by 2002:a05:6a20:7fa2:b0:1e0:d1c3:97d1 with SMTP id
+ adf61e73a8af0-1e5e080294cmr88835890637.29.1736117189553;
+        Sun, 05 Jan 2025 14:46:29 -0800 (PST)
+Received: from smtpclient.apple (203-96-137-90.dsl-dynamic.connections.net.nz.
+ [203.96.137.90])
+        by smtp.gmail.com with ESMTPSA id
+ d2e1a72fcca58-72aad83475asm30001475b3a.57.2025.01.05.14.46.28
+        for <ietf-surveys@ietf.org>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 05 Jan 2025 14:46:29 -0800 (PST)
+X-LINAGORA-Copy-Delivery-Done: 1
+From: IETF Executive Director <exec-director@ietf.org>
+Content-Type: text/plain;
+	charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3776.700.51.11.1\))
+Subject: REMINDER: Please take the IETF Community Survey 2024
+Message-Id: <F6A3988D-510A-470B-B351-1DD59140F27D@ietf.org>
+Date: Mon, 6 Jan 2025 11:46:15 +1300
+To: ietf-surveys@ietf.org
+X-Mailer: Apple Mail (2.3776.700.51.11.1)
+Message-ID-Hash: QDMII254LNT537POFICNTIZGOSYJEJQZ
+X-Message-ID-Hash: QDMII254LNT537POFICNTIZGOSYJEJQZ
+X-MailFrom: jay@staff.ietf.org
+X-Mailman-Rule-Misses: dmarc-mitigation; no-senders; approved; emergency;
+ loop; banned-address; member-moderation; nonmember-moderation; administrivia;
+ implicit-dest; max-recipients; max-size; news-moderation; no-subject;
+ digests; suspicious-header
+X-Mailman-Version: 3.3.9rc6
+Precedence: list
+List-Id: Hidden list used for IETF surveys <ietf-surveys.ietf.org>
+Archived-At: 
+ <https://mailarchive.ietf.org/arch/msg/ietf-surveys/Tw3teVstsa03zdB1cI_HuWlAwwg>
+List-Archive: <https://mailarchive.ietf.org/arch/browse/ietf-surveys>
+List-Help: <mailto:ietf-surveys-request@ietf.org?subject=help>
+List-Owner: <mailto:ietf-surveys-owner@ietf.org>
+List-Post: <mailto:ietf-surveys@ietf.org>
+List-Subscribe: <mailto:ietf-surveys-join@ietf.org>
+List-Unsubscribe: <mailto:ietf-surveys-leave@ietf.org>
+X-SF-RX-Return-Path: <forwardingalgorithm@ietf.org>
+X-SF-Originating-IP: 50.223.129.194
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 3.4
+X-SF-SRS: Sender address rewritten from <forwardingalgorithm@ietf.org> to <SRS0=6nez=T5=ietf.org=forwardingalgorithm@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+This is a reminder to please spare six minutes to provide your feedback =
+on the IETF and your experiences with the IETF, whether you are a =
+regular participant or just an occasional reader of one of our lists:
+
+    https://ietf.iad1.qualtrics.com/jfe/form/SV_7ajlQ6jgwMrIKPk
+
+So far we have 655 responses and ideally we would like over 2000. =20
+
+Please note that Javascript is required for this survey, and that we run =
+this survey in anonymous mode and do not collect data such as IP =
+addresses. If you want to confirm that the link above is genuine then =
+please see our blog post [1], which also includes this link.
+
+This request is being sent to all email addresses subscribed to an IETF =
+mailing list, except those that opted-out of previous community surveys. =
+If you want to opt out of this and all future community surveys then you =
+can do so by emailing ietf-surveys-leave@ietf.org and responding to the =
+confirmation email.
+
+This survey will close on Monday 20 January 2025. Thanks in advance for =
+your time!
+
+[1]  https://www.ietf.org/blog/launch-of-the-ietf-community-survey-2024/
+
+--=20
+Jay Daley
+IETF Executive Director
+exec-director@ietf.org
+
+

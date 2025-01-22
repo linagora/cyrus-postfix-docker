@@ -46,6 +46,12 @@ testsaslauthd -u bob -p secret -f /var/run/saslauthd/mux
 > 0: OK "Success."
 ```
 
+### Add some dummy emails
+By running the following script, your user bob will have a dozen emails in his Inbox:
+```
+./provisioning.sh
+```
+
 # CONNECT FROM TELNET AND CURL
 ### Sample telnet
 To play with Cyrus IMAP (143):

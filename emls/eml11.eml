@@ -1,0 +1,409 @@
+Return-Path: <SRS0=HqjO=UN=bu.d.mailin.fr=bounces-985gf-f.jamet=dpo-rgpd-conformite-paca.fr@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-1.2 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID c4d967c5
+          for <btellier@linagora.com>;
+          Tue, 21 Jan 2025 09:05:04 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 32E8C140555
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 09:05:04 +0000 (UTC)
+Received: from s602g.ik2.com (s602g.ik2.com [66.37.25.74])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 44FEE1D5C7
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 10:09:54 +0100 (CET)
+Received: from s214b.ik2.com
+	by s602g.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <bounces-985gf-f.jamet=dpo-rgpd-conformite-paca.fr@bu.d.mailin.fr>)
+	id 1taABq-0007xf-DY
+	for btellier@linagora.com; Tue, 21 Jan 2025 09:05:02 +0000
+Received: from 185.41.28.121 by s214b.ik2.com (IK2 SMTP Server); Tue, 21 Jan 2025 09:04:53 +0000
+DKIM-Signature: a=rsa-sha256; bh=7Y+u7CJgE+iDcE2InywvuCb9nHO67EFJeOwUUdB42Qk=;
+ c=relaxed/relaxed; d=dpo-rgpd-conformite-paca.fr;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id;
+ q=dns/txt; s=mail; t=1737450291; v=1;
+ b=VMcMR5EojjsVdFAfxGcvmtNzOr9RNlgiurHRwqocD0MUn81x7ENgYpnimD+1D5Wc5aNBCOev
+ mBxqsgUzamGlefsie+aI5yGloQQNEoToI1ZBM1oaldGaSNJNzp5d/BP10xgG4rDjpRLvKHYzbFH
+ 2foar1+FgmZ5EWB8hDmtdMGA=
+To: <btellier@linagora.com>
+Subject: =?utf-8?q?Meilleurs_v=C5=93ux_2025_!_?=
+Content-Type: multipart/alternative; boundary="-------?=_77494-5431717321759"
+Date: Tue, 21 Jan 2025 09:04:51 +0000
+Feedback-ID: 185.41.28.121:5234113_59:5234113:Sendinblue
+X-LINAGORA-Copy-Delivery-Done: 1
+From: =?UTF-8?q?Fr=C3=A9d=C3=A9rique_JAMET?= <f.jamet@dpo-rgpd-conformite-paca.fr>
+List-Id: NTIzNDExMy0yOTAtMTE= <NTIzNDExMy0yOTAtMTE=.list-id.mailin.fr>
+List-Unsubscribe: <mailto:unsubscribe@bu.d.mailin.fr?subject=unsub-oj2mwq8ltrj&body=oj2mwq8ltrj>,<https://985gf.r.a.d.sendibm1.com/mk/un/li/sh/6rqJ8GqndAnmOWqVwJ5HcfD5AMn/LVA-q2SRSL8f>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Message-Id: <202521010904.oj2mwq8ltrj@bu.d.mailin.fr>
+Reply-To: <f.jamet@dpo-rgpd-conformite-paca.fr>
+X-Csa-Complaints: csa-complaints@eco.de
+X-Mailer: Sendinblue
+X-Mailin-Campaign: 59
+X-Mailin-Client: 5234113
+X-sib-id: qnDO12zcn5ALegiOc-U4BEIj_yATpHmUDsNv-PaZgrLj8Kr4SDKiAuAN36RLsvgkJJYVgDRO779HtbHo1vNuEQAS61cWCBtbH3ai8uFGDOHhIgAHbLBzj8nFFmk1uo4VVmTF8ZMnOhtpQDS-NyQQAfhG5FewI0PNn1YfVD69nYrpJC80nFIEc8q2AHO4k6nva1YNzrTL0OJMo0pF4rB8WYE6yxo8gQ
+X-SF-RX-Return-Path: <bounces-985gf-f.jamet=dpo-rgpd-conformite-paca.fr@bu.d.mailin.fr>
+X-SF-Originating-IP: 185.41.28.121
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 1.1
+X-SF-SRS: Sender address rewritten from <bounces-985gf-f.jamet=dpo-rgpd-conformite-paca.fr@bu.d.mailin.fr> to <SRS0=HqjO=UN=bu.d.mailin.fr=bounces-985gf-f.jamet=dpo-rgpd-conformite-paca.fr@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+---------?=_77494-5431717321759
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+Chers clients,=C2=A0
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+En ce d=C3=A9but d=E2=80=99ann=C3=A9e 2025, toute l=E2=80=99=C3=A9quipe de =
+*RGPD Solution Cl=C3=A9-en-main* & *Avenue du RGPD* vous souhaite une ***bo=
+nne ann=C3=A9e s=C3=A9curis=C3=A9e et pleine de succ=C3=A8s***=C2=A0***!=C2=
+=A0***
+
+=C2=A0
+
+**Nous restons engag=C3=A9s =C3=A0 vos c=C3=B4t=C3=A9s pour** **garantir vo=
+tre conformit=C3=A9 avec le RGPD** **et la protection de vos donn=C3=A9es**=
+**.******Nous restons disponibles pour=C2=A0:=C2=A0
+
+=C2=A0
+
+
+- **La formation de vos nouvelles =C3=A9quipes**=20
+- **Une mise =C3=A0 jour de vos d=C3=A9marches**de s=C3=A9curit=C3=A9****et=
+ de vos obligations de conformit=C3=A9 avec le RGPD=20
+- **Vous accompagner dans vos projets** impliquant de nouvelles actions de =
+protection de vos donn=C3=A9es pour minimiser vos risques cyber=20
+=C2=A0
+
+**RAPPEL !** Nos prestations peuvent =C3=AAtre prises en charge par votre O=
+PCO=C2=A0!
+
+=C2=A0
+
+=C3=89quipez-vous d'un destructeur de documents de qualit=C3=A9 puissant=20
+[**CLIQUER ICI**=C2=A0](https://985gf.r.a.d.sendibm1.com/mk/cl/f/sh/6rqJfgq=
+8dINmNXawPJYQKuOyiaj/5KPOsjMYWFgO "https://avenuedurgpd.com/products/destru=
+cteur-de-documents-intimus-120-cp4-coupe-croisee")
+---------------------------------------------------------------------------=
+---------------------------------------------------------------------------=
+-------------------------------------------------
+
+=C2=A0
+
+Merci pour votre confiance et =C3=A0 tr=C3=A8s bient=C3=B4t=C2=A0!
+
+
+**RGPD SOLUTION CLE EN MAIN**
+
+P=C3=A9pini=C3=A8re d'Entreprises innovantes - 100 impasse des Houill=C3=A8=
+res, 13590, MEYREUIL
+
+Cet email a =C3=A9t=C3=A9 envoy=C3=A9 =C3=A0 btellier@linagora.com
+
+Vous l'avez re=C3=A7u car vous =C3=AAtes inscrit =C3=A0 notre newsletter.
+
+[Afficher dans le navigateur](https://985gf.r.a.d.sendibm1.com/mk/mr/sh/6rq=
+J8GoudeITPxc3twlTSIiIQQH/JbyqA2qfbxSj)| [Se d=C3=A9sinscrire](https://985gf=
+.r.a.d.sendibm1.com/mk/un/sh/6rqJ8GqndAnmOWqVwJ5HcfD5AMn/LVA-q2SRSL8f)
+
+
+---------?=_77494-5431717321759
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta h=
+ttp-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><meta name=3D"format-de=
+tection" content=3D"telephone=3Dno"><meta name=3D"viewport" content=3D"widt=
+h=3Ddevice-width, initial-scale=3D1.0"><title>Meilleurs v=C5=93ux 2025 ! </=
+title><style type=3D"text/css" emogrify=3D"no">#outlook a { padding:0; } .E=
+xternalClass { width:100%; } .ExternalClass, .ExternalClass p, .ExternalCla=
+ss span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-=
+height: 100%; } table td { border-collapse: collapse; mso-line-height-rule:=
+ exactly; } .editable.image { font-size: 0 !important; line-height: 0 !impo=
+rtant; } .nl2go_preheader { display: none !important; mso-hide:all !importa=
+nt; mso-line-height-rule: exactly; visibility: hidden !important; line-heig=
+ht: 0px !important; font-size: 0px !important; } body { width:100% !importa=
+nt; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; pad=
+ding:0; } img { outline:none; text-decoration:none; -ms-interpolation-mode:=
+ bicubic; } a img { border:none; } table { border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt; } th { font-weight: normal; text-alig=
+n: left; } *[class=3D"gmail-fix"] { display: none !important; } </style><st=
+yle type=3D"text/css" emogrify=3D"no"> @media (max-width: 600px) { .gmx-kil=
+lpill { content: ' \03D1';} } </style><style type=3D"text/css" emogrify=3D"=
+no">@media (max-width: 600px) { .gmx-killpill { content: ' \03D1';} .r0-o {=
+ border-style: solid !important; margin: 0 auto 0 auto !important; width: 3=
+20px !important } .r1-i { background-color: #ffffff !important } .r2-c { bo=
+x-sizing: border-box !important; text-align: center !important; valign: top=
+ !important; width: 100% !important } .r3-o { border-style: solid !importan=
+t; margin: 0 auto 0 auto !important; width: 100% !important } .r4-i { paddi=
+ng-bottom: 20px !important; padding-left: 15px !important; padding-right: 1=
+5px !important; padding-top: 20px !important } .r5-c { box-sizing: border-b=
+ox !important; display: block !important; valign: top !important; width: 10=
+0% !important } .r6-o { border-style: solid !important; width: 100% !import=
+ant } .r7-i { padding-left: 0px !important; padding-right: 0px !important }=
+ .r8-c { box-sizing: border-box !important; padding-bottom: 15px !important=
+; padding-top: 15px !important; text-align: center !important; valign: top =
+!important; width: 100% !important } .r9-i { padding-bottom: 20px !importan=
+t; padding-left: 10px !important; padding-right: 10px !important; padding-t=
+op: 20px !important } .r10-o { border-style: solid !important; margin: 0 au=
+to 0 0 !important; width: 100% !important } .r11-i { padding-top: 15px !imp=
+ortant; text-align: left !important } .r12-i { background-color: #eff2f7 !i=
+mportant; padding-bottom: 20px !important; padding-left: 15px !important; p=
+adding-right: 15px !important; padding-top: 20px !important } .r13-c { box-=
+sizing: border-box !important; text-align: left !important; valign: top !im=
+portant; width: 100% !important } .r14-i { color: #3b3f44 !important; paddi=
+ng-bottom: 0px !important; padding-top: 15px !important; text-align: center=
+ !important } .r15-i { color: #3b3f44 !important; padding-bottom: 0px !impo=
+rtant; padding-top: 0px !important; text-align: center !important } .r16-i =
+{ color: #3b3f44 !important; padding-bottom: 15px !important; padding-top: =
+15px !important; text-align: center !important } .r17-c { box-sizing: borde=
+r-box !important; text-align: center !important; width: 100% !important } .=
+r18-i { padding-bottom: 15px !important; padding-left: 0px !important; padd=
+ing-right: 0px !important; padding-top: 0px !important } .r19-c { box-sizin=
+g: border-box !important; text-align: center !important; valign: top !impor=
+tant; width: 129px !important } .r20-o { border-style: solid !important; ma=
+rgin: 0 auto 0 auto !important; width: 129px !important } body { -webkit-te=
+xt-size-adjust: none } .nl2go-responsive-hide { display: none } .nl2go-body=
+-table { min-width: unset !important } .mobshow { height: auto !important; =
+overflow: visible !important; max-height: unset !important; visibility: vis=
+ible !important } .resp-table { display: inline-table !important } .magic-r=
+esp { display: table-cell !important } } </style><style type=3D"text/css">p=
+, h1, h2, h3, h4, ol, ul, li { margin: 0; } .nl2go-default-textstyle { colo=
+r: #3b3f44; font-family: arial,helvetica,sans-serif; font-size: 16px; line-=
+height: 1.5; word-break: break-word } .default-button { color: #000000; fon=
+t-family: arial,helvetica,sans-serif; font-size: 16px; font-style: normal; =
+font-weight: bold; line-height: 1.15; text-decoration: none; word-break: br=
+eak-word } a, a:link { color: #fe7502; text-decoration: underline } .defaul=
+t-heading1 { color: #1F2D3D; font-family: arial,helvetica,sans-serif; font-=
+size: 36px; word-break: break-word } .default-heading2 { color: #1F2D3D; fo=
+nt-family: arial,helvetica,sans-serif; font-size: 32px; word-break: break-w=
+ord } .default-heading3 { color: #1F2D3D; font-family: arial,helvetica,sans=
+-serif; font-size: 24px; word-break: break-word } .default-heading4 { color=
+: #1F2D3D; font-family: arial,helvetica,sans-serif; font-size: 18px; word-b=
+reak: break-word } a[x-apple-data-detectors] { color: inherit !important; t=
+ext-decoration: inherit !important; font-size: inherit !important; font-fam=
+ily: inherit !important; font-weight: inherit !important; line-height: inhe=
+rit !important; } .no-show-for-you { border: none; display: none; float: no=
+ne; font-size: 0; height: 0; line-height: 0; max-height: 0; mso-hide: all; =
+overflow: hidden; table-layout: fixed; visibility: hidden; width: 0; } </st=
+yle><!--[if mso]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPe=
+rInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]--><s=
+tyle type=3D"text/css">a:link{color: #fe7502; text-decoration: underline;}<=
+/style></head><body bgcolor=3D"#ffffff" text=3D"#3b3f44" link=3D"#fe7502" y=
+ahoo=3D"fix" style=3D"background-color: #ffffff;"> <table cellpadding=3D"0"=
+ border=3D"0" cellspacing=3D"0" style=3D" mso-hide: all; display: none;"><t=
+r><td>Cap sur une ann=C3=A9e s=C3=A9curis=C3=A9e et pleine de succ=C3=A8s !=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#8=
+47;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;=
+&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zw=
+nj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;=
+&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nb=
+sp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;=
+</td></tr></table> <!--[if mso]> <img width=3D"1" height=3D"1" src=3D"https=
+://985gf.r.a.d.sendibm1.com/mk/op/sh/6rqJ8GsgchJ5N64xyfP5n1hruJJ/NixTth_9zh=
+iO" /> <![endif]-->
+	<!--[if !mso]> <!----> <img style=3D"display:none" src=3D"https://985gf.r.=
+a.d.sendibm1.com/mk/op/sh/6rqJ8GsgchJ5N64xyfP5n1hruJJ/NixTth_9zhiO" /> <!--=
+ <![endif]-->  <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" class=3D"nl2go-body-table" width=3D"100%" style=3D"backgr=
+ound-color: #ffffff; width: 100%;"><tr><td> <table cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=3D"cente=
+r" class=3D"r0-o" style=3D"table-layout: fixed; width: 600px;"><tr><td vali=
+gn=3D"top" class=3D"r1-i" style=3D"background-color: #ffffff;"> <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D=
+"100%" align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; width:=
+ 100%;"><tr><td class=3D"r4-i" style=3D"padding-bottom: 20px; padding-top: =
+20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r5=
+-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6-o" style=
+=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" class=3D"r7-i=
+" style=3D"padding-left: 15px; padding-right: 15px;"> <table width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr=
+><td class=3D"r8-c" align=3D"center" style=3D"font-size: 0px; line-height: =
+0px; padding-bottom: 15px; padding-top: 15px; valign: top;"> <img src=3D"ht=
+tps://985gf.img.a.d.sendibm1.com/im/sh/HmSbpVyMgTjv.png?u=3D1vcqsYC5HMzcSL9=
+iSZ1ZlxNX6Zgeub" width=3D"570" border=3D"0" style=3D"display: block; width:=
+ 100%;" sib_img_id=3D"0"></td> </tr></table></td> </tr></table></th> </tr><=
+/table></td> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" width=3D"100%" align=3D"center" class=3D"r3-o"=
+ style=3D"table-layout: fixed; width: 100%;"><tr><td class=3D"r9-i" style=
+=3D"padding-bottom: 20px; padding-top: 20px;"> <table width=3D"100%" cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th wi=
+dth=3D"100%" valign=3D"top" class=3D"r5-c" style=3D"font-weight: normal;"> =
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentatio=
+n" width=3D"100%" align=3D"left" class=3D"r10-o" style=3D"table-layout: fix=
+ed; width: 100%;"><tr><td align=3D"left" valign=3D"top" class=3D"r11-i nl2g=
+o-default-textstyle" style=3D"color: #3b3f44; font-family: arial,helvetica,=
+sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word; padd=
+ing-top: 15px; text-align: left;"> <div><h1 class=3D"default-heading1" styl=
+e=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-serif; fo=
+nt-size: 36px; word-break: break-word;">Chers clients,=C2=A0</h1></div> </t=
+d> </tr></table><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" align=3D"left" class=3D"r10-o" style=3D"t=
+able-layout: fixed; width: 100%;"><tr><td align=3D"left" valign=3D"top" cla=
+ss=3D"r11-i nl2go-default-textstyle" style=3D"color: #3b3f44; font-family: =
+arial,helvetica,sans-serif; font-size: 16px; line-height: 1.5; word-break: =
+break-word; padding-top: 15px; text-align: left;"> <div><p style=3D"margin:=
+ 0; text-align: justify;"><span style=3D"color: #000000;">En ce d=C3=A9but =
+d=E2=80=99ann=C3=A9e 2025, toute l=E2=80=99=C3=A9quipe de <i>RGPD Solution =
+Cl=C3=A9-en-main</i> & <i>Avenue du RGPD</i> vous souhaite une</span> <span=
+ style=3D"color: #ED7D31; font-size: 18px;"><i><strong>bonne ann=C3=A9e s=
+=C3=A9curis=C3=A9e et pleine de succ=C3=A8s</strong></i>=C2=A0<i><strong>!=
+=C2=A0</strong></i></span></p><p style=3D"margin: 0; text-align: justify;">=
+=C2=A0</p><p style=3D"margin: 0; text-align: justify;"><span style=3D"color=
+: #000000;"><strong>Nous restons engag=C3=A9s =C3=A0 vos c=C3=B4t=C3=A9s po=
+ur</strong> </span><span style=3D"color: #1E4FC2;"><strong>garantir votre c=
+onformit=C3=A9 avec le RGPD</strong> <strong>et la protection de vos donn=
+=C3=A9es</strong></span><span style=3D"color: #1253EA;"><strong>.</strong><=
+/span><strong> </strong><span style=3D"color: #000000;">Nous restons dispon=
+ibles pour=C2=A0:=C2=A0</span></p><p style=3D"margin: 0; text-align: justif=
+y;">=C2=A0</p><ul style=3D"margin: 0; list-style-type: disc;"><li style=3D"=
+margin: 0;"><span style=3D"color: #000000;"><strong>La formation de vos nou=
+velles =C3=A9quipes</strong></span></li><li style=3D"margin: 0;"><span styl=
+e=3D"color: #000000;"><strong>Une mise =C3=A0 jour de vos d=C3=A9marches </=
+strong>de s=C3=A9curit=C3=A9<strong> </strong>et de vos obligations de conf=
+ormit=C3=A9 avec le RGPD</span></li><li style=3D"margin: 0;"><span style=3D=
+"color: #000000;"><strong>Vous accompagner dans vos projets</strong> impliq=
+uant de nouvelles actions de protection de vos donn=C3=A9es pour minimiser =
+vos risques cyber</span></li></ul><p style=3D"margin: 0; list-style-type: d=
+isc;">=C2=A0</p><p style=3D"margin: 0; text-align: justify;"><span style=3D=
+"color: #ed7d31;"><strong>RAPPEL !</strong> </span><span style=3D"color: #0=
+00000;">Nos prestations peuvent =C3=AAtre prises en charge par votre OPCO=
+=C2=A0!</span></p><p style=3D"margin: 0; text-align: justify;">=C2=A0</p><p=
+ style=3D"margin: 0; text-align: justify;"><span style=3D"color: #000000;">=
+=C3=89quipez-vous d'un destructeur de documents de qualit=C3=A9 puissant </=
+span><a href=3D"https://985gf.r.a.d.sendibm1.com/mk/cl/f/sh/6rqJfgq8dINmNXa=
+wPJYQKuOyiaj/5KPOsjMYWFgO" title=3D"https://avenuedurgpd.com/products/destr=
+ucteur-de-documents-intimus-120-cp4-coupe-croisee" target=3D"_blank" style=
+=3D"color: #fe7502; text-decoration: underline;" sib_link_id=3D"0" templati=
+ng=3D"n"><span style=3D"color: #ed7d31; font-size: 19px;"><strong><u>CLIQUE=
+R ICI</u></strong></span><span style=3D"color: #000000;">=C2=A0</span></a><=
+/p><p style=3D"margin: 0; text-align: justify;">=C2=A0</p><p style=3D"margi=
+n: 0; text-align: justify;"><span style=3D"color: #000000;">Merci pour votr=
+e confiance et =C3=A0 tr=C3=A8s bient=C3=B4t=C2=A0!</span></p></div> </td> =
+</tr></table></th> </tr></table></td> </tr></table><table cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" align=
+=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; width: 100%;"><tr>=
+<td class=3D"r12-i" style=3D"background-color: #eff2f7; padding-bottom: 20p=
+x; padding-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"=
+top" class=3D"r5-c" style=3D"font-weight: normal;"> <table cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=
+=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top=
+" class=3D"r7-i" style=3D"padding-left: 15px; padding-right: 15px;"> <table=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation"><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=
+=3D"r10-o" style=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"cen=
+ter" valign=3D"top" class=3D"r14-i nl2go-default-textstyle" style=3D"font-f=
+amily: arial,helvetica,sans-serif; word-break: break-word; color: #3b3f44; =
+font-size: 18px; line-height: 1.5; padding-top: 15px; text-align: center;">=
+ <div><p style=3D"margin: 0;"><strong>RGPD SOLUTION CLE EN MAIN</strong></p=
+></div> </td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"left=
+"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion" width=3D"100%" class=3D"r10-o" style=3D"table-layout: fixed; width: 1=
+00%;"><tr><td align=3D"center" valign=3D"top" class=3D"r15-i nl2go-default-=
+textstyle" style=3D"font-family: arial,helvetica,sans-serif; word-break: br=
+eak-word; color: #3b3f44; font-size: 18px; line-height: 1.5; text-align: ce=
+nter;"> <div><p style=3D"margin: 0; font-size: 14px;">P=C3=A9pini=C3=A8re d=
+'Entreprises innovantes - 100 impasse des Houill=C3=A8res, 13590, MEYREUIL<=
+/p></div> </td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"le=
+ft"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presen=
+tation" width=3D"100%" class=3D"r10-o" style=3D"table-layout: fixed; width:=
+ 100%;"><tr><td align=3D"center" valign=3D"top" class=3D"r14-i nl2go-defaul=
+t-textstyle" style=3D"font-family: arial,helvetica,sans-serif; word-break: =
+break-word; color: #3b3f44; font-size: 18px; line-height: 1.5; padding-top:=
+ 15px; text-align: center;"> <div><p style=3D"margin: 0; font-size: 14px;">=
+Cet email a =C3=A9t=C3=A9 envoy=C3=A9 =C3=A0 btellier@linagora.com</p></div=
+> </td> </tr></table></td> </tr><tr><td class=3D"r13-c" align=3D"left"> <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" =
+width=3D"100%" class=3D"r10-o" style=3D"table-layout: fixed; width: 100%;">=
+<tr><td align=3D"center" valign=3D"top" class=3D"r15-i nl2go-default-textst=
+yle" style=3D"font-family: arial,helvetica,sans-serif; word-break: break-wo=
+rd; color: #3b3f44; font-size: 18px; line-height: 1.5; text-align: center;"=
+> <div><p style=3D"margin: 0; font-size: 14px;">Vous l'avez re=C3=A7u car v=
+ous =C3=AAtes inscrit =C3=A0 notre newsletter.</p></div> </td> </tr></table=
+></td> </tr><tr><td class=3D"r13-c" align=3D"left"> <table cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=
+=3D"r10-o" style=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"cen=
+ter" valign=3D"top" class=3D"r16-i nl2go-default-textstyle" style=3D"font-f=
+amily: arial,helvetica,sans-serif; word-break: break-word; color: #3b3f44; =
+font-size: 18px; line-height: 1.5; padding-bottom: 15px; padding-top: 15px;=
+ text-align: center;"> <div><p style=3D"margin: 0; font-size: 14px;"><a hre=
+f=3D"https://985gf.r.a.d.sendibm1.com/mk/mr/sh/6rqJ8GoudeITPxc3twlTSIiIQQH/=
+JbyqA2qfbxSj" style=3D"color: #fe7502; text-decoration: underline;">Affiche=
+r dans le navigateur</a>| <a href=3D"https://985gf.r.a.d.sendibm1.com/mk/un=
+/sh/6rqJ8GqndAnmOWqVwJ5HcfD5AMn/LVA-q2SRSL8f" style=3D"color: #fe7502; text=
+-decoration: underline;">Se d=C3=A9sinscrire</a></p></div> </td> </tr></tab=
+le></td> </tr><tr><td class=3D"r17-c" align=3D"center"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; width: 100%;"=
+><tr><td valign=3D"top" class=3D"r18-i" style=3D"padding-bottom: 15px;"> <t=
+able width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation"><tr><td class=3D"r19-c" align=3D"center"> <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"129=
+" class=3D"r20-o" style=3D"table-layout: fixed;"><tr><td height=3D"48" styl=
+e=3D"font-size: 0px; line-height: 0px;"> <a href=3D"https://985gf.r.a.d.sen=
+dibm1.com/mk/cl/f/sh/6rqJfgq8dIPRPzt5tcxyGVWuLtl/g8KX7hFcTT12" sib_link_id=
+=3D"1" templating=3D"n"><img src=3D"https://985gf.img.a.d.sendibm1.com/im/s=
+h/VJSUxXbfSkpX.png?u=3D1vcqsYC5HMzcSMokurB45MvShhcIDd" width=3D"129" height=
+=3D"48" border=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"1=
+"></a></td> </tr></table></td> </tr></table></td> </tr></table></td> </tr><=
+/table></td> </tr></table></th> </tr></table></td> </tr></table></td> </tr>=
+</table></td> </tr></table>   </body></html>
+
+
+---------?=_77494-5431717321759--
+
+

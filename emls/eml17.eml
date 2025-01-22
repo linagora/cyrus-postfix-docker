@@ -1,0 +1,135 @@
+Return-Path: <SRS0=e9FY=UD=apache.org=apmail-btellier-owner@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-6.109999 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 31ff1c41
+          for <btellier@linagora.com>;
+          Sat, 11 Jan 2025 00:58:09 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 6558214073D
+	for <btellier@linagora.com>; Sat, 11 Jan 2025 00:58:09 +0000 (UTC)
+Received: from s602g.ik2.com (s602g.ik2.com [66.37.25.74])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 1CA321D5C6
+	for <btellier@linagora.com>; Sat, 11 Jan 2025 02:02:46 +0100 (CET)
+Received: from s214b.ik2.com
+	by s602g.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <apmail-btellier-owner@apache.org>)
+	id 1tWPpF-0005G3-K3
+	for btellier@linagora.com; Sat, 11 Jan 2025 00:58:07 +0000
+Received: from 3.227.148.255 by s214b.ik2.com (IK2 SMTP Server); Sat, 11 Jan 2025 00:58:05 +0000
+Received: from mail.apache.org (mailgw-he-de.apache.org [116.203.246.181])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mxout1-ec2-va.apache.org (ASF Mail Server at mxout1-ec2-va.apache.org) with ESMTPS id 18F5452C33
+	for <btellier@linagora.com>; Sat, 11 Jan 2025 00:58:03 +0000 (UTC)
+Received: (qmail 1067778 invoked by uid 998); 11 Jan 2025 00:57:59 -0000
+Delivered-To: apmail-btellier@apache.org
+Received: (qmail 1067606 invoked by uid 998); 11 Jan 2025 00:57:58 -0000
+Mailing-List: contact dev-help@apisix.apache.org; run by ezmlm
+Precedence: bulk
+List-Help: <mailto:dev-help@apisix.apache.org>
+List-Unsubscribe: <mailto:dev-unsubscribe@apisix.apache.org>
+List-Post: <mailto:dev@apisix.apache.org>
+List-Id: <dev.apisix.apache.org>
+Reply-To: dev@apisix.apache.org
+Delivered-To: mailing list dev@apisix.apache.org
+Delivered-To: btellier@linagora.com
+Received: (qmail 1067589 invoked by uid 116); 11 Jan 2025 00:57:58 -0000
+Received: from ec2-52-204-25-47.compute-1.amazonaws.com (HELO mailrelay1-ec2-va.apache.org) (52.204.25.47)
+ by apache.org (qpsmtpd/0.94) with ESMTP; Sat, 11 Jan 2025 00:57:58 +0000
+Authentication-Results: apache.org; auth=none
+Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com [209.85.217.48])
+	by mailrelay1-ec2-va.apache.org (ASF Mail Server at mailrelay1-ec2-va.apache.org) with ESMTPSA id CE5593F7AE
+	for <dev@apisix.apache.org>; Sat, 11 Jan 2025 00:57:57 +0000 (UTC)
+Received: by mail-vs1-f48.google.com with SMTP id ada2fe7eead31-4b24bc0cc65so1635706137.2
+        for <dev@apisix.apache.org>; Fri, 10 Jan 2025 16:57:57 -0800 (PST)
+X-Gm-Message-State: AOJu0Yzp2Rt8J2Wf+9wXjWqkPBu5IxqvxH+/2qElIWSdX4YQgmMVGpfM
+	OfRvEYXXFvt4Y5GvmqaWLK91Os4nnVRKvSh3AY/tQ6VPt4C75yUpZu5N2rQldVAjgFbWn/bkSeP
+	pHQig4RSj7YKxaP686bVCv/f6zwk=
+X-Google-Smtp-Source: AGHT+IHwLgdNmF6nPjOYxMJMn2AsQ1uqYh88Tbn/NjUPOAVMCsFxLmwNBn0LFwrbODnhNmQ/N3F0dywL7bOoY/dHUHM=
+X-Received: by 2002:a05:6102:3e0b:b0:4b2:48dd:aade with SMTP id
+ ada2fe7eead31-4b3d0da25cemr14299864137.12.1736557077545; Fri, 10 Jan 2025
+ 16:57:57 -0800 (PST)
+MIME-Version: 1.0
+References: <PAWPR06MB86662704309129873CB54F16861C2@PAWPR06MB8666.eurprd06.prod.outlook.com>
+In-Reply-To: <PAWPR06MB86662704309129873CB54F16861C2@PAWPR06MB8666.eurprd06.prod.outlook.com>
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Ming Wen <wenming@apache.org>
+Date: Sat, 11 Jan 2025 08:57:46 +0800
+X-Gmail-Original-Message-ID: <CAOqn2MF6ZH8zdTFpzWj2hVA-fMAMuZkMNPtQ1dwBT6AVaTvCKQ@mail.gmail.com>
+X-Gm-Features: AbW1kvb89TngMxJgbi7gx0eFvE6QCTZJlPUoq0juZ_hX4WeAF-it00PChkcGY1E
+Message-ID: <CAOqn2MF6ZH8zdTFpzWj2hVA-fMAMuZkMNPtQ1dwBT6AVaTvCKQ@mail.gmail.com>
+Subject: Re: Slack
+To: dev@apisix.apache.org
+Content-Type: multipart/alternative; boundary="000000000000bd5143062b63b332"
+X-SF-RX-Return-Path: <apmail-btellier-owner@apache.org>
+X-SF-Originating-IP: 3.227.148.255
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 0.1
+X-SF-SRS: Sender address rewritten from <apmail-btellier-owner@apache.org> to <SRS0=e9FY=UD=apache.org=apmail-btellier-owner@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+--000000000000bd5143062b63b332
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+invited
+
+Thanks,
+Ming Wen, Apache APISIX PMC Chair
+
+
+On Fri, 10 Jan 2025 at 22:08, LUCIA CABANILLAS RODRIGUEZ <
+lucia.cabanillasrodriguez@telefonica.com> wrote:
+
+> Hi Team!
+>
+> I would like to join the APISIX Slack Channel. Could someone please help
+> me with an invite?
+>
+> Thanks,
+> Luc=C3=ADa
+>
+> ________________________________
+>
+> Este mensaje y sus adjuntos se dirigen exclusivamente a su destinatario,
+> puede contener informaci=C3=B3n privilegiada o confidencial y es para uso
+> exclusivo de la persona o entidad de destino. Si no es usted. el
+> destinatario indicado, queda notificado de que la lectura, utilizaci=C3=
+=B3n,
+> divulgaci=C3=B3n y/o copia sin autorizaci=C3=B3n puede estar prohibida en=
+ virtud de
+> la legislaci=C3=B3n vigente. Si ha recibido este mensaje por error, le ro=
+gamos
+> que nos lo comunique inmediatamente por esta misma v=C3=ADa y proceda a s=
+u
+> destrucci=C3=B3n.
+>
+> The information contained in this transmission is confidential and
+> privileged information intended only for the use of the individual or
+> entity named above. If the reader of this message is not the intended
+> recipient, you are hereby notified that any dissemination, distribution o=
+r
+> copying of this communication is strictly prohibited. If you have receive=
+d
+> this transmission in error, do not read it. Please immediately reply to t=
+he
+> sender that you have received this communication in error and then delete
+> it.
+>
+> Esta mensagem e seus anexos se dirigem exclusivamente ao seu destinat=C3=
+=A1rio,
+> pode conter informa=C3=A7=C3=A3o privilegiada ou confidencial e =C3=A9 pa=
+ra uso exclusivo
+> da pessoa ou entidade de destino. Se n=C3=A3o =C3=A9 vossa senhoria o des=
+tinat=C3=A1rio
+> indicado, fica notificado de que a leitura, utiliza=C3=A7=C3=A3o, divulga=
+=C3=A7=C3=A3o e/ou
+> c=C3=B3pia sem autoriza=C3=A7=C3=A3o pode estar proibida em virtude da le=
+gisla=C3=A7=C3=A3o vigente.
+> Se recebeu esta mensagem por erro, rogamos-lhe que nos o comunique
+> imediatamente por esta mesma via e proceda a sua destrui=C3=A7=C3=A3o
+>
+
+--000000000000bd5143062b63b332--
+

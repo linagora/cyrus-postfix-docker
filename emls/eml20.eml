@@ -1,0 +1,197 @@
+Return-Path: <SRS0=msKM=UJ=kandmsolutions.net=nfaccident@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-0.409972 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID f6fcce4f
+          for <btellier@linagora.com>;
+          Fri, 17 Jan 2025 01:16:12 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 1998A140AF9
+	for <btellier@linagora.com>; Fri, 17 Jan 2025 01:16:12 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 589481D5C6
+	for <btellier@linagora.com>; Fri, 17 Jan 2025 02:20:57 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <nfaccident@kandmsolutions.net>)
+	id 1tYay0-00048r-TB
+	for benoit.tellier@linagora.com; Fri, 17 Jan 2025 01:16:10 +0000
+Received: from 160.191.53.7 by s602e.ik2.com (IK2 SMTP Server); Fri, 17 Jan 2025 01:16:08 +0000
+Precedence: BULK
+List-ID: <o.kandmsolutions.net>
+List-Description: "o.kandmsolutions.net"
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <mailto:uu@o.kandmsolutions.net>, <https://e.lastminutetoys.net/un.html>
+X-Mailer: Apple Mail (2.3826.300.87.4.3)
+X-Proofpoint-GUID: ufKywCaX48wU-tCz2rEsarEmSp1TCLnu
+X-Proofpoint-ORIG-GUID: ufKywCaX48wU-tCz2rEsarEmSp1TCLnu
+Message-Id: <5E07F46F-E604-4710-9A65-6B14AD893209@mac.com>
+Date: Fri, 27 Dec 2024 18:29:34 +0000
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Top Luxury Watches Only $250 <nfaccident@kandmsolutions.net>
+To: benoit.tellier <benoit.tellier@linagora.com>
+Subject: Unveil Luxury: Premium Watches at $250!
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="windows-1255"
+Content-Transfer-Encoding: 8bit
+X-SF-RX-Return-Path: <nfaccident@kandmsolutions.net>
+X-SF-Originating-IP: 160.191.53.7
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-Rejection-Reason: 3 - 557 Your IP 160.191.53.7 does not have a reverse DNS entry. Disconnecting...
+X-SF-Score: 18.8
+X-SF-Alias: btellier@linagora.com
+X-SF-SRS: Sender address rewritten from <nfaccident@kandmsolutions.net> to <SRS0=msKM=UJ=kandmsolutions.net=nfaccident@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD><TITLE>Unveil Luxury: Premium Watches at $250!</TITLE>
+<META charset=UTF-8>
+<META name=viewport content="width=device-width, initial-scale=1.0">
+<STYLE>
+        /* Reset and General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6e6;
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+        }
+        .email-container {
+            max-width: 650px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        /* Header Section */
+        .header {
+            position: relative;
+            text-align: center;
+        }
+        .header a img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .header .alt-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 87, 34, 0.8);
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+        /* Main Content */
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 26px;
+            color: #e65100;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .content a.button {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: #ff5722;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .content a.button:hover {
+            background-color: #e64a19;
+        }
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+            background-color: #f3f3f3;
+        }
+        .feature-item {
+            flex: 1 1 45%;
+            margin: 10px 5%;
+            text-align: center;
+        }
+        .feature-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+        .feature-item h3 {
+            font-size: 18px;
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+        .feature-item p {
+            font-size: 14px;
+            color: #555555;
+        }
+        /* Footer Section */
+        .footer {
+            background-color: #ffccbc;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #5d4037;
+        }
+        .footer a {
+            color: #d84315;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive Design */
+        @media only screen and (max-width: 600px) {
+            .features {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .feature-item {
+                flex: 1 1 100%;
+                margin: 15px 0;
+            }
+        }
+    </STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.17037"><meta content="text/html; charset=windows-1255" http-equiv=Content-Type>
+</head>
+<BODY>
+<DIV class=email-container><!-- Header Section -->
+<DIV class=header><A href="https://e.lastminutetoys.net/olks/iskfe.html"><IMG 
+onerror="this.style.display='none'; this.parentElement.querySelector('.alt-text').style.display='block';" 
+alt="Elevate Your Time with Our Luxury Watches" 
+src="https://e.lastminutetoys.net/2.jpg"> 
+<DIV class=alt-text>Discover Timeless Elegance!</DIV></A></DIV><!-- Main Content Section -->
+<DIV class=content>
+<H1><A style="TEXT-DECORATION: none; COLOR: #e65100" 
+href="https://e.lastminutetoys.net/olks/iskfe.html">Unveil the Art of 
+Timekeeping</A></H1>
+<P>Step into a world where sophistication meets precision. Our exclusive 
+collection of luxury watches is designed for those who appreciate the finer 
+things in life. Each watch is crafted with meticulous attention to detail, 
+ensuring both style and functionality. </P><A class=button 
+href="https://e.lastminutetoys.net/olks/iskfe.html">Explore Now</A> </DIV><!-- Footer Section -->
+<DIV class=footer>
+<P>&#65533; 2024 Last Minute Toys. All rights reserved.<BR><A 
+href="https://e.lastminutetoys.net/un.html">Unsubscribe</A> 
+</P></DIV></DIV></BODY></HTML>
+
+

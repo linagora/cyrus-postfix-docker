@@ -1,0 +1,99 @@
+Return-Path: <SRS0=P5Dl=UF=lists.fosdem.org=devroom-managers-bounces@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-3.11 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 8194783f
+          for <btellier@linagora.com>;
+          Mon, 13 Jan 2025 16:35:23 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 32FB1140743
+	for <btellier@linagora.com>; Mon, 13 Jan 2025 16:35:23 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 34B5E1D5C6
+	for <btellier@linagora.com>; Mon, 13 Jan 2025 17:40:04 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <devroom-managers-bounces@lists.fosdem.org>)
+	id 1tXNPL-0002Yz-PG
+	for btellier@linagora.com; Mon, 13 Jan 2025 16:35:21 +0000
+Received: from 31.22.22.142 by s602e.ik2.com (IK2 SMTP Server); Mon, 13 Jan 2025 16:35:19 +0000
+X-Comment: SPF check N/A for local connections - client-ip=::1; helo=mail.fosdem.org; envelope-from=devroom-managers-bounces@lists.fosdem.org; receiver=<UNKNOWN> 
+Received: from mail.fosdem.org (localhost [IPv6:::1])
+	by mail.fosdem.org (Postfix) with ESMTP id D3C53200911;
+	Mon, 13 Jan 2025 16:35:16 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=188.165.51.139;
+ helo=mail-0301.mail-europe.com; envelope-from=paul@ouestware.com;
+ receiver=<UNKNOWN> 
+Received: from mail-0301.mail-europe.com (mail-0301.mail-europe.com
+ [188.165.51.139])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.fosdem.org (Postfix) with ESMTPS id 4C9372008CE
+ for <devroom-managers@lists.fosdem.org>; Mon, 13 Jan 2025 16:35:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ouestware.com;
+ s=protonmail; t=1736786100; x=1737045300;
+ bh=DmuMZABvdTYOjHDnME95/ZVa6Sp06K93mg5N+9MTW3I=;
+ h=Date:To:From:Cc:Subject:Message-ID:In-Reply-To:References:
+ Feedback-ID:From:To:Cc:Date:Subject:Reply-To:Feedback-ID:
+ Message-ID:BIMI-Selector:List-Unsubscribe:List-Unsubscribe-Post;
+ b=LzCiS3RbZCD+/WdR1SWVb/0hwfTK4f56awnki3px+zC5t/vAtcMagM33Mcpl22q32
+ xKFNvvL/sAs+BIFr6PSHCYzyakF5UbA/VxCzjkEkrvdVJy2y+ERuiu5ao86MfMWBx9
+ o+gsLw/GAIqZ9ZEQuo9niHFxg+pLAPLp0aYI86pA=
+Date: Mon, 13 Jan 2025 16:34:54 +0000
+To: Vasil Kolev <vasil@ludost.net>
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Paul <paul@ouestware.com>
+Message-ID: <WHr-foLH-90RBujO82sCQP5UzNuthWVSbS7YWgNtn_a5uVGAmgd3UO5Goi68rUCVqfzvM172RfeVH4yf2-wN-oLuadKQjoLjErO-FN0DrjE=@ouestware.com>
+In-Reply-To: <20250113182401.6aa21dad@kvothe.home.ludost.net>
+References: <NhZKhJT4HBoKclVMGT5KrxmqFoOjJM8iTv8iWN5F-CO4VpVnTGlIeg6yP3X4Q49VBNrDMcSIxDNqFaTsO7C4UVXq-RpA0MzYg833socFgM0=@ouestware.com>
+ <20250113182401.6aa21dad@kvothe.home.ludost.net>
+Feedback-ID: 15458775:user:proton
+X-Pm-Message-ID: 6ce9d192e7f31674998a0a34b1772fa4cb62bfcb
+MIME-Version: 1.0
+Subject: Re: [devroom-managers] [FOSDEM-Video] broadcast audio from
+ presenting latptop
+X-BeenThere: devroom-managers@lists.fosdem.org
+X-Mailman-Version: 2.1.23
+Precedence: list
+List-Id: Closed list for developer room managers
+ <devroom-managers.lists.fosdem.org>
+List-Unsubscribe: <https://lists.fosdem.org/options/devroom-managers>,
+ <mailto:devroom-managers-request@lists.fosdem.org?subject=unsubscribe>
+List-Archive: <https://lists.fosdem.org/private/devroom-managers/>
+List-Post: <mailto:devroom-managers@lists.fosdem.org>
+List-Help: <mailto:devroom-managers-request@lists.fosdem.org?subject=help>
+List-Subscribe: <https://lists.fosdem.org/listinfo/devroom-managers>,
+ <mailto:devroom-managers-request@lists.fosdem.org?subject=subscribe>
+Cc: video <video@fosdem.org>,
+ FOSDEM devroom managers <devroom-managers@lists.fosdem.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+Errors-To: devroom-managers-bounces@lists.fosdem.org
+Sender: "devroom-managers" <devroom-managers-bounces@lists.fosdem.org>
+X-SF-RX-Return-Path: <devroom-managers-bounces@lists.fosdem.org>
+X-SF-Originating-IP: 31.22.22.142
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 5.9
+X-SF-SRS: Sender address rewritten from <devroom-managers-bounces@lists.fosdem.org> to <SRS0=P5Dl=UF=lists.fosdem.org=devroom-managers-bounces@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+SGkgVmFzaWwKClRoYW5rcyBmb3IgdGhlIHF1aWNrIGFuc3dlci4KT2sgSSdsbCB3YXJuIHRoZSBz
+cGVha2VyIGFuZCBkbyB3aXRob3V0LgoKQmVzdCByZWdhcmRzLAoKUGF1bAoKCgoKTGUgbHVuZGkg
+MTMgamFudmllciAyMDI1IMOgIDE3OjI0LCBWYXNpbCBLb2xldiA8dmFzaWxAbHVkb3N0Lm5ldD4g
+YSDDqWNyaXTCoDoKCj4gCj4gCj4gSGkgUGF1bCwKPiAKPiBUaGlzIHllYXIgLSBubywgaXQgd2Fz
+IGluIHRoZSBwbGFucywgYnV0IHdlIGRpZG4ndCBnZXQgdG8gaXQuIEEgKHZlcnkKPiBiYWQpIG9w
+dGlvbiBpcyB0byBwdXQgdGhlIGxhcGVsIG1pYyBvbiB0aGUgbGFwdG9wJ3Mgc3BlYWtlcnMgZm9y
+IHRoZQo+IGR1cmF0aW9uIG9mIHRoZSB2aWRlby4KPiAKPiBPbiBNb24sIDEzIEphbiAyMDI1IDE2
+OjIxOjEyICswMDAwCj4gUGF1bCBwYXVsQG91ZXN0d2FyZS5jb20gd3JvdGU6Cj4gCj4gPiBEZWFy
+IHZpZGVvIHRlYW0sCj4gPiAKPiA+IFdpbGwgaXQgYmUgcG9zc2libGUgdG8gYnJvYWRjYXN0IGF1
+ZGlvIGZyb20gYSBsYXB0b3AgcHJlc2VudGluZyBpbgo+ID4gdGhlIGxpdmUgc3RyZWFtLCB2aWRl
+byByZWNvcmQgYW5kIGxpdmUgaW4gdGhlIHJvb20/IFRoZSB1c2FnZSBpcyBmb3IKPiA+IGEgc3Bl
+YWtlciB3aG8gaGFzIGEgdmlkZW8gb3IgZGVtbyBpbmNsdWRpbmcgc291bmQuCj4gPiAKPiA+IEkg
+YW0gYXNraW5nIGZvciB0aGUgb3BlbiByZXNlYXJjaCBkZXZyb29tIHBsYW5uZWQgaW4gdGhlCj4g
+PiBBVzEuMTI2IHJvb20uCj4gPiAKPiA+IFRoYW5rIHlvdSBmb3IgeW91ciBoZWxwLgo+ID4gCj4g
+PiBCZXN0IHJlZ2FyZHMsCj4gPiBQYXVsCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmRldnJvb20tbWFuYWdlcnMgbWFpbGluZyBsaXN0CmRldnJvb20tbWFu
+YWdlcnNAbGlzdHMuZm9zZGVtLm9yZwpodHRwczovL2xpc3RzLmZvc2RlbS5vcmcvbGlzdGluZm8v
+ZGV2cm9vbS1tYW5hZ2Vycw==
+

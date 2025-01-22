@@ -83,6 +83,14 @@ curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" -
 }' http://localhost:8008/jmap/ | jq
 ```
 
+# CONNECT FROM TMAIL-FRONTEND
+1. Start cyrus (cf above) ;
+2. Find a tmail-flutter version that is compatible with cyrus (mine can be found [here](https://github.com/florentos17/tmail-flutter/tree/Tmail-Front-On-Cyrus)), run `flutter build apk` and send the generated `.apk` file to your android device. Alternatively, you can use an emulator ;
+3. Upon starting the app, select `Use company server`. You will be prompted for a server address.
+   - If connecting from an emulator running on the same machine as cyrus, the server URL is `https://10.0.2.2`, a special address that the emulator resolves as localhost on the host machine ;
+   - If connecting from a physical device, you have to find the IP address of the machine running cyrus. On Linux/Mac, run `ip a` in a terminal and locate the IP under the active network interface (listed with `state UP`). It should look like `10.x.x.x` or `192.168.x.x`. Then you can input `https://x.x.x.x` as the server address.
+4. log in using the credentials from step 1 (eg, `bob@example.com` and `secret`).
+
 # CONFIGURATION
 ### Environment variables
 

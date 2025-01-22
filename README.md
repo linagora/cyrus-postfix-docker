@@ -5,6 +5,18 @@ Docker image based on last Debian stable release. It embeds:
  * cyrus-imapd (backports version)
 
 # HOW TO START
+
+Start by creating SSL keys:
+
+```
+sudo openssl genrsa -out nginx/ssl/key.pem 2048
+sudo openssl req -new -x509 -key nginx/ssl/key.pem -out nginx/ssl/cert.pem -days 365
+sudo chmod 600 nginx/ssl/key.pem
+```
+
+Then:
+
+
 ```
 docker build -t cyrus-local .
 docker compose up

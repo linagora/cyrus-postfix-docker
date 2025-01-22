@@ -1,4 +1,4 @@
-# yadd/cyrus-imapd-postfix
+# linagora/cyrus-imapd-postfix
 
 Docker image based on last Debian stable release. It embeds:
  * postfix

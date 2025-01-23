@@ -1,0 +1,127 @@
+Return-Path: <hosting@linagora.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=0.0 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 1a6b3e33
+          for <btellier@linagora.com>;
+          Wed, 15 Jan 2025 08:26:12 +0000 (UTC)
+Received: from smtp.linagora.com (smtp.linagora.com [54.36.8.78])
+	by incoming.linagora.com (Postfix) with ESMTPS id DC9951408AB
+	for <btellier@linagora.com>; Wed, 15 Jan 2025 08:26:12 +0000 (UTC)
+Received: from localhost.localdomain (ic.linagora.dc2 [172.24.128.68])
+	by smtp.linagora.com (Postfix) with ESMTP id D3E63EE2E3
+	for <btellier@linagora.com>; Wed, 15 Jan 2025 09:30:54 +0100 (CET)
+Date: Wed, 15 Jan 2025 08:26:12 +0000
+X-LINAGORA-Copy-Delivery-Done: 1
+From: =?UTF-8?B?UmVuw6kgQ09SRElFUiAoQHJjb3JkaWVyKQ==?= <hosting@linagora.com>
+Reply-To: GitLab <noreply@linagora.com>
+To: btellier@linagora.com
+Message-ID: <246cea9b7b9e01d0585e4d6ed7ebeada@ci.linagora.com>
+In-Reply-To: <merge_request_25051@ci.linagora.com>
+References: <merge_request_25051@ci.linagora.com>
+Subject: Re: cnb-stg-apps | Tmail backend 1.0.1 (!131)
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6787712461aa6_20f1da580815318d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-GitLab-Project: cnb-stg-apps
+X-GitLab-Project-Id: 3904
+X-GitLab-Project-Path: linagora/lrs/saas/deployments/cnb/cnb-stg-apps
+List-Id: linagora/lrs/saas/deployments/cnb/cnb-stg-apps
+ <3904.cnb-stg-apps.cnb.deployments.saas.lrs.linagora.ci.linagora.com>
+List-Unsubscribe: <https://ci.linagora.com/-/sent_notifications/4348cd181ba6441eb2019ccdc249cb8d/unsubscribe?force=true>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-GitLab-MergeRequest-ID: 25051
+X-GitLab-MergeRequest-IID: 131
+X-GitLab-MergeRequest-State: opened
+X-GitLab-Reply-Key: 4348cd181ba6441eb2019ccdc249cb8d
+Auto-Submitted: auto-generated
+X-Auto-Response-Suppress: All
+
+
+----==_mimepart_6787712461aa6_20f1da580815318d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Ren=C3=A9 CORDIER pushed new commits to merge request !131
+Merge request URL: https://ci.linagora.com/linagora/lrs/saas/deployments/=
+cnb/cnb-stg-apps/-/merge_requests/131
+
+
+* 2b208e84 - Upgrade tmail chart to latest 5.3.1 and enable ws ping inter=
+val
+
+-- =
+
+View it on GitLab: https://ci.linagora.com/linagora/lrs/saas/deployments/=
+cnb/cnb-stg-apps/-/merge_requests/131
+You're receiving this email because of your account on ci.linagora.com.
+
+
+
+----==_mimepart_6787712461aa6_20f1da580815318d
+Content-Type: text/html;
+ charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en" style='--code-editor-font: var(--default-mono-font, "GitLab Mono"), JetBrains Mono, Menlo, DejaVu Sans Mono, Liberation Mono, Consolas, Ubuntu Mono, Courier New, andale mono, lucida console, monospace;'>
+<head>
+<meta content="text/html; charset=US-ASCII" http-equiv="Content-Type">
+<title>
+GitLab
+</title>
+
+<style data-premailer="ignore" type="text/css">
+a { color: #1068bf; }
+</style>
+
+<style>img {
+max-width: 100%; height: auto;
+}
+body {
+font-size: .875rem;
+}
+body {
+-webkit-text-shadow: rgba(255,255,255,.01) 0 0 1px;
+}
+body {
+font-family: "GitLab Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,Cantarell,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; font-size: inherit;
+}
+</style>
+</head>
+<body style='font-size: inherit; -webkit-text-shadow: rgba(255,255,255,.01) 0 0 1px; font-family: "GitLab Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,Cantarell,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+<div class="content">
+
+<h3 style="margin-top: 20px; margin-bottom: 10px;">
+Ren&#233; CORDIER pushed new commits to merge request <a href="https://ci.linagora.com/linagora/lrs/saas/deployments/cnb/cnb-stg-apps/-/merge_requests/131">!131</a>
+</h3>
+<ul>
+<li>
+<a href="https://ci.linagora.com/linagora/lrs/saas/deployments/cnb/cnb-stg-apps/-/commit/2b208e84">2b208e84</a>
+ - Upgrade tmail chart to latest 5.3.1 and enable ws ping interval
+</li>
+</ul>
+
+</div>
+<div class="footer" style="margin-top: 10px;">
+<p style="font-size: small; color: #737278;">
+&#8212;
+<br>
+<a href="https://ci.linagora.com/linagora/lrs/saas/deployments/cnb/cnb-stg-apps/-/merge_requests/131">View it on GitLab</a>.
+<br>
+You're receiving this email because of your account on <a target="_blank" rel="noopener noreferrer" href="https://ci.linagora.com">ci.linagora.com</a>. <a href="https://ci.linagora.com/-/sent_notifications/4348cd181ba6441eb2019ccdc249cb8d/unsubscribe" target="_blank" rel="noopener noreferrer">Unsubscribe</a> from this thread &#183; <a href="https://ci.linagora.com/-/profile/notifications" target="_blank" rel="noopener noreferrer" class="mng-notif-link">Manage all notifications</a> &#183; <a href="https://ci.linagora.com/help" target="_blank" rel="noopener noreferrer" class="help-link">Help</a>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"EmailMessage","action":{"@type":"ViewAction","name":"View Merge request","url":"https://ci.linagora.com/linagora/lrs/saas/deployments/cnb/cnb-stg-apps/-/merge_requests/131"}}</script>
+
+
+</p>
+</div>
+</body>
+</html>
+
+----==_mimepart_6787712461aa6_20f1da580815318d--

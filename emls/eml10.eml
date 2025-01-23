@@ -1,0 +1,108 @@
+Return-Path: <SRS0=wIRq=UN=james.apache.org=server-dev-return-86228-btellier=linagora.com@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-3.11 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 9a8b5e56
+          for <btellier@linagora.com>;
+          Tue, 21 Jan 2025 08:20:07 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id D4669140555
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 08:20:07 +0000 (UTC)
+Received: from s480e.ik2.com (s480e.ik2.com [64.38.239.84])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 795541D5C6
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 09:24:58 +0100 (CET)
+Received: from s480d.ik2.com
+	by s480e.ik2.com with esmtps (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <server-dev-return-86228-btellier=linagora.com@james.apache.org>)
+	id 1ta9UP-0005qV-Hu
+	for btellier@linagora.com; Tue, 21 Jan 2025 08:20:06 +0000
+Received: from 95.216.194.37 by s480d.ik2.com (IK2 SMTP Server); Tue, 21 Jan 2025 08:20:00 +0000
+Received: from mail.apache.org (mailgw-he-de.apache.org [IPv6:2a01:4f8:c2c:d4aa::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mxout1-he-de.apache.org (ASF Mail Server at mxout1-he-de.apache.org) with ESMTPS id 979E36499C
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 08:19:10 +0000 (UTC)
+Received: (qmail 958757 invoked by uid 998); 21 Jan 2025 08:19:07 -0000
+Mailing-List: contact server-dev-help@james.apache.org; run by ezmlm
+Precedence: bulk
+List-Unsubscribe: <mailto:server-dev-unsubscribe@james.apache.org>
+List-Help: <mailto:server-dev-help@james.apache.org>
+List-Post: <mailto:server-dev@james.apache.org>
+List-Id: "James Developers List" <server-dev.james.apache.org>
+Reply-To: "James Developers List" <server-dev@james.apache.org>
+Delivered-To: mailing list server-dev@james.apache.org
+Delivered-To: btellier@linagora.com
+Received: (qmail 958722 invoked by uid 116); 21 Jan 2025 08:19:07 -0000
+Received: from ec2-52-204-25-47.compute-1.amazonaws.com (HELO mailrelay1-ec2-va.apache.org) (52.204.25.47)
+ by apache.org (qpsmtpd/0.94) with ESMTP; Tue, 21 Jan 2025 08:19:07 +0000
+Authentication-Results: apache.org; auth=none
+Received: from gitbox3-he-fi.apache.org (unknown [135.181.246.12])
+	by mailrelay1-ec2-va.apache.org (ASF Mail Server at mailrelay1-ec2-va.apache.org) with ESMTPS id A3D5C403B0
+	for <server-dev@james.apache.org>; Tue, 21 Jan 2025 08:19:06 +0000 (UTC)
+Received: by gitbox3-he-fi.apache.org (ASF Mail Server at gitbox3-he-fi.apache.org, from userid 33)
+	id B703CD0307E; Tue, 21 Jan 2025 08:19:05 +0000 (UTC)
+Date: Tue, 21 Jan 2025 08:19:06 +0000
+To: "server-dev@james.apache.org" <server-dev@james.apache.org>
+Subject: (james-jspf) 01/03: Fix DefaultSPFResolverTest
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+X-LINAGORA-Copy-Delivery-Done: 1
+From: btellier@apache.org
+In-Reply-To: 
+ <173744754564.605600.14743805151206629205@gitbox3-he-fi.apache.org>
+References: 
+ <173744754564.605600.14743805151206629205@gitbox3-he-fi.apache.org>
+X-Git-Host: gitbox3-he-fi.apache.org
+X-Git-Repo: james-jspf
+X-Git-Refname: refs/heads/master
+X-Git-Reftype: branch
+X-Git-Rev: 91c8669e8fa88bc61b333a6a50d69c269dd200c0
+X-Git-NotificationType: diff
+X-Git-Multimail-Version: 1.5.dev
+Auto-Submitted: auto-generated
+Message-Id: <20250121081905.B703CD0307E@gitbox3-he-fi.apache.org>
+X-SF-RX-Return-Path: <server-dev-return-86228-btellier=linagora.com@james.apache.org>
+X-SF-HELO-Domain: mxout1-he-de.apache.org
+X-SF-Originating-IP: 95.216.194.37
+X-SF-WhiteListedReason: Whitelisted Email From Domain
+X-SF-Score: 
+X-SF-SRS: Sender address rewritten from <server-dev-return-86228-btellier=linagora.com@james.apache.org> to <SRS0=wIRq=UN=james.apache.org=server-dev-return-86228-btellier=linagora.com@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+This is an automated email from the ASF dual-hosted git repository.
+
+btellier pushed a commit to branch master
+in repository https://gitbox.apache.org/repos/asf/james-jspf.git
+
+commit 91c8669e8fa88bc61b333a6a50d69c269dd200c0
+Author: Emerson Pinter <e@pinter.dev>
+AuthorDate: Sat Jan 18 02:48:39 2025 -0300
+
+    Fix DefaultSPFResolverTest
+    
+    SPF should return 'none' if domain is not found
+---
+ .../src/test/java/org/apache/james/jspf/DefaultSPFResolverTest.java     | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/resolver/src/test/java/org/apache/james/jspf/DefaultSPFResolverTest.java b/resolver/src/test/java/org/apache/james/jspf/DefaultSPFResolverTest.java
+index cb6acad..fa5b70e 100644
+--- a/resolver/src/test/java/org/apache/james/jspf/DefaultSPFResolverTest.java
++++ b/resolver/src/test/java/org/apache/james/jspf/DefaultSPFResolverTest.java
+@@ -27,6 +27,6 @@ public class DefaultSPFResolverTest {
+     @Test
+     public void shouldHandleNotFound() {
+         String spfResult = new DefaultSPF().checkSPF("207.54.72.202","do_not_reply@reyifglerifwukfvbdjhrkbvebvekvfulervkerkeruerbeb.de","reyifglerifwukfvbdjhrkbvebvekvfulervkerkeruerbeb.de").getResult();
+-        Assert.assertEquals("neutral", spfResult);
++        Assert.assertEquals("none", spfResult);
+     }
+ }
+
+
+---------------------------------------------------------------------
+To unsubscribe, e-mail: server-dev-unsubscribe@james.apache.org
+For additional commands, e-mail: server-dev-help@james.apache.org
+
+

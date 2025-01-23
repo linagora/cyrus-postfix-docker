@@ -1,0 +1,580 @@
+Return-Path: <SRS0=HKCJ=UM=postoffice2-dfactory.com=facteur7818@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-1.188855 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID d7a37621
+          for <btellier@linagora.com>;
+          Mon, 20 Jan 2025 11:57:58 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 86FC8140AF9
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 11:57:58 +0000 (UTC)
+Received: from s602i.ik2.com (s602i.ik2.com [66.37.25.76])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id EC63E1D5C6
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 13:02:47 +0100 (CET)
+Received: from s214b.ik2.com
+	by s602i.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <facteur7818@postoffice2-dfactory.com>)
+	id 1tZqPg-0000Qd-11
+	for btellier@linagora.com; Mon, 20 Jan 2025 11:57:57 +0000
+Received: from 62.193.41.84 by s214b.ik2.com (IK2 SMTP Server); Mon, 20 Jan 2025 11:57:51 +0000
+Received: from MacMini-Mailer3 (unknown [10.0.1.21])
+	by mel.postoffice2-dfactory.com (Postfix) with ESMTP id 8B0611041295
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 12:57:47 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+	d=postoffice2-dfactory.com; s=dkim; t=1737374267;
+	bh=alt5jBEIgh3pqVeyWqHKbjcB2ebZ2mW6qxyv8j8+iEs=;
+	h=Date:To:From:Reply-To:Subject:List-Unsubscribe;
+	b=PSqAVmtgyJZWUDRgnxuMGOssdbe+oGFBK1nmWpt2K4g1h+2lEhCWgl+kgZYuoxp+i
+	 E3Ph0y6uO+d1topLkcc2eZr1SfBM1Dqg5npAPcJN7MrUO3u8EDIeH7eYODaYCxnT92
+	 SyogSg0sGI9VsCSlVBGjomaGMG+9rISDkuKqOZkzRV4q4btzOFy4CmDaVKeuU3w1mO
+	 C9AeeTxbDWzFaJGX1FrSXcQHoFoB8oBgGF0lmjS+IM4xynokVpoMlzs0Uwd648QC3C
+	 ZjKiPn16ADjwWJdl1NOzD67nsfVo/YGNzd+yOhrRh6YeiBDd0jiQPi1aW+SOCde5gK
+	 6FZ7SX12XcgH15kyWGq4CZSXVf08nsj2oRBTaKkL2qiU1RODC9ZxxGSNZ917Uwkk1e
+	 b7et83hPXpmJtfpCCcythsZRZ86Swe1err/P3Zt90t5BDkUQ9ente+srwlPujPuCXb
+	 Jrdj8p6pz+jWQUEef9Uy5kYzceDFR+RQjFaNQJJB2TdLd1CNgtefMBhm9DdaU0/8Js
+	 4LWBLdo1eJPR2BoA1kHEk9GpdsL6YsZX95RvZza2Y2hHt8XVRhNezbeScrj8Xnh0hb
+	 vdc7BLNK+EMqCvp0Qm6Z1M4ncdNuumC3t4eiflIHUwgsOei1YonTvH91sBdAD6PIZq
+	 xE1asnCpS4DIU1H853J1IIG8=
+Message-ID: <20250120125747.1604015959.0DF247F60201N@postoffice2-dfactory.com>
+X-Mailer: SMTPit Pro (OSX 6.0.0)
+Mime-Version: 1.0
+Date: Mon, 20 Jan 2025 12:57:47 +0100
+To: btellier@linagora.com
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Digital Workplace <facteur7818@postoffice2-dfactory.com>
+Reply-To: facteur7818@postoffice2-dfactory.com
+Subject: =?ISO-8859-1?B?MTkrMjAgbWFycyA6OiBMZXMgQ29uZulyZW5jZXMgKGludHJhbmV0LCB0cmF2YWlsIGNvbGxhYm9yYXRpZiwgUlNFLi4uKQ==?=
+List-Unsubscribe: =?ISO-8859-1?B?PGh0dHA6Ly93d3cucG9zdG9mZmljZTItZGZhY3RvcnkuY29tL0FQSS9kZXMvOTk4Lzc4MTgvQlRMNTc4NzYxLzAyNi8+LDxtYWlsdG86aW5mb3Byb21vdGlvbnNAZGZhY3RvcnkuZnI/c3ViamVjdD0oNzgxOCkgRGVtYW5kZSBkZSBkZXNhYm9ubmVtZW50IGRlcyBpbmZvcyBEaWdpdGFsIFdvcmtwbGFjZT4=?=
+EMID: BTL578761F-EMID
+Content-Type: multipart/alternative;
+    boundary="= Multipart Alternative Boundary 20250120125747.1604015959"
+X-SF-RX-Return-Path: <facteur7818@postoffice2-dfactory.com>
+X-SF-Originating-IP: 62.193.41.84
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 7.3
+X-SF-SRS: Sender address rewritten from <facteur7818@postoffice2-dfactory.com> to <SRS0=HKCJ=UM=postoffice2-dfactory.com=facteur7818@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+This is a Multipart MIME Message.
+
+--= Multipart Alternative Boundary 20250120125747.1604015959
+Content-Type: text/plain; charset="ISO-8859-1"; format=flowed
+Content-Transfer-Encoding: quoted-printable
+
+si vous ne parvenez pas =E0 lire ce message, nous vous invitons =E0 =
+suivre ce lien
+en parall=E8les :
+
+
+19 & 20 mars 2025Paris Porte de Versailles
+EXPOSITION | CONF=C9RENCES | ATELIERS
+Le Salon de la Digital Workplace, de l Intranet, du Collaboratif, de la =
+Communication Interne et de l Exp=E9rience Collaborateur
+Les Conf=E9rences =E0 ne surtout pas manquer !
+Les meilleurs experts en Travail Collaboratif, Intranet et Extranet, =
+Blogs projet, Digital Workplace, Microblogging, Espaces participatifs =
+et communautaires, Intranet 2.0, R=E9seaux Sociaux d'Entreprise, =
+Widgets, Communication Unifi=E9e, Web TV & Web Cast, KM, Gestion de =
+contenu, Chatbots et Intelligence Artificielle partagent leurs =
+comp=E9tences et leurs exp=E9riences !
+Pour EXPOSER
+Pour VISITER et S'INSCRIRE AUX CONF=C9RENCES
+
+Transformation de l exp=E9rience collaborateur et de l environnement =
+digital de travail : l IA, une vraie r=E9volution ? Quels d=E9fis pour =
+2025 ?
+Plateforme Collaborateur, Digital Workplace, Intranet, Collaboratif : =
+quels usages de l IA g=E9n=E9rative en interne ?
+D=E9ployer une Digital Workplace au service de l efficacit=E9 =
+individuelle et collective
+Travail collaboratif & solutions collaboratives : quels sont les outils =
+incontournables et les innovations pour 2025 ?
+Plateforme collaborateur, Solutions Collaboratives et de Communication, =
+Digital Workplace, R=E9seau social interne, Intranet Collaboratif : =
+comment choisir le bon outil en 2025 ? Pour quels usages et ROI ?
+Visios, Intranet, DW, outils collaboratifs   : converger vos outils =
+vers une plateforme simplifi=E9e et personnalis=E9e
+Comment int=E9grer concr=E8tement l IA g=E9n=E9rative dans vos =
+solutions digitales internes ?
+R=E9ussir la refonte de votre intranet pour le rendre incontournable =
+dans le quotidien des collaborateurs
+Exp=E9rience collaborateur et engagement interne : quelle strat=E9gie =
+et solutions digitales ?
+5 conseils pour am=E9liorer l exp=E9rience collaborateur dans votre =
+Digital Workplace/Intranet
+Quelle gestion de contenu et de l information pour renforcer l =
+attractivit=E9 de vos plateformes internes ? Quelle place pour l IA ?
+Comment utiliser l IA G=E9n=E9rative pour faciliter l acc=E8s =E0 l =
+information et aux expertises ?
+Le futur de l environnement digital de travail et d information du =
+collaborateur : tendances et perspectives
+Consultez le programme complet
+
+Rendez-vous les 19 & 20 mars 2025
+Paris Porte de Versailles
+Pour EXPOSER
+Pour VISITER et S'INSCRIRE AUX CONF=C9RENCES
+=C0 tr=E8s bient=F4t !
+L'=E9quipe du salon Digital Workplace.
+Sponsor 2025
+
+--= Multipart Alternative Boundary 20250120125747.1604015959
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Diso-8859-1"/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, =
+user-scalable=3D1"/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width; =
+initial-scale=3D1; maximum-scale=3D1"/>
+    <link =
+href=3D"https://fonts.googleapis.com/css?family=3DOpen+Sans:400,300,600,700,800" =
+rel=3D"stylesheet" type=3D"text/css"/>
+    <title>Digital Workplace</title>
+    <style type=3D"text/css">
+    body, td, th {
+        font-family: "Open Sans", Verdana, Geneva, sans-serif;
+        font-size: 12px;
+        color: #333;
+    }
+
+    a:link {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    a:visited {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #666666;
+    }
+
+    a:active {
+        text-decoration: underline;
+        color: #000;
+    }
+    </style>
+
+<link href=3D"http://mel.groupesolutions.fr/dsb/fslfosty.css" =
+rel=3D"stylesheet" type=3D"text/css">
+</head>
+
+<body style=3D"background-color:#FFFFFF">
+    <table align=3D"center" width=3D"600" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+      <tr>
+        <td align=3D"center" style=3D"font-size:10px; padding:5px">si =
+vous ne parvenez pas &agrave; lire ce message, nous vous invitons =
+&agrave;
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/001/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tL25ld3MtMjAyNS0yLmh0bWw-">suivre =
+ce lien</a></td>
+      </tr>
+    </table>
+    <table bgcolor=3D"#FFFFFF" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" valign=3D"top">
+                <table bgcolor=3D"#FFFFFF" width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+                    <tr>
+                        <td align=3D"center" style=3D"padding-top:15px; =
+padding-bottom:15px; padding-left: 50px">
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/002/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tLw--" =
+target=3D"_blank">
+                                <img =
+src=3D"https://www.salon-intranet.com/2021/DIGITAL-WORKPLACE-500.png" =
+border=3D"0" width=3D"250"/>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td align=3D"center">
+                <table bgcolor=3D"#FFFFFF" width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+                    <tr>
+                        <td align=3D"left" style=3D"padding-top:15px; =
+padding-bottom:15px; padding-left: 50px">
+                            <div style=3D"padding-bottom: 10px">en =
+parall&egrave;les :</div>
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/003/7818/BTL578761/aHR0cHM6Ly93d3cuZG9jdW1hdGlvbi5mci8-" =
+target=3D"_blank">
+                                <img =
+src=3D"https://www.salon-intranet.com/2021/logo-documation.png" =
+border=3D"0" width=3D"70" alt=3D"Documation"/>
+                            </a>
+                            <br/>
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/004/7818/BTL578761/aHR0cHM6Ly93d3cuaS1leHBvLm5ldC8-" =
+target=3D"_blank">
+                                <img =
+src=3D"https://www.i-expo.net/logo/logo-i-expo.gif" border=3D"0" =
+width=3D"70" alt=3D"I Expo"/>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table bgcolor=3D"#EFEFEF" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" style=3D"padding: 10px 0 10px 0">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+                    <tr>
+                        <td style=3D"font-size:35px; font-weight:800; =
+color:#4F5983; line-height:32px; padding-right: 0px" =
+align=3D"center">19 &amp; 20 mars 2025</td>
+                    </tr>
+                    <tr>
+                        <td style=3D"font-size:18px; font-weight:bold; =
+color:#000000; line-height:16px; padding-right: 0px; padding-top: 5px" =
+align=3D"center">
+                            Paris Porte de Versailles
+                                      <!--<br />
+                                      Pavillon 4.1/4.2-->
+                        </td>
+                    </tr>
+                    <!--<tr>
+                            <td style=3D"font-size:12px; color:#000000; =
+line-height:15px; padding-right: 0px; padding-top: 5px" =
+align=3D"center">* &agrave; partir de 14h00</td>
+                          </tr>-->
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table bgcolor=3D"#ffffff" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" style=3D"padding-left:20px; =
+padding-top:10px; font-size:15px; font-weight:400; color:#000000; =
+font-family: 'Open Sans', sans-serif; font-weight: 300;">EXPOSITION | =
+CONF&Eacute;RENCES | ATELIERS</td>
+        </tr>
+        <tr>
+            <td align=3D"center" style=3D"padding-bottom:10px; =
+padding-top: 5px; padding-left: 20px; padding-right: 20px; =
+font-size:23px; font-weight:800; color:#000000; line-height: 23px">Le =
+Salon de la Digital Workplace, de l&rsquo;Intranet, du Collaboratif, de =
+la Communication Interne et de l&rsquo;Exp&eacute;rience =
+Collaborateur</td>
+        </tr>
+    </table>
+    <table bgcolor=3D"#4F5983" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" style=3D"padding-top:20px; =
+padding-bottom:20px; padding-left:20px; padding-right:20px; =
+font-size:38px; color:#FFFFFF; font-weight: 800; line-height: 38px; =
+border-bottom: 1px dotted #fff">Les Conf&eacute;rences &agrave; ne =
+surtout pas manquer !</td>
+        </tr>
+    </table>
+    <table align=3D"center" width=3D"600" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#fff" width=3D"100%" =
+style=3D"padding-top:10px; padding-bottom:10px; padding-left:20px; =
+padding-right:20px">
+                <font style=3D"font-size:19px; color:#000; line-height: =
+20px">
+                    <strong>Les meilleurs experts</strong>
+                     en Travail Collaboratif, Intranet et Extranet, =
+Blogs projet, Digital Workplace, Microblogging, Espaces participatifs =
+et communautaires, Intranet 2.0, R&eacute;seaux Sociaux d'Entreprise, =
+Widgets, Communication Unifi&eacute;e, Web TV &amp; Web Cast, KM, =
+Gestion de contenu, Chatbots et Intelligence Artificielle
+                    <strong>partagent leurs comp&eacute;tences et leurs =
+exp&eacute;riences !</strong>
+                </font>
+            </td>
+        </tr>
+    </table>
+    <table align=3D"center" width=3D"600" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#4F5983" width=3D"100%" =
+style=3D"padding-top:10px; padding-bottom:10px; padding-left:15px; =
+padding-right:15px">
+                <font style=3D"font-size:18px; color:#FFFFFF; =
+line-height: 22px">
+                     &bull;
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/005/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tL2RlbWFuZGUtaW5mb3JtYXRpb25zLnBocA--" =
+style=3D"color: #fff">
+                        <strong>Pour EXPOSER</strong>
+                    </a>
+                </font>
+                <br/>
+                <font style=3D"font-size:18px; color:#FFFFFF; =
+line-height: 22px">
+                     &bull;
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/006/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tL3Zpc2l0ZXIucGhw" =
+style=3D"color: #fff">
+                        <strong>Pour VISITER et S'INSCRIRE AUX =
+CONF&Eacute;RENCES</strong>
+                    </a>
+                </font>
+            </td>
+        </tr>
+    </table>
+    <table bgcolor=3D"#FFFFFF" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td bgcolor=3D"#FFFFFF" style=3D"padding-top:10px; =
+padding-left:20px; padding-right:20px; padding-bottom:15px; =
+font-size:16px; line-height:17px;">
+                <ul>
+                    <li style=3D"padding-bottom: 10px"> Transformation =
+de l&rsquo;exp&eacute;rience collaborateur et de l&rsquo;environnement =
+digital de travail : l&rsquo;IA, une vraie r&eacute;volution ? Quels =
+d&eacute;fis pour 2025 ? </li>
+                    <li style=3D"padding-bottom: 10px"> Plateforme =
+Collaborateur, Digital Workplace, Intranet, Collaboratif : quels usages =
+de l&rsquo;IA g&eacute;n&eacute;rative en interne ? </li>
+                    <li style=3D"padding-bottom: 10px"> D&eacute;ployer =
+une Digital Workplace au service de l&rsquo;efficacit&eacute; =
+individuelle et collective </li>
+                    <li style=3D"padding-bottom: 10px"> Travail =
+collaboratif &amp; solutions collaboratives : quels sont les outils =
+incontournables et les innovations pour 2025 ? </li>
+                    <li style=3D"padding-bottom: 10px"> Plateforme =
+collaborateur, Solutions Collaboratives et de Communication, Digital =
+Workplace, R&eacute;seau social interne, Intranet Collaboratif : =
+comment choisir le bon outil en 2025 ? Pour quels usages et ROI ? </li>
+                    <li style=3D"padding-bottom: 10px"> Visios, =
+Intranet, DW, outils collaboratifs &hellip; : converger vos outils vers =
+une plateforme simplifi&eacute;e et personnalis&eacute;e </li>
+                    <li style=3D"padding-bottom: 10px"> Comment =
+int&eacute;grer concr&egrave;tement l&rsquo;IA g&eacute;n&eacute;rative =
+dans vos solutions digitales internes ? </li>
+                    <li style=3D"padding-bottom: 10px"> R&eacute;ussir =
+la refonte de votre intranet pour le rendre incontournable dans le =
+quotidien des collaborateurs </li>
+                    <li style=3D"padding-bottom: 10px"> =
+Exp&eacute;rience collaborateur et engagement interne : quelle =
+strat&eacute;gie et solutions digitales ? </li>
+                    <li style=3D"padding-bottom: 10px"> 5 conseils pour =
+am&eacute;liorer l&rsquo;exp&eacute;rience collaborateur dans votre =
+Digital Workplace/Intranet </li>
+                    <li style=3D"padding-bottom: 10px"> Quelle gestion =
+de contenu et de l&rsquo;information pour renforcer =
+l&rsquo;attractivit&eacute; de vos plateformes internes ? Quelle place =
+pour l&rsquo;IA ? </li>
+                    <li style=3D"padding-bottom: 10px"> Comment =
+utiliser l&rsquo;IA G&eacute;n&eacute;rative pour faciliter =
+l&rsquo;acc&egrave;s &agrave; l&rsquo;information et aux expertises ? =
+</li>
+                    <li> Le futur de l&rsquo;environnement digital de =
+travail et d&rsquo;information du collaborateur : tendances et =
+perspectives </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <table bgcolor=3D"#EFEFEF" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#EFEFEF" =
+style=3D"padding-top:10px; padding-left:20px; padding-right:20px; =
+padding-bottom:15px; font-size:16px; line-height:17px;">
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/007/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tL3RvdXMucGhwP2VsdD1ldmVudA--">
+                    <strong>Consultez le programme complet</strong>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <table align=3D"center" width=3D"600" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#4F5983" width=3D"100%" =
+style=3D"padding-top:10px; padding-bottom:10px; padding-left:15px; =
+padding-right:15px">
+                <font style=3D"font-size:20px; color:#FFFFFF; =
+line-height: 22px">
+                    <strong>
+                        Rendez-vous les 19 &amp; 20 mars 2025
+                        <br/>
+
+                              Paris Porte de Versailles
+                    </strong>
+                </font>
+                <br/>
+                <font style=3D"font-size:18px; color:#FFFFFF; =
+line-height: 22px">
+                     &bull;
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/008/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tL2RlbWFuZGUtaW5mb3JtYXRpb25zLnBocA--" =
+style=3D"color: #fff">
+                        <strong>Pour EXPOSER</strong>
+                    </a>
+                </font>
+                <br/>
+                <font style=3D"font-size:18px; color:#FFFFFF; =
+line-height: 22px">
+                     &bull;
+ 
+<a =
+href=3D"https://www.postoffice2-dfactory.com/API/cli/009/7818/BTL578761/aHR0cHM6Ly93d3cuc2Fsb24taW50cmFuZXQuY29tL3Zpc2l0ZXIucGhw" =
+style=3D"color: #fff">
+                        <strong>Pour VISITER et S'INSCRIRE AUX =
+CONF&Eacute;RENCES</strong>
+                    </a>
+                </font>
+            </td>
+        </tr>
+    </table>
+    <table bgcolor=3D"#FFFFFF" align=3D"center" width=3D"600" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td bgcolor=3D"#FFFFFF" style=3D"padding-top:15px; =
+padding-left:0px; padding-right:0px; padding-bottom:15px; =
+font-size:16px; line-height:18px">
+                &Agrave; tr&egrave;s bient&ocirc;t !
+                <br/>
+
+                      L'&eacute;quipe du salon Digital Workplace.
+            </td>
+        </tr>
+    </table>
+    <table align=3D"center" width=3D"600" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+        <tr>
+            <td align=3D"center" bgcolor=3D"#F7F7F7" =
+style=3D"padding-top:10px; padding-bottom:10px; padding-left:0px; =
+font-size:20px; line-height:20px;">
+                <strong>Sponsor 2025</strong>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor=3D"#FFFFFF" align=3D"center" =
+style=3D"padding-top:10px; padding-left:0px; padding-right:0px; =
+padding-bottom:10px">
+                <img =
+src=3D"https://www.salon-intranet.com/logo/f40d3a476d15182jalios.png" =
+alt=3D"jalios" border=3D"0" width=3D"200"/>
+            </td>
+        </tr>
+    </table>
+
+<br>
+<br>
+<table width=3D"600" border=3D"0" align=3D"Center" cellpadding=3D"0" =
+cellspacing=3D"6" bgcolor=3D"#CCCCCC" class=3D"txtdsb" name=3D"Desabo">
+  <tr>
+    <td class=3D"txtdsb" style=3D"font-family:Arial, Helvetica, =
+sans-serif; font-size:9px; color:#000000;"><div =
+align=3D"center"><i>Vous recevez ce message en tant que visiteur d'un =
+salon du Groupe Solutions.</i></div></td>
+  </tr>
+  <tr>
+    <td class=3D"txtdsb" style=3D"font-family:Arial, Helvetica, =
+sans-serif; font-size:9px; color:#000000;"><b>Si ce message vous a =
+caus&eacute; un quelconque d&eacute;sagr&eacute;ment, nous vous prions =
+de nous en excuser</b>, et vous incitons &agrave; vous =
+d&eacute;sinscrire de nos envois, ou &agrave; nous pr&eacute;ciser quel =
+type d'information vous souhaitez recevoir de notre part.</td>
+  </tr>
+  <tr>
+    <td class=3D"txtdsb" style=3D"font-family:Arial, Helvetica, =
+sans-serif; font-size:9px; color:#000000;">Sachez que nous sommes =
+attentifs au nombre des messages que vous recevez par notre =
+interm&eacute;diaire. Ainsi, <b>depuis le 1er janvier, l'adresse =
+btellier@linagora.com a re&ccedil;u 0 message, infos salons, exposants =
+et partenaires comprises</b>.</td>
+  </tr>
+  <tr>
+    <td><table width=3D"600" border=3D"0" cellspacing=3D"6" =
+cellpadding=3D"0" bgcolor=3D"#CCCCCC" class=3D"txtdsb">
+        <tr>
+          <td width=3D"392" class=3D"txtdsb" =
+style=3D"font-family:Arial, Helvetica, sans-serif; font-size:9px; =
+color:#000000;"><div align=3D"right">Pour ne plus recevoir =
+d'informations sur le salon <b>Digital Workplace</b></div></td>
+          <td width=3D"95" class=3D"txtdsb" style=3D"font-family:Arial, =
+Helvetica, sans-serif; font-size:9px; color:#000000;"><div =
+align=3D"center">&gt; <a class=3D"lnkdsb" =
+href=3D"https://www.postoffice2-dfactory.com/API/des/998/7818/BTL578761/026/">cliquez =
+ici</a> &lt;</div></td>
+          <td width=3D"89" class=3D"txtdsb" style=3D"font-family:Arial, =
+Helvetica, sans-serif; font-size:9p; color:#000000;x">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width=3D"392" class=3D"txtdsb" =
+style=3D"font-family:Arial, Helvetica, sans-serif; font-size:9px; =
+color:#000000;"><div align=3D"right">Pour <b>consulter la liste de nos =
+manifestations</b> et nous pr&eacute;ciser, salon par salon,<br>
+              celles pour lesquelles vous souhaitez ou non recevoir des =
+informations</div></td>
+          <td width=3D"95" class=3D"txtdsb" style=3D"font-family:Arial, =
+Helvetica, sans-serif; font-size:9px; color:#000000;"><div =
+align=3D"center">&gt; <a class=3D"lnkdsb" =
+href=3D"https://www.postoffice2-dfactory.com/API/des/998/7818/BTL578761/022/">cliquez =
+ici</a> &lt;</div></td>
+          <td width=3D"89" class=3D"txtdsb" style=3D"font-family:Arial, =
+Helvetica, sans-serif; font-size:9px; color:#000000;">&nbsp;</td>
+		</tr>
+        <tr>
+          <td width=3D"392" class=3D"txtdsb" =
+style=3D"font-family:Arial, Helvetica, sans-serif; font-size:9px; =
+color:#000000;"><div align=3D"right">Pour ne plus recevoir aucun =
+message de notre part</div></td>
+          <td width=3D"95" class=3D"txtdsb" style=3D"font-family:Arial, =
+Helvetica, sans-serif; font-size:9px; color:#000000;"><div =
+align=3D"center">&gt; <a class=3D"lnkdsb" =
+href=3D"https://www.postoffice2-dfactory.com/API/des/998/7818/BTL578761/023/">cliquez =
+ici</a> &lt;</div></td>
+          <td width=3D"89" class=3D"txtdsb" style=3D"font-family:Arial, =
+Helvetica, sans-serif; font-size:9px; color:#000000;">&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td class=3D"txtdsb" style=3D"font-family:Arial, Helvetica, =
+sans-serif; font-size:9px; color:#000000;">Vous pouvez &eacute;galement =
+nous adresser une demande de d&eacute;sinscription en &eacute;crivant =
+&agrave; l'adresse facteur@infopromotions.fr et en pr&eacute;cisant =
+D&eacute;sinscription dans le sujet de votre message. Cette =
+m&eacute;thode est toutefois un peu plus longue.</td>
+  </tr>
+  <tr>
+    <td class=3D"txtdsb" style=3D"font-family:Arial, Helvetica, =
+sans-serif; font-size:9px; color:#000000;"><p>Conform&eacute;ment =
+&agrave; la loi Informatique et Libert&eacute; du 6 janvier 1978 et aux =
+directives RGDP du 25 mai 2018, vous disposez d'un droit =
+d'acc&egrave;s, de modification, de rectification et de suppression des =
+donn&eacute;es vous concernant. Pour exercer ce droit, adressez-vous =
+&agrave; la soci&eacute;t&eacute; Data Factory, d&eacute;partement =
+Fichier MixMove, 1 rue Guy Moquet, 92240 Malakoff.</p></td>
+  </tr>
+</table>
+<img =
+src=3D"https://www.postoffice2-dfactory.com/API/ouv/000/7818/BTL578761"/>
+</body>
+</html>
+--= Multipart Alternative Boundary 20250120125747.1604015959--
+

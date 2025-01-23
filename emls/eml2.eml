@@ -1,0 +1,90 @@
+Return-Path: <rcordier@linagora.com>
+X-MEETING-METHOD: REPLY
+X-MEETING-UID: 715f5d83-f6fb-493d-8a7d-1989b9d9fba8
+X-MEETING-RECURRENCE-ID: 20250113T070000Z
+X-MEETING-SEQUENCE: 4
+X-MEETING-DTSTAMP: 20250113T075924Z
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=0.0 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 7d3fa1fd
+          for <btellier@linagora.com>;
+          Mon, 13 Jan 2025 07:59:25 +0000 (UTC)
+Received: from smtp.linagora.com (smtp.linagora.com [54.36.8.78])
+	by incoming.linagora.com (Postfix) with ESMTPS id 7E45D14073D
+	for <btellier@linagora.com>; Mon, 13 Jan 2025 07:59:25 +0000 (UTC)
+Received: from ?Open?PaaS?SMTP?server?for?Linagora? (unknown [51.75.13.34])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by smtp.linagora.com (Postfix) with ESMTPSA id 05459EE26E
+	for <btellier@linagora.com>; Mon, 13 Jan 2025 09:04:05 +0100 (CET)
+Date: Mon, 13 Jan 2025 07:59:24 +0000 (UTC)
+X-LINAGORA-Copy-Delivery-Done: 1
+From: rcordier@linagora.com
+To: btellier@linagora.com
+Message-ID: <212689599.576.1736755164992@97ccbdcb6acc>
+Subject: =?UTF-8?Q?ACCEPTED:_Point_TMail_@_Mon_Jan_13,_202?=
+ =?UTF-8?Q?5_(Ren=C3=A9_CORDIER_<rcordier@linagora.com>)?=
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_577_1284718181.1736755164992"
+MIME-Version: 1.0
+
+------=_Part_577_1284718181.1736755164992
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Ren=C3=A9 CORDIER <rcordier@linagora.com> has accepted this invitation.
+
+------=_Part_577_1284718181.1736755164992
+Content-Type: text/calendar; charset=UTF-8; method=REPLY
+Content-Transfer-Encoding: quoted-printable
+
+BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+PRODID:-//Linagora//TMail Calendar//EN
+METHOD:REPLY
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:715f5d83-f6fb-493d-8a7d-1989b9d9fba8
+TRANSP:OPAQUE
+DTSTART;TZID=3DEurope/Paris:20250113T100000
+DTEND;TZID=3DEurope/Paris:20250113T103000
+CLASS:PUBLIC
+X-OPENPAAS-VIDEOCONFERENCE:
+SUMMARY:Point TMail
+DESCRIPTION:https://jitsi.linagora.com/tmail-frontend\n\n - Review slides C=
+OSOFT Dat+Rene\n - Review flutter team members\n - Review roadmap\n - Revie=
+w user stories\n - Small point on QA for the app'
+ORGANIZER;CN=3D"Beno=C3=AEt TELLIER":mailto:btellier@linagora.com
+SEQUENCE:4
+RECURRENCE-ID:20250113T070000Z
+ATTENDEE;ROLE=3DREQ-PARTICIPANT;PARTSTAT=3DACCEPTED;CUTYPE=3DINDIVIDUAL:mai=
+lto:rcordier@linagora.com
+DTSTAMP:20250113T075924Z
+LAST-MODIFIED:20250113T075924Z
+END:VEVENT
+END:VCALENDAR
+
+------=_Part_577_1284718181.1736755164992
+Content-Type: application/ics; name=invite.ics
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=invite.ics
+
+QkVHSU46VkNBTEVOREFSDQpDQUxTQ0FMRTpHUkVHT1JJQU4NClZFUlNJT046Mi4wDQpQUk9ESUQ6
+LS8vTGluYWdvcmEvL1RNYWlsIENhbGVuZGFyLy9FTg0KTUVUSE9EOlJFUExZDQpDQUxTQ0FMRTpH
+UkVHT1JJQU4NCkJFR0lOOlZFVkVOVA0KVUlEOjcxNWY1ZDgzLWY2ZmItNDkzZC04YTdkLTE5ODli
+OWQ5ZmJhOA0KVFJBTlNQOk9QQVFVRQ0KRFRTVEFSVDtUWklEPUV1cm9wZS9QYXJpczoyMDI1MDEx
+M1QxMDAwMDANCkRURU5EO1RaSUQ9RXVyb3BlL1BhcmlzOjIwMjUwMTEzVDEwMzAwMA0KQ0xBU1M6
+UFVCTElDDQpYLU9QRU5QQUFTLVZJREVPQ09ORkVSRU5DRToNClNVTU1BUlk6UG9pbnQgVE1haWwN
+CkRFU0NSSVBUSU9OOmh0dHBzOi8vaml0c2kubGluYWdvcmEuY29tL3RtYWlsLWZyb250ZW5kXG5c
+biAtIFJldmlldyBzbGlkZXMgQ09TT0ZUIERhdCtSZW5lXG4gLSBSZXZpZXcgZmx1dHRlciB0ZWFt
+IG1lbWJlcnNcbiAtIFJldmlldyByb2FkbWFwXG4gLSBSZXZpZXcgdXNlciBzdG9yaWVzXG4gLSBT
+bWFsbCBwb2ludCBvbiBRQSBmb3IgdGhlIGFwcCcNCk9SR0FOSVpFUjtDTj0iQmVub8OudCBURUxM
+SUVSIjptYWlsdG86YnRlbGxpZXJAbGluYWdvcmEuY29tDQpTRVFVRU5DRTo0DQpSRUNVUlJFTkNF
+LUlEOjIwMjUwMTEzVDA3MDAwMFoNCkFUVEVOREVFO1JPTEU9UkVRLVBBUlRJQ0lQQU5UO1BBUlRT
+VEFUPUFDQ0VQVEVEO0NVVFlQRT1JTkRJVklEVUFMOm1haWx0bzpyY29yZGllckBsaW5hZ29yYS5j
+b20NCkRUU1RBTVA6MjAyNTAxMTNUMDc1OTI0Wg0KTEFTVC1NT0RJRklFRDoyMDI1MDExM1QwNzU5
+MjRaDQpFTkQ6VkVWRU5UDQpFTkQ6VkNBTEVOREFSDQo=
+------=_Part_577_1284718181.1736755164992--

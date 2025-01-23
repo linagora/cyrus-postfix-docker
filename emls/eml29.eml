@@ -1,0 +1,1231 @@
+Return-Path: <SRS0=89jC=UI=apache.org=apmail-btellier-owner@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=1.490003 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 15d254ba
+          for <btellier@linagora.com>;
+          Thu, 16 Jan 2025 10:52:12 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 4F751140AD6
+	for <btellier@linagora.com>; Thu, 16 Jan 2025 10:52:12 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id AD71E1D5C6
+	for <btellier@linagora.com>; Thu, 16 Jan 2025 11:56:56 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <apmail-btellier-owner@apache.org>)
+	id 1tYNTs-00070X-Vr
+	for btellier@linagora.com; Thu, 16 Jan 2025 10:52:11 +0000
+Received: from 3.227.148.255 by s602e.ik2.com (IK2 SMTP Server); Thu, 16 Jan 2025 10:52:08 +0000
+Received: from mail.apache.org (mailgw-he-de.apache.org [116.203.246.181])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mxout1-ec2-va.apache.org (ASF Mail Server at mxout1-ec2-va.apache.org) with ESMTPS id 40AC04C464
+	for <btellier@linagora.com>; Thu, 16 Jan 2025 10:52:07 +0000 (UTC)
+Received: (qmail 2141398 invoked by uid 998); 16 Jan 2025 10:52:06 -0000
+Delivered-To: apmail-btellier@apache.org
+Delivered-To: btellier@linagora.com
+Received: (qmail 2141395 invoked by uid 116); 16 Jan 2025 10:52:06 -0000
+Received: from spamproc1-he-de.apache.org (HELO spamproc1-he-de.apache.org) (116.203.196.100)
+ by apache.org (qpsmtpd/0.94) with ESMTP; Thu, 16 Jan 2025 10:52:06 +0000
+Authentication-Results: apache.org; auth=none
+Received: from localhost (localhost [127.0.0.1])
+	by spamproc1-he-de.apache.org (ASF Mail Server at spamproc1-he-de.apache.org) with ESMTP id EF483200478
+	for <btellier@apache.org>; Thu, 16 Jan 2025 10:52:05 +0000 (UTC)
+X-Spam-Level:
+Authentication-Results: spamproc1-he-de.apache.org (amavisd-new);
+	dkim=pass (1024-bit key) header.d=slack.com header.b=XShe6pZq;
+	dkim=pass (1024-bit key) header.d=amazonses.com header.b=FsNjSOPj
+Received: from mx1-ec2-va.apache.org ([116.203.227.195])
+	by localhost (spamproc1-he-de.apache.org [116.203.196.100]) (amavisd-new, port 10024)
+	with ESMTP id b2HFcJdZiH00 for <btellier@apache.org>;
+	Thu, 16 Jan 2025 10:52:04 +0000 (UTC)
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=54.240.37.228; helo=a37-228.smtp-out.amazonses.com; envelope-from=010001946ebdc74b-9f263a3c-241d-4d1f-be0d-8260f0d67e52-000000@mail.slack.com; receiver=<UNKNOWN> 
+Received: from a37-228.smtp-out.amazonses.com (a37-228.smtp-out.amazonses.com [54.240.37.228])
+	by mx1-ec2-va.apache.org (ASF Mail Server at mx1-ec2-va.apache.org) with ESMTPS id 66656BF9B5
+	for <btellier@apache.org>; Thu, 16 Jan 2025 10:52:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=awh63k4dkfmxz2frn2qxdlz7l34bhian; d=slack.com; t=1737024718;
+	h=From:Reply-To:To:Subject:Message-ID:In-Reply-To:References:Content-Type:MIME-Version:List-Unsubscribe:List-Unsubscribe-Post:Date;
+	bh=tnuIoD67PTre3qNdcOaEiZz/HZYGcCX9Ed9nloDAXu8=;
+	b=XShe6pZqvALj43Q1gUw0g+YvVvDSqgBJvU9dDnTMdfriZn2SejX5awSvkssr43Pd
+	sfLPQ6mqmlyTFs8i3ghVEQ/3j9X6JZnyK3x8y5cr8QTW9m8XBF2jjYYxZmDPORTSupg
+	JBxAAf+Ap2P377J5TzrJVY24C3y2Xj165GaI6TOY=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1737024718;
+	h=From:Reply-To:To:Subject:Message-ID:In-Reply-To:References:Content-Type:MIME-Version:List-Unsubscribe:List-Unsubscribe-Post:Date:Feedback-ID;
+	bh=tnuIoD67PTre3qNdcOaEiZz/HZYGcCX9Ed9nloDAXu8=;
+	b=FsNjSOPjGxxd86RAtjPxosY2q9h2JmL9zEAEnLNaTE/v1V69mUAkG4ZwL8z7eiGW
+	4ExesJsJH8O/rfo+WwWWtMjgiJMJdxmDtSna795XuhZyPO+pztBihP10NpdYEpiP2pv
+	wCz8ZKzfbZtKOEZE74ZVTcSKl6tIC9Vy9R5D5kpY=
+X-LINAGORA-Copy-Delivery-Done: 1
+From: "ASF (via Slack)" <notification@slack.com>
+Reply-To: 
+	Slack <eb-T4S1WH2J3-U08916XJ49W-blupwi2i3gzhisgh3rhqqhs67q@slack-mail.com>
+To: btellier@apache.org
+Subject: =?utf-8?Q?You=27ve_got_=31_unread_message?=
+Message-ID: <010001946ebdc74b-9f263a3c-241d-4d1f-be0d-8260f0d67e52-000000@email.amazonses.com>
+In-Reply-To: <T4S1WH2J3.U08916XJ49W.0e53160d7177ea01e251d1fc872209d2@slack.com>
+References: <T4S1WH2J3.U08916XJ49W.0e53160d7177ea01e251d1fc872209d2@slack.com>
+Content-Type: multipart/alternative;
+ boundary="=_ae95bcb1-dcd5-482c-8225-df27684fa15b"
+MIME-Version: 1.0
+List-Unsubscribe: https://the-asf.slack.com/x-p162064580615-8307235616336-8306401490484/unsub/U08916XJ49W-87d27aa6bd6ab213390b4fc08129ed5d8beb6b73ae6762730fd16e826b6f23ac-digest
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Slack-Team-ID: T4S1WH2J3
+Auto-Submitted: auto-generated
+X-Slack-Message-ID: ob-aaaaajn3zvaaogqwrqym5vaqae
+Date: Thu, 16 Jan 2025 10:51:58 +0000
+Feedback-ID: ::1.us-east-1.kwXgUBITdY2w2KyDhc4cKlXKai8tXy8Sx50cu3XZbqE=:AmazonSES
+X-SES-Outgoing: 2025.01.16-54.240.37.228
+X-SF-RX-Return-Path: <apmail-btellier-owner@apache.org>
+X-SF-Originating-IP: 3.227.148.255
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 8.9
+X-SF-SRS: Sender address rewritten from <apmail-btellier-owner@apache.org> to <SRS0=89jC=UI=apache.org=apmail-btellier-owner@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+--=_ae95bcb1-dcd5-482c-8225-df27684fa15b
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+ASF
+
+13,082 members
+
+=F0=9F=94=A5Your team has sent 2,514 messages recently
+
+=F0=9F=8E=892 more teammates have joined
+
+View all unread messages [https://the-asf.slack.com/x-p162064580615-8307235=
+616336-8306401490484/team]
+
+New message in #welcome
+
+Sridhar SarnobatJanuary 15th at 5:37 AM
+Hello. I'm Sridhar from Silicon Valley. I began working on the Oracle RDBMS=
+ optimizer at the beginning of my career though it didn't go well (I'm auti=
+stic so my career has not been impressive). Cassandra is my 2nd chance, not=
+ to mention a way to stay relevant in this new industry.
+2
+
+2 replies [https://the-asf.slack.com/x-p162064580615-8307235616336-83064014=
+90484/archives/CE87PQD6G/p1736948251003629]
+Open in Slack [https://the-asf.slack.com/x-p162064580615-8307235616336-8306=
+401490484/archives/CE87PQD6G/p1736948251003629?thread_ts=3D1736948251.00362=
+9&c=3D4&o=3D1&d=3D1]
+
+Manage email settings
+
+You can snooze notifications this week [https://the-asf.slack.com/x-p162064=
+580615-8307235616336-8306401490484/unsub/U08916XJ49W-3b12c78bd86b2efd1a1b57=
+2281d3e21c4331c6648866416e00aa40054e450fde-notify-mute-7d] or unsubscribe [=
+https://the-asf.slack.com/x-p162064580615-8307235616336-8306401490484/unsub=
+/U08916XJ49W-87d27aa6bd6ab213390b4fc08129ed5d8beb6b73ae6762730fd16e826b6f23=
+ac-digest].
+
+See notifications instantly
+
+The Slack app is the best way to manage your notifications and stay up to d=
+ate.
+
+Get [https://the-asf.slack.com/x-p162064580615-8307235616336-8306401490484/=
+downloads?t=3Ddownload_app]
+
+Get [https://the-asf.slack.com/x-p162064580615-8307235616336-8306401490484/=
+downloads?t=3Ddownload_app]
+--=_ae95bcb1-dcd5-482c-8225-df27684fa15b
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns=3D"http://www.w3.org/1999/xht=
+ml"><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dutf-8"><meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-=
+scale=3D1.0"><link href=3D"https://fonts.googleapis.com/css?family=3DLato:4=
+00,700,900" rel=3D"stylesheet"><title>You've got 1 unread message</title><s=
+tyle type=3D"text/css">/* Global Resets */
+	body, .background_main, p, table, td, div { font-family: 'Lato', 'Helvetic=
+a Neue', Helvetica, Arial, sans-serif; }
+
+	img {
+		border: none;
+		-ms-interpolation-mode: bicubic;
+		max-width: 100%;
+	}
+
+	p {padding-bottom: 2px;}
+
+	body {
+		background: #fff;
+		font-size: 17px;
+		line-height: 24px;
+		margin: 0;
+		padding: 0;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	table {
+		border-collapse: collapse;
+		mso-table-lspace: 0pt;
+		mso-table-rspace: 0pt;
+		width: 100%;
+	}
+
+	td {
+		font-size: 17px;
+		line-height: 24px;
+		vertical-align: top;
+	}
+
+	/* Footer */
+	.email_footer td, .email_footer p, .email_footer span {
+		font-size: 15px;
+		text-align: center;
+		color: #1d1c1d;
+	}
+
+	.email_footer a {
+		text-decoration: underline;
+	}
+
+	.email_footer td {padding-top: 20px;}
+
+	.footer_logo {
+		width: 40px;
+		height: 40px;
+		padding-bottom: 20px;
+	}
+
+	.footer_title {
+		font-weight: 900;
+	}
+
+	.preheader {
+		display: none;
+		mso-hide: all;
+	}
+
+	/* Typography */
+	h1, h2, h3, h4 {
+		color: #1d1c1d;
+		font-weight: 700;
+		margin: 0;
+		margin-bottom: 12px;
+	}
+
+	h1 {
+		font-size: 36px;
+		line-height: 42px;
+		letter-spacing: -.25px;
+		margin-bottom: 28px;
+		text-align: left;
+		word-break: break-word;
+	}
+
+	h2 {
+		font-size: 24px;
+		line-height: 32px;
+		letter-spacing: -0.75px;
+		margin-bottom: 28px;
+		text-align: left;
+	}
+
+	h3 {
+		font-size: 18px;
+		line-height: 24px;
+		letter-spacing: 0px;
+		margin-bottom: 0px;
+	}
+
+	p, ul, ol {
+		font-size: 17px;
+		line-height: 24px;
+		font-weight: normal;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+
+	ul, ol {
+		padding-left: 40px;
+	}
+
+	p li, ul li, ol li {
+		list-style-position: outside;
+		margin-left: 5px;
+	}
+
+	p {
+		font-size: 16px;
+		letter-spacing: -0.2px;
+	}
+
+	a {
+		color: #1264a3;
+		text-decoration: underline!important;
+	}
+
+	a:hover {text-decoration: underline;}
+
+	.button_link::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border-radius: 4px;
+	}
+
+	.action_section_workspace_url a[href] {
+		color: #454447;
+	}
+
+	.action_section_workspace_url:hover {
+		color: #1264A3 !important;
+	}
+
+	.button_link:hover::after {
+		box-shadow: inset 0 -2px #237c4a;
+	}
+
+	.button_link.is_secondary:hover::after {
+		box-shadow: none;
+	}
+
+	.button_link.plum:hover {
+		background-color: #4a154b !important;
+		border-color: #4a154b !important;
+	}
+
+	.button_link_wrapper.plum:hover {
+		background-color: #4a154b !important;
+	}
+
+	.button_link.plum:hover::after {
+		box-shadow: none;
+	}
+
+	.preview_text {
+		color: transparent;
+		display: none;
+		height: 0;
+		max-height: 0;
+		max-width: 0;
+		opacity: 0;
+		overflow: hidden;
+		mso-hide: all;
+		visibility: hidden;
+		width: 0;
+		font-size: 1px;
+		line-height:1px;
+	}
+
+	.preview_text a {
+		color: #3AA3E3 !important;
+		font-weight: bold;
+	}
+
+	.sm_visible {
+		display: none;
+	}
+
+	.footer_padding {
+		padding: 0 50px;
+	}
+
+	table[class=3D"background_main"] .social_icon_margin {
+		margin-left: 32px !important;
+	}
+
+	/* Responsive and Mobile Friendly Styles */
+	/* Yahoo Mail has a history of rendering all media query styles with class=
+ selectors unless class is used as an attribute */
+	@media only screen and (max-width: 600px) {
+		table[class=3D"background_main"] .sm_full_width {
+			width: 100% !important;
+		}
+
+		table[class=3D"background_main"] .sm_90_percent_width {
+			width: 90% !important;
+			padding: 16px !important;
+			text-align: center !important;
+			float: none !important;
+		}
+
+		table[class=3D"background_main"] .sm_side_padding {
+			padding-right: 8px !important;
+			padding-left: 8px !important;
+			float: none !important;
+		}
+
+		table[class=3D"background_main"] .sm_small_top_padding {
+			padding-top: 8px !important;
+		}
+
+		table[class=3D"background_main"] .sm_top_padding {
+			padding-top: 16px !important;
+		}
+
+		table[class=3D"background_main"] .sm_auto_width {
+			width: auto !important;
+		}
+
+		table[class=3D"background_main"] .sm_auto_height {
+			height: auto !important;
+		}
+
+		table[class=3D"background_main"] .sm_border_box {
+			box-sizing: border-box !important;
+		}
+
+		table[class=3D"background_main"] .sm_block {
+			display: block !important;
+		}
+
+		table[class=3D"background_main"] .sm_inline_block {
+			display: inline-block !important;
+		}
+
+		table[class=3D"background_main"] .sm_table {
+			display: table !important;
+		}
+
+		table[class=3D"background_main"] .sm_no_side_padding {
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+		}
+
+		table[class=3D"background_main"] .sm_no_border_radius {
+			border-radius: 0 !important;
+		}
+
+		table[class=3D"background_main"] .sm_no_padding {
+			padding-right: 0 !important;
+			padding-left: 0 !important;
+		}
+
+		table[class=3D"background_main"] .sm_os_icons_height {
+			/* this is to make the parent element the same height as the inline-bloc=
+k img inside */
+			height: 44px;
+		}
+
+		table[class=3D"background_main"] .small_icon {
+			width: 20px !important;
+			height: 20px !important;
+		}
+
+		table[class=3D"background_main"] .social_icon_margin {
+			margin-left: 20px !important;
+		}
+
+		table[class=3D"background_main"] .slack_logo_small_icon {
+			width: 80px !important;
+		}
+
+		table[class=3D"background_main"] .slack_logo_small_icon img {
+			 height: 24px !important;
+		}
+
+		.social_img_bottom_margin {
+			/*this class is for social_user_outreach email only*/
+			margin-bottom: 20px !important;
+		}
+
+		.social_p_bottom_margin {
+			/*this class is for social_user_outreach email only*/
+			margin-bottom: 40px !important;
+		}
+
+		/* Common responsive styles for new email design templates #feat-activati=
+on-email-audit */
+		.sm_hidden {
+			display: none!important;
+		}
+
+		.sm_visible {
+			display: inline-block!important;
+		}
+		h1 {
+			font-size: 24px!important;
+			line-height: 30px!important;
+			margin-bottom: 20px!important;
+			word-break: break-word;
+		}
+		h2 {
+			font-size: 16px!important;
+			line-height: 23px!important;
+			margin-bottom: 10px!important;
+		}
+		h3 {
+			font-size: 14px!important;
+			line-height: 20px!important;
+		}
+
+		.hero_paragraph, .bulleted_list {
+			font-size: 14px!important;
+			line-height: 19px!important;
+			margin-bottom: 20px!important;
+			word-break: break-word;
+		}
+
+		.status_paragraph {
+			font-size: 14px!important;
+			line-height: 19px!important;
+			word-break: break-word;
+		}
+		.content_paragraph {
+			font-size: 12px!important;
+			line-height: 18px!important;
+			margin-bottom: 10px!important;
+		}
+		.list_paragraph {
+			font-size: 12px!important;
+			line-height: 18px!important;
+		}
+
+		.restyle_button {
+			font-size: 12px!important;
+			border-top: 10px solid!important;
+			border-bottom: 10px solid!important;
+			border-color: #611f69!important;
+			line-height: 12px!important;
+		}
+
+		.margin_top {
+			margin-top: 20px!important;
+		}
+
+		.lg_margin_left_right {
+			margin-left: 26px!important;
+			margin-right: 26px!important;
+		}
+
+		.xl_margin_bottom {
+			margin-bottom: 30px!important;
+		}
+
+		.xl_margin_top {
+			margin-top: 30px!important;
+		}
+		.hero_block_container {
+			margin-left: 26px!important;
+		}
+
+		.hero_block_left {
+			width: 50%!important;
+		}
+
+		.slack_logo_style {
+			margin-top: -6px!important;
+			margin-bottom: -12px!important;
+		}
+
+		.larger_bottom_margin {
+			margin-bottom: 30px!important;
+		}
+
+		.list_header {
+			font-size: 16px!important;
+		}
+
+		.list_icon_wrapper {
+			width: 55px!important;
+		}
+
+		.list_icon_style {
+			width: 40px!important;
+			height: 40px!important;
+		}
+
+		.list_icon_style_large {
+			width: auto!important;
+			height: 50px!important;
+		}
+
+		.line_height_24 {
+			line-height: 24px!important;
+		}
+
+		.brand_logo_wrapper {
+			width: 78px!important;
+		}
+
+		.brand_logo_style {
+			width: 68px!important;
+			height: 68px!important;
+		}
+
+		.brand_heading {
+			font-size: 14px!important;
+			line-height: 20px!important;
+		}
+
+		.brand_link {
+			font-size: 13px!important;
+			line-height: 18px!important;
+		}
+
+		.grey_box_container {
+			padding: 20px 9px!important;
+		}
+
+		.account_info_wrapper {
+			margin-bottom: 18px!important;
+		}
+
+		.account_info_item {
+			padding: 0px 5px!important;
+		}
+
+		.account_info_avatar {
+			width: 55px!important;
+			height: 55px!important;
+			margin-bottom: 5px!important;
+		}
+		table[class=3D"background_main"] .footer_padding {
+			padding: 0 26px!important;
+		}
+		.footer_padding {
+			padding: 0 26px !important;
+		}
+		.small_font {
+			font-size: 14px!important;
+		}
+
+	}
+
+	/* More client-specific styles */
+	@media all {
+		.ExternalClass {
+			width: 100%;
+		}
+
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass fon=
+t, .ExternalClass td, .ExternalClass div {
+			line-height: 100%;
+		}
+
+		.footer_link {
+			color: #1d1c1d !important;
+			font-family: inherit !important;
+			font-size: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+	}
+	a:hover {
+		text-decoration: underline !important;
+	}
+
+	pre, code {
+		--saf-0: rgba(var(--sk_foreground_low, 29, 28, 29), 0.13);
+		border: 1px solid var(--saf-0);
+		background: rgba(var(--sk_foreground_min, 29, 28, 29), 0.04);
+		font-family: 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace !imp=
+ortant;
+		font-size: 12px;
+		line-height: 1.50001;
+		font-variant-ligatures: none;
+		white-space: pre;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		word-break: normal;
+		-webkit-tab-size: 4;
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		tab-size: 4;
+	}
+
+	code {
+		color: #e01e5a;
+		padding: 2px 3px 1px;
+		border-radius: 3px;
+	}
+
+	pre {
+		margin-bottom: 16px;
+		padding: 8px;
+		border-radius: 4px;
+	}
+
+	blockquote {
+		position: relative;
+		margin-bottom: 16px;
+		padding-left: 16px;
+		border-left: rgba(var(--sk_foreground_low_solid, 221, 221, 221), 1);
+		border-left-width: 4px;
+		border-left-style: solid;
+	}
+</style><style type=3D"text/css">/* Recap Email Styles */
+body * {
+	font-family: Helvetica, 'Helvetica Neue', 'Lato', Arial, sans-serif;
+}
+
+h1 {
+	margin-bottom: 45px;
+}
+
+span.para_break {
+	display: block;
+	height: 8px;
+}
+
+
+.digest_email__heading_wrapper {
+	padding: 0 50px;
+}
+
+table.digest_email__card_wrapper {
+	border-collapse: collapse;
+}
+
+table.digest_email__card_wrapper td {
+	padding: 0;
+	margin: 0;
+}
+
+.digest_email__card_header {
+	padding: 20px !important;
+}
+
+.digest_email__card_header h3 {
+	color: #FFFFFF;
+}
+
+.digest_email__card_header .email_actions__icon {
+	padding-right: 16px !important;
+}
+
+.digest_email__card_header .email_actions__icon a {
+	height: 58px;
+}
+
+.digest_email__card_footer {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
+.digest_email__card_footer_spacer {
+	padding-right: 20px !important;
+	padding-left: 20px !important;
+}
+
+.digest_email__logo_spacer {
+	width: 50px;
+}
+
+.digest_email__card_spacer {
+	width: 94px;
+}
+
+.digest_email__card_header_text {
+	color: #FFFFFF !important;
+}
+
+.digest_email__card_header_text p {
+	font-size: 15px !important;
+}
+
+.digest_email__card_launch_cta {
+	font-size: 14px;
+	line-height: 14px;
+	padding: 19px 11px;
+}
+
+.digest_email__card_item {
+	font-size: 15px;
+}
+
+.digest_email__item_spacer {
+	height: 8px;
+}
+
+.digest_email__item_spacer_last {
+	height: 20px;
+}
+
+.digest_email__border_spacer {
+	height: 20px;
+}
+
+.digest_email__divider {
+	margin: 40px 0;
+}
+
+.digest_email__message_sections {
+	margin-bottom: 40px;
+}
+
+.digest_email__padding {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.digest_email__section_spacing {
+	padding-bottom: 16px;
+}
+
+.digest_email__section_heading {
+	padding-bottom: 36px;
+}
+
+.digest_email__section_heading h2, h6 {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
+.digest_email__section a {
+	text-decoration: none !important;
+}
+
+.digest_email__section .tsf_output.emoji_replace_on_load .emoji {
+	vertical-align: bottom;
+}
+
+.digest_email__section .tsf_output {
+	line-height: 22px;
+}
+
+.digest_email__section .tsf_output .private_channel_replace_on_load {
+	background-color: #DDDDDD;
+	padding: 2px;
+	border-radius: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+	h1 {
+		margin-bottom: 30px !important;
+	}
+
+	h3 {
+		font-size: 13px !important;
+	}
+
+	.email_actions__wrapper {
+		padding: 30px 25px !important;
+		padding-bottom: 0px !important;
+	}
+	.email_actions__icon {
+		width: 45px !important;
+		height: 45px !important;
+		min-width: 45px !important;
+		max-width: 45px !important;
+		line-height: 45px !important;
+	}
+
+	.email_actions__icon a, .email_actions__icon img {
+		width: inherit !important;
+		height: inherit !important;
+		min-width: inherit !important;
+		line-height: inherit !important;
+	}
+	.email_actions__icon_height_auto img {
+		height: auto !important;
+	}
+	.email_actions__text h3 {
+		font-size: 13px !important;
+	}
+	.email_actions__text p {
+		font-size: 12px !important;
+		line-height: 18px !important;
+	}
+
+	.digest_email__divider {
+		margin: 30px -26px;
+	}
+
+	.digest_email__message_sections {
+		margin-bottom: 30px;
+	}
+
+	.digest_email__message_sections .single_email_digest__sender,
+	.digest_email__message_sections .single_email_digest__message_text {
+		font-size: 13px !important;
+	}
+
+	.digest_email__message_sections .single_email_digest__timestamp {
+		font-size: 11px !important;
+	}
+
+	.digest_email__message_sections .single_email_digest__avatar {
+		margin-top: 3px;
+	}
+
+	.digest_email__padding {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.digest_email__section_heading {
+		padding-bottom: 30px !important;
+	}
+
+	.digest_email__section_heading h2 {
+		font-size: 20px !important;
+	}
+
+	.digest_email__section_spacing {
+		padding-bottom: 10px;
+	}
+
+	.digest_email__section .tsf_output {
+		line-height: 20px;
+	}
+
+	.digest_email__card_header {
+		padding: 16px !important;
+	}
+
+	.digest_email__logo_spacer {
+		width: 25px;
+	}
+
+	.digest_email__card_spacer {
+		width: 25px;
+	}
+
+	.digest_email__heading_wrapper {
+		padding: 0 25px;
+	}
+
+	.digest_email__card_footer {
+		padding-top: 16px !important;
+		padding-bottom: 16px !important;
+	}
+
+	.digest_email__card_footer_spacer {
+		padding-right: 16px !important;
+		padding-left: 16px !important;
+	}
+
+	.digest_email__card_header_text h3 {
+		font-size: 15px !important;
+	}
+
+	.digest_email__card_header_text p {
+		font-size: 13px !important;
+	}
+
+	.digest_email__card_launch_cta {
+		font-size: 12px;
+		line-height: 12px;
+		padding: 9px 11px;
+	}
+
+	.digest_email__card_item {
+		font-size: 13px;
+	}
+
+	.digest_email__item_spacer {
+		height: 6px;
+	}
+
+	.digest_email__item_spacer_last {
+		height: 16px;
+	}
+
+	.digest_email__border_spacer {
+		height: 16px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.email_actions__cta, .email_actions__cta table {
+		display: none;
+	}
+
+	.email_actions__cta_mobile {
+		display: table !important;
+		border-collapse: separate;
+		border-spacing: 0;
+	}
+}</style></head><body><!--[if mso]><style type=3D"text/css">.background_mai=
+n, table, table td, p, div, h1, h2, h3, h4, h5, h6 {
+								font-family: Arial, sans-serif !important;
+							}</style><![endif]--><table style=3D"background-color: #ffffff; padd=
+ing-top: 20px;color: #434245;width: 100%;-webkit-font-smoothing:antialiased=
+; -moz-osx-font-smoothing:grayscale;   border: 0; text-align: center; borde=
+r-collapse: collapse;" class=3D"background_main"><tr><td style=3D"vertical-=
+align: top; padding: 0"><center><table id=3D"body" class=3D"card" style=3D"=
+border: 0; border-collapse: collapse; margin: 0 auto; background: white; bo=
+rder-radius: 8px; margin-bottom: 16px;"><tr><td style=3D"width: 546px; vert=
+ical-align: top; padding-top: 32px"><div style=3D"max-width: 600px; margin:=
+ 0 auto;"><!--[if mso]>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"padding: 0=
+; margin: 0; width: 100%;">
+    <tr>
+        <td colspan=3D"3" style=3D"padding: 0; margin: 0; font-size: 20px; =
+height: 20px;" height=3D"20">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 0; margin: 0;">&nbsp;</td>
+        <td style=3D"padding: 0; margin: 0;" width=3D"540">
+<![endif]--><table class=3D"digest_email__card_wrapper" style=3D"background=
+-color: #F2F2F2; width: 100%; margin-top: -32px;"><tr style=3D"height: 44px=
+;"></tr><tr><td><table style=3D"width: 100%;"><tr><td class=3D"digest_email=
+__logo_spacer"></td><td><div style=3D"margin-top: 18px;"><img width=3D"120"=
+ height=3D"36" style=3D"margin-top: 0; margin-right: 0; margin-bottom: 32px=
+; margin-left: 0px;" src=3D"https://the-asf.slack.com/x-p162064580615-83072=
+35616336-8306401490484/img/slack_logo_240.png" alt=3D"slack logo"></div></t=
+d><td class=3D"digest_email__logo_spacer"></td></tr></table></td></tr><tr><=
+td><table style=3D"width: 100%;"><tr><td class=3D"digest_email__card_spacer=
+"></td><td class=3D"digest_email__card_header" style=3D"background-color: #=
+4A154B; color: #FFFFFF; border-radius: 8px 8px 0px 0px"><table><tr><td clas=
+s=3D"email_actions__icon" style=3D"vertical-align: middle; padding-right: 3=
+0px; width: 58px; min-width: 58px; max-width: 58px;"><a class=3D"plaintext_=
+ignore" href=3D"https://the-asf.slack.com/x-p162064580615-8307235616336-830=
+6401490484/team" style=3D"display: block;"><img alt=3D"" src=3D"https://ava=
+tars.slack-edge.com/2017-03-29/161414987156_b60d413acd860a5ca235_88.jpg" st=
+yle=3D"height: 58px; width: 58px; min-width: 58px; border-radius: 4px; colo=
+r: #FFFFFF; font-size: 18px; line-height: 58px; mso-line-height-rule: exact=
+ly; mso-text-raise: 10px; border-radius: 4px;"></a></td><td style=3D"word-b=
+reak: break-word; vertical-align: middle; text-align: left; width: 100%;"><=
+table><tr><td class=3D"email_actions__text digest_email__card_header_text" =
+style=3D"word-break: break-word; vertical-align: middle; text-align: left; =
+width: 100%;"><h3 style=3D"font-size: 18px; font-weight: 700; line-height: =
+24px;">ASF</h3></td></tr><tr><td class=3D"email_actions__text digest_email_=
+_card_header_text" style=3D"word-break: break-word; vertical-align: middle;=
+ text-align: left; width: 100%;"><p style=3D"font-size: 16px; line-height: =
+23px; margin-bottom: 0;">13,082 members</p></td></tr></table></td></tr></ta=
+ble></td><td class=3D"digest_email__card_spacer"></td></tr></table></td></t=
+r></table><table class=3D"digest_email__card_wrapper" style=3D"width: 100%;=
+ margin-bottom: 45px;"><tr><td class=3D"digest_email__card_spacer"></td><td=
+><table style=3D"background-color: #f8f8f8; border-collapse: separate; bord=
+er-spacing: 0; width: 100%; border-radius: 0px 0px 8px 8px; border: 1px sol=
+id #DBDADB; border-top: none"><tr><td class=3D"digest_email__card_footer"><=
+table style=3D"width: 100%;"><tr><td class=3D"digest_email__card_footer_spa=
+cer"><p class=3D"digest_email__card_item" style=3D"margin: 0; padding-botto=
+m: 0;"><span style=3D"margin-right: 8px;">=F0=9F=94=A5</span>Your team has =
+sent 2,514 messages recently</p></td></tr><tr><td class=3D" digest_email__i=
+tem_spacer"></td></tr><tr><td class=3D"digest_email__card_footer_spacer"><p=
+ class=3D"digest_email__card_item" style=3D"margin: 0; padding-bottom: 0;">=
+<span style=3D"margin-right: 8px;">=F0=9F=8E=89</span>2 more teammates have=
+ joined</p></td></tr><tr><td class=3D"digest_email__item_spacer_last"></td>=
+</tr><tr><td class=3D"digest_email__card_footer_spacer" style=3D"text-align=
+: center;"><a href=3D"https://the-asf.slack.com/x-p162064580615-83072356163=
+36-8306401490484/team" class=3D"digest_email__card_launch_cta" style=3D"tex=
+t-decoration: none !important; color: #4A154B; background-color: #FFFFFF; d=
+isplay: block; text-align: center; text-transform: uppercase; border: 1px s=
+olid #BBBBBB; border-radius: 3px; font-weight: 900; letter-spacing: 0.8px;"=
+>View all unread messages</a></td></tr></table></td></tr></table></td><td c=
+lass=3D"digest_email__card_spacer"></td></tr></table><div style=3D"margin-l=
+eft: 50px; margin-right: 50px; margin-bottom: 72px; margin: 0;" class=3D"lg=
+_margin_left_right xl_margin_bottom"><div class=3D"digest_email__message_se=
+ctions"><div class=3D"digest_email__padding"><div class=3D"digest_email__se=
+ction_heading"><h2>New message in #welcome</h2></div><table><tr><td class=
+=3D"digest_email__section digest_email__section_spacing"><table style=3D"pa=
+dding: 0; font-size: 16px;"><tr><td style=3D"padding: 0 10px 0 0; width: 36=
+px;"><img alt=3D"" class=3D"single_email_digest__avatar" height=3D"36" widt=
+h=3D"36" src=3D"https://avatars.slack-edge.com/2025-01-14/8289076648566_ac7=
+9a17160844bc0a040_72.jpg" style=3D"display: block; border-radius: 4px; widt=
+h: 36px; height: 36px; min-width: 36px;"></td><td style=3D"padding: 0; padd=
+ing-bottom: 20px;"><table><tr><td style=3D"padding: 0;"><table><tr><td styl=
+e=3D"padding: 0; font-size: 16px; line-height: 18px;"><span class=3D"single=
+_email_digest__sender" style=3D"font-weight: bold; color: #1264a3; text-dec=
+oration: none; font-size: 16px; text-decoration: none; font-weight: 900; co=
+lor: #1D1C1D; margin-right: 8px;">Sridhar Sarnobat</span><span class=3D"sin=
+gle_email_digest__timestamp" style=3D"font-weight: normal; font-size: 12px;=
+ color: #717274; text-decoration: none;">January 15th at 5:37 AM</span></td=
+></tr></table></td></tr><tr><td class=3D"single_email_digest__message_text"=
+ style=3D"color: #1D1C1D; padding: 0; font-size: 16px;"><div class=3D"tsf_o=
+utput emoji_replace_on_load">Hello. I'm Sridhar from Silicon Valley. I bega=
+n working on the Oracle RDBMS optimizer at the beginning of my career thoug=
+h it didn't go well (I'm autistic so my career has not been impressive). Ca=
+ssandra is my 2nd chance, not to mention a way to stay relevant in this new=
+ industry.</div></td></tr><tr><td style=3D"padding: 0;"><span style=3D"whit=
+e-space: nowrap; display: inline-block; padding-top: 4px;"><span style=3D"b=
+ackground-color: #F2F2F2; border-radius: 20px; display: inline-block; white=
+-space: nowrap; padding: 5px 7px; line-height: 13px;"><img style=3D"display=
+: inline-block; vertical-align: middle; min-width: 13px;" src=3D"https://a.=
+slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f37b.png"=
+ alt=3D"beers" width=3D"13" height=3D"13"><span style=3D"font-size: 11px; p=
+adding: 0 1px 0 3px;">2</span></span></span></td></tr><tr><td><table style=
+=3D"margin-top: 9px; margin-left: 1px;"><tr><td style=3D"padding: 0; width:=
+ 28px;"><img alt=3D"" src=3D"https://secure.gravatar.com/avatar/e10ed18eec5=
+9fc97c2ac352595ebdd88.jpg?s=3D72&amp;d=3Dhttps%3A%2F%2Fa.slack-edge.com%2Fd=
+f10d%2Fimg%2Favatars%2Fava_0000-72.png" height=3D"24" width=3D"24" style=
+=3D"display: block; border-radius: 4px; width: 24px;"></td><td style=3D"pad=
+ding: 0; width: 28px;"><img alt=3D"" src=3D"https://avatars.slack-edge.com/=
+2022-03-16/3245731427122_1c27bf178f626c1cdeeb_72.png" height=3D"24" width=
+=3D"24" style=3D"display: block; border-radius: 4px; width: 24px;"></td><td=
+ style=3D"padding: 0 0 0 5px;"><a href=3D"https://the-asf.slack.com/x-p1620=
+64580615-8307235616336-8306401490484/archives/CE87PQD6G/p1736948251003629" =
+style=3D"font-size: 13px; font-weight: 700;">2 replies</a></td></tr></table=
+></td></tr></table></td></tr></table></td></tr></table><table style=3D"widt=
+h: 100%; " class=3D"sm_table"><tr style=3D"width: 100%;"><td style=3D"width=
+: 100%;"><span style=3D"display: inline-block; position:relative; border-ra=
+dius:4px; background-color:#611f69; " class=3D"button_link_wrapper plum"><a=
+ class=3D"button_link sm_full_width sm_border_box plum restyle_button" href=
+=3D"https://the-asf.slack.com/x-p162064580615-8307235616336-8306401490484/a=
+rchives/CE87PQD6G/p1736948251003629?thread_ts=3D1736948251.003629&amp;c=3D4=
+&amp;o=3D1&amp;d=3D1" style=3D"border-top:13px solid; border-bottom:13px so=
+lid; border-right:24px solid; border-left:24px solid; border-color:#611f69;=
+ border-radius:4px; background-color:#611f69; color:#ffffff; font-size:16px=
+; line-height:18px; word-break:break-word;  font-weight: bold; font-size: 1=
+4px; border-top:20px solid; border-bottom:20px solid; border-color:#611f69;=
+ line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-s=
+izing: border-box; display: inline-block; text-align: center; font-weight: =
+900; text-decoration: none !important;"> Open in Slack </a></span></td></tr=
+></table></div></div></div><div class=3D"email_actions__wrapper" style=3D"p=
+adding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: =
+50px; border-top: 1px solid #E1E1E4"><table><tr><td class=3D"email_actions_=
+_icon email_actions__icon_height_auto" style=3D"vertical-align: middle; pad=
+ding-right: 30px; width: 58px; min-width: 58px; max-width: 58px;">							<!=
+--[if mso]>
+								<img src=3D"https://a.slack-edge.com/86b79a8/img/email/notification=
+s_bell@2x.png" width=3D"58" alt=3D"" />
+							<![endif]-->
+
+							<!--[if !mso]> <!---->
+								<img src=3D"https://a.slack-edge.com/86b79a8/img/email/notification=
+s_bell@2x.png" style=3D"vertical-align: middle; width: 58px; max-width: non=
+e; width: 45px !important; height: 59px; padding-left: 5px" alt=3D"" />
+							<!-- <![endif]--></td><td style=3D"word-break: break-word; vertical-=
+align: middle; text-align: left; width: 100%;"><table><tr><td class=3D"emai=
+l_actions__text" style=3D"word-break: break-word; vertical-align: middle; t=
+ext-align: left; width: 100%;"><h3 style=3D"font-size: 18px; font-weight: 7=
+00; line-height: 24px;">Manage email settings</h3></td></tr><tr><td class=
+=3D"email_actions__text" style=3D"word-break: break-word; vertical-align: m=
+iddle; text-align: left; width: 100%;"><p style=3D"font-size: 16px; line-he=
+ight: 23px; margin-bottom: 0;">You can
+						<a href=3D"https://the-asf.slack.com/x-p162064580615-8307235616336-83=
+06401490484/unsub/U08916XJ49W-3b12c78bd86b2efd1a1b572281d3e21c4331c66488664=
+16e00aa40054e450fde-notify-mute-7d" style=3Dfont-weight:bold;>snooze notifi=
+cations this week</a>
+						or
+						<a href=3D"https://the-asf.slack.com/x-p162064580615-8307235616336-83=
+06401490484/unsub/U08916XJ49W-87d27aa6bd6ab213390b4fc08129ed5d8beb6b73ae676=
+2730fd16e826b6f23ac-digest" style=3Dfont-weight:bold;>unsubscribe</a>.</p><=
+/td></tr></table></td></tr></table><div style=3D"padding-top: 20px; padding=
+-bottom: 20px;"></div><table><tr><td class=3D"email_actions__icon email_act=
+ions__icon_height_auto" style=3D"vertical-align: middle; padding-right: 30p=
+x; width: 58px; min-width: 58px; max-width: 58px;">							<!--[if mso]>
+								<img src=3D"https://a.slack-edge.com/e6dd342/img/email/slack_app@2x=
+.png" width=3D"58" alt=3D"" />
+							<![endif]-->
+
+							<!--[if !mso]> <!---->
+								<img src=3D"https://a.slack-edge.com/e6dd342/img/email/slack_app@2x=
+.png" style=3D"vertical-align: middle; width: 58px; max-width: none; width:=
+ 58px !important;" alt=3D"" />
+							<!-- <![endif]--></td><td style=3D"word-break: break-word; vertical-=
+align: middle; text-align: left; width: 100%;"><table><tr><td class=3D"emai=
+l_actions__text" style=3D"word-break: break-word; vertical-align: middle; t=
+ext-align: left; width: 100%;"><h3 style=3D"font-size: 18px; font-weight: 7=
+00; line-height: 24px;">See notifications instantly</h3></td></tr><tr><td c=
+lass=3D"email_actions__text" style=3D"word-break: break-word; vertical-alig=
+n: middle; text-align: left; width: 100%;"><p style=3D"font-size: 16px; lin=
+e-height: 23px; margin-bottom: 0;">The Slack app is the best way to manage =
+your notifications and stay up to date.</p></td></tr></table></td><td class=
+=3D"email_actions__cta" style=3D"vertical-align: middle;text-align: right;w=
+hite-space: nowrap; min-width: 120px;"><table style=3D"width: 100%; " class=
+=3D"sm_table"><tr style=3D"width: 100%;"><td style=3D"width: 100%;"><span s=
+tyle=3D"display: inline-block; position:relative; border-radius:4px; backgr=
+ound-color:#611f69; " class=3D"button_link_wrapper plum"><a class=3D"button=
+_link sm_full_width sm_border_box plum restyle_button" href=3D"https://the-=
+asf.slack.com/x-p162064580615-8307235616336-8306401490484/downloads?t=3Ddow=
+nload_app" style=3D"border-top:13px solid; border-bottom:13px solid; border=
+-right:24px solid; border-left:24px solid; border-color:#611f69; border-rad=
+ius:4px; background-color:#611f69; color:#ffffff; font-size:16px; line-heig=
+ht:18px; word-break:break-word;  font-weight: bold; font-size: 14px; border=
+-top:20px solid; border-bottom:20px solid; border-color:#611f69; line-heigh=
+t: 14px; letter-spacing: 0.8px; text-transform: uppercase; box-sizing: bord=
+er-box; display: inline-block; text-align: center; font-weight: 900; text-d=
+ecoration: none !important;">Get</a></span></td></tr></table></td></tr></ta=
+ble><table style=3D"display: none;" class=3D"email_actions__cta_mobile"><tr=
+><td class=3D"email_actions__cta_mobile" style=3D"vertical-align: middle;te=
+xt-align: left; padding-top: 10px; border-left: 75px transparent solid; whi=
+te-space: nowrap; min-width: 120px;"><table style=3D"width: 100%; mso-hide:=
+ all; " class=3D"sm_table"><tr style=3D"width: 100%;"><td style=3D"width: 1=
+00%;"><span style=3D"display: inline-block; position:relative; border-radiu=
+s:4px; background-color:#611f69; " class=3D"button_link_wrapper plum"><a cl=
+ass=3D"button_link sm_full_width sm_border_box plum restyle_button" href=
+=3D"https://the-asf.slack.com/x-p162064580615-8307235616336-8306401490484/d=
+ownloads?t=3Ddownload_app" style=3D"border-top:13px solid; border-bottom:13=
+px solid; border-right:24px solid; border-left:24px solid; border-color:#61=
+1f69; border-radius:4px; background-color:#611f69; color:#ffffff; font-size=
+:16px; line-height:18px; word-break:break-word;  font-weight: bold; font-si=
+ze: 14px; border-top:20px solid; border-bottom:20px solid; border-color:#61=
+1f69; line-height: 14px; letter-spacing: 0.8px; text-transform: uppercase; =
+box-sizing: border-box; display: inline-block; text-align: center; font-wei=
+ght: 900; text-decoration: none !important;">Get</a></span></td></tr></tabl=
+e></td></tr></table></div><!--[if mso]>
+		</td>
+		<td style=3D"padding: 0; margin: 0; font-size: 20px; height: 20px;">&nbsp=
+;</td>
+	</tr>
+	<tr>
+		<td colspan=3D"3" style=3D"padding: 0; margin: 0; font-size: 20px; height=
+: 20px; height: 20px;">&nbsp;</td>
+	</tr>
+</table>
+<![endif]--></div></td></tr></table></center></td></tr><tr><td class=3D"ema=
+il_footer" style=3D"font-size: 15px;color: #717274;text-align: center;width=
+: 100%;"><!--[if mso]>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"padding: 0=
+; margin: 0; width: 100%;">
+    <tr>
+        <td colspan=3D"3" style=3D"padding: 0; margin: 0; font-size: 20px; =
+height: 20px;" height=3D"20">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style=3D"padding: 0; margin: 0;">&nbsp;</td>
+        <td style=3D"padding: 0; margin: 0;" width=3D"540">
+<![endif]--><center><table style=3D"margin: 20px auto 0; background-color: =
+white; border: 0; text-align: center; border-collapse: collapse;"><tr><td s=
+tyle=3D"width: 546px; vertical-align: top; padding: 0px;"><div style=3D"max=
+-width: 600px; margin: 0 auto;"><div class=3D"footer_padding"><table><tr><t=
+d class=3D"slack_logo_small_icon" style=3D"vertical-align: top; text-align:=
+ left;"><img width=3D"120" height=3D"36" style=3D"margin-top: 0; margin-rig=
+ht: 0; margin-bottom: 32px; margin-left: 0px;" src=3D"https://a.slack-edge.=
+com/80588/img/slack_logo_240_vogue.png" alt=3D"slack logo"></td><td style=
+=3D"vertical-align: top; text-align: right;padding-top:25px;"><a href=3D"ht=
+tps://twitter.com/slackhq" data-qa=3D"X_link" class=3D"social_icon_margin" =
+style=3D"margin-left: 20px;"><img class=3D"small_icon" src=3D"https://a.sla=
+ck-edge.com/98dd7c0/marketing/img/icons/icon_black_x.png" width=3D"25" heig=
+ht=3D"25" title=3D"X"></a><a href=3D"https://facebook.com/slackhq" data-qa=
+=3D"fb_link" class=3D"social_icon_margin" style=3D"margin-left: 20px;"><img=
+ class=3D"small_icon" src=3D"https://a.slack-edge.com/98dd7c0/marketing/img=
+/icons/icon_black_facebook.png" width=3D"25" height=3D"25" title=3D"Faceboo=
+k"></a><a href=3D"https://www.linkedin.com/company/tiny-spec-inc/" data-qa=
+=3D"linkedin_link" class=3D"social_icon_margin" style=3D"margin-left: 20px;=
+"><img class=3D"small_icon" src=3D"https://a.slack-edge.com/98dd7c0/marketi=
+ng/img/icons/icon_black_linkedin.png" width=3D"25" height=3D"25" title=3D"L=
+inkedIn"></a><a href=3D"https://www.youtube.com/slackhq" data-qa=3D"youtube=
+_link" class=3D"social_icon_margin" style=3D"margin-left: 20px;"><img class=
+=3D"small_icon" src=3D"https://a.slack-edge.com/98dd7c0/marketing/img/icons=
+/icon_black_youtube.png" width=3D"33" height=3D"25" title=3D"YouTube"></a><=
+a href=3D"https://www.instagram.com/slackhq" data-qa=3D"instagram_link" cla=
+ss=3D"social_icon_margin" style=3D"margin-left: 20px;"><img class=3D"small_=
+icon" src=3D"https://a.slack-edge.com/98dd7c0/marketing/img/icons/icon_blac=
+k_instagram.png" width=3D"25" height=3D"25" title=3D"Instagram"></a></td></=
+tr></table><div style=3D"font-size:12px; opacity:0.5; color:#696969; text-a=
+lign:left; line-height:15px; margin-bottom:50px; text-align: left;"><a clas=
+s=3D"footer_link" href=3D"https://slackhq.com" data-qa=3D"slack_blog" style=
+=3D"color: #696969 !important;">Our Blog</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;=
+&nbsp;<a class=3D"footer_link" href=3D"https://slack.com/legal" data-qa=3D"=
+slack_legal" style=3D"color: #696969 !important;">Policies</a>&nbsp;&nbsp;&=
+nbsp;|&nbsp;&nbsp;&nbsp;<a href=3D"https://slack.com/help" class=3D"footer_=
+link" data-qa=3D"slack_help" style=3D"color: #696969 !important;">Help Cent=
+er</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href=3D"https://slack.com/com=
+munity" class=3D"footer_link" data-qa=3D"slack_commmunity" style=3D"color: =
+#696969 !important;">Slack Community</a><br><br><div>&copy;2025 Slack Techn=
+ologies, LLC, a Salesforce company.<br>415 Mission Street, 3rd Floor, San F=
+rancisco, CA 94105</div><br>All rights reserved.</div></div></div></td></tr=
+></table></center><!--[if mso]>
+		</td>
+		<td style=3D"padding: 0; margin: 0; font-size: 20px; height: 20px;">&nbsp=
+;</td>
+	</tr>
+	<tr>
+		<td colspan=3D"3" style=3D"padding: 0; margin: 0; font-size: 20px; height=
+: 20px; height: 20px;">&nbsp;</td>
+	</tr>
+</table>
+<![endif]--></td></tr></table></body></html>
+--=_ae95bcb1-dcd5-482c-8225-df27684fa15b--
+
+

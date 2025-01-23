@@ -1,0 +1,81 @@
+Return-Path: <SRS0=LTvs=UO=james.apache.org=server-dev-return-86232-btellier=linagora.com@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-2.11 requiredScore=15.0
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 02680b8d
+          for <btellier@linagora.com>;
+          Wed, 22 Jan 2025 14:21:04 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 35681140B07
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 14:21:04 +0000 (UTC)
+Received: from s602i.ik2.com (s602i.ik2.com [66.37.25.76])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 5F2E51D5C6
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 15:25:55 +0100 (CET)
+Received: from s214b.ik2.com
+	by s602i.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <server-dev-return-86232-btellier=linagora.com@james.apache.org>)
+	id 1tabbF-0003ew-Kx
+	for btellier@linagora.com; Wed, 22 Jan 2025 14:21:02 +0000
+Received: from 95.216.194.37 by s214b.ik2.com (IK2 SMTP Server); Wed, 22 Jan 2025 14:20:57 +0000
+Received: from mail.apache.org (mailgw-he-de.apache.org [IPv6:2a01:4f8:c2c:d4aa::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mxout1-he-de.apache.org (ASF Mail Server at mxout1-he-de.apache.org) with ESMTPS id F1A7767670
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 14:20:54 +0000 (UTC)
+Received: (qmail 991007 invoked by uid 998); 22 Jan 2025 14:20:52 -0000
+Mailing-List: contact server-dev-help@james.apache.org; run by ezmlm
+Precedence: bulk
+List-Unsubscribe: <mailto:server-dev-unsubscribe@james.apache.org>
+List-Help: <mailto:server-dev-help@james.apache.org>
+List-Post: <mailto:server-dev@james.apache.org>
+List-Id: "James Developers List" <server-dev.james.apache.org>
+Reply-To: "James Developers List" <server-dev@james.apache.org>
+Delivered-To: mailing list server-dev@james.apache.org
+Delivered-To: btellier@linagora.com
+Received: (qmail 990782 invoked by uid 116); 22 Jan 2025 14:20:50 -0000
+Received: from mailrelay1-he-de.apache.org (HELO mailrelay1-he-de.apache.org) (116.203.21.61)
+ by apache.org (qpsmtpd/0.94) with ESMTP; Wed, 22 Jan 2025 14:20:50 +0000
+Authentication-Results: apache.org; auth=none
+Received: from ci-builds2-he-fi.apache.org (ci-builds2-he-fi.apache.org [135.181.1.42])
+	by mailrelay1-he-de.apache.org (ASF Mail Server at mailrelay1-he-de.apache.org) with ESMTPS id B051A3F6AB
+	for <server-dev@james.apache.org>; Wed, 22 Jan 2025 14:20:50 +0000 (UTC)
+Received: from ci-builds2-he-fi.apache.org (localhost.localdomain [127.0.0.1])
+	by ci-builds2-he-fi.apache.org (ASF Mail Server at ci-builds2-he-fi.apache.org) with ESMTP id 55FE14480559
+	for <server-dev@james.apache.org>; Wed, 22 Jan 2025 14:20:50 +0000 (UTC)
+Date: Wed, 22 Jan 2025 14:20:49 +0000 (UTC)
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Apache Jenkins Server <jenkins@builds.apache.org>
+To: server-dev@james.apache.org
+Message-ID: <568494334.4031.1737555650352@ci-builds2-he-fi.apache.org>
+Subject: [BUILD-UNSTABLE]: Job 'james/ApacheJames-Website/staging [staging]
+ [720]'
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_4030_1871789397.1737555649952"
+X-Jenkins-Job: staging
+X-Jenkins-Result: FAILURE
+X-SF-RX-Return-Path: <server-dev-return-86232-btellier=linagora.com@james.apache.org>
+X-SF-Originating-IP: 95.216.194.37
+X-SF-WhiteListedReason: Whitelisted Email From Domain
+X-SF-Score: -1.3
+X-SF-SRS: Sender address rewritten from <server-dev-return-86232-btellier=linagora.com@james.apache.org> to <SRS0=LTvs=UO=james.apache.org=server-dev-return-86232-btellier=linagora.com@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+------=_Part_4030_1871789397.1737555649952
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+BUILD-UNSTABLE: Job 'james/ApacheJames-Website/staging [staging] [720]':
+
+        Check console output at "<a href="https://ci-builds.apache.org/job/james/job/ApacheJames-Website/job/staging/720/">james/ApacheJames-Website/staging [staging] [720]</a>"
+
+------=_Part_4030_1871789397.1737555649952
+Content-Type: text/plain; charset=us-ascii
+
+
+---------------------------------------------------------------------
+To unsubscribe, e-mail: server-dev-unsubscribe@james.apache.org
+For additional commands, e-mail: server-dev-help@james.apache.org
+------=_Part_4030_1871789397.1737555649952--
+

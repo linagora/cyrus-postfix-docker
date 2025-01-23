@@ -1,0 +1,333 @@
+Return-Path: <SRS0=D1Ks=UO=cyrus.bounce.topicbox.com=bounce.mMa24505e34938427104a33ff2.r93814be0-233c-11ef-b247-ae1740decc0b@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-4.162118 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID ede3bd36
+          for <btellier@linagora.com>;
+          Wed, 22 Jan 2025 03:10:28 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 8037D140555
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 03:10:28 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id B412F1D5C6
+	for <btellier@linagora.com>; Wed, 22 Jan 2025 04:15:19 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <bounce.mMa24505e34938427104a33ff2.r93814be0-233c-11ef-b247-ae1740decc0b@cyrus.bounce.topicbox.com>)
+	id 1taR8K-0004Ze-Ll
+	for btellier@linagora.com; Wed, 22 Jan 2025 03:10:26 +0000
+Received: from 103.168.172.224 by s602e.ik2.com (IK2 SMTP Server); Wed, 22 Jan 2025 03:10:24 +0000
+Received: from localhost.localdomain (kubehost03.phl.internal [10.202.3.3])
+	by mailtxout.phl.internal (Postfix) with ESMTP id B6C472380216
+	for <btellier@linagora.com>; Tue, 21 Jan 2025 22:10:22 -0500 (EST)
+ARC-Authentication-Results: i=2; topicbox.com; arc=pass; dkim=pass (2048-bit rsa key
+ sha256) header.d=fastmail.com header.i=@fastmail.com header.b=TQSOjwY7
+ header.a=rsa-sha256 header.s=fm3 x-bits=2048; dkim=pass (2048-bit rsa key
+ sha256) header.d=messagingengine.com header.i=@messagingengine.com
+ header.b=aJMxMfzs header.a=rsa-sha256 header.s=fm3 x-bits=2048; dmarc=pass
+ policy.published-domain-policy=none policy.published-subdomain-policy=none
+ policy.applied-disposition=none policy.evaluated-disposition=none
+ (p=none,sp=none,d=none,d.eval=none) policy.policy-from=p
+ header.from=fastmail.com; spf=pass smtp.mailfrom=ellie@fastmail.com
+ smtp.helo=fout-a5-smtp.messagingengine.com; x-internal-arc=fail
+ (as.1.topicbox.com=pass, ams.1.topicbox.com=fail (body has been altered))
+ (Message modified while forwarding at Topicbox)
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=
+	topicbox.com; h=mime-version:date:from:to:message-id:subject
+	:content-type:list-help:list-id:list-post:list-subscribe
+	:reply-to:content-transfer-encoding:list-unsubscribe; s=
+	sysmsg-1; t=1737515422; bh=1NGCAij8r85qqRm42p6WEQs5TSwOMQ6R2eUJh
+	AxUYx4=; b=O0N3l1iJq9V+Ksplp9qUGcnTDrhTBpdzNeKk70DzoA9GW3GSFDcHF
+	wU5QBMfMiSCI5Y8pcCDFVfu+hs1Ep3vDhgdMAGmJDL/8DVG8BwrAbPtIbl7L4ge+
+	Jqbqb4aHVd46z+++FxyM9kmED4BHxlEuTWBwqd1MVtQpAZULckweec=
+ARC-Seal: i=2; a=rsa-sha256; cv=pass; d=topicbox.com; s=sysmsg-1; t=
+	1737515422; b=uBhsHNXExuc79+X3Hi9E/ePhT/Im8eQkWgs6Use+Q4M7+EIaDW
+	a3O6LzTGEnsqtH4wumISPS76dHtClTOqUMz2w4XB6pxZkDgum91w5gWI+XNpkbUh
+	W4hjwfYo4F6YZyw3NQxFCP1y8vKMrjS7XH2IaudWEh24wtY/NqD9hCRW0=
+Authentication-Results: topicbox.com; arc=pass; dkim=pass (2048-bit rsa key
+ sha256) header.d=fastmail.com header.i=@fastmail.com header.b=TQSOjwY7
+ header.a=rsa-sha256 header.s=fm3 x-bits=2048; dkim=pass (2048-bit rsa key
+ sha256) header.d=messagingengine.com header.i=@messagingengine.com
+ header.b=aJMxMfzs header.a=rsa-sha256 header.s=fm3 x-bits=2048; dmarc=pass
+ policy.published-domain-policy=none policy.published-subdomain-policy=none
+ policy.applied-disposition=none policy.evaluated-disposition=none
+ (p=none,sp=none,d=none,d.eval=none) policy.policy-from=p
+ header.from=fastmail.com; spf=pass smtp.mailfrom=ellie@fastmail.com
+ smtp.helo=fout-a5-smtp.messagingengine.com; x-internal-arc=fail
+ (as.1.topicbox.com=pass, ams.1.topicbox.com=fail (body has been altered))
+ (Message modified while forwarding at Topicbox)
+X-Received-Authentication-Results: mx.topicbox.com; arc=none (no signatures
+ found); bimi=skipped (DMARC Policy is not at enforcement); dkim=pass
+ (2048-bit rsa key sha256) header.d=fastmail.com header.i=@fastmail.com
+ header.b=TQSOjwY7 header.a=rsa-sha256 header.s=fm3 x-bits=2048; dkim=pass
+ (2048-bit rsa key sha256) header.d=messagingengine.com
+ header.i=@messagingengine.com header.b=aJMxMfzs header.a=rsa-sha256
+ header.s=fm3 x-bits=2048; dmarc=pass policy.published-domain-policy=none
+ policy.published-subdomain-policy=none policy.applied-disposition=none
+ policy.evaluated-disposition=none (p=none,sp=none,d=none,d.eval=none)
+ policy.policy-from=p header.from=fastmail.com; iprev=pass
+ smtp.remote-ip=103.168.172.148 (fout-a5-smtp.messagingengine.com); spf=pass
+ smtp.mailfrom=ellie@fastmail.com smtp.helo=fout-a5-smtp.messagingengine.com;
+ x-aligned-from=pass (Address match); x-me-sender=pass policy.xms=
+ kmGQZzW5ZAwsDQszP94cC3cllU1uByadyJ4VkHIsBZyWvbkVgbk1R4FMC-y8o0CSGpWKCqSUz3U5Axa8BOuNKPVkcMJioyXTlwqU68x6WaYU-Kn9DhkhOGLqTQUPbDeKp9dIoqE; x-ptr=pass smtp.helo=fout-a5-smtp.messagingengine.com policy.ptr=fout-a5-smtp.messagingengine.com; x-return-mx=pass header.domain=fastmail.com policy.is_org=yes (MX Records found: in1-smtp.messagingengine.com,in2-smtp.messagingengine.com); x-return-mx=pass smtp.domain=fastmail.com policy.is_org=yes (MX Records found: in1-smtp.messagingengine.com,in2-smtp.messagingengine.com); x-tls=pass smtp.version=TLSv1.3 smtp.cipher=TLS_AES_256_GCM_SHA384 smtp.bits=256/256; x-vs=clean score=-100 state=0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=cyrus.topicbox.com; h=
+	mime-version:date:from:to:message-id:subject:content-type
+	:list-help:list-id:list-post:list-subscribe:reply-to
+	:content-transfer-encoding:list-unsubscribe; s=dkim-1; t=
+	1737515422; x=1737601822; bh=Akx+XuTiUMDvGDPnB63vd6Rk2SHkKISXGw4
+	NL6P1XnM=; b=VOp11a//3IYRDGeX+Y+Mfjo89wC04Xvvu+lQhK/uCWYWx0ld90Y
+	YR+96DKAm7RpC+58p9ZDQXKXRsApQRD9kEoLD1Lemb+E5zePmKCDFO90efIix8ae
+	Yy3IEparSIs5Vl3CggsKC+DIPRGB7abB2D/sMaiW2J36bmgGGBbwUi9I=
+Received: from mx.topicbox.com (10-0-2-30.authmilter.topicbox.svc.cluster.local [10.0.2.30])
+	by tb-mx-2.topicbox.com (Postfix) with ESMTP id 3F9A110037D1BF62;
+	Tue, 21 Jan 2025 22:10:10 -0500 (EST)
+Received: from tb-mx-1.topicbox.com (10.0.3.218 [10.0.3.218])
+    by mx.topicbox.com (Authentication Milter) with ESMTP
+    id 819BF631A85;
+    Tue, 21 Jan 2025 22:10:10 -0500
+ARC-Seal: i=1; a=rsa-sha256; cv=none; d=topicbox.com; s=arcseal; t=
+    1737515410; b=sLJcpwlKUzbbQfRYiIUZDBtyFQbqRt3YgpdBw1A4jE5mI4d/6F
+    zpiqnVCbF+XlFFxZPjFTgCIN855YyJ6sgKVOlR+Ym3b8y1w6eh/OUIKT1AR+Ilcc
+    rKLhyMsspOHGzAQ1tJIHL8CUvN1eUYdli4Kya2Rt3K1KdZmC8NPGgS4V67OIpfkI
+    NTgDyvNmvJFmw6VfUBMOLTg4kTf8Mn5JyxuVDgj4JH9I9/zG9FI/cMDaejBIMW7i
+    WAvRYzx82f60dOOsP4nbZK6cZJWmYXBHnhBHFnwywqcveFhSY3rfZtZTxOjXP2rQ
+    lR/g8+Ly59+eZKWIuAB4B670UXHbiXjyYJgQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=
+    topicbox.com; h=mime-version:date:from:to:message-id:subject
+    :content-type; s=arcseal; t=1737515410; bh=KDnRxXeK4i4pJiiIvxoaf
+    T7xfbtBql+otMq9UBtmiQE=; b=WeJoMPcvf2bAgUJ7M83g0azqZirbiuD54KN01
+    kZgz3YyO3hGPTlvpsW7Q7EyHZ2qZpEBMg+SuNSesXyAqQ+NhZJhYksAIpB/x+YOG
+    KuhMb6baWJOPwRMt3nnijSnMed+89+YE3sVzWlBUHbI98KkeNDW5SCDbd9/xManL
+    Ehx7n2ha81iZL/2NOceyEYpZ+QMEXGdCK1X1osO2eNmQtMdd3jmPJRzSiYAgKGD0
+    dam/MZ/yzMoCVZP+bD/oQu/rDHA2xpsytzyX7GMoGrpwr5KQX04Fd2F6qoj2e7Mm
+    3hED/x/Z/tOj9yERq2r7eXWCs9pEemoBwEWIoZRMZYn4+XJkg==
+ARC-Authentication-Results: i=1; mx.topicbox.com;
+    arc=none (no signatures found);
+    bimi=skipped (DMARC Policy is not at enforcement);
+    dkim=pass (2048-bit rsa key sha256) header.d=fastmail.com
+    header.i=@fastmail.com header.b=TQSOjwY7 header.a=rsa-sha256
+    header.s=fm3 x-bits=2048;
+    dkim=pass (2048-bit rsa key sha256) header.d=messagingengine.com
+    header.i=@messagingengine.com header.b=aJMxMfzs header.a=rsa-sha256
+    header.s=fm3 x-bits=2048;
+    dmarc=pass policy.published-domain-policy=none
+    policy.published-subdomain-policy=none policy.applied-disposition=none
+    policy.evaluated-disposition=none (p=none,sp=none,d=none,d.eval=none)
+    policy.policy-from=p header.from=fastmail.com;
+    iprev=pass smtp.remote-ip=103.168.172.148
+    (fout-a5-smtp.messagingengine.com);
+    spf=pass smtp.mailfrom=ellie@fastmail.com
+    smtp.helo=fout-a5-smtp.messagingengine.com;
+    x-aligned-from=pass (Address match);
+    x-me-sender=pass
+    policy.xms=
+    kmGQZzW5ZAwsDQszP94cC3cllU1uByadyJ4VkHIsBZyWvbkVgbk1R4FMC-y8o0CSGpWKCqSUz3U5Axa8BOuNKPVkcMJioyXTlwqU68x6WaYU-Kn9DhkhOGLqTQUPbDeKp9dIoqE;
+    x-ptr=pass smtp.helo=fout-a5-smtp.messagingengine.com
+    policy.ptr=fout-a5-smtp.messagingengine.com;
+    x-return-mx=pass header.domain=fastmail.com policy.is_org=yes
+    (MX Records found: in1-smtp.messagingengine.com,in2-smtp.messagingengine.com);
+    x-return-mx=pass smtp.domain=fastmail.com policy.is_org=yes
+    (MX Records found: in1-smtp.messagingengine.com,in2-smtp.messagingengine.com);
+    x-tls=pass smtp.version=TLSv1.3 smtp.cipher=TLS_AES_256_GCM_SHA384
+    smtp.bits=256/256;
+    x-vs=clean score=-100 state=0
+X-ME-VSCause: gggruggvucftvghtrhhoucdtuddrgeefuddrudejfedgheegucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdggtfgfnhhsuhgsshgtrhhisggvpdfu
+    rfetoffkrfgpnffqhgenuceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnh
+    htshculddquddttddmnecujfgurhepofggfffhvffkufgtsegrtderreertddtnecuhfhr
+    ohhmpedfvghllhhivgcuthhimhhonhgvhidfuceovghllhhivgesfhgrshhtmhgrihhlrd
+    gtohhmqeenucggtffrrghtthgvrhhnpeelheejfeehveeikeehvefhtdfgteetgffgleev
+    iedvudelffeitdelhfeigeffudenucffohhmrghinheptgihrhhushhimhgrphdrohhrgh
+    dpghhithhhuhgsrdgtohhmnecukfhppedutdefrdduieekrddujedvrddugeeknecuvehl
+    uhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepuddtfedrudeikedrudejvd
+    drudegkedphhgvlhhopehfohhuthdqrgehqdhsmhhtphdrmhgvshhsrghgihhnghgvnhhg
+    ihhnvgdrtghomhdpmhgrihhlfhhrohhmpeeovghllhhivgesfhgrshhtmhgrihhlrdgtoh
+    hmqedpnhgspghrtghpthhtohepvddprhgtphhtthhopeeorghnnhhouhhntggvsegthihr
+    uhhsrdhtohhpihgtsghogidrtghomheqpdhrtghpthhtohepoehinhhfohestgihrhhush
+    drthhophhitggsohigrdgtohhmqe
+X-ME-VSScore: -100
+X-ME-VSCategory: clean
+Received-SPF: pass
+    (fastmail.com: Sender is authorized to use 'ellie@fastmail.com' in 'mfrom' identity (mechanism 'include:spf.messagingengine.com' matched))
+    receiver=mx.topicbox.com;
+    identity=mailfrom;
+    envelope-from="ellie@fastmail.com";
+    helo=fout-a5-smtp.messagingengine.com;
+    client-ip=103.168.172.148
+Received: from fout-a5-smtp.messagingengine.com (fout-a5-smtp.messagingengine.com [103.168.172.148])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by tb-mx-1.topicbox.com (Postfix) with ESMTPS;
+	Tue, 21 Jan 2025 22:10:09 -0500 (EST)
+Received: from phl-compute-10.internal (phl-compute-10.phl.internal [10.202.2.50])
+	by mailfout.phl.internal (Postfix) with ESMTP id B47F5138017A;
+	Tue, 21 Jan 2025 22:10:09 -0500 (EST)
+Received: from phl-imap-03 ([10.202.2.93])
+  by phl-compute-10.internal (MEProxy); Tue, 21 Jan 2025 22:10:09 -0500
+X-ME-Sender: <xms:kWGQZx_r8cEjbEeTK_AEE9Qy_KFLIsbGDVte27UY5jj0GOPEAozZwg>
+    <xme:kWGQZ1sSydeqMOOGEpRmW6pKnf9CX-CzGe2g40KONyax3MGbjzDz8Lib9PCSfHkhx
+    PjjwTcySiAvRA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefuddrudejfedgheegucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdggtfgfnhhsuhgsshgtrhhisggvpdfu
+    rfetoffkrfgpnffqhgenuceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnh
+    htshculddquddttddmnecujfgurhepofggfffhvffkufgtsegrtderreertddtnecuhfhr
+    ohhmpedfvghllhhivgcuthhimhhonhgvhidfuceovghllhhivgesfhgrshhtmhgrihhlrd
+    gtohhmqeenucggtffrrghtthgvrhhnpeelheejfeehveeikeehvefhtdfgteetgffgleev
+    iedvudelffeitdelhfeigeffudenucffohhmrghinheptgihrhhushhimhgrphdrohhrgh
+    dpghhithhhuhgsrdgtohhmnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehm
+    rghilhhfrhhomhepvghllhhivgesfhgrshhtmhgrihhlrdgtohhmpdhnsggprhgtphhtth
+    hopedvpdhmohguvgepshhmthhpohhuthdprhgtphhtthhopegrnhhnohhunhgtvgestgih
+    rhhushdrthhophhitggsohigrdgtohhmpdhrtghpthhtohepihhnfhhosegthihruhhsrd
+    htohhpihgtsghogidrtghomh
+X-ME-Proxy: <xmx:kWGQZ_DqXlQq-FD-sYkPvZLdIGy9v9HnXJGt2zy7HNdHupTUB1vFew>
+    <xmx:kWGQZ1cUoS1nrZkjEgsYkwUnjwlubLToTlyoIRZw3EYQEU_RrFLJOg>
+    <xmx:kWGQZ2OXU5RjjKzGiByQD7UM59mT7SyOTkGVKZrfXHVJwzxoPQS3TQ>
+    <xmx:kWGQZ3kDxSsw5IRTjKu4eUiraP2__l91pQcUq5pkpkJR_eL3b-iEYQ>
+    <xmx:kWGQZ42zTwI_eYcA5ggA-FsnAROhfJerozbdrgNrAElQwd80P4ORtmpu>
+Feedback-ID: i8af44024:Fastmail
+Received: by mailuser.phl.internal (Postfix, from userid 501)
+	id 7E4F017E0069; Tue, 21 Jan 2025 22:10:09 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+MIME-Version: 1.0
+Date: Wed, 22 Jan 2025 14:09:29 +1100
+X-LINAGORA-Copy-Delivery-Done: 1
+From: "ellie timoney" <ellie@fastmail.com>
+To: "cyrus info" <info@cyrus.topicbox.com>,
+ "cyrus announce" <announce@cyrus.topicbox.com>
+Message-Id: <dec69b6a-2c39-40c7-b745-3ef0cf1a747a@app.fastmail.com>
+Subject: Cyrus IMAP 3.10.1, 3.8.5, and 3.6.7 released
+Content-Type: multipart/alternative;
+ boundary=5783e43f3c194152ab158f1401f6a380
+Topicbox-Policy-Reasoning: allow: sender is an admin
+Topicbox-Message-UUID: 64e95d62-d86e-11ef-a5ec-ba9c898f59ee
+Archived-At: =?UTF-8?B?PGh0dHBzOi8vY3lydXMudG9waWNib3guY29tL2dyb3Vwcy9h?=
+ =?UTF-8?B?bm5vdW5jZS9UZmIxODI4MWYxMDliZTYzZC1NYTI0NTA1ZTM0OTM4NDI3MTA0?=
+ =?UTF-8?B?YTMzZmYyPg==?=
+List-Help: <https://cyrus.topicbox.com/groups/announce>
+List-Id: "Announce" <announce.cyrus.topicbox.com>
+List-Post: <mailto:announce@cyrus.topicbox.com>
+List-Software: Topicbox v0
+List-Subscribe: <https://cyrus.topicbox.com/groups/announce>
+Precedence: list
+Reply-To: Announce <announce@cyrus.topicbox.com>
+Content-Transfer-Encoding: 7bit
+List-Unsubscribe: <https://cyrus.topicbox.com/groups/announce>,
+ <mailto:announce+unsubscribe@cyrus.topicbox.com?subject=x-tx-unsubscribe:2:cyrus:c207302a-0e36-11eb-a4bc-4598212d11b0:93814be0-233c-11ef-b247-ae1740decc0b:Ma24505e34938427104a33ff2:1:LGh6ubo0ob2Ihuxkx5IyzknvddMJ0_3uvJQnQ2smuGk>
+Topicbox-Delivery-ID:
+ 2:cyrus:c207302a-0e36-11eb-a4bc-4598212d11b0:93814be0-233c-11ef-b247-ae1740decc0b:Ma24505e34938427104a33ff2:1:Jc7ey7hhba3c3b0HRmeI3ORmToel0OzrsP0u16bW_xU
+X-SF-RX-Return-Path: <bounce.mMa24505e34938427104a33ff2.r93814be0-233c-11ef-b247-ae1740decc0b@cyrus.bounce.topicbox.com>
+X-SF-Originating-IP: 103.168.172.224
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 2.3
+X-SF-SRS: Sender address rewritten from <bounce.mMa24505e34938427104a33ff2.r93814be0-233c-11ef-b247-ae1740decc0b@cyrus.bounce.topicbox.com> to <SRS0=D1Ks=UO=cyrus.bounce.topicbox.com=bounce.mMa24505e34938427104a33ff2.r93814be0-233c-11ef-b247-ae1740decc0b@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+
+--5783e43f3c194152ab158f1401f6a380
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+The Cyrus team is proud to announce the immediate availability of new versi=
+ons of Cyrus IMAP: 3.10.1, 3.8.5, and 3.6.7
+
+Release notes:
+
+    https://www.cyrusimap.org/imap/download/release-notes/3.10/x/3.10.1.html
+    https://www.cyrusimap.org/imap/download/release-notes/3.8/x/3.8.5.html
+    https://www.cyrusimap.org/imap/download/release-notes/3.6/x/3.6.7.html
+
+Download URLs:
+
+    https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.10.1/cyrus-imapd-3.10.1.tar.gz
+    https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.10.1/cyrus-imapd-3.10.1.tar.gz.sig
+
+    https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.8.5/cyrus-imapd-3.8.5.tar.gz
+    https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.8.5/cyrus-imapd-3.8.5.tar.gz.sig
+
+    https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.6.7/cyrus-imapd-3.6.7.tar.gz
+    https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.6.7/cyrus-imapd-3.6.7.tar.gz.sig
+
+On behalf of the Cyrus team,
+
+ellie timoney
+------------------------------------------
+Cyrus: Announce
+Permalink: https://cyrus.topicbox.com/groups/announce/Tfb18281f109be63d-Ma2=
+4505e34938427104a33ff2
+Delivery options: https://cyrus.topicbox.com/groups/announce/subscription
+
+--5783e43f3c194152ab158f1401f6a380
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html><html><html><head><title></title><style type=3D"text/css">p.MsoNormal=
+,p.MsoNoSpacing{margin:0}
+p.MsoNormal,p.MsoNoSpacing{margin:0}
+p.MsoNormal,p.MsoNoSpacing{margin:0}
+p.MsoNormal,p.MsoNoSpacing{margin:0}
+p.MsoNormal,p.MsoNoSpacing{margin:0}
+p.MsoNormal,p.MsoNoSpacing{margin:0}
+p.MsoNormal,p.MsoNoSpacing{margin:0}</style></head><body><div>The Cyrus tea=
+m is proud to announce the immediate availability of new versions of Cyrus =
+IMAP: 3.10.1, 3.8.5, and 3.6.7<br /></div><div><br /></div><div>Release not=
+es:<br /></div><div><br /></div><div>&nbsp; &nbsp;&nbsp;<a href=3D"https://=
+www.cyrusimap.org/imap/download/release-notes/3.10/x/3.10.1.html">https://w=
+ww.cyrusimap.org/imap/download/release-notes/3.10/x/3.10.1.html</a><br /></=
+div><div>&nbsp; &nbsp;&nbsp;<a href=3D"https://www.cyrusimap.org/imap/downl=
+oad/release-notes/3.8/x/3.8.5.html">https://www.cyrusimap.org/imap/download=
+/release-notes/3.8/x/3.8.5.html</a><br /></div><div>&nbsp; &nbsp;&nbsp;<a h=
+ref=3D"https://www.cyrusimap.org/imap/download/release-notes/3.6/x/3.6.7.ht=
+ml">https://www.cyrusimap.org/imap/download/release-notes/3.6/x/3.6.7.html<=
+/a><br /></div><div><br /></div><div>Download URLs:<br /></div><div><br /><=
+/div><div>&nbsp; &nbsp;&nbsp;<a href=3D"https://github.com/cyrusimap/cyrus-=
+imapd/releases/download/cyrus-imapd-3.10.1/cyrus-imapd-3.10.1.tar.gz">https=
+://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.10.1/cy=
+rus-imapd-3.10.1.tar.gz</a><br /></div><div><div>&nbsp; &nbsp;&nbsp;<a href=
+=3D"https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.10.1/cyrus-imapd-3.10.1.tar.gz.sig">https://github.com/cyrusimap/cyrus-im=
+apd/releases/download/cyrus-imapd-3.10.1/cyrus-imapd-3.10.1.tar.gz.sig</a><=
+br /></div><div><br /></div><div>&nbsp; &nbsp;&nbsp;<a href=3D"https://gith=
+ub.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.5/cyrus-imap=
+d-3.8.5.tar.gz">https://github.com/cyrusimap/cyrus-imapd/releases/download/=
+cyrus-imapd-3.8.5/cyrus-imapd-3.8.5.tar.gz</a><br /></div></div><div>&nbsp;=
+ &nbsp;&nbsp;<a href=3D"https://github.com/cyrusimap/cyrus-imapd/releases/d=
+ownload/cyrus-imapd-3.8.5/cyrus-imapd-3.8.5.tar.gz.sig">https://github.com/=
+cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.8.5/cyrus-imapd-3.8.5=
+.tar.gz.sig</a><br /></div><div><br /></div><div>&nbsp; &nbsp;&nbsp;<a href=
+=3D"https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-=
+3.6.7/cyrus-imapd-3.6.7.tar.gz">https://github.com/cyrusimap/cyrus-imapd/re=
+leases/download/cyrus-imapd-3.6.7/cyrus-imapd-3.6.7.tar.gz</a><br /></div><=
+div><div><div>&nbsp; &nbsp;&nbsp;<a href=3D"https://github.com/cyrusimap/cy=
+rus-imapd/releases/download/cyrus-imapd-3.6.7/cyrus-imapd-3.6.7.tar.gz.sig"=
+>https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-3.6=
+.7/cyrus-imapd-3.6.7.tar.gz.sig</a><br /></div><div><br /></div><div>On beh=
+alf of the Cyrus team,<br /></div></div></div><div><br /></div><div>ellie t=
+imoney<br /></div><div id=3D"topicbox-footer" style=3D"margin:10px 0 0;bord=
+er-top:1px solid #ddd;border-color:rgba(0,0,0,.15);padding:7px 0;">
+
+<strong><a href=3D"https://cyrus.topicbox.com/latest" style=3D"color:inheri=
+t;text-decoration:none">Cyrus</a></strong>
+  / Announce / see
+<a href=3D"https://cyrus.topicbox.com/groups/announce">discussions</a>
+  +
+<a href=3D"https://cyrus.topicbox.com/groups/announce/members">participants=
+</a>
+  +
+<a href=3D"https://cyrus.topicbox.com/groups/announce/subscription">deliver=
+y&nbsp;options</a>
+<a href=3D"https://cyrus.topicbox.com/groups/announce/Tfb18281f109be63d-Ma2=
+4505e34938427104a33ff2" style=3D"float:right">Permalink</a>
+</div>
+</body></html></html></html>=
+
+--5783e43f3c194152ab158f1401f6a380--
+

@@ -1,0 +1,105 @@
+Return-Path: <btellier@linagora.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-4.0 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 84ab1bd1
+          for <btellier@linagora.com>;
+          Mon, 20 Jan 2025 10:22:24 +0000 (UTC)
+Received: from smtp.linagora.com (smtp.linagora.com [54.36.8.78])
+	by incoming.linagora.com (Postfix) with ESMTPS id F0C47140AF9
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 10:22:23 +0000 (UTC)
+Received: from ?Open?PaaS?SMTP?server?for?Linagora? (unknown [51.75.13.34])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by smtp.linagora.com (Postfix) with ESMTPSA id 447AAEE2F1
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 11:27:12 +0100 (CET)
+MIME-Version: 1.0
+References: <Mime4j.3ca.c65014e58e466045.194833513f2@linagora.com>
+In-Reply-To: <Mime4j.3ca.c65014e58e466045.194833513f2@linagora.com>
+Subject: Re: A
+X-LINAGORA-Copy-Delivery-Done: 1
+From: Benoit TELLIER <btellier@linagora.com>
+To: =?ISO-8859-1?Q?Beno=EEt_TELLIER?= <btellier@linagora.com>
+Reply-To: btellier@linagora.com
+Date: Mon, 20 Jan 2025 10:22:23 +0000
+Message-ID: <Mime4j.3d1.2a437c01430289c3.194833c1f1b@linagora.com>
+User-Agent: Twake-Mail/0.14.10 Mozilla/5.0 (X11; Linux x86_64)
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+Content-Type: multipart/alternative;
+ boundary="-=Part.3d2.1f7642fc75dc6bee.194833c1f1c.feac2a814d459d85=-"
+
+---=Part.3d2.1f7642fc75dc6bee.194833c1f1c.feac2a814d459d85=-
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Accept-Language: fr-FR, en-US, vi-VN, ru-RU, ar-TN, it-IT, de-DE
+Content-Language: en-US
+
+
+B--=C2=A0
+
+Best regards,
+
+Benoit TELLIER
+
+General manager of Linagora VIET=
+NAM=2E
+Product owner for Team-Mail product=2E
+Chairman of the Apache James =
+project=2E
+
+Mail: btellier@linagora=2Ecom
+Tel: (0033) 6 77 26 04 58 (WhatsA=
+pp, Signal)
+
+
+On Jan 20, 2025 11:14 AM, from Benoit Tellier <btellier@linag=
+ora=2Ecom>A
+
+--=C2=A0
+
+Best regards,
+
+Benoit TELLIER
+
+General manager of Li=
+nagora VIETNAM =2E
+Product owner for Team-Mail  product=2E
+Chairman of the =
+Apache James project =2E
+
+Mail: btellier@linagora=2Ecom 
+Tel: (0033) 6 77 2=
+6 04 58 (WhatsApp, Signal)
+
+
+
+---=Part.3d2.1f7642fc75dc6bee.194833c1f1c.feac2a814d459d85=-
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Accept-Language: fr-FR, en-US, vi-VN, ru-RU, ar-TN, it-IT, de-DE
+Content-Language: en-US
+
+<div><br>B</div><div class=3D"tmail-signature"><span class=3D"tmail_signatu=
+re_prefix">--&nbsp;</span><br><br>Best regards,<br><br><b>Benoit TELLIER</b=
+><br><br>General manager of <a href=3D"https://linagora=2Evn">Linagora VIET=
+NAM</a>=2E<br>Product owner for <a href=3D"https://github=2Ecom/linagora/tm=
+ail-flutter">Team-Mail</a> product=2E<br>Chairman of the <a href=3D"https:/=
+/james=2Eapache=2Eorg/">Apache James project</a>=2E<br><br>Mail: <a href=3D=
+"mailto:btellier@linagora=2Ecom">btellier@linagora=2Ecom</a><br>Tel: (0033)=
+ 6 77 26 04 58 (WhatsApp, Signal)<br><br><br></div><cite style=3D"text-alig=
+n: left;display: block;">On Jan 20, 2025 11:14 AM, from Benoit Tellier &lt;=
+btellier@linagora=2Ecom&gt;</cite><blockquote style=3D"margin-left:8px;marg=
+in-right:8px;padding-left:12px;padding-right:12px;border-left:5px solid #ee=
+e;"><div>A<br><br></div><div class=3D"tmail-signature-blocked"><span class=
+=3D"tmail_signature_prefix">--&nbsp;</span><br><br>Best regards,<br><br><b>=
+Benoit TELLIER</b><br><br>General manager of <a href=3D"https://linagora=2E=
+vn" class=3D"" target=3D"_blank" rel=3D"noreferrer">Linagora VIETNAM </a>=
+=2E<br>Product owner for <a href=3D"https://github=2Ecom/linagora/tmail-flu=
+tter" class=3D"" target=3D"_blank" rel=3D"noreferrer">Team-Mail </a> produc=
+t=2E<br>Chairman of the <a href=3D"https://james=2Eapache=2Eorg/" class=3D"=
+" target=3D"_blank" rel=3D"noreferrer">Apache James project </a>=2E<br><br>=
+Mail: <a href=3D"mailto:btellier@linagora=2Ecom" class=3D"" target=3D"_blan=
+k" rel=3D"noreferrer">btellier@linagora=2Ecom </a><br>Tel: (0033) 6 77 26 0=
+4 58 (WhatsApp, Signal)<br><br><br></div></blockquote>
+---=Part.3d2.1f7642fc75dc6bee.194833c1f1c.feac2a814d459d85=---

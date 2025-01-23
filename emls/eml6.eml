@@ -1,0 +1,933 @@
+Return-Path: <SRS0=Xwu8=UM=bounce.marketing.ccifi.net=bounce-7@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=0.913787 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 3587663b
+          for <btellier@linagora.com>;
+          Mon, 20 Jan 2025 10:09:52 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 33994140AF9
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 10:09:52 +0000 (UTC)
+Received: from s480e.ik2.com (s480e.ik2.com [64.38.239.84])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id 143B41D5C6
+	for <btellier@linagora.com>; Mon, 20 Jan 2025 11:14:41 +0100 (CET)
+Received: from s480d.ik2.com
+	by s480e.ik2.com with esmtps (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <bounce-7@bounce.marketing.ccifi.net>)
+	id 1tZoj2-0000JL-EG
+	for btellier@linagora.com; Mon, 20 Jan 2025 10:09:50 +0000
+Received: from 188.114.81.4 by s480d.ik2.com (IK2 SMTP Server); Mon, 20 Jan 2025 10:09:43 +0000
+Content-Type: multipart/alternative; boundary=1f703e47a269258f32a5640856f803a6
+Date: Mon, 20 Jan 2025 10:09:41 +0000
+DKIM-Signature: a=rsa-sha256; b=hSbhpeOutOtKsjhB/qcLyb8MKF41+GBqR8B86xACgbZcuItStLPdCssrXl9I9sP0PLdXQO14EBpW7Nf2c9GTT7Ar1mYmyukb/Xx3+xrGoAxR3AU63d5JsZLMAVz7oh6EOQSfjHDPJyHhmotdxfMgCZVnRPPswaJKRasBGb7H0Tg=; bh=t2zQoh09hFVJMYVXq7FJgMZZ82QBaekHdmkdC8KdvoA=; c=simple/simple; d=ccifv.org; h=Sender:From:From:To:To:CC:Subject:Subject:Message-ID:Message-ID:List-Unsubscribe:List-Unsubscribe:List-Unsubscribe-Post:List-Unsubscribe-Post:X-CSA-Complaints:X-CSA-Complaints; s=1b4b4ed1; t=1737367781; v=1; x=1737454181;
+DKIM-Signature: a=rsa-sha256; b=VYdmNoDaGnkJJvC4Vm/VpbF4gEKqeBJGUYHNv1eR83l66/6gasbEnduDaYgbf2RWp5rccsfAeOPooTEdEpEQWQnkkvkkidet+QeMTG4S+eIba1nwuak5PtDi+8A4GJNFC31cPOP1Mrd/d3HN3CXJfUgzOtul+UUhAWkzaFdnp48=; bh=t2zQoh09hFVJMYVXq7FJgMZZ82QBaekHdmkdC8KdvoA=; c=simple/simple; d=marketing.ccifi.net; h=Sender:From:From:To:To:CC:Subject:Subject:Message-ID:Message-ID:List-Unsubscribe:List-Unsubscribe:List-Unsubscribe-Post:List-Unsubscribe-Post:X-CSA-Complaints:X-CSA-Complaints; s=s1024a; t=1737367781; v=1; x=1737454181;
+X-LINAGORA-Copy-Delivery-Done: 1
+From: "CCI France Vietnam" <communication@ccifv.org>
+List-Unsubscribe: <https://marketing.ccifi.net/one_click_unsubscribe.html?x=a62e&m=0b6&s=dCsT&u=z&z=yXF1GI1&>, <mailto:listunsubscribe@marketing.ccifi.net?subject=uccife.xserial.s56e3Y%2Bk6TLzDNIRh6K6QDkuRni2HncroX99Vj%2Fo3XLzPURiurK9pr4BWGOYicv0%2FxyFgpxkLCRL%2FMo03hqo8e7peOmVZfE0xfTpTcDu6p%2FRaqy%2FQi33uSZZ2w%3D%3D>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <uccife.xserial.s56e3Y+k6TLzDNIRh6K6QDkuRni2HncroX99Vj/o3XLzPURiurK9pr4BWGOYicv0/xyFgpxkLCRL/Mo03hqo8e7peOmVZfE0xfTpTcDu6p/Raqy/Qi33uSZZ2w==@marketing.ccifi.net>
+MIME-Version: 1.0
+Reply-To: communication@ccifv.org
+Require-Recipient-Valid-Since: btellier@linagora.com; Thu, 04 May 2023 06:45:34 +0000
+Subject: Celebrate Franco-German Friendship Day in Hanoi and Ho Chi Minh City
+To: "Benoit TELLIER" <btellier@linagora.com>
+X-Complaints-To: abuse@marketing.ccifi.net
+X-CSA-Complaints: csa-complaints@eco.de
+X-SF-RX-Return-Path: <bounce-7@bounce.marketing.ccifi.net>
+X-SF-HELO-Domain: mta-3.marketing.ccifi.net
+X-SF-Originating-IP: 188.114.81.4
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 5.4
+X-SF-SRS: Sender address rewritten from <bounce-7@bounce.marketing.ccifi.net> to <SRS0=Xwu8=UM=bounce.marketing.ccifi.net=bounce-7@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+
+--1f703e47a269258f32a5640856f803a6
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+22nd January from 6:30 PM=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C=20=0A=0AVoir la version en ligne [https://marketing.ccifi.net/view.h=
+tml?x=3Da62e&m=3D0b6&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyoO3bcY&]=0A=0A=0A=0A=0A[htt=
+ps://multimedia.marketing.ccifi.net/uccife-y/photos/10bc03d0-a584-4a07-a9f1=
+-6de3d386124f.png] [https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db9=
+04&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyXuyGz5&]=0A=0A=0ACelebrate Franco-German Frie=
+ndship Day in Hanoi and Ho Chi Minh City=0A=0A=0A=0AFeierabend Rendez-Vous =
+- Edition 2025=0A=0A=0ACelebrate Franco-German Friendship Daywith the Frenc=
+h Chamber of Commerce and the German Business Association at this year's fi=
+rst networking event!=0A=0A=0AEstablished on January 22, 2003, to commemora=
+te the 40th anniversary of the =C3=89lys=C3=A9e Treaty, and initiated by Fr=
+ench President Jacques Chirac and German Chancellor Gerhard Schr=C3=B6der, =
+this day celebrates the enduring partnership between France and Germany, fo=
+stering mutual appreciation of their culture, language, and shared history.=
+=0A=0A=0AThis vibrant event offers an unparalleled opportunity to expand yo=
+ur network and strengthen connections with our European neighbors.=0A=0A=0A=
+Don=E2=80=99t miss out on this dynamic start to the year!=0A=0A=0AWednesday=
+=0A22=0AJanuary=0A=0A=0ATime:=0Afrom 6:30 PM to 9:30 PM=0A=0A=0APrice:=0AMe=
+mber of CCIFV (up to date with their membership fees)& GBA:=0AFree of charg=
+e=0ANon-member: 400 000 VND=0A=0A=0A=0AHANOI=0AVenue:=0ACat Vi Restaurant, =
+Grand Mercure Hanoi=0A15thFloor, 9 Cat Linh, Dong Da, Hanoi=0A=0A=0AI regis=
+ter [https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90f&mc=3Ds&s=3Dd=
+CsT&u=3Dz&z=3Dy06QoxF&]=0A=0AHO CHI MINH CITY=0AVenue:=0APapaya Papa Roofto=
+p=0A13thFloor, 147 Hai Ba Trung, District 3, HCMC=0A=0A=0AI register [https=
+://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90A&mc=3Ds&s=3DdCsT&u=3Dz&=
+z=3DyVi79Rl&]=0A=0A=0A=0A=0A[https://multimedia.marketing.ccifi.net/uccife-=
+y/photos/0a73f077-822a-4e49-aa20-a507f7bad913.png] [https://marketing.ccifi=
+.net/click.html?x=3Da62e&lc=3Db90c&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyUScV6a&]=0A=
+=0A=0A=0A=0A=0A[https://multimedia.marketing.ccifi.net/uccife-y/photos/2db2=
+72c3-842d-4a56-b756-3feb9d446805.png]=0A=0AWednesday=0A22=0AJanuary=0A=0A=
+=0ATime:=0Afrom 4:30 PM to 6:30 PM=0A=0A=0AVenue:=0AUniversity of Science a=
+nd Technology of Hanoi (USTH), Vietnam Academy of Science and Technology,=
+=0ARoom 402, A21 Building,=0A18 Hoang Quoc Viet Street, Cau Giay District, =
+Ha Noi=0A=0A=0AI register [https://marketing.ccifi.net/click.html?x=3Da62e&=
+lc=3Db908&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dywzuz4D&]=0A=0A=0AWe are excited to inv=
+ite you to an insightful talk on critical minerals, featuring Benjamin Gall=
+ezot, the Government Delegate for Strategic Minerals and Metalsat the Frenc=
+h Prime Minister=E2=80=99s Office.=0A=0A=0ADuring this talk, Mr. Gallezot w=
+ill explore the global challenges surrounding critical minerals and discuss=
+ potential collaborations between France and Vietnam to address these pivot=
+al issues.=0A=0A=0AWe would be honored if you could join us for this import=
+ant conversation.=0A=0A=0A=0A=0A=0A=0A[https://multimedia.marketing.ccifi.n=
+et/uccife-y/photos/918e1203-447b-4971-8f2f-2c0465a020b2.png] [https://marke=
+ting.ccifi.net/click.html?x=3Da62e&lc=3Db90i&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dyngs=
+Xpz&]=0A=0A=0Alinkedin [https://us-as.gr-cdn.com/images/common/templates/me=
+ssages/v2/social/linkedin8.png] [https://marketing.ccifi.net/click.html?x=
+=3Da62e&lc=3Db90x&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dyz1AwCU&]=0A=0Afacebook [https:=
+//us-as.gr-cdn.com/images/common/templates/messages/v2/social/facebook8.png=
+] [https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db905&mc=3Ds&s=3DdCs=
+T&u=3Dz&z=3DysVllj&]=0A=0Ayoutube [https://us-as.gr-cdn.com/images/common/t=
+emplates/messages/v2/social/youtube8.png] [https://marketing.ccifi.net/clic=
+k.html?x=3Da62e&lc=3Db907&mc=3Ds&s=3DdCsT&u=3Dz&z=3DydO6wid&]=0A=0Atwitter =
+[https://us-as.gr-cdn.com/images/common/templates/messages/v2/social/twitte=
+r8.png] [https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90u&mc=3Ds&s=
+=3DdCsT&u=3Dz&z=3Dys1czu6&]=0Awww.ccifv.org [https://marketing.ccifi.net/cl=
+ick.html?x=3Da62e&lc=3Db90P&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyLrWUM5&]=0A=0A=0A=0A=
+=0A=0A=0A=0AYou may unsubscribe [https://marketing.ccifi.net/unsubscribe.ht=
+ml?x=3Da62e&m=3D0b6&mc=3Ds&s=3DdCsT&u=3Dz&z=3DybxRGAd&pt=3Dunsubscribe] or =
+change your contact details [https://marketing.ccifi.net/change_details.htm=
+l?x=3Da62e&m=3D0b6&s=3DdCsT&u=3Dz&z=3DywtI06F&pt=3Dchange_details] at any t=
+ime.=0A=
+
+--1f703e47a269258f32a5640856f803a6
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!doctype html><html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org/1=
+999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas=
+-microsoft-com:office:office"><head><title></title><!--[if !mso]><!--><meta=
+ http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![endif]--><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"><meta n=
+ame=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><style =
+type=3D"text/css">#outlook a { padding:0; }=0A      body { margin:0;padding=
+:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }=0A      table=
+, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; =
+}=0A      img { border:0;height:auto;line-height:100%; outline:none;text-de=
+coration:none;-ms-interpolation-mode:bicubic; }=0A      p { display:block;m=
+argin:13px 0; }</style><!--[if mso]>=0A    <noscript>=0A    <xml>=0A    <o:=
+OfficeDocumentSettings>=0A      <o:AllowPNG/>=0A      <o:PixelsPerInch>96</=
+o:PixelsPerInch>=0A    </o:OfficeDocumentSettings>=0A    </xml>=0A    </nos=
+cript>=0A    <![endif]--><!--[if lte mso 11]>=0A    <style type=3D"text/css=
+">=0A      .mj-outlook-group-fix { width:100% !important; }=0A    </style>=
+=0A    <![endif]--><style type=3D"text/css">@media only screen and (min-wid=
+th:480px) {=0A        .mj-column-per-100 { width:100% !important; max-width=
+: 100%; }=0A.mj-column-per-67-0000000000001 { width:67.0000000000001% !impo=
+rtant; max-width: 67.0000000000001%; }=0A.mj-column-per-33-0000000000001 { =
+width:33.0000000000001% !important; max-width: 33.0000000000001%; }=0A.mj-c=
+olumn-per-50 { width:50% !important; max-width: 50%; }=0A      }</style><st=
+yle media=3D"screen and (min-width:480px)">.moz-text-html .mj-column-per-10=
+0 { width:100% !important; max-width: 100%; }=0A.moz-text-html .mj-column-p=
+er-67-0000000000001 { width:67.0000000000001% !important; max-width: 67.000=
+0000000001%; }=0A.moz-text-html .mj-column-per-33-0000000000001 { width:33.=
+0000000000001% !important; max-width: 33.0000000000001%; }=0A.moz-text-html=
+ .mj-column-per-50 { width:50% !important; max-width: 50%; }</style><style =
+type=3D"text/css">@media only screen and (max-width:479px) {=0A      table.=
+mj-full-width-mobile { width: 100% !important; }=0A      td.mj-full-width-m=
+obile { width: auto !important; }=0A    }</style><style type=3D"text/css">@=
+media (max-width: 479px) {=0D=0A.hide-on-mobile {=0D=0Adisplay: none !impor=
+tant;=0D=0A}=0D=0A}=0A.gr-headerviewonline-dwcfgq a,=0D=0A.gr-headerviewonl=
+ine-dwcfgq a:visited {=0D=0Acolor: #FFFFFF;=0D=0Atext-decoration: underline=
+;=0D=0A}=0A.gr-mlimage-exfpat img {=0D=0Abox-sizing: border-box;=0D=0A}=0D=
+=0A@media (min-width: 480px) {=0D=0A.gr-mlimage-qxfbaa {=0D=0Aheight: 320px=
+ !important;=0D=0A}=0D=0A}=0A.gr-mltext-bgrcgh a,=0D=0A.gr-mltext-bgrcgh a:=
+visited {=0D=0Atext-decoration: none;=0D=0A}=0A.gr-mltext-veuieb a,=0D=0A.g=
+r-mltext-veuieb a:visited {=0D=0Atext-decoration: none;=0D=0A}=0A.gr-mltext=
+-nfekih a,=0D=0A.gr-mltext-nfekih a:visited {=0D=0Atext-decoration: none;=
+=0D=0A}=0A.gr-mltext-ceglsu a,=0D=0A.gr-mltext-ceglsu a:visited {=0D=0Atext=
+-decoration: none;=0D=0A}=0A.gr-mlbutton-jldqll p {=0D=0Adirection: ltr;=0D=
+=0A}=0A.gr-mltext-edaerr a,=0D=0A.gr-mltext-edaerr a:visited {=0D=0Atext-de=
+coration: none;=0D=0A}=0A.gr-mlbutton-exlbxi p {=0D=0Adirection: ltr;=0D=0A=
+}=0A.gr-mlimage-exfpat img {=0D=0Abox-sizing: border-box;=0D=0A}=0D=0A@medi=
+a (min-width: 480px) {=0D=0A.gr-mlimage-lxpobs {=0D=0Aheight: 99px !importa=
+nt;=0D=0A}=0D=0A}=0A.gr-mlimage-exfpat img {=0D=0Abox-sizing: border-box;=
+=0D=0A}=0D=0A@media (min-width: 480px) {=0D=0A.gr-mlimage-wjrhmo {=0D=0Ahei=
+ght: 530px !important;=0D=0A}=0D=0A}=0A.gr-mltext-koowmw a,=0D=0A.gr-mltext=
+-koowmw a:visited {=0D=0Atext-decoration: none;=0D=0A}=0A.gr-mlbutton-cqihf=
+x p {=0D=0Adirection: ltr;=0D=0A}=0A.gr-mltext-sjubry a,=0D=0A.gr-mltext-sj=
+ubry a:visited {=0D=0Atext-decoration: none;=0D=0A}=0A.gr-mlimage-exfpat im=
+g {=0D=0Abox-sizing: border-box;=0D=0A}=0D=0A@media (min-width: 480px) {=0D=
+=0A.gr-mlimage-fxbttv {=0D=0Aheight: 314px !important;=0D=0A}=0D=0A}=0A.gr-=
+mltext-gdidqi a,=0D=0A.gr-mltext-gdidqi a:visited {=0D=0Atext-decoration: n=
+one;=0D=0A}=0A.gr-mlimage-exfpat img {=0D=0Abox-sizing: border-box;=0D=0A}=
+=0D=0A@media (min-width: 480px) {=0D=0A.gr-mlimage-eypiif {=0D=0Aheight: 0p=
+x !important;=0D=0A}=0D=0A}=0A.gr-footer-xsmvxc a,=0D=0A.gr-footer-xsmvxc a=
+:visited {=0D=0Acolor: #FFFFFF;=0D=0Atext-decoration: underline;=0D=0A}</st=
+yle><link href=3D"https://fonts.googleapis.com/css?display=3Dswap&family=3D=
+Roboto:400,400i,700,700i&subset=3Dcyrillic,greek,latin-ext,vietnamese" rel=
+=3D"stylesheet" type=3D"text/css"><style type=3D"text/css">@import url(http=
+s://fonts.googleapis.com/css?display=3Dswap&family=3DRoboto:400,400i,700,70=
+0i&subset=3Dcyrillic,greek,latin-ext,vietnamese);</style></head><body style=
+=3D"word-spacing:normal;background-color:#DFE4E8;"><div style=3D"display:no=
+ne;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px=
+;opacity:0;overflow:hidden;">22nd January from 6:30 PM<div style=3D"max-hei=
+ght:0; overflow:hidden; mso-hide:all;" aria-hidden=3D"true">&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp; &n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp; &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp; &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp; &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&n=
+bsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&n=
+bsp; &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp; &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;</div></div><div class=3D"elem-body" style=3D"background-=
+color:#DFE4E8;" lang=3D"und" dir=3D"auto">  <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"w=
+idth:100%;"><tbody><tr><td><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:570px;" width=3D"570" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:=
+0px auto;max-width:570px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody=
+><tr><td style=3D"border-bottom:0 none #000000;border-left:0 none #000000;b=
+order-right:0 none #000000;border-top:0 none #000000;direction:ltr;font-siz=
+e:0px;padding:10px 0 0 0;text-align:center;"><!--[if mso | IE]><table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+class=3D"" style=3D"vertical-align:top;width:570px;" ><![endif]--><div clas=
+s=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" width=3D"100%"><tbody><tr><td style=3D"background-color:transparent;bor=
+der-bottom:none;border-left:none;border-right:none;border-top:none;vertical=
+-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"center" cl=
+ass=3D"gr-headerviewonline-enyokf gr-headerviewonline-dwcfgq" style=3D"back=
+ground:#FFC048;font-size:0px;padding:5px;word-break:break-word;"><div style=
+=3D"font-family:Roboto, Arial, sans-serif;font-size:12px;font-style:normal;=
+line-height:1;text-align:center;text-decoration:underline;color:#000000;"><=
+div><u><a style=3D"color: #FFFFFF;" href=3D"https://marketing.ccifi.net/vie=
+w.html?x=3Da62e&m=3D0b6&mc=3Ds&s=3DdCsT&u=3Dz&z=3DynGLd9O&" target=3D"_blan=
+k">Voir la version en ligne</a></u></div></div></td></tr></tbody></table></=
+td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]=
+--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![e=
+ndif]--></td></tr></tbody></table><table align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"=
+><tbody><tr><td><!--[if mso | IE]><table align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"w=
+idth:570px;" width=3D"570" ><tr><td style=3D"line-height:0px;font-size:0px;=
+mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;ma=
+x-width:570px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td st=
+yle=3D"border-bottom:0 none #000000;border-left:0 none #000000;border-right=
+:0 none #000000;border-top:0 none #000000;direction:ltr;font-size:0px;paddi=
+ng:0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"v=
+ertical-align:top;width:570px;" ><![endif]--><div class=3D"mj-column-per-10=
+0 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><t=
+body><tr><td style=3D"background-color:transparent;border-bottom:none;borde=
+r-left:none;border-right:none;border-top:none;vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"center" class=3D"gr-mlimage-exf=
+pat gr-mlimage-qxfbaa link-id-81473dcfeb30" style=3D"font-size:0px;padding:=
+0;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;border-spaci=
+ng:0px;"><tbody><tr><td style=3D"width:570px;"><a href=3D"https://marketing=
+.ccifi.net/click.html?x=3Da62e&lc=3Db904&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dyk2izKz&=
+" target=3D"_blank"><img alt=3D"" src=3D"https://multimedia.marketing.ccifi=
+.net/uccife-y/photos/10bc03d0-a584-4a07-a9f1-6de3d386124f.png" style=3D"bor=
+der:0;border-left:0 none #000000;border-right:0 none #000000;border-top:0 n=
+one #000000;border-bottom:0 none #000000;border-radius:0;display:block;outl=
+ine:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width=
+=3D"570" height=3D"auto"></a></td></tr></tbody></table></td></tr></tbody></=
+table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><=
+![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></ta=
+ble><![endif]--></td></tr></tbody></table><!--[if mso | IE]><table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=
+=3D"presentation" style=3D"width:570px;" width=3D"570" bgcolor=3D"#FFFFFF" =
+><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactl=
+y;"><![endif]--><div style=3D"background:#FFFFFF;background-color:#FFFFFF;m=
+argin:0px auto;max-width:570px;"><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#F=
+FFFFF;background-color:#FFFFFF;width:100%;"><tbody><tr><td style=3D"border-=
+bottom:0 none #000000;border-left:0 none #000000;border-right:0 none #00000=
+0;border-top:0 none #000000;direction:ltr;font-size:0px;padding:5px;text-al=
+ign:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-alig=
+n:top;width:560px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook=
+-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:in=
+line-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><t=
+d style=3D"background-color:transparent;border-bottom:none;border-left:none=
+;border-right:none;border-top:none;vertical-align:top;padding:0;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%"><tbody><tr><td align=3D"left" class=3D"gr-mltext-qbvral gr-mltext=
+-bgrcgh" style=3D"font-size:0px;padding:10px;word-break:break-word;"><div s=
+tyle=3D"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;lin=
+e-height:1.4;text-align:left;color:#000000;"><div style=3D"text-align: cent=
+er"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bott=
+om:0px;font-weight:normal;color:#000000;"><span style=3D"color: #4F4F4F"><s=
+trong><span style=3D"font-size: 16px"><span style=3D"font-family: Roboto, A=
+rial, sans-serif">Celebrate Franco-German Friendship Day in Hanoi and Ho Ch=
+i Minh City</span></span></strong></span></p></div></div></td></tr></tbody>=
+</table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table=
+><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></=
+table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"" role=3D"presentation" style=3D"width:570px;" width=3D"570" b=
+gcolor=3D"#FFFFFF" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line=
+-height-rule:exactly;"><![endif]--><div style=3D"background:#FFFFFF;backgro=
+und-color:#FFFFFF;margin:0px auto;max-width:570px;"><table align=3D"center"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"background:#FFFFFF;background-color:#FFFFFF;width:100%;"><tbody><tr><=
+td style=3D"border-bottom:0 none #000000;border-left:0 none #000000;border-=
+right:0 none #000000;border-top:0 none #000000;direction:ltr;font-size:0px;=
+padding:5px 5px 0 5px;text-align:center;"><!--[if mso | IE]><table role=3D"=
+presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td clas=
+s=3D"" style=3D"vertical-align:top;width:375.20000000000056px;" ><![endif]-=
+-><div class=3D"mj-column-per-67-0000000000001 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"backgro=
+und-color:transparent;border-bottom:none;border-left:none;border-right:none=
+;border-top:none;vertical-align:top;padding:0;"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><t=
+r><td align=3D"left" class=3D"gr-mltext-qbvral gr-mltext-veuieb" style=3D"f=
+ont-size:0px;padding:10px;word-break:break-word;"><div style=3D"font-family=
+:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1.4;text-a=
+lign:left;color:#000000;"><div style=3D"text-align: center"><p style=3D"fon=
+t-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:=
+normal;color:#000000;"><span style=3D"color: #4F4F4F"><strong><span style=
+=3D"font-size: 18px"><span style=3D"font-family: Roboto, Arial, sans-serif"=
+><span style=3D"background-color: transparent">Feierabend Rendez-Vous - Edi=
+tion 2025</span></span></span></strong></span></p></div><div style=3D"text-=
+align: justify"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px=
+;margin-bottom:0px;font-weight:normal;color:#000000;"><br></p></div><div st=
+yle=3D"text-align: justify"><p style=3D"font-family:Arial;font-size:14px;ma=
+rgin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><span sty=
+le=3D"color: #4F4F4F"><strong><span style=3D"font-size: 14px"><span style=
+=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"background-color=
+: transparent">Celebrate Franco-German Friendship Day</span></span></span><=
+/strong></span><span style=3D"color: #4F4F4F"><span style=3D"font-size: 14p=
+x"><span style=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"fo=
+nt-weight: 400"><span style=3D"background-color: transparent">&nbsp;with th=
+e French Chamber of Commerce and the German Business Association at this ye=
+ar's first networking event!</span></span></span></span></span></p></div><d=
+iv style=3D"text-align: justify"><p style=3D"font-family:Arial;font-size:14=
+px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><br>=
+</p></div><div style=3D"text-align: justify"><p style=3D"font-family:Arial;=
+font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#0=
+00000;"><span style=3D"color: #4F4F4F"><span style=3D"font-size: 14px"><spa=
+n style=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"font-weig=
+ht: 400"><span style=3D"background-color: transparent">Established on Janua=
+ry 22, 2003, to commemorate the 40th anniversary of the =C3=89lys=C3=A9e Tr=
+eaty, and initiated by French President Jacques Chirac and German Chancello=
+r Gerhard Schr=C3=B6der, this day celebrates the enduring partnership betwe=
+en France and Germany, fostering mutual appreciation of their culture, lang=
+uage, and shared history.</span></span></span></span></span></p></div><div =
+style=3D"text-align: justify"><p style=3D"font-family:Arial;font-size:14px;=
+margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><br></p=
+></div><div style=3D"text-align: justify"><p style=3D"font-family:Arial;fon=
+t-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#0000=
+00;"><span style=3D"color: #4F4F4F"><span style=3D"font-size: 14px"><span s=
+tyle=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"font-weight:=
+ 400"><span style=3D"background-color: transparent">This vibrant event offe=
+rs an </span></span></span></span></span><span style=3D"color: #4F4F4F"><st=
+rong><span style=3D"font-size: 14px"><span style=3D"font-family: Roboto, Ar=
+ial, sans-serif"><span style=3D"background-color: transparent">unparalleled=
+ opportunity to expand your network and strengthen connections with our Eur=
+opean neighbors.</span></span></span></strong></span></p></div><div style=
+=3D"text-align: justify"><p style=3D"font-family:Arial;font-size:14px;margi=
+n-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><br></p></di=
+v><div style=3D"text-align: justify"><p style=3D"font-family:Arial;font-siz=
+e:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;">=
+<span style=3D"color: #4F4F4F"><span style=3D"font-size: 14px"><span style=
+=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"font-weight: 400=
+"><span style=3D"background-color: transparent">Don=E2=80=99t miss out on t=
+his dynamic start to the year!</span></span></span></span></span></p></div>=
+</div></td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td><td class=3D"" style=3D"vertical-align:top;width:184.8000000000=
+0055px;" ><![endif]--><div class=3D"mj-column-per-33-0000000000001 mj-outlo=
+ok-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:=
+inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><=
+td style=3D"background-color:transparent;border-bottom:none;border-left:non=
+e;border-right:none;border-top:none;vertical-align:top;padding:0;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%"><tbody><tr><td align=3D"left" class=3D"gr-mltext-qbvral gr-mltext=
+-nfekih" style=3D"background:#F2F2F2;font-size:0px;padding:10px;word-break:=
+break-word;"><div style=3D"font-family:Ubuntu, Helvetica, Arial, sans-serif=
+;font-size:13px;line-height:1.4;text-align:left;color:#000000;"><div style=
+=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14px;margin=
+-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><span style=
+=3D"color: #4F4F4F"><span style=3D"font-size: 16px"><span style=3D"font-fam=
+ily: Roboto, Arial, sans-serif">Wednesday</span></span></span></p></div><di=
+v style=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14px=
+;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><span =
+style=3D"color: #F9C614"><strong><span style=3D"font-size: 64px"><span styl=
+e=3D"font-family: Roboto, Arial, sans-serif">22</span></span></strong></spa=
+n></p></div><div style=3D"text-align: center"><p style=3D"font-family:Arial=
+;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#=
+000000;"><span style=3D"color: #4F4F4F"><span style=3D"font-size: 16px"><sp=
+an style=3D"font-family: Roboto, Arial, sans-serif">January</span></span></=
+span></p></div><div style=3D"text-align: center"><p style=3D"font-family:Ar=
+ial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;colo=
+r:#000000;"><br></p></div><div style=3D"text-align: center"><p style=3D"fon=
+t-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:=
+normal;color:#000000;"><span style=3D"color: #F9C614"><strong><span style=
+=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial, sans-serif"=
+>Time:</span></span></strong></span></p></div><div style=3D"text-align: cen=
+ter"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bot=
+tom:0px;font-weight:normal;color:#000000;"><span style=3D"color: #4F4F4F"><=
+span style=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial, s=
+ans-serif">from 6:30 PM to 9:30 PM</span></span></span></p></div><div style=
+=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14px;margin=
+-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><br></p></div=
+><div style=3D"text-align: center"><p style=3D"font-family:Arial;font-size:=
+14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><s=
+pan style=3D"color: #F9C614"><strong><span style=3D"font-size: 12px"><span =
+style=3D"font-family: Roboto, Arial, sans-serif">Price:</span></span></stro=
+ng></span></p></div><div style=3D"text-align: center"><p style=3D"font-fami=
+ly:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal=
+;color:#000000;"><span style=3D"background-color: transparent"><span style=
+=3D"color: #4F4F4F"><span style=3D"font-size: 12px"><span style=3D"font-fam=
+ily: Roboto, Arial, sans-serif"><span style=3D"font-weight: 400">Member of =
+CCIFV </span></span></span></span><span style=3D"color: #4F4F4F"><em><span =
+style=3D"font-size: 10px"><span style=3D"font-family: Roboto, Arial, sans-s=
+erif"><span style=3D"font-weight: 400">(</span></span></span></em></span></=
+span><span style=3D"color: #4F4F4F"><em><span style=3D"font-size: 10px"><sp=
+an style=3D"font-family: Roboto, Arial, sans-serif">up to date with their m=
+embership fees)</span></span></em></span>&nbsp;<span style=3D"color: #4F4F4=
+F"><span style=3D"font-size: 12px"><span style=3D"font-family: Roboto, Aria=
+l, sans-serif"><span style=3D"font-weight: 400"><span style=3D"background-c=
+olor: transparent">&amp; GBA:</span></span></span></span></span></p></div><=
+div style=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14=
+px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><spa=
+n style=3D"color: #4F4F4F"><span style=3D"font-size: 12px"><span style=3D"f=
+ont-family: Roboto, Arial, sans-serif"><span style=3D"font-weight: 400"><sp=
+an style=3D"background-color: transparent">Free of charge</span></span></sp=
+an></span></span><br><span style=3D"color: #4F4F4F"><span style=3D"font-siz=
+e: 12px"><span style=3D"font-family: Roboto, Arial, sans-serif"><span style=
+=3D"font-weight: 400"><span style=3D"background-color: transparent">Non-mem=
+ber: 400 000 VND</span></span></span></span></span></p></div></div></td></t=
+r></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></=
+tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></=
+td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:570px;" width=
+=3D"570" bgcolor=3D"#F2F2F2" ><tr><td style=3D"line-height:0px;font-size:0p=
+x;mso-line-height-rule:exactly;"><![endif]--><div style=3D"background:#F2F2=
+F2;background-color:#F2F2F2;margin:0px auto;max-width:570px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"background:#F2F2F2;background-color:#F2F2F2;width:100%;"><=
+tbody><tr><td style=3D"border-bottom:0 none #000000;border-left:0 none #000=
+000;border-right:0 none #000000;border-top:0 none #000000;direction:ltr;fon=
+t-size:0px;padding:5px;text-align:center;"><!--[if mso | IE]><table role=3D=
+"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td cla=
+ss=3D"" style=3D"vertical-align:top;width:280px;" ><![endif]--><div class=
+=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px;text-alig=
+n:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"><=
+table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" width=3D"100%"><tbody><tr><td style=3D"background-color:transparent;borde=
+r-bottom:none;border-left:none;border-right:none;border-top:none;vertical-a=
+lign:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" class=
+=3D"gr-mltext-qbvral gr-mltext-ceglsu" style=3D"font-size:0px;padding:10px;=
+word-break:break-word;"><div style=3D"font-family:Ubuntu, Helvetica, Arial,=
+ sans-serif;font-size:13px;line-height:1.4;text-align:left;color:#000000;">=
+<div style=3D"text-align: center"><p style=3D"font-family:Arial;font-size:1=
+4px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><sp=
+an style=3D"color: #F9C614"><strong><span style=3D"font-size: 16px"><span s=
+tyle=3D"font-family: Roboto, Arial, sans-serif">HANOI</span></span></strong=
+></span></p></div><div style=3D"text-align: center"><p style=3D"font-family=
+:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;c=
+olor:#000000;"><span style=3D"color: #F9C614"><strong><span style=3D"font-s=
+ize: 12px"><span style=3D"font-family: Roboto, Arial, sans-serif">Venue:</s=
+pan></span></strong></span></p></div><div style=3D"text-align: center"><p s=
+tyle=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;f=
+ont-weight:normal;color:#000000;"><span style=3D"color: #4F4F4F"><strong><s=
+pan style=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial, sa=
+ns-serif">Cat Vi Restaurant, Grand Mercure Hanoi</span></span></strong></sp=
+an></p></div><div style=3D"text-align: center"><p style=3D"font-family:Aria=
+l;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:=
+#000000;"><span style=3D"font-size: 12px"><span style=3D"color: #4F4F4F"><s=
+trong><span style=3D"font-family: Roboto, Arial, sans-serif">&nbsp;</span><=
+/strong></span><span style=3D"color: #4F4F4F"><em><span style=3D"font-famil=
+y: Roboto, Arial, sans-serif">15</span></em></span><sup><span style=3D"colo=
+r: #4F4F4F"><em><span style=3D"font-family: Roboto, Arial, sans-serif">th</=
+span></em></span><span style=3D"color: #4F4F4F"><em><span style=3D"font-fam=
+ily: Roboto, Arial, sans-serif">&nbsp;</span></em></span></sup><span style=
+=3D"color: #4F4F4F"><span style=3D"font-family: Roboto, Arial, sans-serif">=
+Floor</span></span><span style=3D"color: #4F4F4F"><em><span style=3D"font-f=
+amily: Roboto, Arial, sans-serif">, 9 Cat Linh, Dong Da, Hanoi</span></em><=
+/span></span></p></div></div></td></tr><tr><td align=3D"center" class=3D"gr=
+-mlbutton-itcpfc gr-mlbutton-jldqll link-id-60f7f2d7f344" style=3D"font-siz=
+e:0px;padding:10px 5px 5px 5px;word-break:break-word;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-c=
+ollapse:separate;line-height:100%;"><tbody><tr><td align=3D"center" bgcolor=
+=3D"#F9C614" role=3D"presentation" style=3D"border:none;border-bottom:0 non=
+e #000000;border-left:0 none #000000;border-radius:5px;border-right:0 none =
+#000000;border-top:0 none #000000;cursor:auto;font-style:normal;mso-padding=
+-alt:12px;background:#F9C614;word-break:break-word;" valign=3D"middle"><a h=
+ref=3D"https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90f&mc=3Ds&s=
+=3DdCsT&u=3Dz&z=3Dy1RAkSo&" style=3D"display:inline-block;background:#F9C61=
+4;color:#4F4F4F;font-family:Roboto, Arial, sans-serif;font-size:16px;font-s=
+tyle:normal;font-weight:bold;line-height:100%;margin:0;text-decoration:none=
+;text-transform:none;padding:12px;mso-padding-alt:0px;border-radius:5px;" t=
+arget=3D"_blank">I register</a></td></tr></tbody></table></td></tr></tbody>=
+</table></td></tr></tbody></table></div><!--[if mso | IE]></td><td class=3D=
+"" style=3D"vertical-align:top;width:280px;" ><![endif]--><div class=3D"mj-=
+column-per-50 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;=
+direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%"><tbody><tr><td style=3D"background-color:transparent;border-botto=
+m:none;border-left:none;border-right:none;border-top:none;vertical-align:to=
+p;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" class=3D"gr-=
+mltext-qbvral gr-mltext-edaerr" style=3D"font-size:0px;padding:10px;word-br=
+eak:break-word;"><div style=3D"font-family:Ubuntu, Helvetica, Arial, sans-s=
+erif;font-size:13px;line-height:1.4;text-align:left;color:#000000;"><div st=
+yle=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14px;mar=
+gin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><span styl=
+e=3D"color: #C82B23"><strong><span style=3D"font-size: 16px"><span style=3D=
+"font-family: Roboto, Arial, sans-serif">HO CHI MINH CITY</span></span></st=
+rong></span></p></div><div style=3D"text-align: center"><p style=3D"font-fa=
+mily:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:norm=
+al;color:#000000;"><span style=3D"color: #C82B23"><strong><span style=3D"fo=
+nt-size: 12px"><span style=3D"font-family: Roboto, Arial, sans-serif">Venue=
+:</span></span></strong></span></p></div><div style=3D"text-align: center">=
+<p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0=
+px;font-weight:normal;color:#000000;"><span style=3D"color: #000000"><stron=
+g><span style=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial=
+, sans-serif"><span style=3D"background-color: transparent">=C2=A0</span></=
+span></span></strong></span><span style=3D"color: #4F4F4F"><strong><span st=
+yle=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial, sans-ser=
+if"><span style=3D"background-color: transparent">Papaya Papa Rooftop</span=
+></span></span></strong></span></p></div><div style=3D"text-align: center">=
+<p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0=
+px;font-weight:normal;color:#000000;"><span style=3D"font-size: 12px"><span=
+ style=3D"background-color: transparent"><span style=3D"color: #4F4F4F"><em=
+><span style=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"font=
+-weight: 400">13</span></span></em></span><span style=3D"color: #4F4F4F"><e=
+m><span style=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"fon=
+t-weight: 400"><sup>th</sup></span></span></em></span><span style=3D"color:=
+ #4F4F4F"><em><span style=3D"font-family: Roboto, Arial, sans-serif"><span =
+style=3D"font-weight: 400">&nbsp;Floor, 147 Hai Ba Trung, District 3, HCMC<=
+/span></span></em></span></span></span></p></div></div></td></tr><tr><td al=
+ign=3D"center" class=3D"gr-mlbutton-itcpfc gr-mlbutton-exlbxi link-id-1f5e3=
+d12be21" style=3D"font-size:0px;padding:10px 5px 5px 5px;word-break:break-w=
+ord;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:separate;line-height:100%;"><tbody><tr><t=
+d align=3D"center" bgcolor=3D"#C82B23" role=3D"presentation" style=3D"borde=
+r:none;border-bottom:0 none #000000;border-left:0 none #000000;border-radiu=
+s:5px;border-right:0 none #000000;border-top:0 none #000000;cursor:auto;fon=
+t-style:normal;mso-padding-alt:12px;background:#C82B23;word-break:break-wor=
+d;" valign=3D"middle"><a href=3D"https://marketing.ccifi.net/click.html?x=
+=3Da62e&lc=3Db90A&mc=3Ds&s=3DdCsT&u=3Dz&z=3DybrPLO9&" style=3D"display:inli=
+ne-block;background:#C82B23;color:#4F4F4F;font-family:Roboto, Arial, sans-s=
+erif;font-size:16px;font-style:normal;font-weight:bold;line-height:100%;mar=
+gin:0;text-decoration:none;text-transform:none;padding:12px;mso-padding-alt=
+:0px;border-radius:5px;" target=3D"_blank">I register</a></td></tr></tbody>=
+</table></td></tr></tbody></table></td></tr></tbody></table></div><!--[if m=
+so | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--=
+[if mso | IE]></td></tr></table><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"wid=
+th:570px;" width=3D"570" bgcolor=3D"#FFFFFF" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"=
+background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;max-width:570px=
+;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF=
+;width:100%;"><tbody><tr><td style=3D"border-bottom:0 none #000000;border-l=
+eft:0 none #000000;border-right:0 none #000000;border-top:0 none #000000;di=
+rection:ltr;font-size:0px;padding:0 5px;text-align:center;"><!--[if mso | I=
+E]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:560px;" ><![end=
+if]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"background-color:=
+transparent;border-bottom:none;border-left:none;border-right:none;border-to=
+p:none;vertical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td styl=
+e=3D"font-size:0px;word-break:break-word;"><div style=3D"height:10px;line-h=
+eight:10px;">&#8202;</div></td></tr><tr><td align=3D"center" class=3D"gr-ml=
+image-exfpat gr-mlimage-lxpobs link-id-adfbc677ad77" style=3D"font-size:0px=
+;padding:0;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;bor=
+der-spacing:0px;"><tbody><tr><td style=3D"width:560px;"><a href=3D"https://=
+marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90c&mc=3Ds&s=3DdCsT&u=3Dz&z=
+=3DybfIURg&" target=3D"_blank"><img alt=3D"" src=3D"https://multimedia.mark=
+eting.ccifi.net/uccife-y/photos/0a73f077-822a-4e49-aa20-a507f7bad913.png" s=
+tyle=3D"border:0;border-left:0 none #000000;border-right:0 none #000000;bor=
+der-top:0 none #000000;border-bottom:0 none #000000;border-radius:0;display=
+:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:1=
+3px;" width=3D"560" height=3D"auto"></a></td></tr></tbody></table></td></tr=
+><tr><td align=3D"center" style=3D"font-size:0px;padding:13px;word-break:br=
+eak-word;"><p style=3D"border-top:solid 1px #4F4F4F;font-size:1px;margin:0p=
+x auto;width:92%;"></p><!--[if mso | IE]><table align=3D"center" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid 1px #4F4F4=
+F;font-size:1px;margin:0px auto;width:491.28000000000003px;" role=3D"presen=
+tation" width=3D"491.28000000000003px" ><tr><td style=3D"height:0;line-heig=
+ht:0;"> &nbsp;=0A</td></tr></table><![endif]--></td></tr></tbody></table></=
+td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]=
+--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"" role=3D"presentation" style=3D"width:570px;" width=3D"570" bgcolor=3D=
+"#FFFFFF" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div style=3D"background:#FFFFFF;background-color=
+:#FFFFFF;margin:0px auto;max-width:570px;"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ackground:#FFFFFF;background-color:#FFFFFF;width:100%;"><tbody><tr><td styl=
+e=3D"border-bottom:0 none #000000;border-left:0 none #000000;border-right:0=
+ none #000000;border-top:0 none #000000;direction:ltr;font-size:0px;padding=
+:5px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"v=
+ertical-align:top;width:375.20000000000056px;" ><![endif]--><div class=3D"m=
+j-column-per-67-0000000000001 mj-outlook-group-fix" style=3D"font-size:0px;=
+text-align:left;direction:ltr;display:inline-block;vertical-align:top;width=
+:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" width=3D"100%"><tbody><tr><td style=3D"background-color:transpar=
+ent;border-bottom:none;border-left:none;border-right:none;border-top:none;v=
+ertical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"cen=
+ter" class=3D"gr-mlimage-exfpat gr-mlimage-wjrhmo" style=3D"font-size:0px;p=
+adding:0;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;borde=
+r-spacing:0px;"><tbody><tr><td style=3D"width:375px;"><img alt=3D"" src=3D"=
+https://multimedia.marketing.ccifi.net/uccife-y/photos/2db272c3-842d-4a56-b=
+756-3feb9d446805.png" style=3D"border:0;border-left:0 none #000000;border-r=
+ight:0 none #000000;border-top:0 none #000000;border-bottom:0 none #000000;=
+border-radius:0;display:block;outline:none;text-decoration:none;height:auto=
+;width:100%;font-size:13px;" width=3D"375" height=3D"auto"></td></tr></tbod=
+y></table></td></tr></tbody></table></td></tr></tbody></table></div><!--[if=
+ mso | IE]></td><td class=3D"" style=3D"vertical-align:top;width:184.800000=
+00000055px;" ><![endif]--><div class=3D"mj-column-per-33-0000000000001 mj-o=
+utlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;disp=
+lay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><=
+tr><td style=3D"background-color:transparent;border-bottom:none;border-left=
+:none;border-right:none;border-top:none;vertical-align:top;padding:0;"><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" w=
+idth=3D"100%"><tbody><tr><td align=3D"left" class=3D"gr-mltext-qbvral gr-ml=
+text-koowmw" style=3D"background:#F2F2F2;font-size:0px;padding:10px;word-br=
+eak:break-word;"><div style=3D"font-family:Ubuntu, Helvetica, Arial, sans-s=
+erif;font-size:13px;line-height:1.4;text-align:left;color:#000000;"><div st=
+yle=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14px;mar=
+gin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><span styl=
+e=3D"color: #4F4F4F"><span style=3D"font-size: 16px"><span style=3D"font-fa=
+mily: Roboto, Arial, sans-serif">Wednesday</span></span></span></p></div><d=
+iv style=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14p=
+x;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><span=
+ style=3D"color: #272389"><strong><span style=3D"font-size: 64px"><span sty=
+le=3D"font-family: Roboto, Arial, sans-serif">22</span></span></strong></sp=
+an></p></div><div style=3D"text-align: center"><p style=3D"font-family:Aria=
+l;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:=
+#000000;"><span style=3D"color: #4F4F4F"><span style=3D"font-size: 16px"><s=
+pan style=3D"font-family: Roboto, Arial, sans-serif">January</span></span><=
+/span></p></div><div style=3D"text-align: center"><p style=3D"font-family:A=
+rial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;col=
+or:#000000;"><br></p></div><div style=3D"text-align: center"><p style=3D"fo=
+nt-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight=
+:normal;color:#000000;"><span style=3D"color: #272389"><strong><span style=
+=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial, sans-serif"=
+>Time:</span></span></strong></span></p></div><div style=3D"text-align: cen=
+ter"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bot=
+tom:0px;font-weight:normal;color:#000000;"><span style=3D"color: #4F4F4F"><=
+span style=3D"font-size: 12px"><span style=3D"font-family: Roboto, Arial, s=
+ans-serif">from 4:30 PM to 6:30 PM</span></span></span></p></div><div style=
+=3D"text-align: center"><p style=3D"font-family:Arial;font-size:14px;margin=
+-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><br></p></div=
+><div style=3D"text-align: center"><p style=3D"font-family:Arial;font-size:=
+14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#000000;"><s=
+pan style=3D"color: #272389"><strong><span style=3D"font-size: 12px"><span =
+style=3D"font-family: Roboto, Arial, sans-serif">Venue:</span></span></stro=
+ng></span></p></div><div style=3D"text-align: center"><p style=3D"font-fami=
+ly:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal=
+;color:#000000;"><span style=3D"color: #4F4F4F"><strong><span style=3D"font=
+-size: 12px"><span style=3D"font-family: Roboto, Arial, sans-serif"><span s=
+tyle=3D"font-weight: 700"><span style=3D"background-color: transparent">Uni=
+versity of Science and Technology of Hanoi (USTH), Vietnam Academy of Scien=
+ce and Technology,</span></span></span></span></strong></span><span style=
+=3D"color: #4F4F4F"><span style=3D"font-size: 12px"><span style=3D"font-fam=
+ily: Roboto, Arial, sans-serif"><span style=3D"font-weight: 400"><span styl=
+e=3D"background-color: transparent">=C2=A0</span></span></span></span></spa=
+n></p></div><div style=3D"text-align: center"><p style=3D"font-family:Arial=
+;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;color:#=
+000000;"><span style=3D"color: #4F4F4F"><em><span style=3D"font-size: 12px"=
+><span style=3D"font-family: Roboto, Arial, sans-serif"><span style=3D"back=
+ground-color: transparent">Room 402, A21 Building,</span></span></span></em=
+></span></p></div><div style=3D"text-align: center"><p style=3D"font-family=
+:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-weight:normal;c=
+olor:#000000;"><span style=3D"color: #4F4F4F"><em><span style=3D"font-size:=
+ 12px"><span style=3D"font-family: Roboto, Arial, sans-serif"><span style=
+=3D"background-color: transparent">18 Hoang Quoc Viet Street, Cau Giay Dist=
+rict, Ha Noi</span></span></span></em></span></p></div></div></td></tr><tr>=
+<td align=3D"center" class=3D"gr-mlbutton-itcpfc gr-mlbutton-cqihfx link-id=
+-b00e6fe0652e" style=3D"background:#F2F2F2;font-size:0px;padding:15px 5px 8=
+3px 5px;word-break:break-word;"><table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line-h=
+eight:100%;"><tbody><tr><td align=3D"center" bgcolor=3D"#272389" role=3D"pr=
+esentation" style=3D"border:none;border-bottom:0 none #000000;border-left:0=
+ none #000000;border-radius:5px;border-right:0 none #000000;border-top:0 no=
+ne #000000;cursor:auto;font-style:normal;mso-padding-alt:12px;background:#2=
+72389;word-break:break-word;" valign=3D"middle"><a href=3D"https://marketin=
+g.ccifi.net/click.html?x=3Da62e&lc=3Db908&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyURZ9b5=
+&" style=3D"display:inline-block;background:#272389;color:#FFFFFF;font-fami=
+ly:Roboto, Arial, sans-serif;font-size:16px;font-style:normal;font-weight:b=
+old;line-height:100%;margin:0;text-decoration:none;text-transform:none;padd=
+ing:12px;mso-padding-alt:0px;border-radius:5px;" target=3D"_blank">I regist=
+er</a></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pr=
+esentation" style=3D"width:570px;" width=3D"570" bgcolor=3D"#FFFFFF" ><tr><=
+td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><!=
+[endif]--><div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:=
+0px auto;max-width:570px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#FFFFFF;=
+background-color:#FFFFFF;width:100%;"><tbody><tr><td style=3D"border-bottom=
+:0 none #000000;border-left:0 none #000000;border-right:0 none #000000;bord=
+er-top:0 none #000000;direction:ltr;font-size:0px;padding:5px;text-align:ce=
+nter;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;=
+width:560px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group=
+-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-b=
+lock;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=
+=3D"background-color:transparent;border-bottom:none;border-left:none;border=
+-right:none;border-top:none;vertical-align:top;padding:0;"><table border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%=
+"><tbody><tr><td align=3D"left" class=3D"gr-mltext-qbvral gr-mltext-sjubry"=
+ style=3D"font-size:0px;padding:10px;word-break:break-word;"><div style=3D"=
+font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height=
+:1.4;text-align:left;color:#000000;"><div style=3D"text-align: justify"><p =
+style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;=
+font-weight:normal;color:#000000;"><span style=3D"color: #4F4F4F"><span sty=
+le=3D"font-family: Roboto, Arial, sans-serif">We are excited to invite you =
+to an insightful talk on </span></span><span style=3D"color: #4F4F4F"><stro=
+ng><span style=3D"font-family: Roboto, Arial, sans-serif">critical minerals=
+</span></strong></span><span style=3D"color: #4F4F4F"><span style=3D"font-f=
+amily: Roboto, Arial, sans-serif">, featuring </span></span><span style=3D"=
+color: #4F4F4F"><strong><span style=3D"font-family: Roboto, Arial, sans-ser=
+if">Benjamin Gallezot</span></strong></span><span style=3D"color: #4F4F4F">=
+<span style=3D"font-family: Roboto, Arial, sans-serif">, the </span></span>=
+<span style=3D"color: #4F4F4F"><strong><span style=3D"font-family: Roboto, =
+Arial, sans-serif">Government Delegate for Strategic Minerals and Metals</s=
+pan></strong></span><span style=3D"color: #4F4F4F"><span style=3D"font-fami=
+ly: Roboto, Arial, sans-serif">&nbsp;at the French Prime Minister=E2=80=99s=
+ Office.</span></span></p></div><div style=3D"text-align: justify"><p style=
+=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-=
+weight:normal;color:#000000;"><br></p></div><div style=3D"text-align: justi=
+fy"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bott=
+om:0px;font-weight:normal;color:#000000;"><span style=3D"color: #4F4F4F"><s=
+pan style=3D"font-family: Roboto, Arial, sans-serif">During this talk, Mr. =
+Gallezot will explore the global challenges surrounding critical minerals a=
+nd discuss potential collaborations between France and Vietnam to address t=
+hese pivotal issues.</span></span></p></div><div style=3D"text-align: justi=
+fy"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bott=
+om:0px;font-weight:normal;color:#000000;"><br></p></div><div style=3D"text-=
+align: justify"><p style=3D"font-family:Arial;font-size:14px;margin-top:0px=
+;margin-bottom:0px;font-weight:normal;color:#000000;"><span style=3D"color:=
+ #4F4F4F"><span style=3D"font-family: Roboto, Arial, sans-serif">We would b=
+e honored if you could join us for this important conversation.</span></spa=
+n></p></div></div></td></tr></tbody></table></td></tr></tbody></table></div=
+><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table>=
+</div><!--[if mso | IE]></td></tr></table><![endif]--><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"width:100%;"><tbody><tr><td><!--[if mso | IE]><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pres=
+entation" style=3D"width:570px;" width=3D"570" ><tr><td style=3D"line-heigh=
+t:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=
+=3D"margin:0px auto;max-width:570px;"><table align=3D"center" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:10=
+0%;"><tbody><tr><td style=3D"border-bottom:0 none #000000;border-left:0 non=
+e #000000;border-right:0 none #000000;border-top:0 none #000000;direction:l=
+tr;font-size:0px;padding:5px 0 0 0;text-align:center;"><!--[if mso | IE]><t=
+able role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+><tr><td class=3D"" style=3D"vertical-align:top;width:570px;" ><![endif]-->=
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" width=3D"100%"><tbody><tr><td style=3D"background-color:transp=
+arent;border-bottom:none;border-left:none;border-right:none;border-top:none=
+;vertical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"b=
+ackground:#FFFFFF;font-size:0px;word-break:break-word;"><div style=3D"heigh=
+t:1px;line-height:1px;">&#8202;</div></td></tr><tr><td align=3D"center" cla=
+ss=3D"gr-mlimage-exfpat gr-mlimage-fxbttv link-id-53daae7779ec" style=3D"fo=
+nt-size:0px;padding:0;word-break:break-word;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-collapse:c=
+ollapse;border-spacing:0px;"><tbody><tr><td style=3D"width:570px;"><a href=
+=3D"https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90i&mc=3Ds&s=3DdC=
+sT&u=3Dz&z=3DyGRjLbX&" target=3D"_blank"><img alt=3D"" src=3D"https://multi=
+media.marketing.ccifi.net/uccife-y/photos/918e1203-447b-4971-8f2f-2c0465a02=
+0b2.png" style=3D"border:0;border-left:0 none #000000;border-right:0 none #=
+000000;border-top:0 none #000000;border-bottom:0 none #000000;border-radius=
+:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;f=
+ont-size:13px;" width=3D"570" height=3D"auto"></a></td></tr></tbody></table=
+></td></tr><tr><td align=3D"center" style=3D"background:#003E85;font-size:0=
+px;padding:5px;word-break:break-word;"><!--[if mso | IE]><table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" ><tr><td><![endif]--><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"float:none;display:inli=
+ne-table;"><tbody><tr class=3D"link-id-b68bb697c52a"><td style=3D"padding:0=
+ 10px;vertical-align:middle;"><table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"border-radius:0;width:30px;"><tbo=
+dy><tr><td style=3D"font-size:0;height:30px;vertical-align:middle;width:30p=
+x;"><a href=3D"https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db90x&mc=
+=3Ds&s=3DdCsT&u=3Dz&z=3Dyb0Q0WU&" target=3D"_blank"><img alt=3D"linkedin" h=
+eight=3D"30" src=3D"https://us-as.gr-cdn.com/images/common/templates/messag=
+es/v2/social/linkedin8.png" style=3D"border-radius:0;display:block;" width=
+=3D"30"></a></td></tr></tbody></table></td></tr></tbody></table><!--[if mso=
+ | IE]></td><td><![endif]--><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"float:none;display=
+:inline-table;"><tbody><tr class=3D"link-id-240ce3f7ee32"><td style=3D"padd=
+ing:0 10px;vertical-align:middle;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"border-radius:0;width:30px;"=
+><tbody><tr><td style=3D"font-size:0;height:30px;vertical-align:middle;widt=
+h:30px;"><a href=3D"https://marketing.ccifi.net/click.html?x=3Da62e&lc=3Db9=
+05&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dyog11XS&" target=3D"_blank"><img alt=3D"facebo=
+ok" height=3D"30" src=3D"https://us-as.gr-cdn.com/images/common/templates/m=
+essages/v2/social/facebook8.png" style=3D"border-radius:0;display:block;" w=
+idth=3D"30"></a></td></tr></tbody></table></td></tr></tbody></table><!--[if=
+ mso | IE]></td><td><![endif]--><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"float:none;dis=
+play:inline-table;"><tbody><tr class=3D"link-id-72e5b2d4297a"><td style=3D"=
+padding:0 10px;vertical-align:middle;"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"border-radius:0;width:30=
+px;"><tbody><tr><td style=3D"font-size:0;height:30px;vertical-align:middle;=
+width:30px;"><a href=3D"https://marketing.ccifi.net/click.html?x=3Da62e&lc=
+=3Db907&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyUv0G7G&" target=3D"_blank"><img alt=3D"y=
+outube" height=3D"30" src=3D"https://us-as.gr-cdn.com/images/common/templat=
+es/messages/v2/social/youtube8.png" style=3D"border-radius:0;display:block;=
+" width=3D"30"></a></td></tr></tbody></table></td></tr></tbody></table><!--=
+[if mso | IE]></td><td><![endif]--><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"float:none;=
+display:inline-table;"><tbody><tr class=3D"link-id-82985e9e3b85"><td style=
+=3D"padding:0 10px;vertical-align:middle;"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-radius:0;wid=
+th:30px;"><tbody><tr><td style=3D"font-size:0;height:30px;vertical-align:mi=
+ddle;width:30px;"><a href=3D"https://marketing.ccifi.net/click.html?x=3Da62=
+e&lc=3Db90u&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dynm5VuP&" target=3D"_blank"><img alt=
+=3D"twitter" height=3D"30" src=3D"https://us-as.gr-cdn.com/images/common/te=
+mplates/messages/v2/social/twitter8.png" style=3D"border-radius:0;display:b=
+lock;" width=3D"30"></a></td></tr></tbody></table></td></tr></tbody></table=
+><!--[if mso | IE]></td></tr></table><![endif]--></td></tr><tr><td align=3D=
+"left" class=3D"gr-mltext-qbvral gr-mltext-gdidqi" style=3D"background:#003=
+E85;font-size:0px;padding:10px;word-break:break-word;"><div style=3D"font-f=
+amily:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1.4;t=
+ext-align:left;color:#000000;"><div style=3D"text-align: center"><p style=
+=3D"font-family:Arial;font-size:14px;margin-top:0px;margin-bottom:0px;font-=
+weight:normal;color:#000000;"><a href=3D"https://marketing.ccifi.net/click.=
+html?x=3Da62e&lc=3Db90P&mc=3Ds&s=3DdCsT&u=3Dz&z=3Dy0n2boa&" style=3D"text-d=
+ecoration: none; color: inherit;" target=3D"_blank" class=3D"link-id-181c76=
+efc07f"><span style=3D"color: #FFFFFF"><span style=3D"font-family: Roboto, =
+Arial, sans-serif">www.ccifv.org</span></span></a></p></div></div></td></tr=
+></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></t=
+r></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></t=
+d></tr></table><![endif]--></td></tr></tbody></table><!--[if mso | IE]><tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"" role=3D"presentation" style=3D"width:570px;" width=3D"570" bgcolor=3D=
+"#003E85" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;"><![endif]--><div style=3D"background:#003E85;background-color=
+:#003E85;margin:0px auto;max-width:570px;"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ackground:#003E85;background-color:#003E85;width:100%;"><tbody><tr><td styl=
+e=3D"border-bottom:0 none #000000;border-left:0 none #000000;border-right:0=
+ none #000000;border-top:0 none #000000;direction:ltr;font-size:0px;padding=
+:5px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"v=
+ertical-align:top;width:560px;" ><![endif]--><div class=3D"mj-column-per-10=
+0 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><t=
+body><tr><td style=3D"background-color:transparent;border-bottom:none;borde=
+r-left:none;border-right:none;border-top:none;vertical-align:top;padding:0;=
+"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" width=3D"100%"><tbody><tr><td align=3D"center" class=3D"gr-mlimage-exf=
+pat gr-mlimage-eypiif" style=3D"font-size:0px;padding:0;word-break:break-wo=
+rd;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><=
+td style=3D"width:0px;"><img alt=3D"" src=3D"" style=3D"border:0;border-lef=
+t:0 none #000000;border-right:0 none #000000;border-top:0 none #000000;bord=
+er-bottom:0 none #000000;border-radius:0;display:block;outline:none;text-de=
+coration:none;height:auto;width:100%;font-size:13px;" width=3D"0" height=3D=
+"auto"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr><=
+/tbody></table></div><!--[if mso | IE]></td></tr></table><table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"p=
+resentation" style=3D"width:570px;" width=3D"570" ><tr><td style=3D"line-he=
+ight:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div styl=
+e=3D"margin:0px auto;max-width:570px;"><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:1=
+00%;"><tbody><tr><td style=3D"border-bottom:0 none #000000;border-left:0 no=
+ne #000000;border-right:0 none #000000;border-top:0 none #000000;direction:=
+ltr;font-size:0px;padding:5px;text-align:center;"><!--[if mso | IE]><table =
+role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr>=
+<td class=3D"" style=3D"vertical-align:top;width:560px;" ><![endif]--><div =
+class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;tex=
+t-align:left;direction:ltr;display:inline-block;vertical-align:top;width:10=
+0%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" width=3D"100%"><tbody><tr><td style=3D"background-color:transparent=
+;border-bottom:none;border-left:none;border-right:none;border-top:none;vert=
+ical-align:top;padding:0;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"center=
+" class=3D"gr-footer-hqmtpw gr-footer-xsmvxc" style=3D"background:#003E85;f=
+ont-size:0px;padding:10px;word-break:break-word;"><div style=3D"font-family=
+:Arial;font-size:10px;font-style:normal;line-height:1;text-align:center;tex=
+t-decoration:none;color:#FFFFFF;"><div>You may <a href=3D"https://marketing=
+.ccifi.net/unsubscribe.html?x=3Da62e&m=3D0b6&mc=3Ds&s=3DdCsT&u=3Dz&z=3DyG5Y=
+wCD&pt=3Dunsubscribe" target=3D"_blank">unsubscribe</a> or <a href=3D"https=
+://marketing.ccifi.net/change_details.html?x=3Da62e&m=3D0b6&s=3DdCsT&u=3Dz&=
+z=3DykY3VgX&pt=3Dchange_details" target=3D"_blank">change your contact deta=
+ils</a> at any time.</div></div></td></tr></tbody></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><table =
+align=3D"center" style=3D"font-family: 'Roboto', Helvetica, sans-serif; fon=
+t-weight: 400; letter-spacing: .018em; text-align: center; font-size: 10px;=
+"><tr><td style=3D"padding-bottom: 20px"></td></tr></table></div></body></h=
+tml><img src=3D"https://marketing.ccifi.net/open.html?x=3Da62e&m=3D0b6&mc=
+=3Ds&s=3DdCsT&u=3Dz&z=3DyUpk02t&" width=3D"0" height=3D"0" border=3D"0" alt=
+=3D"" role=3D"presentation" />=
+
+--1f703e47a269258f32a5640856f803a6--
+

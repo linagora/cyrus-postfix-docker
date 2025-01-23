@@ -1,0 +1,479 @@
+Return-Path: <SRS0=NLr+=UE=weblate.org=noreply@ik2.com>
+org.apache.james.rspamd.flag: NO
+org.apache.james.rspamd.status: No, actions=no action score=-1.290909 requiredScore=15.0
+Delivered-To: btellier@linagora.com
+Received: from 172.17.0.1 (EHLO incoming.linagora.com) ([172.17.0.1])
+          by incoming.linagora.com (JAMES SMTP Server ) with ESMTP ID 8f01152b
+          for <btellier@linagora.com>;
+          Sun, 12 Jan 2025 12:19:57 +0000 (UTC)
+Received: from obm3-ui.linagora.dc1 (arathi.linagora.com [54.36.8.82])
+	by incoming.linagora.com (Postfix) with ESMTP id 7103214073D
+	for <btellier@linagora.com>; Sun, 12 Jan 2025 12:19:57 +0000 (UTC)
+Received: from s602f.ik2.com (s602f.ik2.com [66.37.25.73])
+	by obm3-ui.linagora.dc1 (Postfix) with ESMTP id D846B1D5C6
+	for <btellier@linagora.com>; Sun, 12 Jan 2025 13:24:36 +0100 (CET)
+Received: from s602e.ik2.com
+	by s602f.ik2.com with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(envelope-from <noreply@weblate.org>)
+	id 1tWwwV-0004uT-Tl
+	for btellier@linagora.com; Sun, 12 Jan 2025 12:19:55 +0000
+Received: from 77.78.107.252 by s602e.ik2.com (IK2 SMTP Server); Sun, 12 Jan 2025 12:19:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=weblate.org
+	; s=20190206; h=List-Unsubscribe:Message-ID:Date:To:From:Subject:MIME-Version
+	:Content-Type:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=/3vRabZYv0z7a+mjcvMrj4bvAQ0lup6hiRb+F75gyqE=; b=kRoALhSX/0z+HiXCpKkZ0aSd8H
+	VI6r3U67dwtucLyfA8jXDKMmgg2G6qkCAsyu7/8wvIvUpRyhWV0tCd4ViNiIP6EYYlLrIP8LedPl7
+	0/pKn3q/r1lMz4mlAgqfgHYu51EoC3cKg09Co46y14pHVxePSFtZXicuhl8etx6f3XLlFyKqVbaZG
+	HxmzsI8QI5VAtk6Hku+EC13/mfOlh/uXDzT5krUdMeV9gbv3kx4ghMIYmgy+mmlGZ+r6RDXGk8A+w
+	+msokDyf4T9Jie6Hb6O5KOquJ4DH+Y4+v5krSm7Hb8h0gVMfFuPPw7ppJhyurBotmPa7fCh4+U3Za
+	e9NlwhJQ==;
+Received: from 127.0.0.1 (helo=authenticated.u-s-e-r)
+	by mail.cihar.com with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.96)
+	(envelope-from <noreply@weblate.org>)
+	id 1tWwwS-005gHy-0o
+	for btellier@linagora.com;
+	Sun, 12 Jan 2025 13:19:44 +0100
+Received: from localhost ([127.0.0.1] helo=hosted-celery-2)
+	by hosted-celery-2 with esmtp (Exim 4.96)
+	(envelope-from <noreply@weblate.org>)
+	id 1tWwwS-002Jl4-0F
+	for btellier@linagora.com;
+	Sun, 12 Jan 2025 12:19:44 +0000
+Content-Type: multipart/related;
+ boundary="===============1425913294997481209=="
+MIME-Version: 1.0
+Subject: [Hosted Weblate] New language added to Linagora/Twake Drive backend
+X-LINAGORA-Copy-Delivery-Done: 1
+From: =?utf-8?b?4K6k4K6u4K6/4K604K+N4K6o4K+H4K6w4K6u4K+N?=
+ <noreply@weblate.org>
+To: btellier@linagora.com
+Date: Sun, 12 Jan 2025 12:19:44 -0000
+X-Mailer: Weblate
+X-Weblate-Notification: NewTranslationNotificaton
+Message-ID: a564eddc-5921-4c66-b8ed-d50039e82bc9@hosted.weblate.org
+List-Unsubscribe: 
+ https://hosted.weblate.org/accounts/unsubscribe/?i=365287:1tWwwR:a8rocow_keepEunC_KHontXtxlEuTbrn1phNHJHUPGA
+X-SF-RX-Return-Path: <noreply@weblate.org>
+X-SF-Originating-IP: 77.78.107.252
+X-SF-WhiteListedReason: Whitelisted EmailTO
+X-SF-Score: 4.7
+X-SF-SRS: Sender address rewritten from <noreply@weblate.org> to <SRS0=NLr+=UE=weblate.org=noreply@ik2.com>
+X-SF-Domain: qgwlxqsyyb
+
+--===============1425913294997481209==
+Content-Type: multipart/alternative;
+ boundary="===============8468416913714227193=="
+MIME-Version: 1.0
+
+--===============8468416913714227193==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+
+#  Language added
+
+[ TamilNeram](https://hosted.weblate.org/user/TamilNeram/ "தமிழ்நேரம்"):
+[Hosted Weblate](https://hosted.weblate.org) /
+[Linagora](https://hosted.weblate.org/projects/linagora/) / [Twake Drive
+backend](https://hosted.weblate.org/projects/linagora/twake-drive-backend/) /
+[Tamil](https://hosted.weblate.org/projects/linagora/twake-drive-backend/ta/)
+
+## Added language
+
+Tamil (ta)
+
+[View translation
+component](https://hosted.weblate.org/projects/linagora/twake-drive-backend/)
+
+## Translation Info
+
+| All strings             |  [ 4 ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/)                       |                                                                                                      |
+|-------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| Translated strings      |  [ 0 ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:>=translated)  |  [ 0% ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:>=translated)  |
+| Untranslated strings    |  [ 4 ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:empty)         |  [ 100% ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:empty)       |
+| Unfinished strings      |  [ 4 ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:<translated)   |  [ 100% ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:<translated) |
+| Strings marked for edit |  [ 0 ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:needs-editing) |  [ 0% ](https://hosted.weblate.org/translate/linagora/twake-drive-backend/ta/?q=state:needs-editing) |
+
+
+[View](https://hosted.weblate.org/projects/linagora/twake-drive-backend/ta/)
+
+  
+[Weblate, the libre continuous localization system.](https://weblate.org/)
+
+▸ [Notification
+settings](https://hosted.weblate.org/accounts/profile/#notifications)
+
+▸ [Turn off this
+notification](https://hosted.weblate.org/accounts/unsubscribe/?i=365287:1tWwwR:a8rocow_keepEunC_KHontXtxlEuTbrn1phNHJHUPGA)
+
+Generated on Jan. 12, 2025, 1:19 p.m..
+
+
+--===============8468416913714227193==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en"
+      dir=3D"ltr">
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0" />
+    <title>New language added to Linagora/Twake Drive backend</title>
+
+    <style type=3D"text/css">button,hr,input{overflow:visible}audio,canvas,=
+progress,video{display:inline-block}progress,sub,sup{vertical-align:baselin=
+e}[type=3D"checkbox"],[type=3D"radio"],legend{box-sizing:border-box;padding=
+:0}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust=
+:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,m=
+ain,menu,nav,section{display:block}h1{font-size:2em;margin:0.67em 0}figure{=
+margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-f=
+amily:"Source Code Pro",monospace;font-size:1em}a{background-color:transpar=
+ent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;tex=
+t-decoration:underline;text-decoration:underline dotted}b,strong{font-weigh=
+t:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{=
+font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bot=
+tom:-0.25em}sup{top:-0.5em}audio:not([controls]){display:none;height:0}img{=
+border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,sele=
+ct,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0=
+}button,select{text-transform:none}[type=3D"reset"],[type=3D"submit"],butto=
+n,html [type=3D"button"]{-webkit-appearance:button}[type=3D"button"]::-moz-=
+focus-inner,[type=3D"reset"]::-moz-focus-inner,[type=3D"submit"]::-moz-focu=
+s-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=3D"butto=
+n"]:-moz-focusring,[type=3D"reset"]:-moz-focusring,[type=3D"submit"]:-moz-f=
+ocusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{paddi=
+ng:0.35em 0.75em 0.625em}legend{color:inherit;display:table;max-width:100%;=
+white-space:normal}textarea{overflow:auto}[type=3D"number"]::-webkit-inner-=
+spin-button,[type=3D"number"]::-webkit-outer-spin-button{height:auto}[type=
+=3D"search"]{-webkit-appearance:textfield;outline-offset:-2px}[type=3D"sear=
+ch"]::-webkit-search-cancel-button,[type=3D"search"]::-webkit-search-decora=
+tion{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearanc=
+e:button;font:inherit}summary{display:list-item}[hidden],template{display:n=
+one}html,body{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{b=
+ox-sizing:inherit}body{font-family:"Source Sans 3",Arial,sans-serif;color:#=
+2a3744;font-size:16px;letter-spacing:normal;font-weight:400;transition:all =
+0.5s cubic-bezier(0.645,0.045,0.355,1);overflow-x:hidden;text-rendering:opt=
+imizeLegibility!important;-webkit-font-smoothing:antialiased!important}a{tr=
+ansition:all 300ms linear;-webkit-transition:all 300ms linear;text-decorati=
+on:none}p,pre{margin:0}.container{margin:0 auto;width:100%;padding:0 20px}@=
+media (min-width:768px){.container{width:750px}}@media (min-width:992px){.c=
+ontainer{width:970px}}@media (min-width:1200px){.container{width:970px}}.co=
+ntent{padding:30px 0}h1 img{padding:0 5px 0 0}h1{font-size:30px;font-weight=
+:normal;letter-spacing:-0.5px;line-height:48px;margin:20px 0;color:#2a3744}=
+h2{font-size:26px;font-weight:normal;letter-spacing:-0.5px;line-height:31px=
+;color:#2a3744}code,pre{word-wrap:break-word;white-space:pre-wrap}.buttons{=
+padding-top:18px}.head{font-size:28px;letter-spacing:-0.5px;line-height:36p=
+x}a{color:#1fa385;text-decoration:underline}a.button{background:#2eccaa;hei=
+ght:50px;min-width:180px;color:#fff;font-size:18px;line-height:48px;border:=
+1px solid transparent;padding:10px 25px;font-weight:600;text-align:center;l=
+etter-spacing:0.4px;-webkit-border-radius:30px;-moz-border-radius:30px;bord=
+er-radius:30px!important;text-decoration:none;text-shadow:none;display:inli=
+ne}a.button:hover{background-color:#fff;color:#2eccaa;border-color:#2eccaa}=
+.translatetext{background-color:#eee}ins{background-color:lightgreen}del{ba=
+ckground-color:#fc7979}.avatar{-webkit-border-radius:50%;-moz-border-radius=
+:50%;border-radius:50%}.history-row>div{padding:10px 0}.history-row + .hist=
+ory-row>div{border-top:1px solid #e9eaec}.history-event,.history-data .text=
+-muted{font-size:14px}.history-event p{margin-left:34px}.comment-content{bo=
+rder-radius:0 5px 5px 5px;background-color:#e5f0f2;padding:8px 10px}.commen=
+t-source{background-color:#f2e5ea}.footer{background-color:#2a3744;font-siz=
+e:14px;line-height:20px;color:#e9eaec;padding:20px 20px 30px 20px;margin-to=
+p:20px}.footer p:first-child{margin-bottom:20px}.footer img{padding-bottom:=
+20px}.footer a{color:#e9eaec}tr td{text-align:right;padding-left:20px}tr td=
+:first-child{text-align:left;padding-left:0}.col-xs-1,.col-sm-1,.col-md-1,.=
+col-lg-1,.col-xs-2,.col-sm-2,.col-md-2,.col-lg-2,.col-xs-3,.col-sm-3,.col-m=
+d-3,.col-lg-3,.col-xs-4,.col-sm-4,.col-md-4,.col-lg-4,.col-xs-5,.col-sm-5,.=
+col-md-5,.col-lg-5,.col-xs-6,.col-sm-6,.col-md-6,.col-lg-6,.col-xs-7,.col-s=
+m-7,.col-md-7,.col-lg-7,.col-xs-8,.col-sm-8,.col-md-8,.col-lg-8,.col-xs-9,.=
+col-sm-9,.col-md-9,.col-lg-9,.col-xs-10,.col-sm-10,.col-md-10,.col-lg-10,.c=
+ol-xs-11,.col-sm-11,.col-md-11,.col-lg-11,.col-xs-12,.col-sm-12,.col-md-12,=
+.col-lg-12{position:relative;min-height:1px;padding-right:15px;padding-left=
+:15px}.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7=
+,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12{float:left}.col-xs-10=
+{width:83.33333333%}.col-xs-2{width:16.66666667%}.row:before,.row:after{dis=
+play:table;content:" ";clear:both}.text-muted{color:#bfc3c7}.pull-right{flo=
+at:right!important}img{vertical-align:middle}.clearfix:before,.clearfix:aft=
+er{display:table;content:" "}.clearfix:after{clear:both}.badge{display:inli=
+ne-block;min-width:10px;padding:3px 7px;font-size:14px;font-weight:600;line=
+-height:1;color:#e9eaec;text-align:center;white-space:nowrap;vertical-align=
+:middle;background-color:#2a3744;border-radius:3px}.divisor{color:#bfc3c8}<=
+/style>
+
+
+  </head>
+
+  <body>
+    <html><body>
+<div class=3D"content">
+        <div class=3D"container">
+          <div class=3D"box">
+           =20
+              <h1>
+                <img src=3D"cid:email-logo.png@cid.weblate.org">
+                Language added
+              </h1>
+              <div class=3D"nav">
+                <a href=3D"https://hosted.weblate.org/user/TamilNeram/" tit=
+le=3D"=E0=AE=A4=E0=AE=AE=E0=AE=BF=E0=AE=B4=E0=AF=8D=E0=AE=A8=E0=AF=87=E0=AE=
+=B0=E0=AE=AE=E0=AF=8D"><img src=3D"https://hosted.weblate.org/avatar/32/Tam=
+ilNeram.png" class=3D"avatar w32" alt=3D"User avatar"> TamilNeram</a>:
+                <a href=3D"https://hosted.weblate.org">Hosted Weblate</a>
+                / <a href=3D"https://hosted.weblate.org/projects/linagora/"=
+>Linagora</a>
+               =20
+                  /
+                 =20
+                  <a href=3D"https://hosted.weblate.org/projects/linagora/t=
+wake-drive-backend/">Twake Drive backend</a>
+               =20
+                / <a href=3D"https://hosted.weblate.org/projects/linagora/t=
+wake-drive-backend/ta/">Tamil</a>
+              </div>
+           =20
+           =20
+ =20
+
+    <h2>Added language</h2>
+
+ =20
+
+  <p>Tamil (ta)</p>
+
+  <div class=3D"line buttons">
+    <a class=3D"button" href=3D"https://hosted.weblate.org/projects/linagor=
+a/twake-drive-backend/">View translation component</a>
+  </div>
+
+
+
+          </div>
+         =20
+            <h2>Translation Info</h2>
+            <table>
+             =20
+
+
+<tr>
+  <td>All strings</td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/">
+      4
+      </a>
+  </td>
+  <td></td>
+</tr>
+<tr>
+  <td>Translated strings</td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:&gt;=3Dtranslated">
+      0
+      </a>
+  </td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:&gt;=3Dtranslated">
+      0%
+      </a>
+  </td>
+</tr>
+<tr>
+  <td>Untranslated strings</td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:empty">
+      4
+      </a>
+  </td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:empty">
+      100%
+      </a>
+  </td>
+</tr>
+<tr>
+  <td>Unfinished strings</td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:&lt;translated">
+      4
+      </a>
+  </td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:&lt;translated">
+      100%
+      </a>
+  </td>
+</tr>
+<tr>
+  <td>Strings marked for edit</td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:needs-editing">
+      0
+      </a>
+  </td>
+  <td>
+    <a href=3D"https://hosted.weblate.org/translate/linagora/twake-drive-ba=
+ckend/ta/?q=3Dstate:needs-editing">
+      0%
+      </a>
+  </td>
+</tr>
+
+            </table>
+            <div class=3D"buttons">
+              <a class=3D"button" href=3D"https://hosted.weblate.org/projec=
+ts/linagora/twake-drive-backend/ta/">View</a>
+            </div>
+         =20
+          <div class=3D"footer" style=3D"clear:both">
+            <p>
+              <img src=3D"cid:email-logo-footer.png@cid.weblate.org">
+              <br>
+              <a href=3D"https://weblate.org/">Weblate, the libre continuou=
+s localization system.</a>
+            </p>
+           =20
+              <p>
+                =E2=96=B8 <a href=3D"https://hosted.weblate.org/accounts/pr=
+ofile/#notifications">Notification settings</a>
+              </p>
+              <p>
+                =E2=96=B8 <a href=3D"https://hosted.weblate.org/accounts/un=
+subscribe/?i=3D365287:1tWwwR:a8rocow_keepEunC_KHontXtxlEuTbrn1phNHJHUPGA">T=
+urn off this notification</a>
+              </p>
+           =20
+          </div>
+         =20
+         =20
+          <p style=3D"opacity: 0" class=3D"text-muted">
+            Generated on Jan. 12, 2025, 1:19 p.m..
+          </p>
+        </div>
+      </div>
+    </body></html>
+
+  </body>
+</html>
+--===============8468416913714227193==--
+
+--===============1425913294997481209==
+Content-Type: image/png
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Content-ID: <email-logo.png@cid.weblate.org>
+Content-Disposition: inline; filename="email-logo.png"
+
+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
+
+--===============1425913294997481209==
+Content-Type: image/png
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+Content-ID: <email-logo-footer.png@cid.weblate.org>
+Content-Disposition: inline; filename="email-logo-footer.png"
+
+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
+
+--===============1425913294997481209==--
+
